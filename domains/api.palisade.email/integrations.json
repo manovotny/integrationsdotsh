@@ -1,0 +1,22 @@
+{
+  "description": "Palisade is an email authentication and DMARC management platform for organizations. It helps teams add domains, publish and verify SPF, DKIM, DMARC, and related DNS records, track remediation tasks, and review reporting and billing.",
+  "discoveredAt": "2026-08-23T20:22:48.673Z",
+  "domain": "api.palisade.email",
+  "summary": "Palisade exposes a versioned REST API at https://api.palisade.email and a Streamable HTTP MCP server at https://api.palisade.email/mcp; the API uses API keys via HTTP Basic or dashboard JWT bearer auth, and the MCP server supports self-onboarding OAuth or API-key bearer auth.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Palisade MCP server",
+      "slug": "palisade-mcp-server",
+      "type": "mcp",
+      "url": "https://api.palisade.email/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Palisade API",
+      "slug": "palisade-rest-api",
+      "type": "http",
+      "url": "https://api.palisade.email"
+    }
+  ]
+}

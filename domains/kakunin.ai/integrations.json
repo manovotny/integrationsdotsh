@@ -1,0 +1,44 @@
+{
+  "description": "Kakunin provides identity, certificate issuance, behavioral monitoring, and compliance/audit tooling for AI agents. It issues X.509 certificates to agents, scores and logs their behavior, and exposes public verification artifacts for third parties to validate agent credentials.",
+  "discoveredAt": "2026-07-06T02:10:18.736Z",
+  "domain": "kakunin.ai",
+  "summary": "Kakunin exposes a documented REST API with an OpenAPI schema, a public no-auth verification/CRL surface on `api.kakunin.ai`, an MCP server at `https://www.kakunin.ai/api/mcp`, and an npm-distributed `kakunin-mcp` CLI; authenticated surfaces use Bearer auth with Kakunin-issued API keys, and OAuth resource metadata is also published for bearer access tokens.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Kakunin public certificate verification API",
+      "slug": "kakunin-public-certificate-verification-api",
+      "type": "http",
+      "url": "https://api.kakunin.ai/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Kakunin MCP server",
+      "slug": "kakunin-mcp-server",
+      "type": "mcp",
+      "url": "https://www.kakunin.ai/api/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "kakunin-mcp",
+      "name": "kakunin-mcp CLI",
+      "packages": [
+        {
+          "identifier": "@kakunin/mcp",
+          "registryType": "npm",
+          "runtimeHint": "node"
+        }
+      ],
+      "slug": "kakunin-mcp-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Kakunin REST API",
+      "slug": "kakunin-rest-api",
+      "spec": "https://kakunin.ai/v1/openapi.json",
+      "type": "http",
+      "url": "https://api.kakunin.ai"
+    }
+  ]
+}

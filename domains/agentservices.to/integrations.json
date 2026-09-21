@@ -1,0 +1,22 @@
+{
+  "description": "AgentServices is a hosted API platform for AI agents that offers crypto market data, web research, on-chain analytics, inference, and ERC-8004 identity/reputation endpoints. It also publishes a remote MCP server for connecting those capabilities to MCP-compatible clients.",
+  "discoveredAt": "2026-08-30T21:23:37.838Z",
+  "domain": "agentservices.to",
+  "summary": "AgentServices exposes a public REST API at https://agentservices.to and a streamable-HTTP MCP server at https://agentservices.to/mcp; docs advertise x402 wallet micropayments for paid REST routes and OAuth metadata for MCP connectors, but both surfaced endpoints are documented as reachable without pre-minted service credentials.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "AgentServices MCP server",
+      "slug": "agentservices-mcp-server",
+      "type": "mcp",
+      "url": "https://agentservices.to/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "AgentServices REST API",
+      "slug": "agentservices-rest-api",
+      "type": "http",
+      "url": "https://agentservices.to"
+    }
+  ]
+}

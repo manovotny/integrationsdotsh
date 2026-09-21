@@ -1,0 +1,32 @@
+{
+  "description": "Hostodo is a VPS hosting provider offering unmanaged Linux KVM virtual private servers with NVMe storage and multiple US datacenter locations. Customers use its console and tools to deploy and manage VPS instances.",
+  "discoveredAt": "2026-07-06T01:14:43.654Z",
+  "domain": "hostodo.com",
+  "summary": "Hostodo exposes a hosted MCP server at `https://api.hostodo.com/mcp` authenticated with a Hostodo developer bearer token, plus the `odo` CLI authenticated via `odo login` using OAuth device flow.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Hostodo MCP",
+      "slug": "hostodo-mcp",
+      "type": "mcp",
+      "url": "https://api.hostodo.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "odo",
+      "name": "Hostodo CLI",
+      "packages": [
+        {
+          "identifier": "hostodo/tap/odo",
+          "registryType": "homebrew"
+        },
+        {
+          "identifier": "hostodo/odo-cli",
+          "registryType": "github"
+        }
+      ],
+      "slug": "hostodo-cli",
+      "type": "cli"
+    }
+  ]
+}

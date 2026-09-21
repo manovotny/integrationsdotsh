@@ -1,0 +1,15 @@
+{
+  "description": "Honeycomb provides observability tooling for querying and analyzing telemetry such as traces, events, metrics, SLOs, triggers, and boards. Its MCP server lets AI agents access and act on that Honeycomb data through the Model Context Protocol.",
+  "discoveredAt": "2026-09-04T17:30:21.194Z",
+  "domain": "mcp.honeycomb.io",
+  "summary": "mcp.honeycomb.io exposes one OAuth-protected Honeycomb MCP server at `https://mcp.honeycomb.io/mcp` over streamable HTTP; docs also declare an alternate API-key authentication path for the same MCP endpoint.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Honeycomb MCP server",
+      "slug": "honeycomb-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.honeycomb.io/mcp"
+    }
+  ]
+}

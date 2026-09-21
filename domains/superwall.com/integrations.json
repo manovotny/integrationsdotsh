@@ -1,0 +1,22 @@
+{
+  "description": "Superwall is a subscription infrastructure and paywall platform for consumer mobile and web apps. It provides entitlements, purchase and webhook infrastructure, analytics, SQL/query access, and tools for building and experimenting with paywalls.",
+  "discoveredAt": "2026-07-09T18:57:24.665Z",
+  "domain": "superwall.com",
+  "summary": "Superwall exposes a hosted REST API at api.superwall.com and an MCP server at superwall-mcp.superwall.com; both require authentication, and the docs also describe an editor-specific MCP connection flow whose concrete endpoint is not publicly documented.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Superwall API V2",
+      "slug": "superwall-api-v2",
+      "type": "http",
+      "url": "https://api.superwall.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "Superwall MCP",
+      "slug": "superwall-mcp",
+      "type": "mcp",
+      "url": "https://superwall-mcp.superwall.com/mcp"
+    }
+  ]
+}

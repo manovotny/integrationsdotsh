@@ -1,0 +1,23 @@
+{
+  "description": "x-lookup is a read-only browser for public X/Twitter content, returning posts, threads, profiles, search results, followers, and following as Markdown or JSON. It uses public upstream sources and does not access private or gated content.",
+  "discoveredAt": "2026-08-31T05:42:52.892Z",
+  "domain": "x-lookup.mynameistito.com",
+  "summary": "Public no-auth integration surface with one OpenAPI-documented HTTP API at `https://x-lookup.mynameistito.com` and one streamable-HTTP MCP server at `https://x-lookup.mynameistito.com/mcp`.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "x-lookup HTTP API",
+      "slug": "x-lookup-http-api",
+      "spec": "https://x-lookup.mynameistito.com/openapi.json",
+      "type": "http",
+      "url": "https://x-lookup.mynameistito.com"
+    },
+    {
+      "authStatus": "none",
+      "name": "x-lookup MCP server",
+      "slug": "x-lookup-mcp-server",
+      "type": "mcp",
+      "url": "https://x-lookup.mynameistito.com/mcp"
+    }
+  ]
+}

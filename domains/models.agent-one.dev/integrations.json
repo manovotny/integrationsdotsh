@@ -1,0 +1,14 @@
+{
+  "description": "models.agent-one.dev hosts AI Model Directory, a catalog of AI providers and model metadata such as pricing, limits, modalities, and feature flags. Its docs describe browsing the site and consuming the published dataset, primarily via public JSON data and an npm package.",
+  "discoveredAt": "2026-07-07T01:08:42.374Z",
+  "domain": "models.agent-one.dev",
+  "summary": "models.agent-one.dev exposes a public website/data surface for browsing AI model metadata; no authenticated API, GraphQL, MCP server, or CLI targeting this domain was documented.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "AI Model Directory website data",
+      "slug": "ai-model-directory-website-data",
+      "type": "http"
+    }
+  ]
+}

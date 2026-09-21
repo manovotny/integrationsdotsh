@@ -1,0 +1,22 @@
+{
+  "description": "ClickUp is a work management and productivity platform for organizing tasks, docs, chat, goals, and related workflow data inside workspaces. It also offers AI features, including an MCP server that lets external AI assistants interact with ClickUp workspace content.",
+  "discoveredAt": "2026-09-06T15:57:02.730Z",
+  "domain": "clickup.com",
+  "summary": "ClickUp exposes a public HTTP API at api.clickup.com and an OAuth-protected MCP server at mcp.clickup.com; no first-party GraphQL API or official CLI was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "ClickUp Public API",
+      "slug": "clickup-public-api",
+      "type": "http",
+      "url": "https://api.clickup.com/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "ClickUp MCP Server",
+      "slug": "clickup",
+      "type": "mcp",
+      "url": "https://mcp.clickup.com/mcp"
+    }
+  ]
+}

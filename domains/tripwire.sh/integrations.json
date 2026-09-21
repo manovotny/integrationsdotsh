@@ -1,0 +1,15 @@
+{
+  "description": "Tripwire appears to provide an MCP-related service at tripwire.sh. Publicly discoverable metadata shows an OAuth 2.0 authorization server with dynamic client registration and scopes for identity/profile access.",
+  "discoveredAt": "2026-07-04T07:06:23.707Z",
+  "domain": "tripwire.sh",
+  "summary": "tripwire.sh exposes an OAuth-protected MCP resource and no other public developer integration surfaces were found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Tripwire OAuth-protected MCP resource",
+      "slug": "tripwire-oauth-protected-mcp-resource",
+      "type": "mcp",
+      "url": "https://www.tripwire.sh"
+    }
+  ]
+}

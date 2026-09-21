@@ -1,0 +1,43 @@
+{
+  "description": "OpenPost is a workspace for creating, adapting, scheduling, publishing, and tracking social content across supported social networks. It is available as a hosted service and as open-source software you can self-host.",
+  "discoveredAt": "2026-09-01T16:00:52.994Z",
+  "domain": "openpo.st",
+  "summary": "OpenPost exposes one authenticated HTTP API at `https://app.openpo.st/api/v1`, an OAuth/API-token-protected MCP server at `https://app.openpo.st/mcp`, and an `openpost` CLI that talks to the same service.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "OpenPost MCP server",
+      "slug": "openpost-mcp-server",
+      "type": "mcp",
+      "url": "https://app.openpo.st/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "openpost",
+      "name": "OpenPost CLI",
+      "packages": [
+        {
+          "identifier": "https://raw.githubusercontent.com/getopenpost/openpost/main/scripts/install-cli.sh",
+          "registryType": "other"
+        }
+      ],
+      "slug": "openpost-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "OpenPost API",
+      "slug": "api",
+      "type": "http",
+      "url": "https://app.openpo.st/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "OpenPost API",
+      "slug": "api-2",
+      "spec": "https://docs.openpo.st/openapi.json",
+      "type": "http",
+      "url": "https://app.openpo.st/api/v1"
+    }
+  ]
+}

@@ -1,15 +1,22 @@
 {
-  "description": "Baremetrics is a subscription analytics service for recurring-revenue businesses. It connects to billing data sources or accepts subscription data through its API so users can analyze customers, subscriptions, revenue metrics, and related events.",
-  "discoveredAt": "2026-07-02T20:07:17.529Z",
+  "description": "Baremetrics is a subscription analytics and revenue recovery platform for SaaS businesses. It connects billing data from systems like Stripe, Chargebee, and Recurly to provide metrics, dunning, cancellation insights, and forecasting.",
+  "discoveredAt": "2026-07-31T01:46:57.962Z",
   "domain": "baremetrics.com",
-  "summary": "Baremetrics exposes one authenticated REST API at `https://api.baremetrics.com`; it accepts either a Baremetrics API key or an OAuth 2.0 access token via `Authorization: Bearer ...`.",
+  "summary": "Baremetrics exposes a REST API at `api.baremetrics.com` plus an MCP server at `app.baremetrics.com/mcp`; both use Bearer auth with a Baremetrics API key, and the REST API also supports OAuth 2.0 access tokens for approved apps.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Baremetrics API",
+      "name": "Baremetrics REST API",
       "slug": "baremetrics-api",
       "type": "http",
       "url": "https://api.baremetrics.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "Baremetrics MCP server",
+      "slug": "baremetrics-mcp-server",
+      "type": "mcp",
+      "url": "https://app.baremetrics.com/mcp"
     }
   ]
 }

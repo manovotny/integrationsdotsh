@@ -1,0 +1,28 @@
+{
+  "description": "skills.sh is a directory and leaderboard for reusable AI-agent skills, with pages for browsing, packs, audits, and documentation. It indexes skills from repositories and other sources and provides installation workflows for agent tooling.",
+  "discoveredAt": "2026-08-07T05:45:27.287Z",
+  "domain": "skills.sh",
+  "summary": "skills.sh exposes an authenticated HTTP catalog API at `https://skills.sh/api/v1` using Vercel OIDC tokens, plus a public `skills` CLI distributed via npm/npx.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "skills.sh Catalog API",
+      "slug": "skills-sh-catalog-api",
+      "type": "http",
+      "url": "https://skills.sh/api/v1"
+    },
+    {
+      "authStatus": "none",
+      "command": "skills",
+      "name": "skills CLI",
+      "packages": [
+        {
+          "identifier": "skills",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "skills-cli",
+      "type": "cli"
+    }
+  ]
+}

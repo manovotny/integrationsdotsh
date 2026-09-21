@@ -1,0 +1,15 @@
+{
+  "description": "Dotflowy is an open-source outlining and note-taking app positioned as a Workflowy alternative, with real-time sync, import/export, and AI-agent access to outlines. Its public site and repository docs describe an MCP interface for agents to read and modify a user's outline.",
+  "discoveredAt": "2026-08-06T12:53:56.388Z",
+  "domain": "dotflowy.com",
+  "summary": "dotflowy.com publicly documents one developer integration surface: an OAuth-protected MCP server at `https://<your-deployment>/mcp`; no public HTTP/REST, GraphQL, or CLI surface was found for the dotflowy.com domain.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Dotflowy MCP server",
+      "slug": "dotflowy-mcp-server",
+      "type": "mcp",
+      "url": "https://<your-deployment>/mcp"
+    }
+  ]
+}

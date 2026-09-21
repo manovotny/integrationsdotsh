@@ -1,0 +1,35 @@
+{
+  "description": "DataFast is a web analytics platform that helps teams track website traffic, goals, funnels, visitors, and revenue attribution. It also supports payment-provider integrations so users can connect business metrics like subscriptions, MRR, LTV, and churn to acquisition sources.",
+  "discoveredAt": "2026-09-16T22:48:39.223Z",
+  "domain": "datafa.st",
+  "summary": "DataFast exposes a REST API at `https://datafa.st/api/v1/`, a Streamable HTTP MCP server at `https://datafa.st/api/mcp`, and an npm-installed `datafast` CLI; auth is via `df_` website keys, `dft_` account tokens, and MCP OAuth for the MCP surface.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "DataFast REST API",
+      "slug": "datafast-rest-api",
+      "type": "http",
+      "url": "https://datafa.st/api/v1/"
+    },
+    {
+      "authStatus": "required",
+      "name": "DataFast MCP server",
+      "slug": "datafast-mcp-server",
+      "type": "mcp",
+      "url": "https://datafa.st/api/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "datafast",
+      "name": "DataFast CLI",
+      "packages": [
+        {
+          "identifier": "@datafast/cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "datafast-cli",
+      "type": "cli"
+    }
+  ]
+}

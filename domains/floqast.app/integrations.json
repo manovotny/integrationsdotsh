@@ -1,0 +1,15 @@
+{
+  "description": "FloQast provides accounting automation software for financial close, reconciliations, compliance, and related financial operations workflows. Its developer portal documents APIs for platform resources such as users, entities, workflows, and financial data ingestion.",
+  "discoveredAt": "2026-08-07T05:47:53.216Z",
+  "domain": "floqast.app",
+  "summary": "FloQast exposes one documented REST HTTP surface, the FloQast External API, authenticated with a FloQast-issued API key in the `x-api-key` header; no public GraphQL, MCP server, or CLI surfaced in the docs.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "FloQast External API",
+      "slug": "floqast-external-api",
+      "type": "http",
+      "url": "https://apix.floqast.app/v2"
+    }
+  ]
+}

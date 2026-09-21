@@ -1,0 +1,30 @@
+{
+  "description": "Onboard is customer onboarding software for managing projects, tasks, KPIs, and related workflow data. It provides hosted operational tooling around that data for direct API integrations and AI-assisted workflows.",
+  "discoveredAt": "2026-08-03T16:52:40.504Z",
+  "domain": "rest.onboard.io",
+  "summary": "Onboard exposes a token-authenticated REST API at rest.onboard.io and a hosted MCP server under /mcp that supports either the same API token or OAuth-discovered user sign-in.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Onboard REST API",
+      "slug": "onboard-rest-api",
+      "type": "http",
+      "url": "https://rest.onboard.io"
+    },
+    {
+      "authStatus": "required",
+      "name": "Onboard MCP server",
+      "slug": "onboard-mcp-server",
+      "type": "mcp",
+      "url": "https://rest.onboard.io/mcp/rpc"
+    },
+    {
+      "authStatus": "required",
+      "name": "Onboard REST API",
+      "slug": "onboard-api",
+      "spec": "https://docs.onboard.io/openapi.json",
+      "type": "http",
+      "url": "https://rest.onboard.io"
+    }
+  ]
+}

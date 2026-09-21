@@ -1,0 +1,49 @@
+{
+  "description": "Flusterduck monitors website behavior to detect user friction, score confusing pages, cluster issues, and verify whether deploys fix those problems. It focuses on behavioral signals rather than session replay or personal data collection.",
+  "discoveredAt": "2026-07-06T18:19:34.705Z",
+  "domain": "flusterduck.com",
+  "summary": "Flusterduck exposes a REST API, a hosted MCP server, and a CLI; all require authentication, with secret/MCP keys for API and CLI use and OAuth sign-in for the hosted MCP server.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Flusterduck MCP server",
+      "slug": "flusterduck-hosted-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.flusterduck.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "flusterduck",
+      "name": "Flusterduck CLI",
+      "packages": [
+        {
+          "identifier": "flusterduck-cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        },
+        {
+          "identifier": "@flusterduck/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "flusterduck-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Flusterduck REST API",
+      "slug": "flusterduck-rest-api",
+      "type": "http",
+      "url": "https://api.flusterduck.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Flusterduck REST API",
+      "slug": "flusterduck-rest-api-2",
+      "spec": "https://flusterduck.com/openapi.json",
+      "type": "http",
+      "url": "https://api.flusterduck.com/v1"
+    }
+  ]
+}

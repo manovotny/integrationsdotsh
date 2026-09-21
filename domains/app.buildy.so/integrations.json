@@ -1,0 +1,30 @@
+{
+  "description": "Buildy hosts interactive web apps that agents can create, update, and render inline, publishing each app at a Buildy URL. The service supports building and operating those apps through either MCP tools or its HTTP API.",
+  "discoveredAt": "2026-07-08T23:44:57.477Z",
+  "domain": "app.buildy.so",
+  "summary": "Buildy exposes two developer surfaces on app.buildy.so: a bearer-authenticated HTTP API and an OAuth-protected streamable-HTTP MCP server.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Buildy MCP server",
+      "slug": "buildy-mcp-server",
+      "type": "mcp",
+      "url": "https://app.buildy.so/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Buildy HTTP API",
+      "slug": "buildy-http-api-2",
+      "type": "http",
+      "url": "https://app.buildy.so"
+    },
+    {
+      "authStatus": "required",
+      "name": "Buildy HTTP API",
+      "slug": "buildy-http-api-2-2",
+      "spec": "https://app.buildy.so/.well-known/openapi.json",
+      "type": "http",
+      "url": "https://app.buildy.so"
+    }
+  ]
+}

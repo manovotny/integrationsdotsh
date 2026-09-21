@@ -1,0 +1,15 @@
+{
+  "description": "Siebly publishes documentation, machine-readable indexes, and open-source package guidance for Node.js/JavaScript/TypeScript SDKs that integrate with third-party cryptocurrency exchanges. It is not itself an exchange or API provider; the documented SDKs target other domains.",
+  "discoveredAt": "2026-08-30T20:32:48.707Z",
+  "domain": "siebly.io",
+  "summary": "siebly.io exposes public AI-agent discovery artifacts (llms.txt, agent-skills index/skill, SDK catalog, recipes/integration kits/conformance files) and documentation for SDKs, but no documented HTTP API, GraphQL API, MCP connect endpoint, or CLI whose requests target siebly.io itself.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Siebly agent skill index",
+      "slug": "siebly-agent-skill-index",
+      "type": "mcp",
+      "url": "https://siebly.io/.well-known/agent-skills/index.json"
+    }
+  ]
+}

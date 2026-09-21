@@ -1,0 +1,36 @@
+{
+  "description": "You.com provides APIs and agent tooling for real-time web search, webpage content extraction, and citation-backed research. Its platform also includes hosted agent endpoints and an MCP server for connecting these capabilities to IDEs and AI clients.",
+  "discoveredAt": "2026-07-04T02:04:51.847Z",
+  "domain": "you.com",
+  "summary": "you.com exposes HTTP APIs for search, contents extraction, research, finance research, billing, live news, images, and agents, plus a hosted MCP server at `https://api.you.com/mcp` with both OAuth and API-key access and a public free-profile variant.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "You.com Search/Contents/Research HTTP API",
+      "slug": "you-com-search-contents-research-http-api",
+      "type": "http",
+      "url": "https://api.you.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "You.com MCP server",
+      "slug": "you-com-mcp-server",
+      "type": "mcp",
+      "url": "https://api.you.com/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "You.com MCP server free profile",
+      "slug": "you-com-mcp-server-free-profile",
+      "type": "mcp",
+      "url": "https://api.you.com/mcp?profile=free"
+    },
+    {
+      "authStatus": "required",
+      "name": "You.com Agents HTTP API",
+      "slug": "you-com-agents-http-api",
+      "type": "http",
+      "url": "https://api.you.com/v1/agents/runs"
+    }
+  ]
+}

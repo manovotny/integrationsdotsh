@@ -1,0 +1,40 @@
+{
+  "description": "OpenMail provides email infrastructure for AI agents, including dedicated inboxes, outbound sending, inbound delivery, threading, and attachment parsing. It can deliver inbound email events in real time via webhooks or WebSocket and supports custom domains on paid plans.",
+  "discoveredAt": "2026-07-06T19:57:03.367Z",
+  "domain": "openmail.sh",
+  "summary": "OpenMail exposes a Bearer-authenticated REST API at `https://api.openmail.sh`, a WebSocket event stream at `wss://api.openmail.sh/v1/ws`, and an `openmail` CLI (`@openmail/cli`); inbound webhooks use a separate dashboard-issued signing secret for verification.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "OpenMail REST API",
+      "slug": "openmail-rest-api",
+      "type": "http",
+      "url": "https://api.openmail.sh"
+    },
+    {
+      "authStatus": "required",
+      "name": "OpenMail WebSocket event stream",
+      "slug": "openmail-websocket-event-stream",
+      "type": "http",
+      "url": "wss://api.openmail.sh/v1/ws"
+    },
+    {
+      "authStatus": "required",
+      "command": "openmail",
+      "name": "OpenMail CLI",
+      "packages": [
+        {
+          "identifier": "@openmail/cli",
+          "registryType": "npm"
+        },
+        {
+          "identifier": "@openmail/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "openmail-cli",
+      "type": "cli"
+    }
+  ]
+}

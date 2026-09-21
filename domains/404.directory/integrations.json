@@ -1,0 +1,23 @@
+{
+  "description": "404.directory provides agent discovery and trust infrastructure for AI agents, including official-docs search, tool discovery, website verification, webpage understanding, and controlled read-only invocation of curated remote MCP tools. It publishes both MCP and REST interfaces plus machine-readable discovery metadata on its website.",
+  "discoveredAt": "2026-08-21T18:20:27.489Z",
+  "domain": "404.directory",
+  "summary": "404.directory exposes two public developer integration surfaces on its own domain: a Streamable HTTP MCP server at `/mcp` and a REST API described by an OpenAPI document at `/openapi.json`; the MCP surface is explicitly unauthenticated, while the REST API is mostly public/read-only with some registry-write operations documented as bearer-protected in OpenAPI.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "404.directory MCP server",
+      "slug": "404-directory-mcp-server",
+      "type": "mcp",
+      "url": "https://404.directory/mcp"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "404.directory REST API",
+      "slug": "404-directory-rest-api",
+      "spec": "https://404.directory/openapi.json",
+      "type": "http",
+      "url": "https://404.directory"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "description": "Amazon Web Services is a cloud computing platform that provides infrastructure, storage, databases, analytics, developer tools, and many managed application services. The `amazonaws.com` domain is used for many AWS service endpoints and related APIs.",
-  "discoveredAt": "2026-07-02T21:10:48.462Z",
+  "description": "Amazon Web Services provides cloud infrastructure and managed platform services, including compute, storage, networking, databases, analytics, security, and developer tooling. The `amazonaws.com` domain is used for many AWS service endpoints and related programmatic interfaces.",
+  "discoveredAt": "2026-07-03T23:20:55.998Z",
   "domain": "amazonaws.com",
-  "summary": "Amazon Web Services exposes a large set of service-specific HTTP APIs on amazonaws.com authenticated with AWS Signature Version 4 / temporary session credentials, plus the `aws` CLI for programmatic access and credential management.",
+  "summary": "amazonaws.com exposes many AWS service HTTP APIs on service/region-specific `amazonaws.com` endpoints authenticated with AWS Signature Version 4, plus the `aws` CLI for invoking them.",
   "surfaces": [
     {
       "authStatus": "required",

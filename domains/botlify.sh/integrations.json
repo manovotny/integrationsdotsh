@@ -1,0 +1,29 @@
+{
+  "description": "Botlify lets people claim a slug and turn a documentation site or website into a public Grok Bot knowledge source. It crawls same-host sitemap and `llms.txt` content, then publishes an install page and public MCP for each claimed bot.",
+  "discoveredAt": "2026-08-28T05:01:46.340Z",
+  "domain": "botlify.sh",
+  "summary": "Botlify exposes a public streamable-HTTP MCP at `https://botlify.sh/api/mcp/:slug`, a public JSON directory at `GET /api/directory`, and public per-bot agent metadata at `GET /agents/:slug.md`; no developer credentials are required for the documented surfaces.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Botlify MCP",
+      "slug": "mcp-server",
+      "type": "mcp",
+      "url": "https://botlify.sh/api/mcp/convex"
+    },
+    {
+      "authStatus": "none",
+      "name": "Botlify directory",
+      "slug": "botlify-directory-api",
+      "type": "http",
+      "url": "https://botlify.sh/api/directory"
+    },
+    {
+      "authStatus": "none",
+      "name": "Botlify per-bot agent instructions",
+      "slug": "botlify-per-bot-agent-instructions",
+      "type": "http",
+      "url": "https://botlify.sh/agents/convex.md"
+    }
+  ]
+}

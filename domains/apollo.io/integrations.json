@@ -1,8 +1,8 @@
 {
-  "description": "Apollo.io is a sales intelligence and engagement platform for searching and enriching people and company data and managing go-to-market workflows. It also provides CRM, sequencing, analytics, and related sales operations features.",
-  "discoveredAt": "2026-07-03T05:39:17.193Z",
+  "description": "Apollo.io is a sales intelligence and engagement platform for searching and enriching company and contact data and managing go-to-market workflows. It also provides tools for CRM records, sequences, conversations, calls, tasks, and analytics.",
+  "discoveredAt": "2026-07-06T07:55:50.376Z",
   "domain": "apollo.io",
-  "summary": "Apollo.io exposes a REST API at `https://api.apollo.io/api/v1`, a remote OAuth-protected MCP server at `https://mcp.apollo.io/mcp`, and a first-party `apollo` CLI.",
+  "summary": "Apollo.io exposes a REST API at `https://api.apollo.io/api/v1`, a remote MCP server at `https://mcp.apollo.io/mcp`, and an `apollo` CLI; the API supports Apollo API keys or partner OAuth, while MCP and CLI use OAuth.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -26,7 +26,7 @@
     },
     {
       "authStatus": "required",
-      "name": "Apollo REST API",
+      "name": "Apollo API",
       "slug": "apollo-rest-api",
       "type": "http",
       "url": "https://api.apollo.io/api/v1"

@@ -1,0 +1,50 @@
+{
+  "description": "Vapi is a voice AI platform for building, testing, and operating voice agents, calls, chats, and related telephony workflows. It provides tools for managing assistants, phone numbers, calls, workflows, and developer integrations.",
+  "discoveredAt": "2026-07-16T18:47:43.434Z",
+  "domain": "vapi.ai",
+  "summary": "Vapi exposes a bearer-authenticated REST API, a bearer-authenticated hosted MCP server, a public documentation MCP server, and a `vapi` CLI that supports browser login plus API-key-based non-interactive auth.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Vapi MCP Server",
+      "slug": "vapi-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.vapi.ai/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "Vapi Documentation MCP Server",
+      "slug": "vapi-documentation-mcp-server",
+      "type": "mcp",
+      "url": "https://docs.vapi.ai/_mcp/server"
+    },
+    {
+      "authStatus": "required",
+      "command": "vapi",
+      "name": "Vapi CLI",
+      "packages": [
+        {
+          "identifier": "VapiAI/cli",
+          "registryType": "github"
+        }
+      ],
+      "slug": "vapi-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Vapi REST API",
+      "slug": "vapi-rest-api",
+      "type": "http",
+      "url": "https://api.vapi.ai"
+    },
+    {
+      "authStatus": "required",
+      "name": "Vapi REST API",
+      "slug": "vapi-rest-api-2",
+      "spec": "https://vapi.ai/openapi.json",
+      "type": "http",
+      "url": "https://api.vapi.ai"
+    }
+  ]
+}

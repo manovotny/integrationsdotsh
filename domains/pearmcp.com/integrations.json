@@ -1,0 +1,15 @@
+{
+  "description": "Pear MCP is a hosted Model Context Protocol server that gives AI assistants access to a user’s Apple iCloud and Microsoft 365 calendar, tasks, contacts, and mail. It lets users connect those providers once and reuse the same hosted endpoint across supported AI clients.",
+  "discoveredAt": "2026-07-04T02:51:15.025Z",
+  "domain": "pearmcp.com",
+  "summary": "pearmcp.com exposes a hosted remote MCP server at `https://pearmcp.com/api/mcp`, authenticated either with Pear OAuth or a Pear API key bearer token; no separate REST, GraphQL, or CLI surface was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Pear MCP server",
+      "slug": "pear-mcp-server",
+      "type": "mcp",
+      "url": "https://pearmcp.com/api/mcp"
+    }
+  ]
+}

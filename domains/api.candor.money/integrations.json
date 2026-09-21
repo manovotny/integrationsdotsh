@@ -1,0 +1,35 @@
+{
+  "description": "Candor is a personal finance service that lets a user's existing AI agent access read-only financial records, organize budgets and goals, and retain notes and prior decisions across conversations. It does not move money or make changes at the user's bank or broker.",
+  "discoveredAt": "2026-08-10T17:33:17.571Z",
+  "domain": "api.candor.money",
+  "summary": "Candor exposes an OAuth-protected REST API at https://api.candor.money, an OAuth-protected streamable HTTP MCP server at https://api.candor.money/mcp, and an npm-distributed `candor` CLI.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Candor MCP server",
+      "slug": "candor-mcp-server",
+      "type": "mcp",
+      "url": "https://api.candor.money/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "candor",
+      "name": "Candor CLI",
+      "packages": [
+        {
+          "identifier": "@candorsystems/candor-cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "candor-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Candor API",
+      "slug": "candor-api-2",
+      "type": "http",
+      "url": "https://api.candor.money"
+    }
+  ]
+}

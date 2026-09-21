@@ -1,0 +1,15 @@
+{
+  "description": "Lune Research provides access to academic research content and workflows, including searching, retrieving, and subscribing to papers. Its public endpoint on this domain is a remote Model Context Protocol server for MCP-compatible clients.",
+  "discoveredAt": "2026-08-24T07:00:41.123Z",
+  "domain": "mcp.luneresearch.com",
+  "summary": "Lune Research exposes one OAuth-protected remote MCP server at `https://mcp.luneresearch.com/mcp`, using self-onboarding OAuth with dynamic client registration.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Lune Research MCP Server",
+      "slug": "lune-research-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.luneresearch.com/mcp"
+    }
+  ]
+}

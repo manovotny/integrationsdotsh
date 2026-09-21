@@ -1,0 +1,21 @@
+{
+  "description": "Humanizer PRO is a web service for rewriting draft text to sound more natural, scanning text for AI-style signals, and tracking word-balance usage across plans and integrations. It also offers hosted integrations for AI assistants and workflow tools using the same account balance.",
+  "discoveredAt": "2026-08-29T13:38:00.263Z",
+  "domain": "texthumanizer.pro",
+  "summary": "texthumanizer.pro exposes an OAuth-protected streamable HTTP MCP server at `/mcp` and a documented REST API that uses bearer-token authentication; no GraphQL API or standalone first-party CLI was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Humanizer PRO MCP",
+      "slug": "humanizer-pro-mcp",
+      "type": "mcp",
+      "url": "https://texthumanizer.pro/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Humanizer PRO REST API",
+      "slug": "humanizer-pro-rest-api",
+      "type": "http"
+    }
+  ]
+}

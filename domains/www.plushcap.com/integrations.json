@@ -1,0 +1,22 @@
+{
+  "description": "Plushcap provides developer marketing intelligence data spanning engineering blogs, developer content, YouTube metrics, Hacker News activity, and software trend analysis. It tracks companies and topics and makes that read-only data available through web docs, a public API, and an MCP server.",
+  "discoveredAt": "2026-07-08T17:58:25.262Z",
+  "domain": "www.plushcap.com",
+  "summary": "Plushcap exposes a read-only REST API at `https://www.plushcap.com/api/v1/` plus an OAuth- or API-key-protected streamable HTTP MCP server at `https://mcp.plushcap.com/mcp`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Plushcap Public REST API",
+      "slug": "plushcap-public-rest-api",
+      "type": "http",
+      "url": "https://www.plushcap.com/api/v1/"
+    },
+    {
+      "authStatus": "required",
+      "name": "Plushcap MCP server",
+      "slug": "plushcap-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.plushcap.com/mcp"
+    }
+  ]
+}

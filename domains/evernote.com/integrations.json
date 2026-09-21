@@ -1,0 +1,21 @@
+{
+  "description": "Evernote is a note-taking and productivity service for capturing, organizing, searching, and creating notes, notebooks, tags, tasks, and attachments. The site also publishes browser-based AI and document tools alongside the core Evernote platform.",
+  "discoveredAt": "2026-09-04T09:04:11.591Z",
+  "domain": "evernote.com",
+  "summary": "Evernote exposes a beta remote MCP server at `https://mcp.evernote.com/mcp` authenticated via self-onboarding OAuth, plus a deprecated legacy Evernote Cloud API (EDAM) documented on dev.evernote.com that supports developer tokens or OAuth 1.0a app authentication.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Evernote MCP server",
+      "slug": "evernote-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.evernote.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Evernote Cloud API (legacy EDAM)",
+      "slug": "evernote-cloud-api-legacy-edam",
+      "type": "http"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "description": "Rivet provides infrastructure components for durable actors, agent runtimes, workflows, and dynamic app deployment. Its products let developers run stateful backends and AI-agent-related workloads locally or on Rivet Cloud.",
+  "discoveredAt": "2026-09-12T22:11:50.712Z",
+  "domain": "rivet.dev",
+  "summary": "Rivet exposes an OAuth-protected hosted MCP server at mcp.rivet.dev, a cloud control-plane HTTP API at api.rivet.dev used by Actors/Dynamic Apps tooling, and an npm-distributed `rivet` CLI for deploy/dev workflows.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Rivet MCP",
+      "slug": "rivet-mcp",
+      "type": "mcp",
+      "url": "https://mcp.rivet.dev/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Rivet Cloud control-plane HTTP API",
+      "slug": "rivet-cloud-control-plane-http-api",
+      "type": "http",
+      "url": "https://api.rivet.dev"
+    },
+    {
+      "authStatus": "required",
+      "command": "rivet",
+      "name": "Rivet CLI",
+      "packages": [
+        {
+          "identifier": "@rivetkit/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "rivet-cli",
+      "type": "cli"
+    }
+  ]
+}

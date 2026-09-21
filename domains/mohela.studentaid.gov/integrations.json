@@ -1,0 +1,7 @@
+{
+  "description": "MOHELA on mohela.studentaid.gov is a U.S. federal student loan servicing website where borrowers manage loans, payments, repayment plans, and forgiveness-related account tasks. The site provides informational pages, forms, and secure account access for borrowers.",
+  "discoveredAt": "2026-08-07T05:42:25.931Z",
+  "domain": "mohela.studentaid.gov",
+  "summary": "mohela.studentaid.gov appears to expose only a borrower-facing website and secure account portal; no public developer integration surfaces (HTTP APIs, GraphQL, MCP servers, or CLI) were found.",
+  "surfaces": []
+}

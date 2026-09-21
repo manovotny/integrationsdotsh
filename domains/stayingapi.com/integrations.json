@@ -1,0 +1,30 @@
+{
+  "description": "StayingAPI provides normalized accommodation data across Airbnb, Booking.com, Vrbo, and Google Hotels, including search, availability, pricing, reviews, and cross-OTA price comparison. It offers the same capabilities to developers over REST and to AI agents over MCP.",
+  "discoveredAt": "2026-08-27T06:05:53.474Z",
+  "domain": "stayingapi.com",
+  "summary": "StayingAPI exposes a Bearer-authenticated REST API at `https://api.stayingapi.com/v1`, an OAuth-protected Streamable HTTP MCP server at `https://mcp.stayingapi.com/mcp`, and also documents a public no-sign-up sandbox REST console against the same API host.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "StayingAPI MCP server",
+      "slug": "stayingapi-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.stayingapi.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "StayingAPI REST API",
+      "slug": "stayingapi-rest-api",
+      "spec": "https://stayingapi.com/openapi.json",
+      "type": "http",
+      "url": "https://api.stayingapi.com/v1"
+    },
+    {
+      "authStatus": "none",
+      "name": "StayingAPI REST API public sandbox console",
+      "slug": "stayingapi-rest-api-public-sandbox-console",
+      "type": "http",
+      "url": "https://api.stayingapi.com/v1"
+    }
+  ]
+}

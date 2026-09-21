@@ -1,9 +1,16 @@
 {
-  "description": "Canva is a visual design and collaboration platform for creating and managing designs, assets, templates, and brand content. It also offers enterprise administration features such as SCIM-based user provisioning and audit-log export.",
-  "discoveredAt": "2026-07-03T14:45:48.358Z",
+  "description": "Canva is a visual design and content creation platform with products for individuals, teams, and enterprises. It also provides developer tooling for integrating Canva design capabilities, administration, provisioning, and AI-assisted workflows.",
+  "discoveredAt": "2026-09-01T20:31:21.069Z",
   "domain": "canva.com",
-  "summary": "Canva exposes a REST Connect API, a SCIM API, a remote OAuth-protected MCP server at mcp.canva.com, and a Canva CLI; its audit-log integration is S3 delivery setup rather than a callable authenticated API.",
+  "summary": "Canva exposes five developer integration surfaces on canva.com infrastructure: the OAuth-based Connect REST API, the Admin REST API, the SCIM REST API, a remote OAuth-protected MCP server, and the `canva` CLI for Canva Apps.",
   "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Canva SCIM API",
+      "slug": "canva-scim-api",
+      "type": "http",
+      "url": "https://www.canva.com/_scim/v2"
+    },
     {
       "authStatus": "required",
       "name": "Canva MCP server",
@@ -18,8 +25,7 @@
       "packages": [
         {
           "identifier": "@canva/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         }
       ],
       "slug": "canva-cli",
@@ -27,24 +33,19 @@
     },
     {
       "authStatus": "required",
-      "name": "Canva SCIM API",
-      "slug": "canva-scim-api",
-      "type": "http",
-      "url": "https://www.canva.com/_scim/v2"
-    },
-    {
-      "authStatus": "none",
-      "name": "Canva Audit Logs",
-      "slug": "canva-audit-logs",
-      "type": "http"
-    },
-    {
-      "authStatus": "required",
       "name": "Canva Connect API",
       "slug": "canva-connect-api",
       "spec": "https://www.canva.dev/sources/connect/api/latest/api.yml",
       "type": "http",
-      "url": "https://api.canva.com/rest/v1"
+      "url": "https://api.canva.com/rest"
+    },
+    {
+      "authStatus": "required",
+      "name": "Canva Admin API",
+      "slug": "canva-admin-api",
+      "spec": "https://www.canva.dev/sources/admin/api/latest/api.yml",
+      "type": "http",
+      "url": "https://api.canva.com/admin/v1"
     }
   ]
 }

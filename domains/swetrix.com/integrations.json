@@ -1,0 +1,40 @@
+{
+  "description": "Swetrix is an open-source, privacy-focused web analytics platform that provides traffic analytics, performance monitoring, and error tracking without cookies. It also offers self-hosting and related products such as CAPTCHA.",
+  "discoveredAt": "2026-07-29T09:40:54.191Z",
+  "domain": "swetrix.com",
+  "summary": "Swetrix exposes documented HTTP APIs for analytics reads (Statistics API v1 and v2), event ingestion, and administration; no public GraphQL API, MCP server, or CLI was found for swetrix.com.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Swetrix Statistics API v1",
+      "slug": "swetrix-statistics-api-v1",
+      "type": "http"
+    },
+    {
+      "authStatus": "required",
+      "name": "Swetrix Statistics API v2",
+      "slug": "swetrix-statistics-api-v2",
+      "type": "http",
+      "url": "https://api.swetrix.com/v2/projects/{pid}"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "Swetrix Events API",
+      "slug": "swetrix-events-api",
+      "type": "http"
+    },
+    {
+      "authStatus": "required",
+      "name": "Swetrix Admin API",
+      "slug": "swetrix-admin-api",
+      "type": "http"
+    },
+    {
+      "authStatus": "required",
+      "name": "Swetrix CAPTCHA validation API",
+      "slug": "swetrix-captcha-validation-api",
+      "type": "http",
+      "url": "https://api.swetrixcaptcha.com/v1/captcha/validate"
+    }
+  ]
+}

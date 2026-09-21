@@ -1,24 +1,24 @@
 {
-  "description": "monday.com is a work management platform for boards, items, docs, workflows, and related collaboration data. It lets teams and apps read and update account data programmatically through its API and AI-facing MCP tooling.",
-  "discoveredAt": "2026-07-02T20:38:26.600Z",
+  "description": "monday.com is a cloud work management platform for organizing workflows, projects, CRM, service, and related business operations around boards, items, workspaces, and automations. It also offers AI-oriented integration points including a hosted MCP server and agent signup flow.",
+  "discoveredAt": "2026-07-10T12:29:48.871Z",
   "domain": "monday.com",
-  "summary": "monday.com exposes a GraphQL-based platform API at `https://api.monday.com/v2` with a published OpenAPI document, plus an OAuth-protected MCP server at `https://mcp.monday.com/mcp`; its GraphQL schema is also publicly available via `GET /v2/get_schema`.",
+  "summary": "monday.com exposes a GraphQL Platform API at `https://api.monday.com/v2`, a public GraphQL schema endpoint, an OAuth-protected hosted MCP server at `https://mcp.monday.com/mcp`, and a documented `mcli` command-line tool; API access uses either personal API tokens or OAuth app credentials depending on the surface.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "monday.com Platform API",
-      "slug": "monday-com-platform-api",
-      "spec": "https://monday.com/openapi.json",
-      "type": "http",
+      "name": "monday.com GraphQL API",
+      "slug": "monday-com-graphql-schema",
+      "spec": "https://api.monday.com/v2/get_schema",
+      "type": "graphql",
       "url": "https://api.monday.com/v2"
     },
     {
       "authStatus": "none",
-      "name": "monday.com GraphQL schema",
-      "slug": "monday-com-graphql-schema",
-      "spec": "https://api.monday.com/v2/get_schema?format=sdl",
-      "type": "graphql",
-      "url": "https://api.monday.com/v2"
+      "name": "monday.com GraphQL schema endpoint",
+      "slug": "monday-com-graphql-schema-endpoint",
+      "spec": "https://monday.com/openapi.json",
+      "type": "http",
+      "url": "https://api.monday.com/v2/get_schema"
     },
     {
       "authStatus": "required",
@@ -26,6 +26,13 @@
       "slug": "monday-com-mcp-server",
       "type": "mcp",
       "url": "https://mcp.monday.com/mcp"
+    },
+    {
+      "authStatus": "unknown",
+      "command": "mcli",
+      "name": "mcli",
+      "slug": "mcli",
+      "type": "cli"
     }
   ]
 }

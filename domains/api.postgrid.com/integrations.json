@@ -1,0 +1,22 @@
+{
+  "description": "PostGrid provides APIs and dashboards for address verification and for sending physical mail such as letters, postcards, and cheques. It also supports related operational features like webhooks, sub-organizations, and tracking for mailed items.",
+  "discoveredAt": "2026-08-31T04:02:07.094Z",
+  "domain": "api.postgrid.com",
+  "summary": "PostGrid exposes two authenticated REST APIs on `api.postgrid.com`: an Address Verification API and a Print & Mail API, both using PostGrid-issued API keys via `x-api-key`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "PostGrid Address Verification API",
+      "slug": "postgrid-address-verification-api",
+      "type": "http",
+      "url": "https://api.postgrid.com/addver"
+    },
+    {
+      "authStatus": "required",
+      "name": "PostGrid Print & Mail API",
+      "slug": "postgrid-print-mail-api",
+      "type": "http",
+      "url": "https://api.postgrid.com/print-mail/v1"
+    }
+  ]
+}

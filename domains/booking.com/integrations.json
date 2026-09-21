@@ -1,28 +1,42 @@
 {
-  "discoveredAt": "2026-07-02T20:11:38.145Z",
+  "description": "Booking.com is an online travel platform for accommodations and other travel products. It also operates partner and provider platforms that let affiliates, connectivity partners, metasearch partners, and approved businesses access Booking.com inventory, property-management features, and user data portability exports.",
+  "discoveredAt": "2026-07-23T22:23:00.285Z",
   "domain": "booking.com",
-  "summary": "Booking.com exposes Demand API v3.1/v3.2 REST endpoints authenticated with `Authorization: Bearer <API key token>` plus `X-Affiliate-Id`, a Connectivity HTTP API authenticated either by a short-lived bearer JWT minted from machine-account Client ID/Secret or by legacy Basic auth machine-account credentials, and a public no-auth MCP server at `https://demandapi-mcp.booking.com/v1/mcp/8132308`.",
+  "summary": "Booking.com exposes four public developer integration surfaces on booking.com subdomains: the Demand API, Connectivity APIs, Data Portability API, Metasearch Connect API, plus a public MCP server endpoint from Booking.com’s demand stack.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Demand API v3.2",
+      "name": "Booking.com Connectivity APIs",
+      "slug": "booking-com-connectivity-apis",
+      "type": "http"
+    },
+    {
+      "authStatus": "required",
+      "name": "Booking.com Data Portability API",
+      "slug": "booking-com-data-portability-api",
+      "type": "http",
+      "url": "https://dma-data-portability-service.prod.booking.com/dma/port_report/{report_id}"
+    },
+    {
+      "authStatus": "none",
+      "name": "Booking.com MCP server",
+      "slug": "booking-com-demand-api-mcp-server",
+      "type": "mcp",
+      "url": "https://demandapi-mcp.booking.com/v1/mcp/8132308"
+    },
+    {
+      "authStatus": "required",
+      "name": "Booking.com Demand API",
       "slug": "demand-api-v3-2",
       "type": "http",
       "url": "https://demandapi.booking.com/3.2"
     },
     {
       "authStatus": "required",
-      "name": "Demand API v3.1",
-      "slug": "demand-api-v3-1",
+      "name": "Booking.com Metasearch Connect API",
+      "slug": "booking-com-metasearch-connect-api",
       "type": "http",
-      "url": "https://demandapi.booking.com/3.1"
-    },
-    {
-      "authStatus": "required",
-      "name": "Connectivity APIs",
-      "slug": "connectivity-apis",
-      "type": "http",
-      "url": "https://(secure)-supply-xml.booking.com/hotels/{ota or xml}/{API name}"
+      "url": "https://metasearch-connect-api.booking.com"
     }
   ]
 }

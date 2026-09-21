@@ -1,19 +1,12 @@
 {
-  "description": "Notra turns engineering and product activity into publish-ready changelogs, blog posts, social posts, and related marketing content in a team’s brand voice. It also connects workspace integrations such as GitHub and provides chat, scheduling, and reusable writing-skill features.",
-  "discoveredAt": "2026-07-03T09:16:52.399Z",
+  "description": "Notra is a generative engine optimization and content operations product that tracks how AI answer engines mention a brand, attributes AI-agent traffic, and helps teams turn content gaps and shipped work into drafts like articles, changelogs, and social posts.",
+  "discoveredAt": "2026-09-17T13:31:00.225Z",
   "domain": "usenotra.com",
-  "summary": "usenotra.com exposes an authenticated REST API at api.usenotra.com, an OAuth/API-key protected MCP server at mcp.usenotra.com, and a Notra CLI authenticated with Notra API keys.",
+  "summary": "Notra exposes a public HTTP API at api.usenotra.com, a hosted streamable-HTTP MCP server at mcp.usenotra.com, and an npm-distributed `notra` CLI; the API and MCP accept bearer API keys and OAuth tokens, while the CLI supports browser/device OAuth login and API-key-based automation.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Notra REST API",
-      "slug": "notra-rest-api",
-      "type": "http",
-      "url": "https://api.usenotra.com/v1"
-    },
-    {
-      "authStatus": "required",
-      "name": "Notra MCP Server",
+      "name": "Notra MCP server",
       "slug": "notra-mcp-server",
       "type": "mcp",
       "url": "https://mcp.usenotra.com/mcp"
@@ -26,16 +19,26 @@
         {
           "identifier": "notra",
           "registryType": "npm",
-          "runtimeHint": "bunx/npx"
-        },
-        {
-          "identifier": "notra",
-          "registryType": "npm",
-          "runtimeHint": "global install via bun add -g notra"
+          "runtimeHint": "npx"
         }
       ],
       "slug": "notra-cli",
       "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Notra API",
+      "slug": "notra-rest-api-2",
+      "type": "http",
+      "url": "https://api.usenotra.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "Notra API",
+      "slug": "notra-rest-api-2-2",
+      "spec": "https://api.usenotra.com/openapi.json",
+      "type": "http",
+      "url": "https://api.usenotra.com"
     }
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "description": "Mentionkit is a social listening service for tracking and reviewing mentions across platforms like Reddit, X, LinkedIn, TikTok, Bluesky, Hacker News, and YouTube. It lets teams query mention data, projects, keywords, and organization usage information, and use that data in agent workflows.",
+  "discoveredAt": "2026-07-05T06:06:36.114Z",
+  "domain": "api.mentionkit.com",
+  "summary": "Mentionkit exposes two developer surfaces on api.mentionkit.com: a bearer-token-protected REST API with an OpenAPI spec, and an OAuth-protected remote MCP server that also documents bearer-token access.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Mentionkit MCP server",
+      "slug": "mentionkit-mcp-server",
+      "type": "mcp",
+      "url": "https://api.mentionkit.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Mentionkit Public API",
+      "slug": "mentionkit-public-api",
+      "spec": "https://api.mentionkit.com/openapi.json",
+      "type": "http",
+      "url": "https://api.mentionkit.com"
+    }
+  ]
+}

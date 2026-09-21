@@ -1,0 +1,15 @@
+{
+  "description": "Google Tasks is Google’s task-list service for creating, organizing, and managing personal tasks and task lists. Its developer documentation covers a REST API for reading and updating task data in Google accounts.",
+  "discoveredAt": "2026-09-03T15:15:22.633Z",
+  "domain": "tasks.google.com",
+  "summary": "Google Tasks exposes one REST API for managing task lists and tasks, authenticated with Google OAuth 2.0 access tokens; the published API description also documents a `key` query parameter and OAuth token query parameters.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Google Tasks API",
+      "slug": "google-tasks-api",
+      "type": "http",
+      "url": "https://tasks.googleapis.com/tasks/v1"
+    }
+  ]
+}

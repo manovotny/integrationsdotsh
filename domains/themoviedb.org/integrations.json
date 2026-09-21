@@ -1,15 +1,15 @@
 {
-  "description": "TMDB (The Movie Database) provides movie, TV, person, and image metadata plus related account features such as favorites, ratings, watchlists, and lists. Its service is used by applications to fetch entertainment data and associated images.",
-  "discoveredAt": "2026-07-03T00:05:28.003Z",
+  "description": "The Movie Database (TMDB) is an online movie and TV metadata service with information on titles, people, images, and watch providers. It also lets TMDB users manage ratings, favorites, watchlists, and custom lists tied to their accounts.",
+  "discoveredAt": "2026-07-21T11:30:08.310Z",
   "domain": "themoviedb.org",
-  "summary": "themoviedb.org exposes one documented HTTP API surface: the TMDB v3 REST API at `https://api.themoviedb.org`, authenticated with either a v3 API key or a bearer read-access token, with session-based extensions for user and guest actions.",
+  "summary": "themoviedb.org exposes one documented developer surface: the TMDB v3 HTTP API at `https://api.themoviedb.org/3`, authenticated with either an API key / read access token alone or combined with TMDB user or guest session IDs for user-scoped actions.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "TMDB API v3",
       "slug": "tmdb-api-v3",
       "type": "http",
-      "url": "https://api.themoviedb.org"
+      "url": "https://api.themoviedb.org/3"
     }
   ]
 }

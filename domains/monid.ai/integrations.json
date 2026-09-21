@@ -1,0 +1,42 @@
+{
+  "description": "Monid is a service that lets agents and applications discover and execute third-party data tools through a single routed interface. It brokers access to many underlying providers and meters usage under either a Monid balance or, for some run flows, x402 wallet payments.",
+  "discoveredAt": "2026-07-29T20:06:44.438Z",
+  "domain": "monid.ai",
+  "summary": "Monid exposes a bearer-authenticated HTTP API at api.monid.ai, a remote MCP server at mcp.monid.ai, an npm-installed `monid` CLI, and a separate x402-paid run API at x402.monid.ai.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Monid HTTP API",
+      "slug": "monid-http-api",
+      "type": "http",
+      "url": "https://api.monid.ai"
+    },
+    {
+      "authStatus": "required",
+      "name": "Monid MCP server",
+      "slug": "monid-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.monid.ai/v1"
+    },
+    {
+      "authStatus": "required",
+      "command": "monid",
+      "name": "Monid CLI",
+      "packages": [
+        {
+          "identifier": "@monid-ai/cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "monid-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Monid x402 run API",
+      "slug": "monid-x402-run-api",
+      "type": "http",
+      "url": "https://x402.monid.ai/v1"
+    }
+  ]
+}

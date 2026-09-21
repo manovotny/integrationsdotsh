@@ -1,0 +1,22 @@
+{
+  "description": "LLM Pulse is an AI search and generative engine optimization platform that tracks how brands appear in AI-generated answers across products like ChatGPT, Perplexity, Gemini, and Google AI Overviews. It measures mentions, citations, share of voice, sentiment, and related visibility data for brands and competitors.",
+  "discoveredAt": "2026-09-19T10:40:22.916Z",
+  "domain": "llmpulse.ai",
+  "summary": "LLM Pulse exposes a REST API at `https://api.llmpulse.ai/api/v1` authenticated by Bearer API key, plus an OAuth-protected MCP server at `https://api.llmpulse.ai/api/v1/mcp` that supports self-onboarding OAuth 2.1 and also accepts Bearer API keys.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "LLM Pulse MCP server",
+      "slug": "llm-pulse-mcp-server",
+      "type": "mcp",
+      "url": "https://api.llmpulse.ai/api/v1/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "LLM Pulse REST API v1",
+      "slug": "llm-pulse-rest-api-v1",
+      "type": "http",
+      "url": "https://api.llmpulse.ai/api/v1"
+    }
+  ]
+}

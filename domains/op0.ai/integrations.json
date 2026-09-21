@@ -1,0 +1,44 @@
+{
+  "description": "op0 is a governed runtime for agent work that combines company context, explicit approval boundaries, and receipt-backed execution records. It also provides usectx, a hosted memory service for agents at ctx.op0.ai.",
+  "discoveredAt": "2026-09-01T01:05:49.723Z",
+  "domain": "op0.ai",
+  "summary": "op0 exposes a hosted MCP endpoint and HostApi on app.op0.ai plus the hosted usectx memory service on ctx.op0.ai with MCP and HTTP surfaces; auth is mostly bearer-token based, with some public health/readiness endpoints and an in-repo CLI drive path documented but not distributed as a standalone package.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "op0 MCP",
+      "slug": "op0-mcp",
+      "type": "mcp",
+      "url": "https://app.op0.ai/v1/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "usectx MCP",
+      "slug": "usectx-mcp",
+      "type": "mcp",
+      "url": "https://ctx.op0.ai/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "usectx public probes and try endpoints",
+      "slug": "usectx-public-probes-and-try-endpoints",
+      "type": "http",
+      "url": "https://ctx.op0.ai"
+    },
+    {
+      "authStatus": "none",
+      "name": "op0 health endpoint",
+      "slug": "op0-health-endpoint",
+      "type": "http",
+      "url": "https://app.op0.ai"
+    },
+    {
+      "authStatus": "required",
+      "name": "usectx HTTP API",
+      "slug": "usectx-http-api",
+      "spec": "https://ctx.op0.ai/openapi.json",
+      "type": "http",
+      "url": "https://ctx.op0.ai"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "description": "DMF (Digital Monetary Framework) is a non-custodial protocol on Base that issues dmfUSD, a USDC-backed digital token with deterministic minting, redemption, and transparent on-chain reserves. Its site and app provide documentation, transparency data, and WebMCP-based agent interactions around the protocol.",
+  "discoveredAt": "2026-07-07T09:19:38.156Z",
+  "domain": "dmfam.org",
+  "summary": "dmfam.org exposes two public developer surfaces on its own domain: a public HTTP API at `https://dmfam.org/api` with OpenAPI at `https://dmfam.org/openapi.json`, and a public streamable-HTTP WebMCP server at `https://dmfam.org` for site tools; no CLI or GraphQL surface was found on dmfam.org.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "DMF public site API",
+      "slug": "dmf-public-site-api",
+      "spec": "https://dmfam.org/openapi.json",
+      "type": "http",
+      "url": "https://dmfam.org/api"
+    },
+    {
+      "authStatus": "none",
+      "name": "DMF site WebMCP tools",
+      "slug": "dmf-site-webmcp-tools",
+      "type": "mcp",
+      "url": "https://dmfam.org"
+    },
+    {
+      "authStatus": "none",
+      "name": "DMF app WebMCP tools",
+      "slug": "dmf-app-webmcp-tools",
+      "type": "mcp",
+      "url": "https://app.dmfam.org"
+    }
+  ]
+}

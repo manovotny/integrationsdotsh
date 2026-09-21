@@ -1,0 +1,52 @@
+{
+  "description": "Pydantic provides Python-focused data validation, agent tooling, and the Logfire observability platform. Its hosted Logfire service offers region-specific APIs and an MCP server for querying and managing telemetry, dashboards, alerts, variables, and related resources.",
+  "discoveredAt": "2026-09-17T18:13:49.138Z",
+  "domain": "pydantic.dev",
+  "summary": "pydantic.dev exposes two public HTTP APIs on its main domain (docs search and API discovery), plus region-specific authenticated Logfire platform APIs on `logfire-us.pydantic.dev` and `logfire-eu.pydantic.dev`, and OAuth-protected MCP servers in both regions.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Pydantic docs search API",
+      "slug": "pydantic-docs-search-api",
+      "spec": "https://pydantic.dev/docs/api/openapi.json",
+      "type": "http",
+      "url": "https://pydantic.dev"
+    },
+    {
+      "authStatus": "none",
+      "name": "Pydantic API discovery API",
+      "slug": "pydantic-api-discovery-api",
+      "spec": "https://pydantic.dev/openapi.json",
+      "type": "http",
+      "url": "https://pydantic.dev/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Pydantic Logfire Platform API (US)",
+      "slug": "pydantic-logfire-platform-api-us",
+      "type": "http",
+      "url": "https://logfire-us.pydantic.dev/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "Pydantic Logfire Platform API (EU)",
+      "slug": "pydantic-logfire-platform-api-eu",
+      "type": "http",
+      "url": "https://logfire-eu.pydantic.dev/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "Pydantic Logfire MCP server (US)",
+      "slug": "pydantic-logfire-mcp-server-us",
+      "type": "mcp",
+      "url": "https://logfire-us.pydantic.dev/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Pydantic Logfire MCP server (EU)",
+      "slug": "pydantic-logfire-mcp-server-eu",
+      "type": "mcp",
+      "url": "https://logfire-eu.pydantic.dev/mcp"
+    }
+  ]
+}

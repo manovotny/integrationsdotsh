@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-21T17:12:28.654Z",
+  "checkedAt": "2026-09-21T17:26:29.819Z",
   "endpoints": {
     "http://<server-host>:8080/mcp": {
       "status": "unknown",
@@ -11,10 +11,20 @@
       "detail": "fetch() URL is invalid",
       "checkedAt": "2026-09-21T17:12:19.251Z"
     },
+    "http://127.0.0.1:29979/mcp": {
+      "status": "dead",
+      "detail": "Unable to connect. Is the computer able to access the url?",
+      "checkedAt": "2026-09-21T17:26:19.425Z"
+    },
     "http://127.0.0.1:3000/mcp": {
       "status": "dead",
       "detail": "Unable to connect. Is the computer able to access the url?",
       "checkedAt": "2026-09-21T17:12:19.252Z"
+    },
+    "http://127.0.0.1:3845/mcp": {
+      "status": "dead",
+      "detail": "Unable to connect. Is the computer able to access the url?",
+      "checkedAt": "2026-09-21T17:26:19.425Z"
     },
     "http://127.0.0.1:54321/mcp": {
       "status": "dead",
@@ -35,6 +45,16 @@
       "status": "dead",
       "detail": "Unable to connect. Is the computer able to access the url?",
       "checkedAt": "2026-09-21T17:12:19.251Z"
+    },
+    "http://localhost:6000/mcp": {
+      "status": "dead",
+      "detail": "Unable to connect. Is the computer able to access the url?",
+      "checkedAt": "2026-09-21T17:26:19.425Z"
+    },
+    "http://localhost:8000/mcp": {
+      "status": "dead",
+      "detail": "Unable to connect. Is the computer able to access the url?",
+      "checkedAt": "2026-09-21T17:26:19.424Z"
     },
     "http://www.kakao.golf/.well-known/mcp/server-card.json": {
       "status": "auth",
@@ -60,6 +80,11 @@
       "status": "dead",
       "detail": "Unable to connect. Is the computer able to access the url?",
       "checkedAt": "2026-09-21T17:11:47.967Z"
+    },
+    "https://{shop}.myshopify.com/api/mcp": {
+      "status": "dead",
+      "detail": "getaddrinfo ENOTFOUND {shop}.myshopify.com",
+      "checkedAt": "2026-09-21T17:26:14.485Z"
     },
     "https://{tenant}.chronosphere.io/api/mcp/mcp": {
       "status": "dead",
@@ -111,10 +136,20 @@
       "detail": "fetch() URL is invalid",
       "checkedAt": "2026-09-21T17:12:19.083Z"
     },
+    "https://<your-coolify-domain>/mcp": {
+      "status": "unknown",
+      "detail": "fetch() URL is invalid",
+      "checkedAt": "2026-09-21T17:26:19.422Z"
+    },
     "https://<your-coolify-instance>/mcp": {
       "status": "unknown",
       "detail": "fetch() URL is invalid",
       "checkedAt": "2026-09-21T17:12:19.083Z"
+    },
+    "https://<your-deployment>/mcp": {
+      "status": "unknown",
+      "detail": "fetch() URL is invalid",
+      "checkedAt": "2026-09-21T17:26:19.421Z"
     },
     "https://<your-directus-url>/mcp": {
       "status": "unknown",
@@ -196,6 +231,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:19.211Z"
     },
+    "https://404.directory/mcp": {
+      "status": "unknown",
+      "detail": "HTTP 503",
+      "checkedAt": "2026-09-21T17:26:19.422Z"
+    },
     "https://4a9466cd-e601-4d19-b90d-006c43404551.rightmove.co.uk/019bff2a-5bc6-7560-947d-b43c0152aa0a": {
       "status": "auth",
       "detail": "HTTP 403",
@@ -244,7 +284,7 @@
     "https://admin-mcp.every.ai": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:31.950Z"
+      "checkedAt": "2026-09-21T17:26:19.396Z"
     },
     "https://admin-mcp.every.ai/": {
       "status": "auth",
@@ -255,6 +295,11 @@
       "status": "auth",
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:12:18.587Z"
+    },
+    "https://ads-api.x.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:19.389Z"
     },
     "https://aep-ai-ama.adobe.io/mcp": {
       "status": "auth",
@@ -276,10 +321,15 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:18.475Z"
     },
+    "https://agent.news/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:19.388Z"
+    },
     "https://agent.thoughtspot.app/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:31.783Z"
+      "checkedAt": "2026-09-21T17:26:19.382Z"
     },
     "https://agent.thoughtspot.app/mcp?api-version={YYYY-MM-DD}": {
       "status": "auth",
@@ -290,6 +340,16 @@
       "status": "unknown",
       "detail": "HTTP 400",
       "checkedAt": "2026-09-21T17:12:18.467Z"
+    },
+    "https://agentdomainsearch.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:19.354Z"
+    },
+    "https://agentgrade.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:19.317Z"
     },
     "https://agentic-commerce.pinelabsonline.com/mcp": {
       "status": "auth",
@@ -316,10 +376,20 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:18.120Z"
     },
+    "https://agents.uploads.sh/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:19.246Z"
+    },
     "https://agents.yoshi.ai/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:18.119Z"
+    },
+    "https://agentservices.to/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:19.213Z"
     },
     "https://agentsitecms.com/mcp?shop=duceswildbbq": {
       "status": "live",
@@ -359,7 +429,7 @@
     "https://ai-connect.norton.com/api/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:31.474Z"
+      "checkedAt": "2026-09-21T17:26:19.206Z"
     },
     "https://ai-inc.mailchimp.com/claude/mcp/v2": {
       "status": "auth",
@@ -369,12 +439,12 @@
     "https://ai-inc.quickbooks.intuit.com/v1/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:31.420Z"
+      "checkedAt": "2026-09-21T17:26:19.204Z"
     },
     "https://ai-inc.turbotax.intuit.com/358A1C1B-F73B-46A7-B130-4B14916E6843/v1/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:31.360Z"
+      "checkedAt": "2026-09-21T17:26:19.200Z"
     },
     "https://ai-stats.phaseo.app/mcp": {
       "status": "dead",
@@ -404,7 +474,7 @@
     "https://ai.despegar.io/odyssey/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:31.164Z"
+      "checkedAt": "2026-09-21T17:26:19.194Z"
     },
     "https://ai.monito.com/mcp": {
       "status": "live",
@@ -424,7 +494,7 @@
     "https://ai.todoist.net/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:31.025Z"
+      "checkedAt": "2026-09-21T17:26:19.176Z"
     },
     "https://ai.tourradar.com/mcp/chatgpt": {
       "status": "live",
@@ -479,7 +549,7 @@
     "https://alpcoind.mcp.noodleseed.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:30.841Z"
+      "checkedAt": "2026-09-21T17:26:19.113Z"
     },
     "https://analyticsadmin.googleapis.com/mcp": {
       "status": "live",
@@ -519,7 +589,7 @@
     "https://api-staging.letsdeel.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:30.626Z"
+      "checkedAt": "2026-09-21T17:26:19.063Z"
     },
     "https://api-v2.appdeploy.ai/mcp": {
       "status": "auth",
@@ -531,10 +601,15 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:17.153Z"
     },
+    "https://api.agentcloud.so/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:19.031Z"
+    },
     "https://api.ahrefs.com/mcp/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:30.596Z"
+      "checkedAt": "2026-09-21T17:26:19.018Z"
     },
     "https://api.analytics.lseg.com/lfa/mcp/server-cl": {
       "status": "auth",
@@ -549,7 +624,7 @@
     "https://api.appdeploy.ai/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:30.530Z"
+      "checkedAt": "2026-09-21T17:26:18.995Z"
     },
     "https://api.arcjet.com/mcp": {
       "status": "auth",
@@ -570,6 +645,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:17.025Z"
+    },
+    "https://api.candor.money/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.987Z"
     },
     "https://api.capacities.io/mcp": {
       "status": "auth",
@@ -631,6 +711,16 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:16.680Z"
     },
+    "https://api.databuddy.cc/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.975Z"
+    },
+    "https://api.databuddy.cc/v1/mcp/": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.973Z"
+    },
     "https://api.dataplatform.cloud.ibm.com/wxbi/v1/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -639,7 +729,12 @@
     "https://api.deals-gpt.loudcrowd.com/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:30.238Z"
+      "checkedAt": "2026-09-21T17:26:18.920Z"
+    },
+    "https://api.descript.com/v2/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.894Z"
     },
     "https://api.devrev.ai/mcp/v1": {
       "status": "auth",
@@ -674,7 +769,7 @@
     "https://api.fireflies.ai/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:30.116Z"
+      "checkedAt": "2026-09-21T17:26:18.879Z"
     },
     "https://api.fiscal.ai/mcp": {
       "status": "auth",
@@ -691,6 +786,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:16.546Z"
     },
+    "https://api.fullstory.com/mcp/subtext": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.860Z"
+    },
     "https://api.galileo.ai/mcp/http/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -704,7 +804,7 @@
     "https://api.githubcopilot.com/mcp/": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:30.014Z"
+      "checkedAt": "2026-09-21T17:26:18.859Z"
     },
     "https://api.godaddy.com/v1/domains/mcp": {
       "status": "live",
@@ -751,10 +851,25 @@
       "detail": "The operation timed out.",
       "checkedAt": "2026-09-21T17:12:16.365Z"
     },
+    "https://api.hostodo.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.827Z"
+    },
     "https://api.hyperping.io/v1/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:16.216Z"
+    },
+    "https://api.influencekit.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.821Z"
+    },
+    "https://api.influencekit.com/mcp/public": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:18.817Z"
     },
     "https://api.intercom.io/fin/mcp": {
       "status": "auth",
@@ -796,10 +911,15 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:16.124Z"
     },
+    "https://api.krea.ai/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.783Z"
+    },
     "https://api.krikey.ai/openai/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:29.709Z"
+      "checkedAt": "2026-09-21T17:26:18.760Z"
     },
     "https://api.kubera.com/api/v1/mcp": {
       "status": "auth",
@@ -815,6 +935,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:16.046Z"
+    },
+    "https://api.llmpulse.ai/api/v1/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.754Z"
     },
     "https://api.lmnr.ai/v1/mcp": {
       "status": "auth",
@@ -856,6 +981,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:15.863Z"
     },
+    "https://api.mentionkit.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.736Z"
+    },
     "https://api.mercuryinsurance.com/api/ai-quote-tools/v1/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -865,6 +995,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:15.626Z"
+    },
+    "https://api.monarch.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.696Z"
     },
     "https://api.monoscope.tech/api/v1/mcp": {
       "status": "auth",
@@ -906,6 +1041,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:15.480Z"
     },
+    "https://api.openpanel.dev/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.686Z"
+    },
     "https://api.openstatus.dev/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -925,6 +1065,16 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:15.368Z"
+    },
+    "https://api.palisade.email/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.658Z"
+    },
+    "https://api.parse.bot/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.654Z"
     },
     "https://api.pcexpress.ca/v1/agents/mcp": {
       "status": "live",
@@ -961,6 +1111,11 @@
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:12:15.160Z"
     },
+    "https://api.raindrop.io/rest/v2/ai/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.650Z"
+    },
     "https://api.read.ai/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -991,6 +1146,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:15.084Z"
     },
+    "https://api.sequenzy.com/v1/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.543Z"
+    },
     "https://api.sierra.chat/chat/_UjgWN4Bl-YJFsMBmn6VXROTPHGXRd9NCk5oWwSqMMA/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -1016,6 +1176,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:14.980Z"
     },
+    "https://api.sleevy.app/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:18.495Z"
+    },
     "https://api.smith.langchain.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -1035,6 +1200,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:14.894Z"
+    },
+    "https://api.stellary.co/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.432Z"
     },
     "https://api.streak.com/mcp": {
       "status": "auth",
@@ -1086,6 +1256,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:14.547Z"
     },
+    "https://api.webhound.ai/api/v2/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.431Z"
+    },
     "https://api.whack.ie/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -1100,6 +1275,21 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:14.482Z"
+    },
+    "https://api.you.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.429Z"
+    },
+    "https://api.you.com/mcp?profile=free": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:18.389Z"
+    },
+    "https://api.zillapi.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.386Z"
     },
     "https://api.ziprecruiter.com/mcp": {
       "status": "live",
@@ -1181,6 +1371,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:13.991Z"
     },
+    "https://app.baremetrics.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.353Z"
+    },
     "https://app.base44.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -1190,6 +1385,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:13.951Z"
+    },
+    "https://app.buildy.so/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.330Z"
     },
     "https://app.caloriegptapp.com/mcp": {
       "status": "live",
@@ -1211,6 +1411,11 @@
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:12:13.890Z"
     },
+    "https://app.dmfam.org": {
+      "status": "unknown",
+      "detail": "HTTP 405",
+      "checkedAt": "2026-09-21T17:26:18.301Z"
+    },
     "https://app.docsie.io/mcp/": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -1225,6 +1430,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:13.764Z"
+    },
+    "https://app.getsequence.io/api/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.280Z"
     },
     "https://app.hex.tech/mcp": {
       "status": "auth",
@@ -1271,6 +1481,16 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:13.478Z"
     },
+    "https://app.op0.ai/v1/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.251Z"
+    },
+    "https://app.openpo.st/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.241Z"
+    },
     "https://app.pendo.io/mcp/v0/shttp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -1299,7 +1519,12 @@
     "https://app.rfpio.com/oa/v2/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:27.574Z"
+      "checkedAt": "2026-09-21T17:26:18.239Z"
+    },
+    "https://app.rock8.cloud/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.160Z"
     },
     "https://app.tropicapp.io/mcp": {
       "status": "auth",
@@ -1324,7 +1549,7 @@
     "https://aris.kongmy.dev/": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:27.507Z"
+      "checkedAt": "2026-09-21T17:26:18.102Z"
     },
     "https://artue.io/api/mcp": {
       "status": "live",
@@ -1366,6 +1591,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:12.946Z"
     },
+    "https://awardtravelfinder.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:18.083Z"
+    },
     "https://aws-mcp.us-east-1.api.aws/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -1404,7 +1634,7 @@
     "https://bananabee.mcp.noodleseed.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:26.994Z"
+      "checkedAt": "2026-09-21T17:26:18.065Z"
     },
     "https://bananagen.awesomize.ai/mcp": {
       "status": "live",
@@ -1424,7 +1654,7 @@
     "https://basbas.mcp.noodleseed.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:26.881Z"
+      "checkedAt": "2026-09-21T17:26:18.060Z"
     },
     "https://bbnmcp.cfdomains.com/mcp": {
       "status": "live",
@@ -1450,6 +1680,11 @@
       "status": "auth",
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:12:12.497Z"
+    },
+    "https://better-design.com/api/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.058Z"
     },
     "https://betterstack.com/mcp": {
       "status": "auth",
@@ -1520,6 +1755,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:12.224Z"
+    },
+    "https://botlify.sh/api/mcp/convex": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:18.054Z"
     },
     "https://box.main-kill-isr.mintlify.me/mcp": {
       "status": "live",
@@ -1659,7 +1899,7 @@
     "https://chatgpt-app.printify.com/mcp-personalized-gifts-for-chatgpt": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:25.902Z"
+      "checkedAt": "2026-09-21T17:26:18.048Z"
     },
     "https://chatgpt-app.retellai.com/mcp": {
       "status": "live",
@@ -1834,7 +2074,7 @@
     "https://clarity-method.mcp.noodleseed.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:25.005Z"
+      "checkedAt": "2026-09-21T17:26:18.046Z"
     },
     "https://clarity-sfdr20-mcp.pro.clarity.ai/mcp": {
       "status": "live",
@@ -1850,6 +2090,16 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:09.838Z"
+    },
+    "https://cloud.hitkeep.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:18.031Z"
+    },
+    "https://cloud.hitkeep.eu/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.976Z"
     },
     "https://cloud.langfuse.com/api/public/mcp": {
       "status": "auth",
@@ -1924,7 +2174,7 @@
     "https://connect.thehotelsnetwork.com/v2/mcp/hub": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:24.705Z"
+      "checkedAt": "2026-09-21T17:26:17.947Z"
     },
     "https://connector.scholargateway.ai/mcp": {
       "status": "auth",
@@ -2026,6 +2276,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:08.176Z"
     },
+    "https://ctx.op0.ai/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.930Z"
+    },
     "https://cvpop-mcp-server.fly.dev/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -2044,7 +2299,7 @@
     "https://data-search.apigw.feverup.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:24.123Z"
+      "checkedAt": "2026-09-21T17:26:17.924Z"
     },
     "https://data-search.apigw.feverup.com/mcp/": {
       "status": "auth",
@@ -2064,7 +2319,12 @@
     "https://datacamp-mcp.datacamp.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:24.082Z"
+      "checkedAt": "2026-09-21T17:26:17.910Z"
+    },
+    "https://datafa.st/api/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.905Z"
     },
     "https://dataflow.googleapis.com/mcp": {
       "status": "live",
@@ -2099,7 +2359,7 @@
     "https://demandapi-mcp.booking.com/v1/mcp/8132308": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:23.967Z"
+      "checkedAt": "2026-09-21T17:26:17.903Z"
     },
     "https://dev.craime.se/mcp": {
       "status": "live",
@@ -2135,6 +2395,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:07.662Z"
+    },
+    "https://developers.beehiiv.com/_mcp/server": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.883Z"
     },
     "https://developers.bump.sh/doc/portal/mcp": {
       "status": "live",
@@ -2201,15 +2466,45 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:07.149Z"
     },
+    "https://dmfam.org": {
+      "status": "unknown",
+      "detail": "HTTP 405",
+      "checkedAt": "2026-09-21T17:26:17.829Z"
+    },
     "https://docs-mcp.getzep.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:07.027Z"
     },
+    "https://docs.agentmail.to/_mcp/server": {
+      "status": "unknown",
+      "detail": "The operation timed out.",
+      "checkedAt": "2026-09-21T17:26:17.816Z"
+    },
+    "https://docs.bigcommerce.com/_mcp/server": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.548Z"
+    },
+    "https://docs.reducto.ai/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.492Z"
+    },
+    "https://docs.vapi.ai/_mcp/server": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.469Z"
+    },
     "https://documentation-mcp.vonage.dev/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:07.007Z"
+    },
+    "https://documentation.idenfy.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.466Z"
     },
     "https://docuseal.com/mcp": {
       "status": "auth",
@@ -2271,6 +2566,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:06.784Z"
     },
+    "https://evlog.dev/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.464Z"
+    },
     "https://evo.fintables.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -2321,6 +2621,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:06.570Z"
     },
+    "https://fakerforge.com/mcp/fakerforge": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.453Z"
+    },
     "https://fellow.app/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -2344,7 +2649,7 @@
     "https://filar-szumlanski-zachara.mcp.noodleseed.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:23.161Z"
+      "checkedAt": "2026-09-21T17:26:17.418Z"
     },
     "https://file.googleapis.com/mcp": {
       "status": "live",
@@ -2466,6 +2771,16 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:05.766Z"
     },
+    "https://getbeachfinder.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.416Z"
+    },
+    "https://getoffers.com/.well-known/mcp/server-card.json": {
+      "status": "dead",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-09-21T17:26:17.401Z"
+    },
     "https://gitmcp.io/{owner}/{repo}": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -2559,7 +2874,7 @@
     "https://gptconnector.promocodes.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:22.446Z"
+      "checkedAt": "2026-09-21T17:26:17.351Z"
     },
     "https://grantedai.com/api/mcp/mcp": {
       "status": "live",
@@ -2621,6 +2936,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:05.354Z"
     },
+    "https://hitkeep.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 403",
+      "checkedAt": "2026-09-21T17:26:17.344Z"
+    },
     "https://hjarni.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -2646,10 +2966,15 @@
       "detail": "HTTP 200, no initialize result",
       "checkedAt": "2026-09-21T17:12:05.194Z"
     },
+    "https://huggingface.co/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.306Z"
+    },
     "https://huggingface.co/mcp?login&gradio=none": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:22.176Z"
+      "checkedAt": "2026-09-21T17:26:17.241Z"
     },
     "https://ia-openai-prd.ecsbr.net/mcp/": {
       "status": "auth",
@@ -2680,6 +3005,11 @@
       "status": "dead",
       "detail": "HTTP 404",
       "checkedAt": "2026-09-21T17:12:05.084Z"
+    },
+    "https://influencekit.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.185Z"
     },
     "https://integrations.freediver.club/mcp": {
       "status": "auth",
@@ -2736,6 +3066,11 @@
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:12:04.909Z"
     },
+    "https://kennel.work/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.153Z"
+    },
     "https://keybid.eu/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -2780,6 +3115,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:04.796Z"
+    },
+    "https://kredit.ae/api/mcp/v2": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:17.129Z"
     },
     "https://kronan.is/api/mcp": {
       "status": "live",
@@ -2881,6 +3221,16 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:04.416Z"
     },
+    "https://logfire-eu.pydantic.dev/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.124Z"
+    },
+    "https://logfire-us.pydantic.dev/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.112Z"
+    },
     "https://logging.googleapis.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -2961,6 +3311,11 @@
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:12:04.009Z"
     },
+    "https://mavolife.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.101Z"
+    },
     "https://mcp-{REGION}.hygraph.com/{PROJECT_ID}/{ENVIRONMENT}/mcp": {
       "status": "unknown",
       "detail": "HTTP 400",
@@ -3014,7 +3369,7 @@
     "https://mcp-catalog.cafe24.com/api/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:20.885Z"
+      "checkedAt": "2026-09-21T17:26:17.059Z"
     },
     "https://mcp-demo.airwallex.com/developer": {
       "status": "auth",
@@ -3034,7 +3389,7 @@
     "https://mcp-gateway-external-pilot.spotify.net/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:20.822Z"
+      "checkedAt": "2026-09-21T17:26:17.039Z"
     },
     "https://mcp-gpt.dist.flix.tech/mcp": {
       "status": "live",
@@ -3054,7 +3409,7 @@
     "https://mcp-london-transport-demo.onrender.com/mcp": {
       "status": "unknown",
       "detail": "The operation timed out.",
-      "checkedAt": "2026-08-28T04:12:20.691Z"
+      "checkedAt": "2026-09-21T17:26:17.025Z"
     },
     "https://mcp-main-406f710.accuweather.zuplo.work/v0/mcp/chatgpt?key=zpka_REDACTED": {
       "status": "auth",
@@ -3116,6 +3471,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:03.357Z"
     },
+    "https://mcp-server.macro.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:17.003Z"
+    },
     "https://mcp-server.prd.athome.lu/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -3134,7 +3494,7 @@
     "https://mcp-server.zomato.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:20.302Z"
+      "checkedAt": "2026-09-21T17:26:16.979Z"
     },
     "https://mcp-services.wanderu.com/mcp": {
       "status": "live",
@@ -3159,7 +3519,7 @@
     "https://mcp-ui.donedeal.ie/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:20.207Z"
+      "checkedAt": "2026-09-21T17:26:16.964Z"
     },
     "https://mcp-ultrasearch.etraveligroup.com/mcp": {
       "status": "unknown",
@@ -3175,6 +3535,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:03.087Z"
+    },
+    "https://mcp.{region}.bronto.io/mcp": {
+      "status": "dead",
+      "detail": "getaddrinfo ENOTFOUND mcp.{region}.bronto.io",
+      "checkedAt": "2026-09-21T17:26:15.302Z"
     },
     "https://mcp.{region}.signoz.cloud/mcp": {
       "status": "dead",
@@ -3200,6 +3565,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:03.074Z"
+    },
+    "https://mcp.adjacent.markets/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:16.961Z"
     },
     "https://mcp.adobeaemcloud.com/adobe/mcp/aem": {
       "status": "auth",
@@ -3230,6 +3600,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:02.944Z"
+    },
+    "https://mcp.agentmail.to/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.925Z"
     },
     "https://mcp.agilitycms.com/api/mcp": {
       "status": "auth",
@@ -3269,7 +3644,7 @@
     "https://mcp.alpic.ai": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:19.993Z"
+      "checkedAt": "2026-09-21T17:26:16.864Z"
     },
     "https://mcp.alpic.ai/": {
       "status": "auth",
@@ -3384,7 +3759,7 @@
     "https://mcp.atlassian.com/v1/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:19.721Z"
+      "checkedAt": "2026-09-21T17:26:16.858Z"
     },
     "https://mcp.atlassian.com/v1/mcp/authv2": {
       "status": "auth",
@@ -3436,6 +3811,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:02.209Z"
     },
+    "https://mcp.awardtravelfinder.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:16.856Z"
+    },
     "https://mcp.aweber.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -3454,12 +3834,22 @@
     "https://mcp.benevity.org/general/v1/nonprofit": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:19.458Z"
+      "checkedAt": "2026-09-21T17:26:16.851Z"
     },
     "https://mcp.bestlawyers.com": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:02.085Z"
+    },
+    "https://mcp.bestprice.gr/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:16.842Z"
+    },
+    "https://mcp.betterstack.com": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.777Z"
     },
     "https://mcp.bigdata.com/": {
       "status": "auth",
@@ -3510,6 +3900,21 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:01.947Z"
+    },
+    "https://mcp.buddy.works/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.774Z"
+    },
+    "https://mcp.buffer.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.738Z"
+    },
+    "https://mcp.builder.io": {
+      "status": "dead",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-09-21T17:26:16.708Z"
     },
     "https://mcp.builder.io/mcp/publish": {
       "status": "auth",
@@ -3571,6 +3976,11 @@
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:12:01.809Z"
     },
+    "https://mcp.carsxe.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.692Z"
+    },
     "https://mcp.cartesia.ai/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -3585,6 +3995,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:01.764Z"
+    },
+    "https://mcp.cavuno.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.685Z"
     },
     "https://mcp.cbinsights.com": {
       "status": "auth",
@@ -3624,7 +4039,7 @@
     "https://mcp.clickup.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:18.956Z"
+      "checkedAt": "2026-09-21T17:26:16.681Z"
     },
     "https://mcp.close.com/mcp": {
       "status": "auth",
@@ -3685,6 +4100,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:01.467Z"
+    },
+    "https://mcp.context7.com/mcp/oauth": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.662Z"
     },
     "https://mcp.cosmicjs.com/v1/agent": {
       "status": "live",
@@ -3754,12 +4174,17 @@
     "https://mcp.datesnrates.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:18.423Z"
+      "checkedAt": "2026-09-21T17:26:16.646Z"
     },
     "https://mcp.datocms.com": {
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:01.159Z"
+    },
+    "https://mcp.deepwiki.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:16.642Z"
     },
     "https://mcp.descope.com": {
       "status": "auth",
@@ -3784,7 +4209,7 @@
     "https://mcp.docusign.com/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:18.319Z"
+      "checkedAt": "2026-09-21T17:26:16.627Z"
     },
     "https://mcp.domotz.com/mcp": {
       "status": "auth",
@@ -3861,6 +4286,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:00.691Z"
     },
+    "https://mcp.evernote.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.600Z"
+    },
     "https://mcp.exa.ai/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -3869,7 +4299,12 @@
     "https://mcp.excalidraw.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:18.052Z"
+      "checkedAt": "2026-09-21T17:26:16.578Z"
+    },
+    "https://mcp.expense-budget-tracker.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.578Z"
     },
     "https://mcp.explorium.ai/mcp": {
       "status": "auth",
@@ -3906,10 +4341,30 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:00.537Z"
     },
+    "https://mcp.firecrawl.dev/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:16.557Z"
+    },
     "https://mcp.flagsmith.com": {
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:00.504Z"
+    },
+    "https://mcp.flashcards-open-source-app.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.510Z"
+    },
+    "https://mcp.flightqueue.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.505Z"
+    },
+    "https://mcp.flusterduck.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.499Z"
     },
     "https://mcp.frankfurter.dev/": {
       "status": "live",
@@ -3939,12 +4394,12 @@
     "https://mcp.gamma.app/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:17.869Z"
+      "checkedAt": "2026-09-21T17:26:16.453Z"
     },
     "https://mcp.getdex.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:17.869Z"
+      "checkedAt": "2026-09-21T17:26:16.433Z"
     },
     "https://mcp.global.datasite.com/mcp": {
       "status": "auth",
@@ -3966,10 +4421,15 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:00.356Z"
     },
+    "https://mcp.gowindmill.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.426Z"
+    },
     "https://mcp.granola.ai/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:17.713Z"
+      "checkedAt": "2026-09-21T17:26:16.398Z"
     },
     "https://mcp.grep.app": {
       "status": "live",
@@ -3991,6 +4451,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:12:00.289Z"
     },
+    "https://mcp.hcti.io": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.390Z"
+    },
     "https://mcp.heepsy.com/mcp": {
       "status": "dead",
       "detail": "HTTP 404",
@@ -4004,12 +4469,17 @@
     "https://mcp.heygen.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:17.557Z"
+      "checkedAt": "2026-09-21T17:26:16.388Z"
     },
     "https://mcp.hipages.com.au/v1": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:12:00.257Z"
+    },
+    "https://mcp.honcho.dev": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.385Z"
     },
     "https://mcp.honeycomb.io/mcp": {
       "status": "auth",
@@ -4024,7 +4494,7 @@
     "https://mcp.hubspot.com/anthropic": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:17.494Z"
+      "checkedAt": "2026-09-21T17:26:16.377Z"
     },
     "https://mcp.icons8.com/mcp/": {
       "status": "auth",
@@ -4044,7 +4514,7 @@
     "https://mcp.indeed.com/claude/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:17.467Z"
+      "checkedAt": "2026-09-21T17:26:16.355Z"
     },
     "https://mcp.infobip.com/{mcp-tool}": {
       "status": "dead",
@@ -4166,6 +4636,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:59.675Z"
     },
+    "https://mcp.knock.app/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.343Z"
+    },
     "https://mcp.kosik.cz/mcp-openai/": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -4246,6 +4721,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:59.175Z"
     },
+    "https://mcp.lightfield.app/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.338Z"
+    },
     "https://mcp.lilt.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -4269,7 +4749,7 @@
     "https://mcp.localfalcon.com": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:16.413Z"
+      "checkedAt": "2026-09-21T17:26:16.302Z"
     },
     "https://mcp.localfalcon.com/mcp": {
       "status": "auth",
@@ -4296,6 +4776,11 @@
       "detail": "HTTP 520",
       "checkedAt": "2026-09-21T17:11:58.937Z"
     },
+    "https://mcp.loops.so": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.274Z"
+    },
     "https://mcp.lowes.com/lowes-oai-mcp/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
@@ -4310,6 +4795,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:58.850Z"
+    },
+    "https://mcp.luneresearch.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.270Z"
     },
     "https://mcp.lusha.com/": {
       "status": "auth",
@@ -4360,6 +4850,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:58.618Z"
+    },
+    "https://mcp.marblecms.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.235Z"
     },
     "https://mcp.marcopolo.dev": {
       "status": "auth",
@@ -4444,7 +4939,7 @@
     "https://mcp.miro.com/": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:15.690Z"
+      "checkedAt": "2026-09-21T17:26:16.215Z"
     },
     "https://mcp.mixmax.com/mcp": {
       "status": "auth",
@@ -4454,7 +4949,12 @@
     "https://mcp.mixpanel.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:15.632Z"
+      "checkedAt": "2026-09-21T17:26:16.215Z"
+    },
+    "https://mcp.modem.dev/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.207Z"
     },
     "https://mcp.mollie.com/mcp": {
       "status": "auth",
@@ -4465,6 +4965,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:58.206Z"
+    },
+    "https://mcp.monid.ai/v1": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.197Z"
     },
     "https://mcp.morningstar.com/mcp": {
       "status": "auth",
@@ -4549,17 +5054,17 @@
     "https://mcp.noodleseed.com/c3EMls6YD9cgcDqwj36M/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:15.167Z"
+      "checkedAt": "2026-09-21T17:26:16.178Z"
     },
     "https://mcp.noodleseed.com/Dd0U0LLqpK83pocK3vq6/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:15.175Z"
+      "checkedAt": "2026-09-21T17:26:16.184Z"
     },
     "https://mcp.noodleseed.com/p49oDMkJ8iailt4AnMB9/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:15.162Z"
+      "checkedAt": "2026-09-21T17:26:16.167Z"
     },
     "https://mcp.notion.com/mcp": {
       "status": "auth",
@@ -4600,6 +5105,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:57.839Z"
+    },
+    "https://mcp.onlineornot.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.132Z"
     },
     "https://mcp.onthebeach.co.uk/chatgpt/v2": {
       "status": "auth",
@@ -4701,6 +5211,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:57.494Z"
     },
+    "https://mcp.plushcap.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.131Z"
+    },
     "https://mcp.pocketsmith.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -4739,7 +5254,7 @@
     "https://mcp.postman.com/minimal": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:14.375Z"
+      "checkedAt": "2026-09-21T17:26:16.124Z"
     },
     "https://mcp.priceline.com/penny-mcp": {
       "status": "auth",
@@ -4780,6 +5295,16 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:57.074Z"
+    },
+    "https://mcp.public.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.056Z"
+    },
+    "https://mcp.publora.com": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:16.055Z"
     },
     "https://mcp.pubnub.com": {
       "status": "auth",
@@ -4836,6 +5361,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.787Z"
     },
+    "https://mcp.re-port-flow.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:16.026Z"
+    },
     "https://mcp.realestateapi.com/sse": {
       "status": "unknown",
       "detail": "HTTP 405",
@@ -4881,10 +5411,25 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.620Z"
     },
+    "https://mcp.resend.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:16.016Z"
+    },
     "https://mcp.resume.io/": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:13.727Z"
+      "checkedAt": "2026-09-21T17:26:16.014Z"
+    },
+    "https://mcp.rivet.dev/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.981Z"
+    },
+    "https://mcp.rize.io/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.978Z"
     },
     "https://mcp.rootly.com/mcp": {
       "status": "auth",
@@ -4906,10 +5451,20 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.561Z"
     },
+    "https://mcp.saleshandy.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.936Z"
+    },
     "https://mcp.samrum.io/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.560Z"
+    },
+    "https://mcp.samva.dev": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.927Z"
     },
     "https://mcp.sanity.io": {
       "status": "auth",
@@ -4920,6 +5475,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.510Z"
+    },
+    "https://mcp.schedulin.app/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.885Z"
     },
     "https://mcp.scrapfly.io": {
       "status": "unknown",
@@ -5016,6 +5576,16 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.090Z"
     },
+    "https://mcp.solana.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:15.880Z"
+    },
+    "https://mcp.speko.ai/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.879Z"
+    },
     "https://mcp.spinify.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -5031,6 +5601,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.089Z"
     },
+    "https://mcp.squirrelscan.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:15.848Z"
+    },
     "https://mcp.stackoverflow.com": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -5041,10 +5616,15 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:56.061Z"
     },
+    "https://mcp.stayingapi.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.842Z"
+    },
     "https://mcp.steadily.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:13.150Z"
+      "checkedAt": "2026-09-21T17:26:15.786Z"
     },
     "https://mcp.steer.coach/mcp": {
       "status": "auth",
@@ -5091,6 +5671,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:55.919Z"
     },
+    "https://mcp.supermemory.ai/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.770Z"
+    },
     "https://mcp.supermetrics.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
@@ -5129,7 +5714,7 @@
     "https://mcp.tavily.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:12.733Z"
+      "checkedAt": "2026-09-21T17:26:15.770Z"
     },
     "https://mcp.tavily.com/mcp/": {
       "status": "auth",
@@ -5154,7 +5739,7 @@
     "https://mcp.to3d.app/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:12.556Z"
+      "checkedAt": "2026-09-21T17:26:15.729Z"
     },
     "https://mcp.tokenterminal.com/mcp": {
       "status": "auth",
@@ -5175,6 +5760,21 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:55.461Z"
+    },
+    "https://mcp.trainheroic-unofficial.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.706Z"
+    },
+    "https://mcp.trainheroic-unofficial.com/mcp/athlete": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.688Z"
+    },
+    "https://mcp.trainheroic-unofficial.com/mcp/coach": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.642Z"
     },
     "https://mcp.traktorpool.com/chatgpt-892332849/mcp/": {
       "status": "live",
@@ -5231,6 +5831,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:55.223Z"
     },
+    "https://mcp.typeui.sh": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.609Z"
+    },
     "https://mcp.uber.com/claude/rides-3p/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
@@ -5254,12 +5859,32 @@
     "https://mcp.ur.com/public/eyJvcmdhbml6YXRpb24iOiJvcmdfSlhWRjhIeHFERERmcGszSCIsImNv2UxNWRhZTdiZGQ1NGIxMTk1NTY3MmQ2MDgyMjkyMDQtYXV0b2dlbmVyYXRlZCJ9": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:12.112Z"
+      "checkedAt": "2026-09-21T17:26:15.585Z"
+    },
+    "https://mcp.us.signoz.cloud/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.567Z"
     },
     "https://mcp.us.synq.io/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:55.129Z"
+    },
+    "https://mcp.useautumn.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.563Z"
+    },
+    "https://mcp.usehalyard.ai": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.552Z"
+    },
+    "https://mcp.usehalyard.ai/openapi.json": {
+      "status": "dead",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-09-21T17:26:15.527Z"
     },
     "https://mcp.usenotra.com/mcp": {
       "status": "auth",
@@ -5281,10 +5906,15 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:55.049Z"
     },
+    "https://mcp.vapi.ai/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.488Z"
+    },
     "https://mcp.vectoryx-api.cloud": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:12.015Z"
+      "checkedAt": "2026-09-21T17:26:15.482Z"
     },
     "https://mcp.vendr.com/mcp": {
       "status": "auth",
@@ -5294,7 +5924,7 @@
     "https://mcp.vercel.com": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:11.913Z"
+      "checkedAt": "2026-09-21T17:26:15.478Z"
     },
     "https://mcp.vercel.com/": {
       "status": "auth",
@@ -5314,7 +5944,7 @@
     "https://mcp.vio.com/mcp?ui=true&api_key=8290b1f5cb2ba88786816b9c8469c045": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:11.902Z"
+      "checkedAt": "2026-09-21T17:26:15.463Z"
     },
     "https://mcp.virtuoso.ai/mcp": {
       "status": "auth",
@@ -5324,7 +5954,7 @@
     "https://mcp.voyage-prive.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:11.844Z"
+      "checkedAt": "2026-09-21T17:26:15.443Z"
     },
     "https://mcp.waldo.fyi": {
       "status": "auth",
@@ -5394,7 +6024,12 @@
     "https://mcp.windsor.ai": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:11.607Z"
+      "checkedAt": "2026-09-21T17:26:15.427Z"
+    },
+    "https://mcp.windsor.ai/": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.392Z"
     },
     "https://mcp.withbites.com": {
       "status": "live",
@@ -5436,6 +6071,16 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:54.449Z"
     },
+    "https://mcp.zapier.com/mcp": {
+      "status": "unknown",
+      "detail": "HTTP 200, no initialize result",
+      "checkedAt": "2026-09-21T17:26:15.391Z"
+    },
+    "https://mcp.zernio.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.355Z"
+    },
     "https://mcp.zillow.com/api/v1": {
       "status": "dead",
       "detail": "HTTP 404",
@@ -5464,12 +6109,12 @@
     "https://mcp.zoom.us/mcp/zoom/streamable": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:11.319Z"
+      "checkedAt": "2026-09-21T17:26:15.353Z"
     },
     "https://mcp.zoominfo.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:11.278Z"
+      "checkedAt": "2026-09-21T17:26:15.303Z"
     },
     "https://mcp.zoopla.co.uk/mcp": {
       "status": "auth",
@@ -5624,7 +6269,12 @@
     "https://neartail.com/mcp/116858831459398171161": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:10.691Z"
+      "checkedAt": "2026-09-21T17:26:15.277Z"
+    },
+    "https://negativeev.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:15.233Z"
     },
     "https://netlify-mcp.netlify.app/mcp": {
       "status": "auth",
@@ -5639,7 +6289,7 @@
     "https://neurnav.com": {
       "status": "unknown",
       "detail": "HTTP 200, no initialize result",
-      "checkedAt": "2026-08-28T04:12:10.600Z"
+      "checkedAt": "2026-09-21T17:26:15.145Z"
     },
     "https://neurnav.com/mcp": {
       "status": "auth",
@@ -5674,7 +6324,7 @@
     "https://novostavby-mcp-bridge.onrender.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:10.412Z"
+      "checkedAt": "2026-09-21T17:26:15.144Z"
     },
     "https://nuxt.com/mcp": {
       "status": "live",
@@ -5700,6 +6350,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:53.428Z"
+    },
+    "https://onkeiki.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.136Z"
     },
     "https://open-ai-app.stubhub.net/mcp": {
       "status": "auth",
@@ -5791,6 +6446,11 @@
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:52.941Z"
     },
+    "https://os1221.com": {
+      "status": "unknown",
+      "detail": "HTTP 405",
+      "checkedAt": "2026-09-21T17:26:15.103Z"
+    },
     "https://outliner.chatgptapps.sider.ai/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -5805,6 +6465,16 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:52.903Z"
+    },
+    "https://pallyy.com/.well-known/mcp/server-card.json": {
+      "status": "dead",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-09-21T17:26:15.072Z"
+    },
+    "https://panel.example.com/mcp": {
+      "status": "dead",
+      "detail": "getaddrinfo ENOTFOUND panel.example.com",
+      "checkedAt": "2026-09-21T17:26:15.063Z"
     },
     "https://partner-mcp.fareharbor.com/mcp": {
       "status": "live",
@@ -5829,12 +6499,17 @@
     "https://pazy-mcp-vercel.vercel.app/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:09.541Z"
+      "checkedAt": "2026-09-21T17:26:15.052Z"
     },
     "https://pcm.property24.com": {
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:52.788Z"
+    },
+    "https://pearmcp.com/api/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:15.036Z"
     },
     "https://penny.apps.trychannel3.com/mcp": {
       "status": "auth",
@@ -5944,7 +6619,7 @@
     "https://premium.mcp.pitchbook.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:09.120Z"
+      "checkedAt": "2026-09-21T17:26:14.954Z"
     },
     "https://preply.com/mcp": {
       "status": "live",
@@ -6009,7 +6684,7 @@
     "https://ps-copywriting.mcp.noodleseed.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:08.865Z"
+      "checkedAt": "2026-09-21T17:26:14.920Z"
     },
     "https://public-api.wordpress.com/wpcom/v2/mcp/v1": {
       "status": "auth",
@@ -6119,7 +6794,7 @@
     "https://rentbooking-mcp.orange.sixt.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:08.398Z"
+      "checkedAt": "2026-09-21T17:26:14.885Z"
     },
     "https://rentcafe.yardimcp.com/mcp": {
       "status": "dead",
@@ -6140,6 +6815,11 @@
       "status": "auth",
       "detail": "HTTP 401",
       "checkedAt": "2026-09-21T17:11:51.484Z"
+    },
+    "https://rest.onboard.io/mcp/rpc": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.721Z"
     },
     "https://retirement-calculator-ribr.onrender.com/mcp": {
       "status": "dead",
@@ -6165,6 +6845,16 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:51.422Z"
+    },
+    "https://safwanyp.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:14.718Z"
+    },
+    "https://samva.dev/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:14.712Z"
     },
     "https://sandbox-mcp.paddle.com/mcp": {
       "status": "auth",
@@ -6224,7 +6914,7 @@
     "https://search.mcp.depositphotos.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:07.786Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://searchconsole.googleapis.com/mcp": {
       "status": "live",
@@ -6239,7 +6929,7 @@
     "https://seleven-mcp-sg.airudder.com/mcp/chatgpt_oauth": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:07.738Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://send.co/mcp": {
       "status": "auth",
@@ -6282,9 +6972,9 @@
       "checkedAt": "2026-09-21T17:11:50.800Z"
     },
     "https://setup.shopify.com/mcp": {
-      "status": "auth",
-      "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:07.543Z"
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://share-gmbh.myshopify.com/api/ucp/mcp": {
       "status": "live",
@@ -6316,6 +7006,16 @@
       "detail": "HTTP 404",
       "checkedAt": "2026-09-21T17:11:50.672Z"
     },
+    "https://siebly.io/.well-known/agent-skills/index.json": {
+      "status": "unknown",
+      "detail": "HTTP 405",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
+    "https://sigiro.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
     "https://simcardo.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -6344,12 +7044,12 @@
     "https://slidesgpt-server-uojeu24xoq-uc.a.run.app/mcp": {
       "status": "unknown",
       "detail": "HTTP 405",
-      "checkedAt": "2026-08-28T04:12:07.363Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://slotted.mcp.noodleseed.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:07.335Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://snake-game-mcp.onrender.com/mcp": {
       "status": "dead",
@@ -6359,7 +7059,7 @@
     "https://sobobeaches-chatgpt.onrender.com/mcp": {
       "status": "unknown",
       "detail": "The operation timed out.",
-      "checkedAt": "2026-08-28T04:12:07.296Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://softonic-mcp-server-v1.sft.product-europe.sftapi.com/mcp/demo": {
       "status": "live",
@@ -6411,6 +7111,11 @@
       "detail": "HTTP 403",
       "checkedAt": "2026-09-21T17:11:50.368Z"
     },
+    "https://sprites.dev/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
     "https://sprouts-mcp-server.kartikay-dhar.workers.dev": {
       "status": "unknown",
       "detail": "HTTP 200, no initialize result",
@@ -6420,6 +7125,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:50.311Z"
+    },
+    "https://stage.getoffers.com/.well-known/mcp/server-card.json": {
+      "status": "dead",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://stopwatch.widgets.widget.olutely.com/stopwatch/mcp": {
       "status": "live",
@@ -6445,6 +7155,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:50.224Z"
+    },
+    "https://superwall-mcp.superwall.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://svc.naked.insure/quote/mcp": {
       "status": "auth",
@@ -6486,10 +7201,20 @@
       "detail": "HTTP 502",
       "checkedAt": "2026-09-21T17:11:49.989Z"
     },
+    "https://texthumanizer.pro/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
     "https://th-chatgpt.rbi.digital/api/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:49.967Z"
+    },
+    "https://thekontextco.ai/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://tickersage.toolpipe.ai/mcp": {
       "status": "unknown",
@@ -6525,6 +7250,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:49.736Z"
+    },
+    "https://transcriptapi.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://translate.bluente.com/api/gpt-app/mcp": {
       "status": "auth",
@@ -6761,6 +7491,11 @@
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:48.942Z"
     },
+    "https://www.beehiiv.com/api/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
     "https://www.berlin-group.org/_api/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
@@ -6784,7 +7519,7 @@
     "https://www.directbooker.ai/claude": {
       "status": "auth",
       "detail": "HTTP 403",
-      "checkedAt": "2026-08-28T04:12:05.766Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://www.ean-search.org/mcp": {
       "status": "auth",
@@ -6806,6 +7541,11 @@
       "detail": "HTTP 406",
       "checkedAt": "2026-09-21T17:11:48.760Z"
     },
+    "https://www.evlog.dev/.well-known/mcp/server-card.json": {
+      "status": "dead",
+      "detail": "HTTP 404",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
     "https://www.expedia.com/mcp": {
       "status": "auth",
       "detail": "HTTP 403",
@@ -6824,7 +7564,7 @@
     "https://www.finn.com/api/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:05.756Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://www.fotocasa.es/mcp": {
       "status": "live",
@@ -6880,6 +7620,11 @@
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:48.625Z"
+    },
+    "https://www.kakunin.ai/api/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://www.khanacademy.org/api/partner/_mcp-gateway/db8f4a30-0516-45da-9d34-e9bfae33225c/sse": {
       "status": "live",
@@ -7062,9 +7807,9 @@
       "checkedAt": "2026-09-21T17:11:47.967Z"
     },
     "https://www.tiket.com/mcp": {
-      "status": "live",
-      "detail": "HTTP 200, initialize ok",
-      "checkedAt": "2026-08-28T04:12:05.033Z"
+      "status": "auth",
+      "detail": "HTTP 403",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://www.toolzy.io/api/mcp": {
       "status": "live",
@@ -7079,7 +7824,12 @@
     "https://www.triggercmd.com/mcp": {
       "status": "auth",
       "detail": "HTTP 401",
-      "checkedAt": "2026-08-28T04:12:05.033Z"
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
+    "https://www.tripwire.sh": {
+      "status": "unknown",
+      "detail": "HTTP 405",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://www.trykopi.ai/mcp": {
       "status": "auth",
@@ -7101,10 +7851,20 @@
       "detail": "HTTP 405",
       "checkedAt": "2026-09-21T17:11:47.967Z"
     },
+    "https://x-lookup.mynameistito.com/mcp": {
+      "status": "live",
+      "detail": "HTTP 200, initialize ok",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
+    },
     "https://xpert-chatgpt-app.prod.ai.2u.com/mcp": {
       "status": "live",
       "detail": "HTTP 200, initialize ok",
       "checkedAt": "2026-09-21T17:11:47.967Z"
+    },
+    "https://xquik.com/mcp": {
+      "status": "auth",
+      "detail": "HTTP 401",
+      "checkedAt": "2026-09-21T17:26:14.486Z"
     },
     "https://yango.com/mcp": {
       "status": "unknown",

@@ -1,12 +1,12 @@
 {
-  "description": "B12 is an AI website builder platform for creating and publishing business websites, stores, and web apps. It also offers related tools for client engagement, marketing, payments, and scheduling.",
-  "discoveredAt": "2026-07-02T21:16:46.501Z",
+  "description": "B12 is an AI-powered website builder and business platform for creating, editing, hosting, and publishing websites. Its product includes AI-assisted website generation and related business tools such as forms, marketing, and commerce features.",
+  "discoveredAt": "2026-07-05T20:36:24.056Z",
   "domain": "b12.io",
-  "summary": "B12 exposes a public MCP server for its Website Generator at `https://b12.io/mcp`; no other public developer API, GraphQL endpoint, or CLI surface was found on `b12.io`.",
+  "summary": "B12 exposes a public MCP server at `https://b12.io/mcp`; no documented HTTP/GraphQL APIs or CLI surfaces were found for the b12.io domain.",
   "surfaces": [
     {
       "authStatus": "none",
-      "name": "B12 Website Generator MCP",
+      "name": "B12 MCP server",
       "slug": "b12-website-generator-mcp",
       "type": "mcp",
       "url": "https://b12.io/mcp"

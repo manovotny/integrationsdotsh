@@ -1,33 +1,34 @@
 {
-  "description": "Ticketmaster is a live-event ticketing and event-discovery platform. Its developer portal offers APIs for searching events and, for approved partners, commerce and publishing workflows around ticketing and event data.",
-  "discoveredAt": "2026-07-02T21:00:28.364Z",
+  "description": "Ticketmaster is a live events and ticketing platform. Its developer portal offers APIs for event discovery and partner/commerce workflows around ticket inventory and transactions.",
+  "discoveredAt": "2026-08-07T14:58:40.794Z",
   "domain": "ticketmaster.com",
-  "summary": "Ticketmaster exposes a public MCP server, plus documented HTTP APIs for Discovery, Commerce, and Publish; Discovery and Commerce use Ticketmaster-issued developer access, while Publish auth could not be confirmed from the available public docs/spec excerpts.",
+  "summary": "Ticketmaster exposes REST APIs for event discovery, commerce, and publishing, plus a public unauthenticated MCP endpoint; the documented developer auth is primarily an API key, while commerce/publish partner credentials are only partially documented publicly.",
   "surfaces": [
     {
       "authStatus": "none",
-      "name": "Ticketmaster MCP Server",
+      "name": "Ticketmaster MCP server",
       "slug": "ticketmaster-mcp-server",
       "type": "mcp",
       "url": "https://partner-mcp.ticketmaster.com/mcp"
     },
     {
       "authStatus": "required",
-      "name": "Ticketmaster Discovery API v2",
+      "name": "Ticketmaster Commerce API",
+      "slug": "ticketmaster-commerce-api-v2",
+      "spec": "https://api.apis.guru/v2/specs/ticketmaster.com/commerce/v2/swagger.json",
+      "type": "http",
+      "url": "https://www.ticketmaster.com/commerce/v2"
+    },
+    {
+      "authStatus": "required",
+      "name": "Ticketmaster Discovery API",
       "slug": "ticketmaster-discovery-api-v2",
       "type": "http",
       "url": "https://www.ticketmaster.com/discovery/v2"
     },
     {
-      "authStatus": "required",
-      "name": "Ticketmaster Commerce API v2",
-      "slug": "ticketmaster-commerce-api-v2",
-      "type": "http",
-      "url": "https://www.ticketmaster.com/commerce/v2"
-    },
-    {
       "authStatus": "unknown",
-      "name": "Ticketmaster Publish API v2",
+      "name": "Ticketmaster Publish API",
       "slug": "ticketmaster-publish-api-v2",
       "type": "http",
       "url": "https://www.ticketmaster.com/publish/v2"

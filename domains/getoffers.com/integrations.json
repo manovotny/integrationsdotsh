@@ -1,0 +1,21 @@
+{
+  "description": "GetOffers is a B2B corporate travel and expense management platform for searching, booking, and managing flights, hotels, transfers, car rentals, yachts, and experiences. It serves companies, travel agencies, and hotel partners through an AI-assisted booking platform.",
+  "discoveredAt": "2026-07-07T10:34:53.593Z",
+  "domain": "getoffers.com",
+  "summary": "GetOffers publicly advertises a forthcoming REST API for travel search/booking and exposes an MCP well-known endpoint, but no public API spec, auth details, or CLI documentation were discoverable on getoffers.com.",
+  "surfaces": [
+    {
+      "authStatus": "unknown",
+      "name": "GetOffers MCP server",
+      "slug": "getoffers-mcp-server",
+      "type": "mcp",
+      "url": "https://getoffers.com/.well-known/mcp/server-card.json"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "GetOffers REST API",
+      "slug": "getoffers-rest-api",
+      "type": "http"
+    }
+  ]
+}

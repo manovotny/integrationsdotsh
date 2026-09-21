@@ -1,0 +1,22 @@
+{
+  "description": "evlog is a TypeScript logging library for structured logs, wide events, and structured errors across web apps, scripts, and server runtimes. Its documentation covers framework integrations, log drains, audit logging, and AI-observability use cases.",
+  "discoveredAt": "2026-07-07T13:39:33.472Z",
+  "domain": "evlog.dev",
+  "summary": "evlog.dev exposes a public MCP server at `https://evlog.dev/mcp`; no HTTP/REST, GraphQL, or first-party CLI surfaces were documented on the domain.",
+  "surfaces": [
+    {
+      "authStatus": "unknown",
+      "name": "MCP server",
+      "slug": "mcp-server",
+      "type": "mcp",
+      "url": "https://www.evlog.dev/.well-known/mcp/server-card.json"
+    },
+    {
+      "authStatus": "none",
+      "name": "evlog MCP server",
+      "slug": "evlog-mcp-server",
+      "type": "mcp",
+      "url": "https://evlog.dev/mcp"
+    }
+  ]
+}

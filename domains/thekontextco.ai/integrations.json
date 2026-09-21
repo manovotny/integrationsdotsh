@@ -1,0 +1,15 @@
+{
+  "description": "Kontext is a user-owned library for saving, organizing, and revisiting context created while working with AI, including projects, tasks, documents, and quick saves. It lets users carry that context across compatible AI clients and share selected work under their control.",
+  "discoveredAt": "2026-08-27T22:39:39.191Z",
+  "domain": "thekontextco.ai",
+  "summary": "thekontextco.ai exposes one developer integration surface: an OAuth-protected remote MCP server at https://thekontextco.ai/mcp using Streamable HTTP and self-onboarding OAuth 2.1 with PKCE and dynamic client registration.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Kontext MCP server",
+      "slug": "kontext-mcp-server",
+      "type": "mcp",
+      "url": "https://thekontextco.ai/mcp"
+    }
+  ]
+}

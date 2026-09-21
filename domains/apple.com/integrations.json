@@ -1,9 +1,16 @@
 {
-  "description": "Apple develops consumer and developer platforms including the App Store, Apple Music, and Siri integrations. Its public developer documentation includes APIs for managing App Store Connect resources and integrating media services with Siri and Apple Music.",
-  "discoveredAt": "2026-07-02T21:14:28.053Z",
+  "description": "Apple develops consumer and developer platforms including the App Store, Siri integrations, and Apple Music services. Its developer documentation covers APIs for managing App Store Connect resources and integrating cloud-backed media services with Siri.",
+  "discoveredAt": "2026-08-12T08:19:16.587Z",
   "domain": "apple.com",
-  "summary": "Apple exposes two documented HTTP APIs for developers—App Store Connect API and SiriKit Cloud Media—and a known Apple Music MCP endpoint; App Store Connect requires JWT bearer auth via an API key, SiriKit Cloud Media’s published spec shows no auth, and the MCP endpoint’s auth could not be confirmed from public docs.",
+  "summary": "Apple exposes two documented developer HTTP APIs under apple.com ecosystem docs—App Store Connect API and SiriKit Cloud Media—and a known Apple Music MCP server endpoint on mcp.music.apple.com; App Store Connect uses signed JWT bearer auth, while SiriKit Cloud Media and the MCP server have unclear/publicly undocumented auth from the pages found.",
   "surfaces": [
+    {
+      "authStatus": "unknown",
+      "name": "Apple Music MCP server",
+      "slug": "apple-music-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.music.apple.com/v1/longandcomplexstring294/mcp"
+    },
     {
       "authStatus": "required",
       "name": "App Store Connect API",
@@ -12,18 +19,10 @@
       "url": "https://api.appstoreconnect.apple.com/"
     },
     {
-      "authStatus": "none",
+      "authStatus": "unknown",
       "name": "SiriKit Cloud Media",
       "slug": "sirikit-cloud-media",
-      "type": "http",
-      "url": "https://cloudextension-testservice.local/api"
-    },
-    {
-      "authStatus": "unknown",
-      "name": "Apple Music MCP server",
-      "slug": "apple-music-mcp-server",
-      "type": "mcp",
-      "url": "https://mcp.music.apple.com/v1/longandcomplexstring294/mcp"
+      "type": "http"
     }
   ]
 }

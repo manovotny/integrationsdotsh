@@ -1,0 +1,49 @@
+{
+  "description": "Hugging Face hosts a platform for sharing and using machine learning models, datasets, and AI applications called Spaces. It also offers managed inference infrastructure and developer tooling around the Hugging Face Hub.",
+  "discoveredAt": "2026-07-24T16:44:56.052Z",
+  "domain": "huggingface.co",
+  "summary": "Hugging Face exposes an OAuth-protected MCP server at `https://huggingface.co/mcp`, an authenticated Hub-facing CLI (`hf`), an authenticated Inference Endpoints management API at `https://api.endpoints.huggingface.cloud`, and public/authenticated Hub HTTP endpoints documented under the Hub API docs.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "MCP server",
+      "slug": "mcp-server",
+      "type": "mcp",
+      "url": "https://huggingface.co/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Hugging Face MCP Server",
+      "slug": "hugging-face",
+      "type": "mcp",
+      "url": "https://huggingface.co/mcp?login&gradio=none"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "Hugging Face Hub API",
+      "slug": "hugging-face-hub-api",
+      "type": "http",
+      "url": "https://huggingface.co"
+    },
+    {
+      "authStatus": "required",
+      "command": "hf",
+      "name": "HF CLI",
+      "packages": [
+        {
+          "identifier": "huggingface_hub",
+          "registryType": "pypi"
+        }
+      ],
+      "slug": "hf-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Hugging Face Inference Endpoints API",
+      "slug": "hugging-face-inference-endpoints-api",
+      "type": "http",
+      "url": "https://api.endpoints.huggingface.cloud"
+    }
+  ]
+}

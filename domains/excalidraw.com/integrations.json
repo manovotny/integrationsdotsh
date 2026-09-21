@@ -1,6 +1,22 @@
 {
-  "discoveredAt": "2026-07-03T07:45:35.449Z",
+  "description": "Excalidraw is a collaborative whiteboarding and diagramming service. Its Excalidraw Plus offering adds workspace management, scenes, collections, and programmable access for integrations and AI clients.",
+  "discoveredAt": "2026-08-28T09:20:44.906Z",
   "domain": "excalidraw.com",
-  "summary": "excalidraw.com integration surfaces",
-  "surfaces": []
+  "summary": "Excalidraw exposes a beta REST API at `https://api.excalidraw.com/api/v1` and a streamable-HTTP MCP server cataloged at `https://mcp.excalidraw.com/mcp`; both use Excalidraw Plus API keys via `Authorization: Bearer`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Excalidraw Plus REST API",
+      "slug": "excalidraw-plus-rest-api",
+      "type": "http",
+      "url": "https://api.excalidraw.com/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Excalidraw MCP",
+      "slug": "excalidraw",
+      "type": "mcp",
+      "url": "https://mcp.excalidraw.com/mcp"
+    }
+  ]
 }

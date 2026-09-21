@@ -1,9 +1,16 @@
 {
-  "description": "Loops is an email platform for software companies that combines transactional and marketing email in one product. It lets teams manage contacts, events, campaigns, workflows, and email content through its app and API.",
-  "discoveredAt": "2026-07-02T20:33:27.931Z",
+  "description": "Loops is an email platform for software companies that combines transactional, lifecycle, and marketing email. It provides contact management, events, campaigns, workflows, and email content tooling in one product.",
+  "discoveredAt": "2026-08-20T20:04:37.523Z",
   "domain": "loops.so",
-  "summary": "Loops exposes a bearer-authenticated REST API and an official CLI authenticated with the same Loops API key; its MCP server is documented as coming soon, and no GraphQL API is documented.",
+  "summary": "Loops exposes a bearer-token REST API at app.loops.so, a remote Streamable HTTP MCP server at mcp.loops.so using OAuth, and a `loops` CLI that authenticates with the same API key or via `LOOPS_API_KEY`.",
   "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Loops MCP server",
+      "slug": "loops-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.loops.so"
+    },
     {
       "authStatus": "required",
       "command": "loops",
@@ -15,12 +22,12 @@
         },
         {
           "identifier": "github.com/loops-so/cli/cmd/loops",
-          "registryType": "golang",
-          "runtimeHint": "go install"
+          "registryType": "go"
         },
         {
-          "identifier": "https://install.loops.so/cli | sh",
-          "registryType": "shell"
+          "identifier": "https://install.loops.so/cli",
+          "registryType": "generic",
+          "runtimeHint": "shell installer"
         }
       ],
       "slug": "loops-cli",

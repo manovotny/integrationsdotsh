@@ -1,0 +1,22 @@
+{
+  "description": "Webhound is a research system that runs budget-capped web investigations and returns cited reports, datasets, and related evidence trails. It is designed for users and agents to start research runs, inspect claims and sources, and manage resulting workspace artifacts.",
+  "discoveredAt": "2026-07-24T13:01:08.207Z",
+  "domain": "webhound.ai",
+  "summary": "Webhound exposes a Bearer-authenticated REST API at `https://api.webhound.ai/api/v2` and an MCP server at `https://api.webhound.ai/api/v2/mcp`; the MCP surface is owner-declared as OAuth self-onboarding, while current public setup/docs and endpoint behavior also show API-key access.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Webhound API v2",
+      "slug": "webhound-api-v2",
+      "type": "http",
+      "url": "https://api.webhound.ai/api/v2"
+    },
+    {
+      "authStatus": "required",
+      "name": "Webhound MCP server",
+      "slug": "webhound-mcp-server",
+      "type": "mcp",
+      "url": "https://api.webhound.ai/api/v2/mcp"
+    }
+  ]
+}

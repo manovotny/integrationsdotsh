@@ -1,16 +1,15 @@
 {
-  "description": "Ramp is a financial operations platform for corporate cards, expense management, bill pay, procurement, travel, and related finance workflows. It also provides developer tooling so customers and partners can automate Ramp data access and actions.",
-  "discoveredAt": "2026-07-02T20:47:14.079Z",
+  "description": "Ramp is a financial operations platform for corporate cards, expense management, bill pay, procurement, travel, treasury, and related business finance workflows. It also publishes developer tooling for integrating with Ramp data and actions from applications, terminals, and AI assistants.",
+  "discoveredAt": "2026-07-06T03:31:31.724Z",
   "domain": "ramp.com",
-  "summary": "Ramp exposes HTTP APIs (a documented Developer API plus a public website OpenAPI endpoint), three MCP servers (account-scoped Ramp MCP, public Developer MCP, and Ramp Data MCP), and a Ramp CLI.",
+  "summary": "Ramp exposes HTTP APIs on ramp.com and api.ramp.com, plus three MCP servers (account, developer-docs, and public-data) and a `ramp` CLI.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "Ramp Developer API",
       "slug": "ramp-developer-api",
-      "spec": "https://ramp.com/openapi.json",
       "type": "http",
-      "url": "https://ramp.com/api/ramplify"
+      "url": "https://api.ramp.com/developer/v1"
     },
     {
       "authStatus": "required",
@@ -18,13 +17,12 @@
       "name": "Ramp CLI",
       "packages": [
         {
-          "identifier": "https://agents.ramp.com/install.sh",
-          "registryType": "other"
+          "identifier": "ramp-public/ramp-cli",
+          "registryType": "github"
         },
         {
-          "identifier": "git+https://github.com/ramp-public/ramp-cli.git",
-          "registryType": "uv",
-          "runtimeHint": "uv"
+          "identifier": "https://agents.ramp.com/install.sh",
+          "registryType": "other"
         }
       ],
       "slug": "ramp-cli",
@@ -39,17 +37,24 @@
     },
     {
       "authStatus": "none",
-      "name": "Ramp Developer MCP",
-      "slug": "ramp-developer-mcp",
-      "type": "mcp",
-      "url": "https://mcp.ramp.com/developer/mcp"
+      "name": "Developer MCP",
+      "slug": "developer-mcp",
+      "type": "mcp"
     },
     {
-      "authStatus": "unknown",
+      "authStatus": "required",
       "name": "Ramp Data MCP",
       "slug": "ramp-data-mcp",
       "type": "mcp",
       "url": "https://mcp.ramp.com/ramp-data/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "Ramp marketing/openapi API",
+      "slug": "ramp-developer-api-2",
+      "spec": "https://ramp.com/openapi.json",
+      "type": "http",
+      "url": "https://ramp.com/api/ramplify"
     }
   ]
 }

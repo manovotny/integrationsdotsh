@@ -1,0 +1,15 @@
+{
+  "description": "Apple Music is Apple’s music streaming service, offering on-demand catalog streaming, radio, playlists, recommendations, and user library features across Apple and other platforms. It also provides developer access to Apple Music catalog and authorized user library data through MusicKit and the Apple Music API.",
+  "discoveredAt": "2026-07-19T03:31:37.203Z",
+  "domain": "music.apple.com",
+  "summary": "Apple Music exposes one documented developer integration surface for this domain: the Apple Music REST API at `https://api.music.apple.com/v1`, authenticated with a developer token and, for user/personalized operations, an additional Music User Token.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Apple Music API",
+      "slug": "apple-music-api",
+      "type": "http",
+      "url": "https://api.music.apple.com/v1"
+    }
+  ]
+}

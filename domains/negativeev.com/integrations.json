@@ -1,0 +1,23 @@
+{
+  "description": "NegativeEV is a sports bet checker that grades MLB, WNBA, PGA, and ATP bets against thousands of play-by-play simulations. It compares simulated win probability with the sportsbook's implied probability and returns a written verdict and edge analysis.",
+  "discoveredAt": "2026-08-27T21:47:49.321Z",
+  "domain": "negativeev.com",
+  "summary": "NegativeEV exposes a public HTTP bet-check API documented by an OpenAPI spec, a public Streamable HTTP MCP server at `/mcp`, and a public A2A JSON-RPC endpoint at `/a2a`; all work anonymously, with an optional signed-in user's Supabase bearer token to raise quotas.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "NegativeEV MCP server",
+      "slug": "negativeev-mcp-server",
+      "type": "mcp",
+      "url": "https://negativeev.com/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "NegativeEV A2A agent endpoint",
+      "slug": "negativeev-bet-check-api",
+      "spec": "https://negativeev.com/openapi.json",
+      "type": "http",
+      "url": "https://negativeev.com"
+    }
+  ]
+}

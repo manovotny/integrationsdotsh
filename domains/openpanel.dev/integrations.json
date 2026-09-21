@@ -1,0 +1,22 @@
+{
+  "description": "OpenPanel is an open-source web and product analytics platform for tracking events, users, funnels, retention, and related analytics data. It can be used as a hosted service or self-hosted.",
+  "discoveredAt": "2026-07-29T09:25:07.183Z",
+  "domain": "openpanel.dev",
+  "summary": "openpanel.dev exposes a hosted REST API at `https://api.openpanel.dev` and a hosted MCP server at `https://api.openpanel.dev/mcp`, both authenticated with OpenPanel-issued client credentials; no documented GraphQL API, OpenAPI spec URL, or standalone CLI was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "OpenPanel REST API",
+      "slug": "openpanel-rest-api",
+      "type": "http",
+      "url": "https://api.openpanel.dev"
+    },
+    {
+      "authStatus": "required",
+      "name": "OpenPanel MCP Server",
+      "slug": "openpanel-mcp-server",
+      "type": "mcp",
+      "url": "https://api.openpanel.dev/mcp"
+    }
+  ]
+}

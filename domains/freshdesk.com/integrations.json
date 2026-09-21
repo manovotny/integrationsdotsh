@@ -1,8 +1,8 @@
 {
-  "description": "Freshdesk is a customer support and help desk platform for managing tickets, agents, customers, and related support workflows. Freshworks also provides a developer platform for building and submitting apps that integrate with Freshdesk and other Freshworks products.",
-  "discoveredAt": "2026-07-02T20:24:16.654Z",
+  "description": "Freshdesk is a customer support and help desk platform from Freshworks for managing tickets, customer conversations, and self-service/support widgets. It also provides embeddable website support widgets and developer APIs for integrating with a Freshdesk account.",
+  "discoveredAt": "2026-07-22T06:53:18.381Z",
   "domain": "freshdesk.com",
-  "summary": "Freshdesk exposes a tenant-scoped REST API, plus Freshworks developer tooling via an MCP server and the FDK CLI; no public GraphQL surface was found.",
+  "summary": "Freshdesk exposes a tenant-specific core REST API plus browser widget integration surfaces for the Help Widget and Web Chat Widget; no public GraphQL, MCP, or standalone CLI surfaces were found on freshdesk.com.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -12,25 +12,18 @@
       "url": "https://{domain}.freshdesk.com/api/v2"
     },
     {
-      "authStatus": "required",
-      "name": "Freshworks Developer MCP server",
-      "slug": "freshworks-developer-mcp-server",
-      "type": "mcp",
-      "url": "https://mcp.freshworks.dev/mcp"
+      "authStatus": "unknown",
+      "name": "Freshdesk Web Chat Widget API",
+      "slug": "freshdesk-web-chat-widget-api",
+      "type": "http",
+      "url": "https://{host}/webchat/js/widget.js"
     },
     {
       "authStatus": "unknown",
-      "command": "fdk",
-      "name": "Freshworks CLI (FDK)",
-      "packages": [
-        {
-          "identifier": "https://cdn.freshdev.io/fdk/latest.tgz",
-          "registryType": "npm",
-          "runtimeHint": "node"
-        }
-      ],
-      "slug": "freshworks-cli-fdk",
-      "type": "cli"
+      "name": "Freshdesk Help Widget JavaScript API",
+      "slug": "freshdesk-help-widget-javascript-api",
+      "type": "http",
+      "url": "https://widget.freshworks.com/widgets/{widget_id}.js"
     }
   ]
 }

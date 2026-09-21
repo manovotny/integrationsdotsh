@@ -1,9 +1,16 @@
 {
-  "description": "Stripe provides online payment processing, billing, payouts, and related financial infrastructure for internet businesses. Its platform also includes tools for developers to manage payments, subscriptions, connected accounts, and other commerce workflows.",
-  "discoveredAt": "2026-07-03T01:32:00.703Z",
+  "description": "Stripe provides financial infrastructure for businesses, including online and in-person payments, billing, payouts, and related money-management products. Its platform supports businesses building payment, subscription, marketplace, treasury, and other financial workflows.",
+  "discoveredAt": "2026-07-08T02:32:42.824Z",
   "domain": "stripe.com",
-  "summary": "Stripe exposes a REST HTTP API at `https://api.stripe.com`, an OAuth-protected MCP server at `https://mcp.stripe.com`, and the `stripe` CLI.",
+  "summary": "Stripe exposes a REST HTTP API at https://api.stripe.com, an OAuth-protected MCP server at https://mcp.stripe.com, and the `stripe` CLI; all require Stripe-issued credentials.",
   "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Stripe API",
+      "slug": "stripe-api",
+      "type": "http",
+      "url": "https://api.stripe.com"
+    },
     {
       "authStatus": "required",
       "name": "Stripe MCP server",
@@ -22,19 +29,11 @@
         },
         {
           "identifier": "@stripe/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         }
       ],
       "slug": "stripe-cli",
       "type": "cli"
-    },
-    {
-      "authStatus": "required",
-      "name": "Stripe API",
-      "slug": "stripe-api",
-      "type": "http",
-      "url": "https://api.stripe.com"
     }
   ]
 }

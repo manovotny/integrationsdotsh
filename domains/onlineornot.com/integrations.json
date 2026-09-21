@@ -1,0 +1,44 @@
+{
+  "description": "OnlineOrNot is an uptime monitoring platform for websites, APIs, browser flows, and scheduled jobs. It also provides alerts and customer-facing status pages for communicating service health.",
+  "discoveredAt": "2026-08-31T07:18:47.387Z",
+  "domain": "onlineornot.com",
+  "summary": "OnlineOrNot exposes a REST API, a streamable-HTTP MCP server, and an npm-distributed `onlineornot` CLI; all require authentication, primarily with OnlineOrNot API tokens, while the MCP server also supports OAuth-discovered bearer tokens.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "OnlineOrNot REST API",
+      "slug": "onlineornot-http-api",
+      "type": "http",
+      "url": "https://api.onlineornot.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "OnlineOrNot MCP server",
+      "slug": "onlineornot-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.onlineornot.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "onlineornot",
+      "name": "OnlineOrNot CLI",
+      "packages": [
+        {
+          "identifier": "onlineornot",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "onlineornot-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "OnlineOrNot REST API",
+      "slug": "onlineornot-http-api-2",
+      "spec": "https://api.onlineornot.com/openapi.json",
+      "type": "http",
+      "url": "https://api.onlineornot.com"
+    }
+  ]
+}

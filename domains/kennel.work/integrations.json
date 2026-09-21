@@ -1,0 +1,23 @@
+{
+  "description": "kennel is an open-source task list application with tasks, projects, and labels, plus a web dashboard. It lets apps and AI agents read and modify that task data over HTTP and MCP.",
+  "discoveredAt": "2026-08-28T00:02:37.371Z",
+  "domain": "kennel.work",
+  "summary": "kennel.work exposes two developer integration surfaces: a REST API at `https://kennel.work/api/v1` with OpenAPI at `https://kennel.work/openapi.json`, and an OAuth-protected remote MCP server at `https://kennel.work/mcp`; both accept kennel API keys, and both also support OAuth 2.1 bearer tokens.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "kennel MCP server",
+      "slug": "kennel-mcp-server",
+      "type": "mcp",
+      "url": "https://kennel.work/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "kennel REST API",
+      "slug": "kennel-rest-api",
+      "spec": "https://kennel.work/openapi.json",
+      "type": "http",
+      "url": "https://kennel.work/api/v1"
+    }
+  ]
+}

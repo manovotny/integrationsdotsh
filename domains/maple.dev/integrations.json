@@ -1,0 +1,45 @@
+{
+  "description": "Maple is an open-source observability platform for traces, logs, metrics, and browser sessions built on OpenTelemetry and ClickHouse. It can run as a hosted service or locally as a single binary with embedded storage and dashboard.",
+  "discoveredAt": "2026-08-13T17:17:14.896Z",
+  "domain": "maple.dev",
+  "summary": "Maple exposes an OTLP-style ingest HTTP API at ingest.maple.dev authenticated by a Bearer project ingest key, a public no-auth local-mode HTTP server on localhost, an MCP server documented on maple.dev with undetermined connect URL/auth details, and a `maple` CLI that supports local mode and hosted-workspace login via `maple login`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Maple ingest API",
+      "slug": "maple-ingest-api",
+      "type": "http",
+      "url": "https://ingest.maple.dev"
+    },
+    {
+      "authStatus": "none",
+      "name": "Maple local query and ingest server",
+      "slug": "maple-local-query-and-ingest-server",
+      "type": "http",
+      "url": "http://127.0.0.1:4318"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "Maple MCP server",
+      "slug": "maple-mcp-server",
+      "type": "mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "maple",
+      "name": "Maple CLI",
+      "packages": [
+        {
+          "identifier": "maple",
+          "registryType": "homebrew"
+        },
+        {
+          "identifier": "https://maple.dev/cli/install",
+          "registryType": "script"
+        }
+      ],
+      "slug": "maple-cli",
+      "type": "cli"
+    }
+  ]
+}

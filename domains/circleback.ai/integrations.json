@@ -1,25 +1,31 @@
 {
-  "description": "Circleback is an AI meeting productivity platform that records or transcribes meetings, generates notes and action items, and lets users search meeting, calendar, and email context. It also supports automations and exposes that context to AI tools and the terminal.",
-  "discoveredAt": "2026-07-02T21:22:58.786Z",
+  "description": "Circleback is an AI meeting productivity platform that captures meetings and conversations, producing transcripts, notes, action items, and related context like calendar events, emails, people, and companies. It supports online meetings, in-person recording, Slack huddles, and imported audio or video.",
+  "discoveredAt": "2026-09-02T16:16:11.895Z",
   "domain": "circleback.ai",
-  "summary": "Circleback exposes an OAuth-protected remote MCP server at `https://app.circleback.ai/api/mcp` (streamable HTTP) and an official npm CLI (`@circleback/cli`); both use Circleback account OAuth, and Circleback also documents outbound webhooks but no public REST or GraphQL API surface.",
+  "summary": "Circleback exposes a bearer-token REST API at https://circleback.ai/api, an OAuth-protected remote MCP server at https://app.circleback.ai/api/mcp, and an official npm-distributed CLI (`cb`/`circleback`) that supports browser login or API-key auth.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Circleback MCP Server",
+      "name": "Circleback API",
+      "slug": "circleback-api",
+      "type": "http",
+      "url": "https://circleback.ai/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "Circleback MCP",
       "slug": "circleback-mcp-server",
       "type": "mcp",
       "url": "https://app.circleback.ai/api/mcp"
     },
     {
       "authStatus": "required",
-      "command": "circleback",
+      "command": "cb",
       "name": "Circleback CLI",
       "packages": [
         {
           "identifier": "@circleback/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         }
       ],
       "slug": "circleback-cli",

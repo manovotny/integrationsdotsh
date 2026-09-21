@@ -1,0 +1,36 @@
+{
+  "description": "Adjacent News provides indexing, benchmarking, and market data for prediction markets and event contracts, including indices, reference rates, markets, events, news, and methodology documents. It also publishes the same data through public JSON, MCP, and oracle-proxy access points.",
+  "discoveredAt": "2026-08-03T15:17:25.210Z",
+  "domain": "adjacent.markets",
+  "summary": "adjacent.markets exposes two REST API tiers on api.adjacent.markets (public snapshot and authenticated live/scoped), a public Streamable HTTP MCP server on mcp.adjacent.markets with optional API-key realtime access, and a public oracle proxy on oracle.testnet.adjacent.markets.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Adjacent Authenticated REST API",
+      "slug": "adjacent-authenticated-rest-api",
+      "type": "http",
+      "url": "https://api.adjacent.markets/api/v1"
+    },
+    {
+      "authStatus": "none",
+      "name": "Adjacent Public Snapshot REST API",
+      "slug": "adjacent-public-snapshot-rest-api",
+      "type": "http",
+      "url": "https://api.adjacent.markets/api/v1/public"
+    },
+    {
+      "authStatus": "required",
+      "name": "Adjacent MCP Server",
+      "slug": "adjacent-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.adjacent.markets/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "Adjacent Oracle Proxy",
+      "slug": "adjacent-oracle-proxy",
+      "type": "http",
+      "url": "https://oracle.testnet.adjacent.markets/proxy"
+    }
+  ]
+}

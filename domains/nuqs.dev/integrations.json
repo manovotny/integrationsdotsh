@@ -1,0 +1,7 @@
+{
+  "description": "nuqs is a TypeScript/React library for storing application state in URL query strings with typed parsers and framework adapters. The nuqs.dev site is documentation for the library, including installation and usage guides.",
+  "discoveredAt": "2026-08-27T06:08:53.810Z",
+  "domain": "nuqs.dev",
+  "summary": "nuqs.dev publishes documentation for a client-side React library and does not expose any documented HTTP APIs, GraphQL APIs, MCP servers, or standalone CLI surfaces on nuqs.dev.",
+  "surfaces": []
+}

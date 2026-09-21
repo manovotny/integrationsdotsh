@@ -1,21 +1,15 @@
 {
-  "description": "Knock provides infrastructure for sending product and customer messaging across channels such as in-app, email, mobile, and chat. It includes workflow orchestration, templates, broadcasts, guides, and related notification-management features.",
-  "discoveredAt": "2026-07-02T20:31:46.249Z",
+  "description": "Knock is a customer and product messaging platform for sending notifications, in-app messages, broadcasts, and lifecycle communications across channels. It provides infrastructure for designing workflows, managing templates and recipients, and integrating messaging into applications.",
+  "discoveredAt": "2026-08-17T20:24:13.348Z",
   "domain": "knock.app",
-  "summary": "Knock exposes two HTTP APIs (the Knock API and a separate Management API), a Knock CLI, and documentation for a Knock MCP server.",
+  "summary": "Knock exposes two authenticated HTTP APIs (runtime and management), an OAuth-protected remote MCP server, and an authenticated CLI.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Knock Management API",
-      "slug": "knock-management-api",
-      "type": "http",
-      "url": "https://control.knock.app/v1"
-    },
-    {
-      "authStatus": "required",
-      "name": "Knock API",
-      "slug": "knock-api",
-      "type": "http"
+      "name": "Knock MCP server",
+      "slug": "knock-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.knock.app/mcp"
     },
     {
       "authStatus": "required",
@@ -24,8 +18,7 @@
       "packages": [
         {
           "identifier": "@knocklabs/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         },
         {
           "identifier": "knocklabs/tap/knock",
@@ -36,10 +29,34 @@
       "type": "cli"
     },
     {
-      "authStatus": "unknown",
-      "name": "Knock MCP server",
-      "slug": "knock-mcp-server",
-      "type": "mcp"
+      "authStatus": "required",
+      "name": "Knock API",
+      "slug": "knock-api-2",
+      "type": "http",
+      "url": "https://api.knock.app/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Knock management API",
+      "slug": "knock-management-api-2",
+      "type": "http",
+      "url": "https://control.knock.app/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Knock API",
+      "slug": "knock-api-2-2",
+      "spec": "https://api.knock.app/v1/openapi",
+      "type": "http",
+      "url": "https://api.knock.app/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Knock management API",
+      "slug": "knock-management-api-2-2",
+      "spec": "https://control.knock.app/v1/openapi",
+      "type": "http",
+      "url": "https://control.knock.app/v1"
     }
   ]
 }

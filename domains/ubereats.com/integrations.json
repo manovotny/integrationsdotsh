@@ -1,8 +1,8 @@
 {
-  "description": "Uber Eats is Uber's food ordering and merchant marketplace platform. Its developer offering lets approved partners integrate merchant store operations, menus, and order workflows with Uber Eats.",
-  "discoveredAt": "2026-07-02T22:38:10.081Z",
+  "description": "Uber Eats is Uber’s food ordering and delivery marketplace for merchants and partners. Its developer offering lets approved partners connect store, menu, order, reporting, and activation workflows to Uber Eats.",
+  "discoveredAt": "2026-08-02T12:36:40.207Z",
   "domain": "ubereats.com",
-  "summary": "Uber Eats exposes a public no-auth MCP server and an OAuth-protected Uber Eats Marketplace HTTP API on `https://api.uber.com` for store, menu, order, reporting, promotions, and integration-activation workflows.",
+  "summary": "ubereats.com exposes a public streamable-HTTP MCP endpoint and a partner-oriented Uber Eats Marketplace REST API on api.uber.com authenticated with Uber OAuth 2.0 bearer tokens.",
   "surfaces": [
     {
       "authStatus": "required",

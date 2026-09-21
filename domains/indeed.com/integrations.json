@@ -1,0 +1,23 @@
+{
+  "description": "Indeed is a job marketplace and hiring platform. Its partner documentation covers integrations for job posting, candidate/application workflows, employer management, and AI-agent access to Indeed job and company data.",
+  "discoveredAt": "2026-07-04T08:39:45.308Z",
+  "domain": "indeed.com",
+  "summary": "Indeed exposes partner GraphQL APIs and an OAuth-protected MCP server at `https://mcp.indeed.com/claude/mcp`; no standalone CLI was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Indeed GraphQL APIs",
+      "slug": "indeed-graphql-apis",
+      "spec": "introspection",
+      "type": "graphql",
+      "url": "https://apis.indeed.com/graphql"
+    },
+    {
+      "authStatus": "required",
+      "name": "Indeed MCP",
+      "slug": "indeed",
+      "type": "mcp",
+      "url": "https://mcp.indeed.com/claude/mcp"
+    }
+  ]
+}

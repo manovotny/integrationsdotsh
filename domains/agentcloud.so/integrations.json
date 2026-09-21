@@ -1,0 +1,15 @@
+{
+  "description": "AgentCloud provides hosted iOS Simulator sessions for cloud coding agents so they can build, launch, inspect, and operate iOS apps remotely. It focuses on a constrained MCP tool surface rather than a general-purpose remote Mac or shell.",
+  "discoveredAt": "2026-08-25T23:28:22.196Z",
+  "domain": "agentcloud.so",
+  "summary": "AgentCloud exposes one developer integration surface: an OAuth-protected Streamable HTTP MCP server at https://api.agentcloud.so/mcp for remote iOS Simulator control from MCP-capable clients such as Cursor, Claude Code, and Codex.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "AgentCloud MCP server",
+      "slug": "agentcloud-mcp-server",
+      "type": "mcp",
+      "url": "https://api.agentcloud.so/mcp"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "description": "AgentOne is a desktop AI agent application that lets users run chats, connect AI model providers, and add built-in or MCP-based extensions. It also publishes an AI Model Directory website and downloadable model metadata catalog.",
+  "discoveredAt": "2026-07-07T01:07:27.668Z",
+  "domain": "www.agent-one.dev",
+  "summary": "AgentOne exposes a public HTTP JSON data surface for its AI Model Directory at `models.agent-one.dev`; the main `www.agent-one.dev` product and docs describe a desktop app that consumes third-party providers and MCP servers, but no documented developer API, GraphQL API, MCP endpoint, or CLI on the `agent-one.dev` domain was found.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "AI Model Directory JSON data",
+      "slug": "ai-model-directory-json-data",
+      "type": "http",
+      "url": "https://models.agent-one.dev/data/all.json"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "description": "Expense Budget Tracker is an open-source personal finance and budgeting app for tracking expenses, planning budgets, and viewing financial dashboards with multi-currency support. It offers a managed cloud service as well as self-hosting options.",
+  "discoveredAt": "2026-08-28T07:36:21.102Z",
+  "domain": "expense-budget-tracker.com",
+  "summary": "Hosted integration surfaces on expense-budget-tracker.com include one HTTP Agent API at `https://api.expense-budget-tracker.com/v1/` using a long-lived ApiKey, plus one remote MCP server at `https://mcp.expense-budget-tracker.com/mcp` using OAuth-discovered MCP auth.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Expense Budget Tracker Agent API",
+      "slug": "expense-budget-tracker-agent-api",
+      "type": "http",
+      "url": "https://api.expense-budget-tracker.com/v1/"
+    },
+    {
+      "authStatus": "required",
+      "name": "Expense Budget Tracker MCP Connector",
+      "slug": "expense-budget-tracker-mcp-connector",
+      "type": "mcp",
+      "url": "https://mcp.expense-budget-tracker.com/mcp"
+    }
+  ]
+}

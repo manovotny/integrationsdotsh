@@ -1,20 +1,27 @@
 {
-  "description": "Coolify is an open-source self-hosted PaaS for deploying and managing applications, databases, and services on your own servers. It supports both Coolify Cloud and self-hosted instances.",
-  "discoveredAt": "2026-07-02T20:16:10.547Z",
+  "description": "Coolify is an open-source platform for deploying and managing applications, databases, and services on your own servers or on Coolify Cloud. It provides a dashboard and automation features for infrastructure, deployments, and integrations.",
+  "discoveredAt": "2026-09-09T09:45:10.726Z",
   "domain": "coolify.io",
-  "summary": "Coolify exposes a self-hosted HTTP API with an OpenAPI spec, a built-in Streamable HTTP MCP server, and an official CLI; all use the same Coolify API token.",
+  "summary": "Coolify exposes a tenant/self-hosted REST API under `/api/v1`, a built-in streamable-HTTP MCP endpoint at `/mcp`, a standalone `coolify` CLI, and an unauthenticated health endpoint; the authenticated surfaces all use Coolify API tokens.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Coolify MCP Server",
+      "name": "Coolify REST API",
+      "slug": "coolify-rest-api",
+      "type": "http",
+      "url": "https://<your-coolify-domain>/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Coolify MCP server",
       "slug": "coolify-mcp-server",
       "type": "mcp",
-      "url": "https://<your-coolify-instance>/mcp"
+      "url": "https://<your-coolify-domain>/mcp"
     },
     {
       "authStatus": "required",
       "command": "coolify",
-      "name": "coolify CLI",
+      "name": "Coolify CLI",
       "packages": [
         {
           "identifier": "coollabsio/coolify-cli/coolify-cli",
@@ -22,30 +29,19 @@
         },
         {
           "identifier": "github.com/coollabsio/coolify-cli/coolify",
-          "registryType": "golang",
+          "registryType": "go",
           "runtimeHint": "go install"
-        },
-        {
-          "identifier": "https://raw.githubusercontent.com/coollabsio/coolify-cli/main/scripts/install.sh",
-          "registryType": "script",
-          "runtimeHint": "bash install script"
-        },
-        {
-          "identifier": "https://raw.githubusercontent.com/coollabsio/coolify-cli/main/scripts/install.ps1",
-          "registryType": "script",
-          "runtimeHint": "powershell install script"
         }
       ],
       "slug": "coolify-cli",
       "type": "cli"
     },
     {
-      "authStatus": "required",
-      "name": "Coolify API",
-      "slug": "coolify-api",
-      "spec": "https://raw.githubusercontent.com/coollabsio/coolify/v4.x/openapi.yaml",
+      "authStatus": "none",
+      "name": "Coolify public health endpoint",
+      "slug": "coolify-public-health-endpoint",
       "type": "http",
-      "url": "https://<your-coolify-instance>/api/v1"
+      "url": "https://<your-coolify-domain>/api/health"
     }
   ]
 }

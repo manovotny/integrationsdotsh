@@ -1,0 +1,22 @@
+{
+  "description": "Krea is an AI creative platform for generating and editing images, video, 3D assets, and related media with many underlying models in one workspace. It also offers enterprise features such as shared workspaces, API access, and agent integrations.",
+  "discoveredAt": "2026-08-27T21:31:48.001Z",
+  "domain": "krea.ai",
+  "summary": "Krea exposes a bearer-authenticated REST API at `https://api.krea.ai` and a hosted OAuth/API-token-protected MCP server at `https://api.krea.ai/mcp`; I found no GraphQL API or standalone first-party CLI surface targeting krea.ai.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Krea REST API",
+      "slug": "krea-rest-api",
+      "type": "http",
+      "url": "https://api.krea.ai"
+    },
+    {
+      "authStatus": "required",
+      "name": "Krea MCP server",
+      "slug": "krea-mcp-server",
+      "type": "mcp",
+      "url": "https://api.krea.ai/mcp"
+    }
+  ]
+}

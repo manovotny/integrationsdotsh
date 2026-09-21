@@ -1,0 +1,23 @@
+{
+  "description": "Rize is automatic time-tracking software for individuals and teams that captures work activity in the background and organizes it into time entries, projects, clients, and reporting. It also offers team analytics, profitability tracking, and integrations with other work tools.",
+  "discoveredAt": "2026-07-11T10:17:30.106Z",
+  "domain": "rize.io",
+  "summary": "Rize exposes two developer integration surfaces on rize.io: an authenticated GraphQL API at api.rize.io and an OAuth-protected MCP server at mcp.rize.io.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Rize GraphQL API",
+      "slug": "rize-graphql-api",
+      "spec": "introspection",
+      "type": "graphql",
+      "url": "https://api.rize.io/api/v1/graphql"
+    },
+    {
+      "authStatus": "required",
+      "name": "Rize MCP server",
+      "slug": "rize-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.rize.io/mcp"
+    }
+  ]
+}

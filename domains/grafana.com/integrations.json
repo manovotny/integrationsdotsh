@@ -1,28 +1,36 @@
 {
-  "description": "Grafana provides observability software and services for dashboards, metrics, logs, traces, profiling, alerting, and incident response, including managed Grafana Cloud and self-hosted Grafana. Its products let teams collect, query, visualize, and operate on telemetry and related operational data.",
-  "discoveredAt": "2026-07-02T20:25:56.004Z",
+  "description": "Grafana Labs provides observability software for dashboards, metrics, logs, traces, profiling, testing, and incident response across Grafana Cloud and self-managed Grafana. The platform includes Grafana itself plus related components such as Loki, Mimir, Tempo, Pyroscope, Alloy, and k6.",
+  "discoveredAt": "2026-07-09T03:23:28.602Z",
   "domain": "grafana.com",
-  "summary": "Grafana exposes two developer HTTP APIs—a tenant/instance Grafana HTTP API and the grafana.com Grafana Cloud API—and a Grafana MCP server; auth is via service account tokens, Cloud Access Policy tokens, or on-prem Basic auth for the instance HTTP API/MCP server.",
+  "summary": "Grafana.com exposes a documented Grafana Cloud REST API on `https://grafana.com/api`, tenant-specific Grafana instance HTTP APIs, a self-hostable Grafana MCP server, and CLIs including `k6` cloud mode and `gcx`.",
   "surfaces": [
-    {
-      "authStatus": "required",
-      "name": "Grafana Cloud API (GCOM API)",
-      "slug": "grafana-cloud-api-gcom-api",
-      "type": "http",
-      "url": "https://grafana.com/api"
-    },
-    {
-      "authStatus": "required",
-      "name": "Grafana HTTP API",
-      "slug": "grafana-http-api",
-      "type": "http",
-      "url": "http://your.grafana.com"
-    },
     {
       "authStatus": "required",
       "name": "Grafana MCP server",
       "slug": "grafana-mcp-server",
-      "type": "mcp"
+      "type": "mcp",
+      "url": "http://localhost:8000/mcp"
+    },
+    {
+      "authStatus": "unknown",
+      "command": "gcx",
+      "name": "gcx",
+      "slug": "gcx",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "command": "k6",
+      "name": "k6 CLI cloud mode",
+      "slug": "k6-cli-cloud-mode",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Grafana instance HTTP API",
+      "slug": "grafana-instance-http-api",
+      "type": "http",
+      "url": "https://<your-grafana-instance>/api"
     }
   ]
 }

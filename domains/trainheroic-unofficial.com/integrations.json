@@ -1,0 +1,42 @@
+{
+  "description": "trainheroic-unofficial.com documents an unofficial toolkit for accessing the TrainHeroic platform, including hosted and local MCP tooling, a CLI, and an export page. It is a separate project from TrainHeroic and wraps an undocumented upstream TrainHeroic API.",
+  "discoveredAt": "2026-08-10T19:34:28.018Z",
+  "domain": "trainheroic-unofficial.com",
+  "summary": "Public integration surfaces on trainheroic-unofficial.com are a hosted MCP server at `mcp.trainheroic-unofficial.com` (main, coach-only, and athlete-only endpoints) plus the `trainheroic` CLI distributed on npm; both require TrainHeroic account credentials, and no public HTTP/GraphQL API spec is documented on this domain.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Hosted MCP server",
+      "slug": "hosted-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.trainheroic-unofficial.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Hosted MCP server (coach-only)",
+      "slug": "hosted-mcp-server-coach-only",
+      "type": "mcp",
+      "url": "https://mcp.trainheroic-unofficial.com/mcp/coach"
+    },
+    {
+      "authStatus": "required",
+      "name": "Hosted MCP server (athlete-only)",
+      "slug": "hosted-mcp-server-athlete-only",
+      "type": "mcp",
+      "url": "https://mcp.trainheroic-unofficial.com/mcp/athlete"
+    },
+    {
+      "authStatus": "required",
+      "command": "trainheroic",
+      "name": "trainheroic CLI",
+      "packages": [
+        {
+          "identifier": "@trainheroic-unofficial/cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "trainheroic-cli",
+      "type": "cli"
+    }
+  ]
+}

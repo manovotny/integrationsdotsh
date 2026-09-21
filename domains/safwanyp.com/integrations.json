@@ -1,0 +1,23 @@
+{
+  "description": "safwanyp.com is a personal website for Safwan Parkar that publishes read-only machine-readable discovery endpoints for site search, feeds, API catalog metadata, agent skills, and MCP access.",
+  "discoveredAt": "2026-07-03T22:33:51.881Z",
+  "domain": "safwanyp.com",
+  "summary": "Public integration surface consists of one read-only HTTP/OpenAPI API at https://safwanyp.com with spec at /openapi.json, plus a public MCP server at https://safwanyp.com/mcp using streamable HTTP; no authentication is documented for either.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Safwan Parkar Discovery API",
+      "slug": "safwan-parkar-discovery-api",
+      "spec": "https://safwanyp.com/openapi.json",
+      "type": "http",
+      "url": "https://safwanyp.com"
+    },
+    {
+      "authStatus": "none",
+      "name": "Safwan Parkar MCP server",
+      "slug": "safwan-parkar-mcp-server",
+      "type": "mcp",
+      "url": "https://safwanyp.com/mcp"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "description": "HitKeep is a privacy-first web analytics product offered as managed EU/US cloud and self-hosted deployments. It provides analytics, tracking, and AI-facing access to web analytics data.",
+  "discoveredAt": "2026-07-06T19:27:41.519Z",
+  "domain": "cloud.hitkeep.eu",
+  "summary": "HitKeep Cloud EU exposes two developer surfaces on cloud.hitkeep.eu: a bearer-token authenticated REST API at `/api` and a streamable HTTP MCP server at `/mcp`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "HitKeep MCP server",
+      "slug": "hitkeep-mcp-server",
+      "type": "mcp",
+      "url": "https://cloud.hitkeep.eu/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "HitKeep REST API",
+      "slug": "hitkeep-rest-api",
+      "type": "http",
+      "url": "https://cloud.hitkeep.eu/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "HitKeep REST API",
+      "slug": "hitkeep-rest-api-2",
+      "spec": "https://cloud.hitkeep.eu/openapi.json",
+      "type": "http",
+      "url": "https://cloud.hitkeep.eu/api"
+    }
+  ]
+}

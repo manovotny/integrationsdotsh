@@ -1,0 +1,22 @@
+{
+  "description": "andrey-markin.com is Andrey Markin's personal site for AI/full-stack development services, offers, projects, courses, and a curated directory. It publishes its site content in machine-readable formats and provides a public contact submission endpoint.",
+  "discoveredAt": "2026-09-10T13:31:31.369Z",
+  "domain": "andrey-markin.com",
+  "summary": "andrey-markin.com exposes one public HTTP API: a site content/read API with markdown pages, JSON indexes, RSS feeds, and a public contact-submit endpoint, described by an OpenAPI spec at `/openapi.json`; no authenticated developer surface was found.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "andrey-markin.com content API",
+      "slug": "andrey-markin-com-content-api",
+      "spec": "https://andrey-markin.com/openapi.json",
+      "type": "http",
+      "url": "https://andrey-markin.com"
+    },
+    {
+      "authStatus": "none",
+      "name": "andrey-markin.com WebMCP tools",
+      "slug": "andrey-markin-webmcp",
+      "type": "mcp"
+    }
+  ]
+}

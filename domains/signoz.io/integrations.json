@@ -1,29 +1,22 @@
 {
-  "description": "SigNoz is an observability platform for collecting and exploring metrics, traces, and logs, offered as both self-hosted software and a managed cloud service. It supports OpenTelemetry-native ingestion and workspace-based access control for teams and automation.",
-  "discoveredAt": "2026-07-02T20:50:57.736Z",
+  "description": "SigNoz is an open-source observability platform for collecting and analyzing metrics, traces, and logs. It is available as both a self-hosted deployment and a managed SigNoz Cloud service.",
+  "discoveredAt": "2026-07-15T18:30:58.597Z",
   "domain": "signoz.io",
-  "summary": "SigNoz exposes a tenant-hosted HTTP API, SigNoz Cloud OTLP ingestion endpoints, and a hosted MCP server; no public GraphQL API or first-party CLI surface was found.",
+  "summary": "SigNoz exposes a documented HTTP API for its observability platform and a hosted MCP server for SigNoz Cloud; both require authentication, using service-account API keys for the HTTP API and OAuth for the MCP server.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "SigNoz API",
+      "name": "SigNoz HTTP API",
       "slug": "signoz-api",
       "type": "http",
       "url": "https://{host}:{port}{base_path}"
     },
     {
       "authStatus": "required",
-      "name": "SigNoz Cloud OTLP ingestion endpoints",
-      "slug": "signoz-cloud-otlp-ingestion-endpoints",
-      "type": "http",
-      "url": "https://ingest.{region}.signoz.cloud:443"
-    },
-    {
-      "authStatus": "required",
       "name": "SigNoz MCP Server",
       "slug": "signoz-mcp-server",
       "type": "mcp",
-      "url": "https://mcp.{region}.signoz.cloud/mcp"
+      "url": "https://mcp.us.signoz.cloud/mcp"
     }
   ]
 }

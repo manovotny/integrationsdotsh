@@ -1,0 +1,21 @@
+{
+  "description": "Google Calendar is Google’s calendar and scheduling service for managing calendars, events, attendees, and availability. It is part of Google Workspace and also supports AI-agent access through a remote MCP server.",
+  "discoveredAt": "2026-08-21T18:16:15.243Z",
+  "domain": "calendar.google.com",
+  "summary": "Google Calendar exposes a REST HTTP API for calendar and event data plus a remote MCP server for AI agents; both require Google-issued credentials, with the HTTP API supporting OAuth 2.0 and some API-key access.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Google Calendar API",
+      "slug": "google-calendar-api",
+      "type": "http",
+      "url": "https://www.googleapis.com/calendar/v3"
+    },
+    {
+      "authStatus": "required",
+      "name": "Google Calendar MCP server",
+      "slug": "google-calendar-mcp-server",
+      "type": "mcp"
+    }
+  ]
+}

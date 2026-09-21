@@ -1,15 +1,15 @@
 {
-  "description": "Airtable is a cloud platform for building and collaborating on structured data workflows, combining spreadsheet-like tables with relational database features. Users organize records, fields, views, automations, and related workspace content in hosted bases.",
-  "discoveredAt": "2026-07-03T04:06:52.008Z",
+  "description": "Airtable is a cloud platform for building collaborative databases, workflows, interfaces, and automations. It lets teams store structured data in bases and access or manipulate that data through APIs and AI-tool integrations.",
+  "discoveredAt": "2026-09-01T17:05:08.022Z",
   "domain": "airtable.com",
-  "summary": "Airtable exposes an authenticated REST Web API at `https://api.airtable.com/v0` using bearer tokens (personal access tokens or OAuth access tokens), plus an OAuth-protected MCP server at `https://mcp.airtable.com/mcp` over streamable HTTP.",
+  "summary": "Airtable exposes a token-authenticated REST Web API at api.airtable.com, an OAuth/PAT-authenticated MCP server at mcp.airtable.com/mcp, and an official `airtable-mcp` CLI for terminal access to MCP tools.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "Airtable Web API",
       "slug": "airtable-web-api",
       "type": "http",
-      "url": "https://api.airtable.com/v0"
+      "url": "https://api.airtable.com"
     },
     {
       "authStatus": "required",
@@ -17,6 +17,23 @@
       "slug": "airtable",
       "type": "mcp",
       "url": "https://mcp.airtable.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "airtable-mcp",
+      "name": "Airtable MCP CLI",
+      "packages": [
+        {
+          "identifier": "@airtable/mcp-cli",
+          "registryType": "npm"
+        },
+        {
+          "identifier": "https://raw.githubusercontent.com/Airtable/airtable-mcp-cli/main/install.sh",
+          "registryType": "shell"
+        }
+      ],
+      "slug": "airtable-mcp-cli",
+      "type": "cli"
     }
   ]
 }

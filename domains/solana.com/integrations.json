@@ -1,0 +1,43 @@
+{
+  "description": "Solana is a blockchain platform and developer ecosystem for building applications, tokens, payments, and onchain programs. Its public documentation covers network RPC access, development tooling, and AI-agent resources.",
+  "discoveredAt": "2026-07-05T06:08:14.349Z",
+  "domain": "solana.com",
+  "summary": "solana.com exposes public Solana JSON-RPC over HTTP and WebSocket, a public remote MCP server at mcp.solana.com, and installation/docs for the `solana` CLI; no developer credential is required for these public surfaces.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Solana JSON-RPC API",
+      "slug": "solana-json-rpc-api",
+      "type": "http",
+      "url": "https://api.mainnet.solana.com"
+    },
+    {
+      "authStatus": "none",
+      "name": "Solana RPC WebSocket API",
+      "slug": "solana-rpc-websocket-api",
+      "type": "http",
+      "url": "wss://api.mainnet.solana.com/"
+    },
+    {
+      "authStatus": "none",
+      "name": "Solana Developer MCP",
+      "slug": "solana-developer-mcp",
+      "type": "mcp",
+      "url": "https://mcp.solana.com/mcp"
+    },
+    {
+      "authStatus": "none",
+      "command": "solana",
+      "name": "Solana CLI",
+      "packages": [
+        {
+          "identifier": "https://solana-install.solana.workers.dev",
+          "registryType": "other",
+          "runtimeHint": "curl | bash installer"
+        }
+      ],
+      "slug": "solana-cli",
+      "type": "cli"
+    }
+  ]
+}

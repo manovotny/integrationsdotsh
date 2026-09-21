@@ -1,8 +1,8 @@
 {
-  "description": "Sandbox was a service for creating mock or simulated API sandboxes for development and testing. The current getsandbox.com domain appears parked and offered for sale, but a historical public Swagger/OpenAPI document for its API is still available via APIs.guru.",
-  "discoveredAt": "2026-07-02T21:43:34.618Z",
+  "description": "Sandbox is an HTTP mocking and stubbing service for creating scriptable mock servers on getsandbox.com subdomains. Its published API manages sandboxes and activity for those mock environments.",
+  "discoveredAt": "2026-07-20T19:01:52.516Z",
   "domain": "getsandbox.com",
-  "summary": "getsandbox.com has one known developer integration surface: a REST HTTP API (“Sandbox API”) documented by an OpenAPI/Swagger spec and authenticated with an API key header.",
+  "summary": "getsandbox.com exposes one documented HTTP REST API, the Sandbox API at `https://getsandbox.com/api/`, with an OpenAPI spec and API-key header authentication.",
   "surfaces": [
     {
       "authStatus": "required",

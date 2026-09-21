@@ -1,0 +1,23 @@
+{
+  "description": "Keiki is a hosted platform for building and operating autonomous AI agents that work across messaging channels like SMS, WhatsApp, Telegram, Slack, and email. It manages agent configuration, conversations, tools, memory, observability, and channel delivery for customer-facing or team-facing workflows.",
+  "discoveredAt": "2026-09-05T02:12:39.902Z",
+  "domain": "onkeiki.com",
+  "summary": "Keiki exposes one OpenAPI-described HTTP API at https://onkeiki.com with OpenAI- and Anthropic-compatible endpoints authenticated by scoped API keys, plus an OAuth2-protected Streamable HTTP MCP server at https://onkeiki.com/mcp with dynamic client registration.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Keiki Agent API",
+      "slug": "keiki-agent-api",
+      "spec": "https://onkeiki.com/openapi.json",
+      "type": "http",
+      "url": "https://onkeiki.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "Keiki MCP Server",
+      "slug": "keiki-mcp-server",
+      "type": "mcp",
+      "url": "https://onkeiki.com/mcp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "description": "Sleek is an AI-powered web app for generating and editing mobile app UI designs from prompts or sketches. It lets users create multi-screen app mockups and export them to Figma or code.",
+  "discoveredAt": "2026-07-06T02:42:04.258Z",
+  "domain": "sleek.design",
+  "summary": "sleek.design exposes one developer integration surface: a documented REST API at `https://sleek.design/api/v1` with a public OpenAPI spec; no public GraphQL API, MCP server, standalone CLI, or other developer-callable surface was found on this domain.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Sleek REST API",
+      "slug": "sleek-rest-api",
+      "type": "http",
+      "url": "https://sleek.design/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Sleek REST API",
+      "slug": "sleek-rest-api-2",
+      "spec": "https://sleek.design/api/v1/spec.json",
+      "type": "http",
+      "url": "https://sleek.design/api/v1"
+    }
+  ]
+}

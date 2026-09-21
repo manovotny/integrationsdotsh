@@ -1,33 +1,49 @@
 {
-  "description": "Better Stack is an observability and incident-management platform covering uptime monitoring, on-call/incident response, log and telemetry management, and error tracking. It also offers an MCP server so AI assistants can access Better Stack data.",
-  "discoveredAt": "2026-07-02T20:07:47.936Z",
+  "discoveredAt": "2026-08-05T02:32:35.835Z",
   "domain": "betterstack.com",
-  "summary": "Better Stack exposes three documented HTTP APIs (Uptime, Telemetry, and Errors) plus a remote MCP server; the APIs use bearer API tokens, and Better Stack also publishes OAuth endpoints for app-based authorization.",
+  "summary": "Better Stack exposes Uptime, Telemetry, Errors, Telemetry ingestion, and Telemetry SQL HTTP APIs plus an MCP server; authenticate with Bearer global API tokens, Telemetry team tokens, source tokens for ingestion, SQL username/password for the SQL API, or OAuth/DCR for MCP.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "Better Stack Uptime API",
       "slug": "better-stack-uptime-api",
-      "type": "http"
+      "type": "http",
+      "url": "https://uptime.betterstack.com/api/v2"
     },
     {
       "authStatus": "required",
       "name": "Better Stack Telemetry API",
       "slug": "better-stack-telemetry-api",
-      "type": "http"
+      "type": "http",
+      "url": "https://telemetry.betterstack.com/api"
     },
     {
       "authStatus": "required",
       "name": "Better Stack Errors API",
       "slug": "better-stack-errors-api",
-      "type": "http"
+      "type": "http",
+      "url": "https://errors.betterstack.com/api/v1"
     },
     {
-      "authStatus": "none",
+      "authStatus": "required",
+      "name": "Better Stack Telemetry HTTP ingestion API",
+      "slug": "better-stack-telemetry-http-ingestion-api",
+      "type": "http",
+      "url": "https://in.logs.betterstack.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "Better Stack Telemetry SQL API",
+      "slug": "better-stack-telemetry-sql-api",
+      "type": "http",
+      "url": "https://telemetry.betterstack.com"
+    },
+    {
+      "authStatus": "required",
       "name": "Better Stack MCP server",
       "slug": "better-stack-mcp-server",
       "type": "mcp",
-      "url": "https://betterstack.com/mcp"
+      "url": "https://mcp.betterstack.com"
     }
   ]
 }

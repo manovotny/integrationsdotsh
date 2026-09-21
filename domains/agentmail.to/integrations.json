@@ -1,0 +1,50 @@
+{
+  "description": "AgentMail provides programmatic email inboxes for AI agents so they can send, receive, reply to, and manage threaded email conversations. It also supports related capabilities like webhooks, real-time event streaming, custom domains, and multi-tenant isolation.",
+  "discoveredAt": "2026-07-08T07:38:40.028Z",
+  "domain": "agentmail.to",
+  "summary": "AgentMail exposes a Bearer-authenticated REST API at api.agentmail.to, a hosted MCP server at mcp.agentmail.to with OAuth or API-key auth, an npm-installed `agentmail` CLI using API keys, and a public docs MCP endpoint at docs.agentmail.to/_mcp/server.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "AgentMail MCP server",
+      "slug": "agentmail-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.agentmail.to/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "agentmail",
+      "name": "AgentMail CLI",
+      "packages": [
+        {
+          "identifier": "agentmail-cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "agentmail-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "none",
+      "name": "AgentMail docs MCP",
+      "slug": "agentmail-docs-mcp",
+      "type": "mcp",
+      "url": "https://docs.agentmail.to/_mcp/server"
+    },
+    {
+      "authStatus": "required",
+      "name": "AgentMail REST API",
+      "slug": "agentmail-rest-api",
+      "type": "http",
+      "url": "https://api.agentmail.to"
+    },
+    {
+      "authStatus": "required",
+      "name": "AgentMail REST API",
+      "slug": "agentmail-rest-api-2",
+      "spec": "https://agentmail.to/openapi.json",
+      "type": "http",
+      "url": "https://api.agentmail.to"
+    }
+  ]
+}

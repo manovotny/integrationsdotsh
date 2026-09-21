@@ -1,30 +1,9 @@
 {
-  "description": "Cloudflare provides a global cloud platform for web delivery, security, serverless compute, storage, networking, and related developer services. Its products include APIs and tooling for managing zones, security features, Workers, storage, analytics, and other platform resources.",
-  "discoveredAt": "2026-07-03T01:33:58.522Z",
+  "description": "Cloudflare provides developer infrastructure, security, Zero Trust, and network services on a global edge network. Its platform includes compute, storage, AI, media, application security, and enterprise networking products.",
+  "discoveredAt": "2026-09-19T21:01:32.235Z",
   "domain": "cloudflare.com",
-  "summary": "Cloudflare exposes a public site OpenAPI, the authenticated Cloudflare REST API, a remote MCP server, and the Wrangler CLI.",
+  "summary": "Cloudflare exposes a public site-discovery HTTP API on www.cloudflare.com, its main authenticated REST API on api.cloudflare.com, a remote MCP server at bindings.mcp.cloudflare.com/mcp, and the Wrangler CLI.",
   "surfaces": [
-    {
-      "authStatus": "required",
-      "name": "Cloudflare Developer Platform MCP",
-      "slug": "cloudflare-developer-platform-mcp",
-      "type": "mcp",
-      "url": "https://bindings.mcp.cloudflare.com/mcp"
-    },
-    {
-      "authStatus": "required",
-      "command": "wrangler",
-      "name": "Wrangler CLI",
-      "packages": [
-        {
-          "identifier": "wrangler",
-          "registryType": "npm",
-          "runtimeHint": "node"
-        }
-      ],
-      "slug": "wrangler-cli",
-      "type": "cli"
-    },
     {
       "authStatus": "none",
       "name": "Cloudflare Public Site API",
@@ -39,6 +18,26 @@
       "slug": "cloudflare-api",
       "type": "http",
       "url": "https://api.cloudflare.com/client/v4"
+    },
+    {
+      "authStatus": "required",
+      "name": "Cloudflare Developer Platform MCP Server",
+      "slug": "cloudflare-developer-platform-mcp",
+      "type": "mcp",
+      "url": "https://bindings.mcp.cloudflare.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "wrangler",
+      "name": "Wrangler CLI",
+      "packages": [
+        {
+          "identifier": "wrangler",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "wrangler-cli",
+      "type": "cli"
     }
   ]
 }

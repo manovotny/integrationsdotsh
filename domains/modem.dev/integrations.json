@@ -1,0 +1,43 @@
+{
+  "description": "Modem is a product-feedback and workflow platform for developer-facing teams. It aggregates conversations from tools like Slack, Discord, GitHub, Zendesk, Intercom, and email into prioritized topics and lets teams query or act on that context with AI.",
+  "discoveredAt": "2026-09-10T17:21:09.791Z",
+  "domain": "modem.dev",
+  "summary": "modem.dev exposes four developer integration surfaces: a REST API at `api.modem.dev/v1`, a separate ingest HTTP API at `ingest.modem.dev`, a hosted MCP server at `mcp.modem.dev/mcp`, and the `modem` CLI published as `@modem-dev/cli`; all require authentication via either Modem API keys or Modem OAuth for MCP.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Modem Ingest API",
+      "slug": "modem-ingest-api",
+      "type": "http",
+      "url": "https://ingest.modem.dev"
+    },
+    {
+      "authStatus": "required",
+      "name": "Modem MCP server",
+      "slug": "modem-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.modem.dev/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "modem",
+      "name": "Modem CLI",
+      "packages": [
+        {
+          "identifier": "@modem-dev/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "modem-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Modem API",
+      "slug": "api-2",
+      "type": "http",
+      "url": "https://api.modem.dev/v1"
+    }
+  ]
+}

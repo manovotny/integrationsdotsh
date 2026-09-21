@@ -1,0 +1,30 @@
+{
+  "description": "Rock8Cloud is a deployment platform that connects to a GitHub repository, builds and runs applications, and provides managed databases, object storage, preview environments, and SSL. It also exposes deployment, logging, and AI-assisted code review capabilities for projects hosted on the platform.",
+  "discoveredAt": "2026-07-09T11:25:19.216Z",
+  "domain": "app.rock8.cloud",
+  "summary": "Rock8Cloud exposes two developer integration surfaces on app.rock8.cloud: a REST API at `https://app.rock8.cloud/api` authenticated with scoped `vhk_...` Bearer API keys, and an OAuth-protected streamable-HTTP MCP server at `https://app.rock8.cloud/mcp` with self-service OAuth discovery/DCR.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Rock8Cloud MCP",
+      "slug": "rock8cloud-mcp",
+      "type": "mcp",
+      "url": "https://app.rock8.cloud/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Rock8Cloud REST API",
+      "slug": "rock8cloud-rest-api",
+      "type": "http",
+      "url": "https://app.rock8.cloud/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "Rock8Cloud REST API",
+      "slug": "rest-api",
+      "spec": "https://app.rock8.cloud/api/openapi.json",
+      "type": "http",
+      "url": "https://app.rock8.cloud/api"
+    }
+  ]
+}

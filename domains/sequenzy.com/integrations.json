@@ -1,0 +1,58 @@
+{
+  "description": "Sequenzy is an email marketing and lifecycle automation platform for managing subscribers, campaigns, sequences, transactional emails, landing pages, and analytics. It also provides AI-agent access via MCP and agent-oriented authentication flows.",
+  "discoveredAt": "2026-07-04T01:21:38.399Z",
+  "domain": "sequenzy.com",
+  "summary": "Sequenzy exposes a bearer-authenticated HTTP API at api.sequenzy.com, a remote streamable-HTTP MCP server, and two npm-delivered CLIs: the main `sequenzy` CLI and a local `@sequenzy/mcp` MCP stdio package.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Sequenzy remote MCP server",
+      "slug": "sequenzy-remote-mcp-server",
+      "type": "mcp",
+      "url": "https://api.sequenzy.com/v1/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "sequenzy",
+      "name": "Sequenzy CLI",
+      "packages": [
+        {
+          "identifier": "@sequenzy/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "sequenzy-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "command": "sequenzy-mcp",
+      "name": "Sequenzy local MCP CLI",
+      "packages": [
+        {
+          "identifier": "@sequenzy/mcp",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "sequenzy-local-mcp-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Sequenzy HTTP API",
+      "slug": "sequenzy-http-api",
+      "type": "http",
+      "url": "https://api.sequenzy.com/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Sequenzy HTTP API",
+      "slug": "sequenzy-http-api-2",
+      "spec": "https://www.sequenzy.com/openapi.json",
+      "type": "http",
+      "url": "https://api.sequenzy.com/api/v1"
+    }
+  ]
+}

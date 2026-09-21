@@ -1,0 +1,22 @@
+{
+  "description": "Zillapi provides Zillow-sourced U.S. residential property data, including property details, Zestimates, listing search, building extraction, async jobs, and signed webhooks. It is positioned for developers, SaaS products, and AI agents that need structured property data without scraping.",
+  "discoveredAt": "2026-08-27T06:06:00.397Z",
+  "domain": "zillapi.com",
+  "summary": "Zillapi exposes a bearer-authenticated REST API at api.zillapi.com and a streamable-HTTP MCP server at /mcp that accepts either the same API key or OAuth 2.1 with dynamic client registration.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Zillapi REST API",
+      "slug": "zillapi-rest-api",
+      "type": "http",
+      "url": "https://api.zillapi.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "Zillapi MCP server",
+      "slug": "zillapi-mcp-server",
+      "type": "mcp",
+      "url": "https://api.zillapi.com/mcp"
+    }
+  ]
+}

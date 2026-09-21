@@ -1,0 +1,16 @@
+{
+  "description": "comdirect is a German direct bank brand of Commerzbank. Its public developer-facing documentation on comdirect.de focuses on PSD2 open-banking access for third-party providers and customer account/brokerage API information.",
+  "discoveredAt": "2026-07-05T19:55:49.504Z",
+  "domain": "comdirect.de",
+  "summary": "comdirect exposes one documented HTTP integration surface on its own domain: a PSD2/XS2A Berlin Group REST API at `https://xs2a-api.comdirect.de` with a downloadable OpenAPI spec; no GraphQL, MCP server, or CLI were found on comdirect.de.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "comdirect PSD2 XS2A API",
+      "slug": "comdirect-psd2-xs2a-api",
+      "spec": "https://xs2a-developer.comdirect.de/sites/cdt/files/apidoc_specs/cdt-swagger.yaml",
+      "type": "http",
+      "url": "https://xs2a-api.comdirect.de"
+    }
+  ]
+}

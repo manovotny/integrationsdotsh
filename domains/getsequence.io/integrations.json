@@ -1,0 +1,29 @@
+{
+  "description": "Sequence provides software for automating and orchestrating money movement across bank accounts, rules, and transfers. Its products include a consumer/business finance automation app and a developer-focused platform for agentic money movement with permissions, limits, and audit trails.",
+  "discoveredAt": "2026-07-04T05:36:12.984Z",
+  "domain": "getsequence.io",
+  "summary": "getsequence.io exposes two documented HTTP APIs—a newer Sequence Platform REST API at `api.getsequence.io/platform/v1` plus an older Remote API at `api.getsequence.io/`—and a Streamable HTTP MCP server at `app.getsequence.io/api/mcp`; all documented surfaces require Sequence-issued bearer credentials.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Sequence Platform API",
+      "slug": "sequence-platform-api",
+      "type": "http",
+      "url": "https://api.getsequence.io/platform/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Sequence MCP server",
+      "slug": "sequence-mcp-server",
+      "type": "mcp",
+      "url": "https://app.getsequence.io/api/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Sequence Remote API",
+      "slug": "sequence-remote-api",
+      "type": "http",
+      "url": "https://api.getsequence.io/"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "description": "Zapier is an automation and integration platform that connects thousands of apps and lets users build workflows, actions, and AI-driven automations. It also offers embeddable workflow tooling and developer tools for building integrations on the Zapier platform.",
-  "discoveredAt": "2026-07-03T10:05:09.011Z",
+  "description": "Zapier is an automation platform that connects thousands of third-party apps so users and teams can run workflows, embedded integrations, and AI-assisted actions. It also provides developer tooling for building Zapier integrations and embedding Zapier-powered automation or app connections into other products.",
+  "discoveredAt": "2026-08-29T13:42:56.623Z",
   "domain": "zapier.com",
-  "summary": "Zapier exposes a hosted MCP server at `mcp.zapier.com`, the Natural Language Actions HTTP API at `nla.zapier.com` with an OpenAPI spec, and a `zapier-sdk` CLI for terminal-based access; all documented surfaces require authentication.",
+  "summary": "Zapier exposes a hosted MCP server, a REST Workflow API on api.zapier.com, White Label REST APIs for Trigger Inbox and Connection Webhooks, and two CLIs; a legacy NLA REST API is also publicly documented on nla.zapier.com.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -12,13 +12,28 @@
       "url": "https://mcp.zapier.com/api/v1/connect"
     },
     {
+      "authStatus": "none",
+      "name": "Zapier MCP (public endpoint listing)",
+      "slug": "zapier-mcp-public-endpoint-listing",
+      "type": "mcp",
+      "url": "https://mcp.zapier.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Zapier Trigger Inbox API",
+      "slug": "zapier-trigger-inbox-api",
+      "type": "http",
+      "url": "https://api.zapier.com"
+    },
+    {
       "authStatus": "required",
       "command": "zapier-sdk",
       "name": "Zapier SDK CLI",
       "packages": [
         {
           "identifier": "@zapier/zapier-sdk-cli",
-          "registryType": "npm"
+          "registryType": "npm",
+          "runtimeHint": "node"
         }
       ],
       "slug": "zapier-sdk-cli",
@@ -26,7 +41,29 @@
     },
     {
       "authStatus": "required",
-      "name": "Zapier NLA API",
+      "command": "zapier",
+      "name": "Zapier Platform CLI",
+      "packages": [
+        {
+          "identifier": "zapier-platform-cli",
+          "registryType": "npm",
+          "runtimeHint": "node"
+        }
+      ],
+      "slug": "zapier-platform-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Zapier Workflow API",
+      "slug": "zapier-workflow-api",
+      "spec": "https://api.zapier.com/schema",
+      "type": "http",
+      "url": "https://api.zapier.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "Zapier Natural Language Actions API",
       "slug": "zapier-nla-api",
       "spec": "https://api.apis.guru/v2/specs/zapier.com/nla/1.0.0/openapi.json",
       "type": "http",

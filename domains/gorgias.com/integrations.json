@@ -1,19 +1,19 @@
 {
-  "description": "Gorgias provides a customer support and conversational AI platform for ecommerce brands. Its products center on a helpdesk, automation, and AI tools for handling support interactions and related account configuration.",
-  "discoveredAt": "2026-07-02T20:26:47.738Z",
+  "description": "Gorgias is an ecommerce customer support and conversational AI platform that unifies helpdesk channels such as email, chat, voice, SMS, and social messaging. It lets merchants manage support operations, automation, analytics, and app integrations from a tenant-specific Gorgias account.",
+  "discoveredAt": "2026-08-29T15:28:26.798Z",
   "domain": "gorgias.com",
-  "summary": "Gorgias exposes a tenant-scoped REST API authenticated by either Basic auth with a user API key or OAuth2 bearer tokens, plus a hosted MCP server at `https://mcp.gorgias.com/mcp` that users authorize with their Gorgias account.",
+  "summary": "Gorgias exposes a tenant-scoped REST API on `https://{domain}.gorgias.com/api` authenticated by either HTTP Basic with a user API key or OAuth 2.0 bearer tokens, plus a remote MCP server at `https://mcp.gorgias.com/mcp` authenticated by browser-based Gorgias authorization.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "Gorgias REST API",
       "slug": "gorgias-rest-api",
       "type": "http",
-      "url": "https://{subdomain}.gorgias.com/api"
+      "url": "https://{domain}.gorgias.com/api"
     },
     {
       "authStatus": "required",
-      "name": "Gorgias MCP server",
+      "name": "Gorgias MCP Server",
       "slug": "gorgias-mcp-server",
       "type": "mcp",
       "url": "https://mcp.gorgias.com/mcp"

@@ -1,0 +1,35 @@
+{
+  "description": "Cavuno provides AI-native job board software for launching and managing branded job boards. It handles job listings, companies, blog content, monetization, and related board management features.",
+  "discoveredAt": "2026-07-04T00:12:50.233Z",
+  "domain": "cavuno.com",
+  "summary": "Cavuno exposes a REST API at `api.cavuno.com/v1`, a `cavuno` npm CLI, and a hosted MCP server at `mcp.cavuno.com/mcp`; REST and CLI use Cavuno API keys, while MCP supports either OAuth 2.1 or an API key.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Cavuno MCP server",
+      "slug": "cavuno-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.cavuno.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "cavuno",
+      "name": "Cavuno CLI",
+      "packages": [
+        {
+          "identifier": "cavuno",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "cavuno-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Cavuno REST API",
+      "slug": "cavuno-rest-api",
+      "type": "http",
+      "url": "https://api.cavuno.com/v1"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "description": "Tesla develops electric vehicles and energy products. Its developer platform lets approved apps access vehicle and energy-device data and send commands through the Fleet API.",
+  "discoveredAt": "2026-08-07T05:44:47.787Z",
+  "domain": "tesla.com",
+  "summary": "Tesla exposes one documented developer integration surface on tesla.com: the regional Tesla Fleet REST API, authenticated with Bearer tokens obtained via Tesla-issued OAuth app credentials using partner, third-party user, or third-party business token flows.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Tesla Fleet API",
+      "slug": "tesla-fleet-api",
+      "type": "http",
+      "url": "https://fleet-api.prd.na.vn.cloud.tesla.com"
+    }
+  ]
+}

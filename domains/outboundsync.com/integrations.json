@@ -1,0 +1,15 @@
+{
+  "description": "OutboundSync is an outbound data integration and orchestration platform that syncs activity from outbound tools into CRMs like HubSpot, Salesforce, Close, and Attio. It helps teams route replies, automate workflows, attribute revenue, and maintain block or exclusion lists from CRM data.",
+  "discoveredAt": "2026-07-07T19:23:15.455Z",
+  "domain": "outboundsync.com",
+  "summary": "OutboundSync exposes one documented developer surface: a Bearer-authenticated REST API at `https://app.outboundsync.com/api/v1` for validating API keys and listing accessible CRM connections; no public GraphQL API, MCP server, or CLI is currently documented on outboundsync.com.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "OutboundSync API v1",
+      "slug": "outboundsync-api-v1",
+      "type": "http",
+      "url": "https://app.outboundsync.com/api/v1"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "description": "Stellary is an AI-powered project management and delivery workspace that combines boards, documents, dashboards, automations, and AI agents in one system. It lets teams and AI agents work from shared project context, with both REST and MCP access to workspace data and actions.",
+  "discoveredAt": "2026-09-02T05:20:31.573Z",
+  "domain": "stellary.co",
+  "summary": "Stellary exposes two developer integration surfaces on `api.stellary.co`: a REST API and a remote Streamable HTTP MCP server; both require auth, with the MCP server supporting either OAuth 2.1/DCR or bearer tokens.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Stellary REST API",
+      "slug": "stellary-rest-api",
+      "type": "http",
+      "url": "https://api.stellary.co"
+    },
+    {
+      "authStatus": "required",
+      "name": "Stellary MCP server",
+      "slug": "stellary-mcp-server",
+      "type": "mcp",
+      "url": "https://api.stellary.co/mcp"
+    }
+  ]
+}

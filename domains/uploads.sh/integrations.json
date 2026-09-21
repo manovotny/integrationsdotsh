@@ -1,0 +1,37 @@
+{
+  "description": "uploads.sh is a file-hosting service for sharing screenshots, recordings, and other files, especially into GitHub pull requests and issues. It provides hosted public file URLs and tools for agents and humans, with invitation-based workspace access.",
+  "discoveredAt": "2026-07-22T22:15:40.549Z",
+  "domain": "uploads.sh",
+  "summary": "uploads.sh exposes a workspace-scoped REST API at `api.uploads.sh`, a hosted streamable-HTTP MCP server at `agents.uploads.sh/mcp`, and an `uploads` CLI; the API and CLI use a workspace bearer token, while the hosted MCP accepts either that bearer token or OAuth 2.1 via well-known discovery.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "uploads.sh hosted MCP server",
+      "slug": "uploads-sh-hosted-mcp-server",
+      "type": "mcp",
+      "url": "https://agents.uploads.sh/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "uploads",
+      "name": "uploads CLI",
+      "packages": [
+        {
+          "identifier": "@buildinternet/uploads",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "uploads-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "uploads.sh REST API",
+      "slug": "uploads-sh-rest-api",
+      "spec": "https://uploads.sh/openapi.json",
+      "type": "http",
+      "url": "https://api.uploads.sh"
+    }
+  ]
+}

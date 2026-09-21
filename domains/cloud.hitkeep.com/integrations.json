@@ -1,0 +1,30 @@
+{
+  "description": "HitKeep Cloud is a hosted privacy-first web analytics service. It lets teams collect and analyze website traffic, events, conversions, and related reporting data.",
+  "discoveredAt": "2026-07-06T19:28:29.343Z",
+  "domain": "cloud.hitkeep.com",
+  "summary": "HitKeep Cloud exposes two developer surfaces on cloud.hitkeep.com: a bearer-token-protected REST API and a streamable HTTP MCP server.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "HitKeep MCP server",
+      "slug": "hitkeep-mcp-server",
+      "type": "mcp",
+      "url": "https://cloud.hitkeep.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "HitKeep REST API",
+      "slug": "hitkeep-rest-api",
+      "type": "http",
+      "url": "https://cloud.hitkeep.com/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "HitKeep REST API",
+      "slug": "hitkeep-rest-api-2",
+      "spec": "https://cloud.hitkeep.com/openapi.json",
+      "type": "http",
+      "url": "https://cloud.hitkeep.com/api"
+    }
+  ]
+}

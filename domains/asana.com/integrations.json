@@ -1,23 +1,22 @@
 {
-  "description": "Asana is a work management platform for organizing projects, tasks, teams, and workflows. Its APIs and MCP server expose Asana workspace data and actions for integrations and AI assistants.",
-  "discoveredAt": "2026-07-02T20:03:33.149Z",
+  "description": "Asana is a work management platform for organizing goals, projects, tasks, and workflows across teams. It also provides AI and developer features for integrating with the Asana Work Graph and workspace data.",
+  "discoveredAt": "2026-07-06T17:48:18.017Z",
   "domain": "asana.com",
-  "summary": "Asana exposes a REST API at `https://app.asana.com/api/1.0` with OpenAPI, plus an official MCP server at `https://mcp.asana.com/v2/mcp` over streamable HTTP; both require authentication.",
+  "summary": "Asana exposes a REST API at `https://app.asana.com/api/1.0` authenticated by personal access tokens or OAuth 2.0, plus an OAuth-protected streamable HTTP MCP server at `https://mcp.asana.com/v2/mcp`.",
   "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Asana REST API",
+      "slug": "asana-rest-api",
+      "type": "http",
+      "url": "https://app.asana.com/api/1.0"
+    },
     {
       "authStatus": "required",
       "name": "Asana MCP Server",
       "slug": "asana-mcp-server",
       "type": "mcp",
       "url": "https://mcp.asana.com/v2/mcp"
-    },
-    {
-      "authStatus": "required",
-      "name": "Asana REST API",
-      "slug": "asana-rest-api",
-      "spec": "https://raw.githubusercontent.com/Asana/developer-docs/master/defs/asana_oas.yaml",
-      "type": "http",
-      "url": "https://app.asana.com/api/1.0"
     }
   ]
 }

@@ -1,23 +1,9 @@
 {
-  "description": "X is a social platform for public posts, conversations, direct messages, Spaces, trends, and related content. Its developer platform provides programmatic access to X data and actions through standard APIs and AI-oriented tooling.",
-  "discoveredAt": "2026-07-02T21:07:28.319Z",
+  "description": "X is a social platform centered on posts, users, messaging, trends, and advertising. Its developer platform provides APIs and tools for accessing public conversation, managing ads, and building chat or automation integrations.",
+  "discoveredAt": "2026-08-31T07:51:23.517Z",
   "domain": "x.com",
-  "summary": "X exposes a REST X API, separate enterprise HTTP APIs, two hosted MCP servers (X API MCP and docs MCP), and the xurl CLI used especially for MCP/OAuth flows.",
+  "summary": "x.com exposes a REST X API at api.x.com/2, an Ads API at ads-api.x.com, hosted MCP servers for X API and Ads, and the xurl CLI; auth is required via bearer tokens, OAuth 2.0, or OAuth 1.0a depending on surface.",
   "surfaces": [
-    {
-      "authStatus": "required",
-      "name": "X API",
-      "slug": "x-api",
-      "type": "http",
-      "url": "https://api.x.com/2"
-    },
-    {
-      "authStatus": "required",
-      "name": "X Enterprise APIs",
-      "slug": "x-enterprise-apis",
-      "type": "http",
-      "url": "https://gnip-api.x.com"
-    },
     {
       "authStatus": "required",
       "name": "X MCP",
@@ -26,28 +12,38 @@
       "url": "https://api.x.com/mcp"
     },
     {
-      "authStatus": "unknown",
-      "name": "X Docs MCP",
-      "slug": "x-docs-mcp",
-      "type": "mcp"
-    },
-    {
       "authStatus": "required",
       "command": "xurl",
       "name": "xurl",
       "packages": [
         {
-          "identifier": "@xdevplatform/xurl",
-          "registryType": "npm",
-          "runtimeHint": "node"
-        },
-        {
-          "identifier": "xdevplatform/tap/xurl",
-          "registryType": "homebrew"
+          "identifier": "github.com/xdevplatform/xurl@latest",
+          "registryType": "go"
         }
       ],
       "slug": "xurl",
       "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "X API v2",
+      "slug": "x-api",
+      "type": "http",
+      "url": "https://api.x.com/2"
+    },
+    {
+      "authStatus": "required",
+      "name": "X Ads API",
+      "slug": "x-ads-api",
+      "type": "http",
+      "url": "https://ads-api.x.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "X Ads MCP",
+      "slug": "x-ads-mcp",
+      "type": "mcp",
+      "url": "https://ads-api.x.com/mcp"
     }
   ]
 }

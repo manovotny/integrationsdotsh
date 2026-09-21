@@ -1,8 +1,8 @@
 {
-  "description": "Faces is an AI presentation tool for creating, editing, publishing, and sharing interactive web-based slide decks. It supports direct use in the web app as well as programmatic deck and slide management.",
-  "discoveredAt": "2026-07-03T01:06:29.961Z",
+  "description": "Faces is an AI presentation tool for creating, editing, publishing, and sharing interactive web-based slide decks. It supports both direct API access and MCP-based agent workflows for managing presentations and slides.",
+  "discoveredAt": "2026-07-19T14:56:35.499Z",
   "domain": "faces.app",
-  "summary": "faces.app exposes a REST API at `https://faces.app/api/v1` with an OpenAPI spec, an OAuth-protected streamable-HTTP MCP server at `https://mcp.faces.app/mcp`, and an npm-distributed `faces` CLI.",
+  "summary": "Faces exposes a bearer-authenticated REST API at `https://faces.app/api/v1`, a hosted OAuth-protected MCP server at `https://mcp.faces.app/mcp`, and a `faces` CLI distributed on npm that authenticates via `faces login`, `FACES_API_KEY`, or `--api-key`.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -18,8 +18,7 @@
       "packages": [
         {
           "identifier": "@facesapp/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         }
       ],
       "slug": "faces-cli",
@@ -27,9 +26,9 @@
     },
     {
       "authStatus": "required",
-      "name": "Faces REST API",
+      "name": "Faces API",
       "slug": "faces-rest-api",
-      "spec": "https://faces.app/docs/openapi.json",
+      "spec": "https://faces.app/openapi.json",
       "type": "http",
       "url": "https://faces.app/api/v1"
     }

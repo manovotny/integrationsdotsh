@@ -1,0 +1,29 @@
+{
+  "description": "Umami is a privacy-focused web analytics platform offered as open-source self-hosted software and as Umami Cloud. It collects website analytics and provides dashboards, reporting, and event tracking.",
+  "discoveredAt": "2026-07-29T09:43:37.531Z",
+  "domain": "umami.is",
+  "summary": "Umami exposes documented HTTP APIs for Cloud and self-hosted analytics management, plus a public event-ingestion HTTP endpoint; no GraphQL or MCP surface was found, and no documented first-party CLI on umami.is was confirmed as targeting umami.is endpoints.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Umami Cloud REST API",
+      "slug": "umami-cloud-rest-api",
+      "type": "http",
+      "url": "https://api.umami.is/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Umami self-hosted REST API",
+      "slug": "umami-self-hosted-rest-api",
+      "type": "http",
+      "url": "http://<your-umami-instance>/api"
+    },
+    {
+      "authStatus": "none",
+      "name": "Umami event ingestion API",
+      "slug": "umami-event-ingestion-api",
+      "type": "http",
+      "url": "https://cloud.umami.is/api"
+    }
+  ]
+}

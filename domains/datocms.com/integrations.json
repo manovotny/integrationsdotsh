@@ -1,20 +1,34 @@
 {
-  "description": "DatoCMS is a headless content management system for modeling, managing, and delivering structured content to websites and applications. It provides APIs and tooling for content delivery, content management, schema migrations, and AI-assisted workflows.",
-  "discoveredAt": "2026-07-02T20:18:07.785Z",
+  "description": "DatoCMS is a headless CMS for modeling content and delivering it to websites, apps, and other clients. It provides hosted content management, content delivery, asset handling, search, and AI-assistant integration features.",
+  "discoveredAt": "2026-08-30T17:01:19.064Z",
   "domain": "datocms.com",
-  "summary": "DatoCMS exposes a GraphQL Content Delivery API, an HTTP Content Management API, a remote MCP server at `https://mcp.datocms.com`, and the `datocms` npm CLI; all require authentication via DatoCMS-issued API tokens or OAuth depending on the surface.",
+  "summary": "DatoCMS exposes a GraphQL Content Delivery API, a REST/JSON:API Content Management API, a real-time SSE-based updates API, a public asset CDN surface, a hosted MCP server, and a `datocms` CLI.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Content Delivery API",
-      "slug": "content-delivery-api",
+      "name": "DatoCMS Content Delivery API",
+      "slug": "datocms-content-delivery-api",
       "spec": "introspection",
       "type": "graphql",
-      "url": "https://graphql.datocms.com/"
+      "url": "https://graphql.datocms.com"
     },
     {
       "authStatus": "required",
-      "name": "DatoCMS MCP Server",
+      "name": "DatoCMS Real-time Updates API",
+      "slug": "datocms-real-time-updates-api",
+      "type": "http",
+      "url": "https://graphql-listen.datocms.com"
+    },
+    {
+      "authStatus": "none",
+      "name": "DatoCMS Asset CDN",
+      "slug": "datocms-asset-cdn",
+      "type": "http",
+      "url": "https://www.datocms-assets.com/<PROJECT_ID>/<UNIQUE_STAMP>-<ASSET_NAME>.<FORMAT>"
+    },
+    {
+      "authStatus": "required",
+      "name": "DatoCMS MCP server",
       "slug": "datocms-mcp-server",
       "type": "mcp",
       "url": "https://mcp.datocms.com"
@@ -27,7 +41,7 @@
         {
           "identifier": "datocms",
           "registryType": "npm",
-          "runtimeHint": "node"
+          "runtimeHint": "npx"
         }
       ],
       "slug": "datocms-cli",
@@ -35,7 +49,7 @@
     },
     {
       "authStatus": "required",
-      "name": "Content Management API",
+      "name": "DatoCMS Content Management API",
       "slug": "content-management-api",
       "type": "http",
       "url": "https://site-api.datocms.com"

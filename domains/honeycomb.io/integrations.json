@@ -1,8 +1,8 @@
 {
-  "description": "Honeycomb is an observability platform for exploring telemetry from distributed systems and applications. It helps teams investigate performance, reliability, and behavior using high-cardinality event, trace, and related operational data.",
-  "discoveredAt": "2026-07-02T20:28:34.559Z",
+  "description": "Honeycomb is an observability platform for exploring telemetry, traces, and high-cardinality event data from modern software systems. It helps engineering teams investigate production behavior, analyze reliability, and debug distributed applications.",
+  "discoveredAt": "2026-09-07T14:50:04.211Z",
   "domain": "honeycomb.io",
-  "summary": "Honeycomb exposes a region-specific REST API with an OpenAPI spec and a streamable-HTTP MCP server; both require Honeycomb-issued credentials, with MCP supporting either OAuth or API-key authentication.",
+  "summary": "Honeycomb exposes a documented regional HTTP API with an OpenAPI spec and a hosted streamable-HTTP MCP server; both require Honeycomb-issued credentials, with MCP supporting OAuth and API-key auth.",
   "surfaces": [
     {
       "authStatus": "required",

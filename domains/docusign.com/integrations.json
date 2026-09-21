@@ -1,0 +1,36 @@
+{
+  "description": "Docusign provides electronic signature and agreement management products, including APIs for eSignature, admin, rooms, web forms, workflows, and related agreement operations. Its platform also offers AI-tool access through a hosted MCP server and developer tooling for building and managing integrations.",
+  "discoveredAt": "2026-08-12T06:05:31.666Z",
+  "domain": "docusign.com",
+  "summary": "Docusign exposes authenticated REST APIs across multiple product areas, a hosted MCP server at `https://mcp.docusign.com/mcp`, and a `ds` CLI for Agreement Manager.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Docusign REST APIs",
+      "slug": "docusign-rest-apis",
+      "type": "http",
+      "url": "https://{baseUri}/restapi"
+    },
+    {
+      "authStatus": "required",
+      "name": "Docusign MCP Server",
+      "slug": "docusign",
+      "type": "mcp",
+      "url": "https://mcp.docusign.com/mcp"
+    },
+    {
+      "authStatus": "unknown",
+      "command": "ds",
+      "name": "Docusign CLI",
+      "packages": [
+        {
+          "identifier": "@docusign/cli",
+          "registryType": "npm",
+          "runtimeHint": "node"
+        }
+      ],
+      "slug": "docusign-cli",
+      "type": "cli"
+    }
+  ]
+}

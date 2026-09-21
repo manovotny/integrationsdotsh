@@ -1,0 +1,23 @@
+{
+  "description": "HitKeep is a privacy-first web analytics product available as managed cloud or self-hosted single-binary software. It provides cookie-light tracking, analytics dashboards, exports, and optional AI-assisted analytics features.",
+  "discoveredAt": "2026-07-06T19:25:50.787Z",
+  "domain": "hitkeep.com",
+  "summary": "HitKeep exposes a documented REST API on hitkeep.com with an OpenAPI document, plus an optional Streamable HTTP MCP endpoint at `/mcp`; both use HitKeep-issued bearer API client tokens.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "HitKeep REST API",
+      "slug": "hitkeep-rest-api",
+      "spec": "https://hitkeep.com/api/operations/apidocsv1openapijson/",
+      "type": "http",
+      "url": "https://hitkeep.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "HitKeep MCP server",
+      "slug": "hitkeep-mcp-server",
+      "type": "mcp",
+      "url": "https://hitkeep.com/mcp"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "description": "Agent Domain Search is a domain registration and DNS management service designed for programmatic use. It lets users check availability, register and renew domains, and manage DNS using Ethereum wallet signatures and USDC payments on Base.",
+  "discoveredAt": "2026-07-05T23:54:34.898Z",
+  "domain": "agentdomainsearch.com",
+  "summary": "agentdomainsearch.com exposes a JSON HTTP API with an OpenAPI spec plus a public MCP endpoint; the API mixes free public reads with wallet-signature auth for management operations and x402 USDC payment authorization for registration/renewal.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Agent Domain Search MCP server",
+      "slug": "agent-domain-search-mcp-server",
+      "type": "mcp",
+      "url": "https://agentdomainsearch.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Agent Domain Search JSON API",
+      "slug": "agent-domain-search-json-api",
+      "spec": "https://agentdomainsearch.com/openapi.json",
+      "type": "http",
+      "url": "https://agentdomainsearch.com"
+    }
+  ]
+}

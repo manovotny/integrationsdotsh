@@ -1,0 +1,22 @@
+{
+  "description": "Granola is an AI notepad for meetings that captures transcripts and generates notes, summaries, and meeting context without using a meeting bot. It offers desktop and mobile apps plus workspace features for sharing, search, and integrations.",
+  "discoveredAt": "2026-07-06T06:27:33.877Z",
+  "domain": "granola.ai",
+  "summary": "Granola exposes two developer integration surfaces on its own domain: a REST HTTP API at `public-api.granola.ai/v1` authenticated by Granola API keys, and an OAuth-protected MCP server at `https://mcp.granola.ai/mcp`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Granola API",
+      "slug": "granola-api",
+      "type": "http",
+      "url": "https://public-api.granola.ai/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Granola MCP",
+      "slug": "granola",
+      "type": "mcp",
+      "url": "https://mcp.granola.ai/mcp"
+    }
+  ]
+}

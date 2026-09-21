@@ -1,0 +1,15 @@
+{
+  "description": "Macro is an open-source workspace app that combines email, messages, documents, tasks, calls, agents, and CRM in one system. It is designed for teams to work from a unified interface with shared context and AI memory.",
+  "discoveredAt": "2026-08-06T12:51:13.891Z",
+  "domain": "macro.com",
+  "summary": "Macro exposes a documented remote MCP server at `https://mcp-server.macro.com/mcp`, authenticated via Macro OAuth browser sign-in; no verified public REST, GraphQL, or CLI surface was found for `macro.com`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Macro MCP server",
+      "slug": "macro-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp-server.macro.com/mcp"
+    }
+  ]
+}

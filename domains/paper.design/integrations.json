@@ -1,0 +1,15 @@
+{
+  "description": "Paper is a design tool built around HTML and CSS, with desktop and web apps for creating interface designs and exporting them to code. It also lets AI agents read and modify design files through an MCP connection.",
+  "discoveredAt": "2026-07-20T15:59:43.785Z",
+  "domain": "paper.design",
+  "summary": "paper.design documents one developer integration surface: a local Paper MCP server exposed by the Paper Desktop app at `http://127.0.0.1:29979/mcp`; no public HTTP/GraphQL API or standalone CLI for paper.design was found.",
+  "surfaces": [
+    {
+      "authStatus": "unknown",
+      "name": "Paper MCP Server",
+      "slug": "paper-mcp-server",
+      "type": "mcp",
+      "url": "http://127.0.0.1:29979/mcp"
+    }
+  ]
+}

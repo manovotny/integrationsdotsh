@@ -1,0 +1,7 @@
+{
+  "description": "Migaku is a language-learning product with a Chrome extension, mobile apps, and a web flashcard study app for immersive learning from videos, websites, and other native content. It helps learners study vocabulary, subtitles, OCR text, and spaced-repetition flashcards across supported languages.",
+  "discoveredAt": "2026-07-19T03:29:10.967Z",
+  "domain": "migaku.com",
+  "summary": "Migaku exposes no public developer integration surface on migaku.com: its own llms.txt explicitly says there is no public API, and the site documents only user-facing apps and web study tools.",
+  "surfaces": []
+}

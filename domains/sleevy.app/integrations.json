@@ -1,0 +1,23 @@
+{
+  "description": "Sleevy is a read-later app for saving URLs, organizing them with folders and tags, and tracking read state across its clients and integrations. It also offers developer access through a REST API and an MCP server for AI agents.",
+  "discoveredAt": "2026-07-21T20:38:17.653Z",
+  "domain": "sleevy.app",
+  "summary": "Sleevy exposes a REST API at `https://api.sleevy.app` with an OpenAPI spec and a streamable HTTP MCP server at `https://api.sleevy.app/mcp`; the REST API uses personal API keys and the MCP server uses OAuth, while health-check endpoints are public.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Sleevy MCP server",
+      "slug": "sleevy-mcp-server",
+      "type": "mcp",
+      "url": "https://api.sleevy.app/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Sleevy REST API",
+      "slug": "sleevy-rest-api",
+      "spec": "https://sleevy.app/openapi.json",
+      "type": "http",
+      "url": "https://api.sleevy.app"
+    }
+  ]
+}

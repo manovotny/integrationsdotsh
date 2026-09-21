@@ -1,0 +1,7 @@
+{
+  "description": "No authoritative evidence of public APIs, GraphQL endpoints, MCP servers, or CLIs for example.io was found in discoverable developer documentation. Searches for developer, API, CLI, MCP, and OpenAPI resources on the domain returned no relevant results.",
+  "discoveredAt": "2026-07-05T23:58:00.454Z",
+  "domain": "example.io",
+  "summary": "No public developer integration surface found for example.io.",
+  "surfaces": []
+}
