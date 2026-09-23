@@ -304,4 +304,44 @@ describe("mergeDeclared", () => {
     expect(r.surfaces).toHaveLength(2);
     expect(r.surfaces.map((s) => s.slug)).toEqual(["backend-api", "platform-api"]);
   });
+
+  test("does not merge distinct spec-bearing APIs that share a base url", () => {
+    const r = resultWith([
+      {
+        type: "http",
+        slug: "backend-api",
+        name: "Backend API",
+        url: "https://api.clerk.example/v1",
+        basis: { via: "discovered", evidence: [] },
+        auth: { status: "unknown" },
+      },
+    ]);
+    mergeDeclared(
+      r,
+      detectionWith([
+        {
+          type: "http",
+          slug: "backend-api",
+          name: "Backend API",
+          url: "https://api.clerk.example/v1",
+          spec: "https://clerk.example/spec/bapi/latest.yml",
+          basis: declaredBasis,
+          auth: { status: "unknown" },
+        },
+        {
+          type: "http",
+          slug: "platform-api",
+          name: "Platform API",
+          url: "https://api.clerk.example/v1",
+          spec: "https://clerk.example/spec/platform/latest.yml",
+          basis: declaredBasis,
+          auth: { status: "unknown" },
+        },
+      ]),
+    );
+
+    expect(r.surfaces.map((s) => s.slug)).toEqual(["backend-api", "platform-api"]);
+    expect(r.surfaces[0].spec).toBe("https://clerk.example/spec/bapi/latest.yml");
+    expect(r.surfaces[1].spec).toBe("https://clerk.example/spec/platform/latest.yml");
+  });
 });

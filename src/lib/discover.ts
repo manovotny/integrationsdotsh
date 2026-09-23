@@ -740,14 +740,16 @@ function markDeclaredSurface(surface: Surface, source: string): Surface {
  * into its discovered twin even when one carries a spec and the other only a
  * base url (or their urls are templated differently), so matching tries each
  * facet — ending with type+name, the same pair the batch validator treats as
- * a duplicate. */
+ * a duplicate. A surface with a spec does NOT expose its url as a facet:
+ * distinct APIs can share a base url (Clerk's Backend and Platform APIs both
+ * live at api.clerk.com/v1), and the spec is what tells them apart. */
 function surfaceLocators(s: Surface): string[] {
   const keys: string[] = [];
   const add = (value: string | undefined) => {
     if (value) keys.push(`${s.type}|${value.toLowerCase()}`);
   };
   add(s.spec);
-  add(s.url);
+  if (!s.spec) add(s.url);
   add(s.command);
   add(s.packages?.[0]?.identifier);
   add(s.name);
