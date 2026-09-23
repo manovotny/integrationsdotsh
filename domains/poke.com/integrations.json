@@ -1,0 +1,29 @@
+{
+  "description": "Poke is an AI assistant that operates through messaging platforms like Apple Messages, WhatsApp, Telegram, and RCS, and can act across connected apps and services. It also provides Kitchen for managing recipes, integrations, API keys, and related developer workflows.",
+  "discoveredAt": "2026-07-05T23:29:12.169Z",
+  "domain": "poke.com",
+  "summary": "Poke exposes one documented HTTP API at `https://poke.com/api/v1` for sending messages to your assistant and one documented CLI (`poke` via `npx poke@latest`) for logging in, adding MCP integrations, and tunneling local MCP servers; no GraphQL API, public MCP server endpoint, or machine-readable OpenAPI spec was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Poke API",
+      "slug": "poke-api",
+      "type": "http",
+      "url": "https://poke.com/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "command": "poke",
+      "name": "Poke CLI",
+      "packages": [
+        {
+          "identifier": "poke",
+          "registryType": "npm",
+          "runtimeHint": "npx poke@latest"
+        }
+      ],
+      "slug": "poke-cli",
+      "type": "cli"
+    }
+  ]
+}

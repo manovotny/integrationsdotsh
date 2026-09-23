@@ -1,0 +1,29 @@
+{
+  "description": "Databuddy is a privacy-focused developer analytics platform that combines web analytics, event tracking, feature flags, uptime monitoring, short links, and related tooling. It also provides AI-agent access to that data and configuration through an MCP server and agent-auth metadata.",
+  "discoveredAt": "2026-07-04T17:11:23.113Z",
+  "domain": "databuddy.cc",
+  "summary": "Databuddy exposes a scoped REST API at `https://api.databuddy.cc/v1` plus OAuth-discoverable MCP endpoints at `https://api.databuddy.cc/v1/mcp/` and `https://api.databuddy.cc/mcp`, all authenticated with Databuddy-issued API keys.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Databuddy MCP server",
+      "slug": "databuddy-mcp-server",
+      "type": "mcp",
+      "url": "https://api.databuddy.cc/v1/mcp/"
+    },
+    {
+      "authStatus": "required",
+      "name": "Databuddy MCP alternate endpoint",
+      "slug": "databuddy-mcp-alternate-endpoint",
+      "type": "mcp",
+      "url": "https://api.databuddy.cc/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Databuddy REST API",
+      "slug": "databuddy-rest-api",
+      "type": "http",
+      "url": "https://api.databuddy.cc/v1"
+    }
+  ]
+}

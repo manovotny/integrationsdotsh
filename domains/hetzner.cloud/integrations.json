@@ -1,8 +1,8 @@
 {
-  "description": "Hetzner Cloud is Hetzner's public cloud infrastructure service for managing resources such as servers, volumes, load balancers, firewalls, and networking. It provides project-based cloud administration through a web console, API, and command-line tooling.",
-  "discoveredAt": "2026-07-02T21:49:21.139Z",
+  "description": "Hetzner Cloud is Hetzner's infrastructure cloud platform for managing resources such as servers, volumes, load balancers, networks, and related services. It provides programmatic access for provisioning and operating those cloud resources.",
+  "discoveredAt": "2026-07-05T19:28:49.556Z",
   "domain": "hetzner.cloud",
-  "summary": "Hetzner Cloud exposes a REST HTTP API at `https://api.hetzner.cloud/v1` plus the official `hcloud` CLI; both authenticate with a project-scoped API token.",
+  "summary": "Hetzner Cloud exposes a REST HTTP API at `https://api.hetzner.cloud/v1` authenticated with project API tokens, plus the official `hcloud` CLI for interacting with the same cloud service.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -10,17 +10,8 @@
       "name": "hcloud CLI",
       "packages": [
         {
-          "identifier": "github.com/hetznercloud/cli/cmd/hcloud",
-          "registryType": "go",
-          "runtimeHint": "go install"
-        },
-        {
-          "identifier": "hcloud",
-          "registryType": "homebrew"
-        },
-        {
           "identifier": "hetznercloud/cli",
-          "registryType": "docker"
+          "registryType": "github"
         }
       ],
       "slug": "hcloud-cli",

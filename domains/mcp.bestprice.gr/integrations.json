@@ -1,0 +1,15 @@
+{
+  "description": "BestPrice is a Greek price-comparison shopping service. Its MCP server exposes read-only product search, offer comparison, and price-history information from the Greek market.",
+  "discoveredAt": "2026-08-26T21:53:17.228Z",
+  "domain": "mcp.bestprice.gr",
+  "summary": "Public unauthenticated MCP server at https://mcp.bestprice.gr/mcp over Streamable HTTP; no HTTP/GraphQL API or CLI surface found for this domain.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "BestPrice MCP server",
+      "slug": "bestprice-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.bestprice.gr/mcp"
+    }
+  ]
+}

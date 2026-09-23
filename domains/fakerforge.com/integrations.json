@@ -1,0 +1,23 @@
+{
+  "description": "Faker Forge is a synthetic data and API mocking platform for developers. It helps users generate realistic mock data from schemas, manage mock APIs with scenarios, and expose those workflows to AI agents through MCP.",
+  "discoveredAt": "2026-07-06T14:29:18.994Z",
+  "domain": "fakerforge.com",
+  "summary": "fakerforge.com exposes a Bearer-token-protected HTTP Data API at `https://fakerforge.com/api` with an OpenAPI spec at `https://fakerforge.com/openapi.json`, plus a Bearer-token-protected streamable HTTP MCP server at `https://fakerforge.com/mcp/fakerforge`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Faker Forge MCP Server",
+      "slug": "faker-forge-mcp-server",
+      "type": "mcp",
+      "url": "https://fakerforge.com/mcp/fakerforge"
+    },
+    {
+      "authStatus": "required",
+      "name": "Faker Forge Data API",
+      "slug": "faker-forge-data-api",
+      "spec": "https://fakerforge.com/openapi.json",
+      "type": "http",
+      "url": "https://fakerforge.com/api"
+    }
+  ]
+}

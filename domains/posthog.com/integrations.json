@@ -1,36 +1,22 @@
 {
-  "description": "PostHog is a product platform for analytics, feature flags, session replay, error tracking, experiments, surveys, data warehousing, and related tooling. It can be used on PostHog Cloud in US/EU regions or on self-hosted instances.",
-  "discoveredAt": "2026-07-02T20:45:40.717Z",
+  "description": "PostHog is a product analytics and developer tooling platform that combines event analytics, feature flags, experiments, session replay, error tracking, logs, and related product data tools. It offers both hosted cloud services and self-hosted deployment options for instrumenting and analyzing applications.",
+  "discoveredAt": "2026-07-05T18:27:02.757Z",
   "domain": "posthog.com",
-  "summary": "PostHog exposes one HTTP API (private CRUD/query plus public ingestion endpoints), one hosted MCP server, and a public npm-based setup CLI.",
+  "summary": "PostHog exposes a region-based REST API for its cloud service and an official hosted MCP server at `https://mcp.posthog.com/mcp`; both use PostHog-issued personal API keys according to the docs gathered here.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "PostHog API",
-      "slug": "posthog-api",
+      "name": "PostHog REST API",
+      "slug": "posthog-rest-api",
       "type": "http",
-      "url": "https://us.posthog.com"
+      "url": "https://us.i.posthog.com"
     },
     {
       "authStatus": "required",
-      "name": "PostHog MCP Server",
+      "name": "PostHog MCP server",
       "slug": "posthog-mcp-server",
       "type": "mcp",
       "url": "https://mcp.posthog.com/mcp"
-    },
-    {
-      "authStatus": "none",
-      "command": "posthog-wizard",
-      "name": "PostHog Wizard CLI",
-      "packages": [
-        {
-          "identifier": "@posthog/wizard",
-          "registryType": "npm",
-          "runtimeHint": "npx"
-        }
-      ],
-      "slug": "posthog-wizard-cli",
-      "type": "cli"
     }
   ]
 }

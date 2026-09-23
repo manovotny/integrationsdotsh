@@ -1,0 +1,15 @@
+{
+  "description": "ozma.io is a low-code CRM and ERP platform for building customizable business applications. Its documentation describes a database-centric backend called FunDB that powers application data, views, and server-side actions.",
+  "discoveredAt": "2026-09-05T08:19:21.978Z",
+  "domain": "ozma.io",
+  "summary": "ozma.io exposes one documented developer integration surface: the tenant-scoped FunDB REST API, authenticated with an Ozma-issued OIDC client and bearer access token.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "FunDB REST API",
+      "slug": "fundb-rest-api",
+      "type": "http",
+      "url": "https://YOUR_INSTANCE_NAME.api.ozma.org"
+    }
+  ]
+}

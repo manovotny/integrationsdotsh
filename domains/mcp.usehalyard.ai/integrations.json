@@ -1,0 +1,30 @@
+{
+  "description": "Halyard is an organizational context engine that indexes a team's knowledge into a graph and lets AI agents retrieve it or ask human experts through Slack. It provides MCP tools for knowledge search and updates, people and org data, expert conversations, and delivery metrics.",
+  "discoveredAt": "2026-07-08T07:39:27.121Z",
+  "domain": "mcp.usehalyard.ai",
+  "summary": "Halyard exposes one OAuth-protected remote MCP server at https://mcp.usehalyard.ai plus an OpenAPI-described HTTP surface for that same MCP endpoint.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "MCP server",
+      "slug": "mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.usehalyard.ai/openapi.json"
+    },
+    {
+      "authStatus": "required",
+      "name": "Halyard MCP Server",
+      "slug": "halyard-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.usehalyard.ai"
+    },
+    {
+      "authStatus": "required",
+      "name": "Halyard MCP HTTP API",
+      "slug": "halyard-mcp-http-api",
+      "spec": "https://mcp.usehalyard.ai/openapi.json",
+      "type": "http",
+      "url": "https://mcp.usehalyard.ai"
+    }
+  ]
+}

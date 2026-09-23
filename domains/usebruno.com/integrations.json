@@ -1,8 +1,8 @@
 {
-  "description": "Bruno is a local-first, Git-friendly API client for working with REST, GraphQL, gRPC, and WebSocket requests. It stores collections as local files and is distributed as a desktop app and CLI rather than as a cloud API service.",
-  "discoveredAt": "2026-07-02T21:04:32.432Z",
+  "description": "Bruno is a local, Git-friendly API client for sending and testing REST, GraphQL, gRPC, and WebSocket requests. It stores collections as local files and does not require a Bruno account or cloud sync to use.",
+  "discoveredAt": "2026-07-07T11:12:50.671Z",
   "domain": "usebruno.com",
-  "summary": "Bruno exposes a public installable CLI (`bru` via `@usebruno/cli` or Docker) and does not appear to expose a hosted developer API, GraphQL endpoint, or MCP server on usebruno.com.",
+  "summary": "usebruno.com exposes a public Bruno CLI and no Bruno-hosted HTTP, GraphQL, or MCP developer surface; Bruno is a local/offline API client rather than a hosted API service.",
   "surfaces": [
     {
       "authStatus": "none",
@@ -12,11 +12,7 @@
         {
           "identifier": "@usebruno/cli",
           "registryType": "npm",
-          "runtimeHint": "Node.js 18+"
-        },
-        {
-          "identifier": "usebruno/cli",
-          "registryType": "docker"
+          "runtimeHint": "node"
         }
       ],
       "slug": "bruno-cli",

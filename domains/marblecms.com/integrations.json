@@ -1,0 +1,23 @@
+{
+  "description": "Marble is an open-source headless CMS for creating and managing content such as posts, authors, categories, tags, media, and custom fields. It provides hosted workspaces for teams to publish content to websites and applications.",
+  "discoveredAt": "2026-07-28T07:41:49.781Z",
+  "domain": "marblecms.com",
+  "summary": "Marble exposes two developer integration surfaces on marblecms.com: a REST API at `https://api.marblecms.com/v1` with published OpenAPI documents, and a remote streamable-HTTP MCP server at `https://mcp.marblecms.com/mcp`; both use scoped Marble API keys.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Marble MCP Server",
+      "slug": "marble-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.marblecms.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Marble REST API",
+      "slug": "marble-rest-api",
+      "spec": "https://marblecms.com/openapi.json",
+      "type": "http",
+      "url": "https://api.marblecms.com/v1"
+    }
+  ]
+}

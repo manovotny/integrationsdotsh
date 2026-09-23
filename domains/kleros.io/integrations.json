@@ -1,0 +1,15 @@
+{
+  "description": "Kleros is a decentralized dispute-resolution protocol used with blockchain applications, including products such as Court, Curate, Oracle, and Proof of Humanity. Its public site links to documentation and product resources, while the actual integrations described are primarily smart-contract and third-party blockchain services.",
+  "discoveredAt": "2026-07-04T01:51:44.755Z",
+  "domain": "kleros.io",
+  "summary": "kleros.io exposes public documentation on docs.kleros.io and integration guides for on-chain smart-contract integrations, but no documented HTTP/REST API, GraphQL endpoint on a kleros.io host, MCP server, or standalone CLI on the kleros.io domain.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Kleros documentation index",
+      "slug": "kleros-documentation-index",
+      "type": "http",
+      "url": "https://docs.kleros.io/"
+    }
+  ]
+}

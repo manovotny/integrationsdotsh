@@ -1,0 +1,28 @@
+{
+  "description": "Aside is an AI browser that performs tasks across websites, accounts, browsing history, and files. Its help center documents browser features, AI-provider configuration, account use, and local developer tools.",
+  "discoveredAt": "2026-07-19T03:35:49.325Z",
+  "domain": "aside.com",
+  "summary": "Aside exposes a local `aside` CLI and a local MCP server launched via `aside mcp`; both depend on being signed in to an Aside account in the Aside browser. No public HTTP/REST, GraphQL, or hosted MCP endpoint on aside.com was documented.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "command": "aside",
+      "name": "Aside CLI",
+      "packages": [
+        {
+          "identifier": "install script: curl -fsSL https://releases.aside.com/install.sh | bash",
+          "registryType": "other"
+        }
+      ],
+      "slug": "aside-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Aside MCP server (local via CLI stdio)",
+      "slug": "aside-mcp-server-local-via-cli-stdio",
+      "type": "mcp",
+      "url": "command: aside mcp"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "description": "Speko is a voice AI gateway that routes speech-to-text, text-to-speech, LLM, and telephony workloads across providers with failover. It also provides tooling for operating voice agents, sessions, calls, phone numbers, and related platform resources.",
+  "discoveredAt": "2026-07-06T01:09:05.537Z",
+  "domain": "speko.ai",
+  "summary": "Speko exposes a bearer-authenticated REST API at api.speko.dev, an OAuth-or-API-key hosted MCP server at mcp.speko.ai/mcp, a local stdio MCP server package for outbound calling, and npm-distributed CLIs for MCP setup and terminal operations.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Speko hosted MCP server",
+      "slug": "speko-hosted-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.speko.ai/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "spekoai-mcp",
+      "name": "spekoai-mcp CLI",
+      "packages": [
+        {
+          "identifier": "@spekoai/mcp",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "spekoai-mcp-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Speko Calls MCP server (local stdio)",
+      "slug": "speko-calls-mcp-server-local-stdio",
+      "type": "mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "speko",
+      "name": "speko CLI",
+      "packages": [
+        {
+          "identifier": "@spekoai/mcp-calls",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "speko-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Speko REST API",
+      "slug": "speko-rest-api",
+      "type": "http",
+      "url": "https://api.speko.dev"
+    },
+    {
+      "authStatus": "required",
+      "name": "Speko REST API",
+      "slug": "speko-api",
+      "spec": "https://docs.speko.dev/openapi.json",
+      "type": "http",
+      "url": "https://api.speko.dev"
+    },
+    {
+      "authStatus": "required",
+      "command": "npx @spekoai/mcp@latest init",
+      "name": "Speko MCP setup CLI",
+      "packages": [
+        {
+          "identifier": "@spekoai/mcp",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "speko-mcp-setup-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Speko Calls MCP server (local)",
+      "slug": "speko-calls-mcp",
+      "type": "mcp"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "description": "Descript is an audio and video editing platform with AI-assisted editing, transcription, publishing, and collaboration features. It is used to create and edit podcasts, videos, captions, clips, and other media projects.",
+  "discoveredAt": "2026-07-05T14:00:56.485Z",
+  "domain": "descript.com",
+  "summary": "descript.com exposes a bearer-token HTTP API at `https://descriptapi.com/v1`, an OAuth-protected MCP server at `https://api.descript.com/v2/mcp`, and an npm-distributed `descript-api` CLI that uses the same API token.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Descript API",
+      "slug": "descript-api",
+      "type": "http",
+      "url": "https://descriptapi.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Descript MCP",
+      "slug": "descript-mcp",
+      "type": "mcp",
+      "url": "https://api.descript.com/v2/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "descript-api",
+      "name": "descript-api CLI",
+      "packages": [
+        {
+          "identifier": "@descript/platform-cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "descript-api-cli",
+      "type": "cli"
+    }
+  ]
+}

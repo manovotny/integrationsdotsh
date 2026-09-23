@@ -1,0 +1,15 @@
+{
+  "description": "Better Design is a design intelligence service for AI coding agents. It provides shadcn-compatible design systems, UI/UX principles, icon discovery, and review rules through an MCP server and related registry content.",
+  "discoveredAt": "2026-07-03T23:10:09.885Z",
+  "domain": "better-design.com",
+  "summary": "better-design.com exposes an OAuth-capable MCP server at https://better-design.com/api/mcp, authenticated either by a Better Design bearer API key or via OAuth with dynamic client registration.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Better Design MCP server",
+      "slug": "better-design-mcp-server",
+      "type": "mcp",
+      "url": "https://better-design.com/api/mcp"
+    }
+  ]
+}

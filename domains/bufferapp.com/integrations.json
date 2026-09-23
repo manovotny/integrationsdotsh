@@ -1,8 +1,8 @@
 {
-  "description": "Buffer is a social media management platform for creating, scheduling, and analyzing posts across multiple social channels. It lets users and teams manage organizations, channels, posts, and ideas from one service.",
-  "discoveredAt": "2026-07-03T15:18:46.278Z",
+  "description": "Buffer is a social media publishing platform that lets people and teams schedule posts, manage content ideas, and coordinate publishing across connected social channels. Its API and related tools operate on a user's Buffer account and organizations.",
+  "discoveredAt": "2026-08-26T15:10:06.521Z",
   "domain": "bufferapp.com",
-  "summary": "Buffer exposes a GraphQL API at `https://api.buffer.com`, a deprecated legacy REST API at `https://api.bufferapp.com/1/`, and a `buffer` CLI distributed as `@bufferapp/cli`; authentication is via personal API key for GraphQL/CLI or OAuth app credentials for app-style access and the legacy REST API.",
+  "summary": "Buffer exposes a GraphQL API at api.buffer.com, an MCP server at mcp.buffer.com, a terminal CLI (`buffer`), and a legacy REST API at api.bufferapp.com; auth is via Buffer-issued API keys and/or OAuth depending on the surface.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -14,10 +14,10 @@
     },
     {
       "authStatus": "required",
-      "name": "Buffer Legacy REST API",
-      "slug": "buffer-legacy-rest-api",
-      "type": "http",
-      "url": "https://api.bufferapp.com/1/"
+      "name": "Buffer MCP server",
+      "slug": "buffer-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.buffer.com/mcp"
     },
     {
       "authStatus": "required",
@@ -27,11 +27,18 @@
         {
           "identifier": "@bufferapp/cli",
           "registryType": "npm",
-          "runtimeHint": "node"
+          "runtimeHint": "Node.js 18+"
         }
       ],
       "slug": "buffer-cli",
       "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Buffer legacy REST API",
+      "slug": "buffer-legacy-rest-api",
+      "type": "http",
+      "url": "https://api.bufferapp.com/1/"
     }
   ]
 }

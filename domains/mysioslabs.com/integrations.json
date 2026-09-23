@@ -1,0 +1,22 @@
+{
+  "description": "Mysios Labs is a consultancy site whose owner also publishes nazca, a thin CLI for generating AI images, video, speech, and 3D assets. Nazca routes prompts to supported model providers such as Vertex AI, fal.ai, ModelArk, OpenAI, Atlas Cloud, and Worder.",
+  "discoveredAt": "2026-07-30T14:36:59.596Z",
+  "domain": "mysioslabs.com",
+  "summary": "mysioslabs.com declares and documents one developer integration surface: the `nazca` CLI, installed from GitHub, with auth via Google Cloud ADC for Vertex by default plus optional fal.ai, ByteDance ModelArk, OpenAI, Atlas Cloud, and Worder keys.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "command": "nazca",
+      "name": "nazca CLI",
+      "packages": [
+        {
+          "identifier": "https://github.com/Mysios-Labs-inc/nazca.git",
+          "registryType": "git",
+          "runtimeHint": "uv tool install \"git+https://github.com/Mysios-Labs-inc/nazca.git@v0.1.0\" or pipx install from Git"
+        }
+      ],
+      "slug": "nazca-cli",
+      "type": "cli"
+    }
+  ]
+}

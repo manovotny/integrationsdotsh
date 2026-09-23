@@ -1,0 +1,15 @@
+{
+  "description": "EstrelaPay is a Brazilian PIX payment processing service. Its site advertises instant payment collection via API and dashboard, with webhook notifications for payment events.",
+  "discoveredAt": "2026-07-04T14:17:51.203Z",
+  "domain": "estrelapay.online",
+  "summary": "estrelapay.online exposes one documented HTTP API surface: the EstrelaPay API v2 for PIX payments and balance/status operations, authenticated with merchant client credentials.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "EstrelaPay API v2",
+      "slug": "estrelapay-api-v2",
+      "type": "http",
+      "url": "https://estrelapay.online/api/v2/"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "description": "OpenPanel is a web hosting control panel built around isolated per-user service containers for websites, databases, mail, and related hosting functions. It includes an end-user panel (OpenPanel) and an administrator panel (OpenAdmin) for managing hosting accounts and server settings.",
+  "discoveredAt": "2026-07-29T09:19:10.905Z",
+  "domain": "openpanel.com",
+  "summary": "OpenPanel exposes two tenant-hosted REST APIs (OpenPanel and OpenAdmin), a tenant-hosted MCP server for OpenPanel accounts, and an `opencli` administrator CLI.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "OpenPanel REST API",
+      "slug": "openpanel-rest-api",
+      "type": "http",
+      "url": "https://panel.example.com/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "OpenPanel MCP server",
+      "slug": "openpanel-mcp-server",
+      "type": "mcp",
+      "url": "https://panel.example.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "OpenAdmin REST API",
+      "slug": "openadmin-rest-api",
+      "type": "http"
+    },
+    {
+      "authStatus": "none",
+      "command": "opencli",
+      "name": "opencli",
+      "slug": "opencli",
+      "type": "cli"
+    }
+  ]
+}

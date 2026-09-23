@@ -1,0 +1,36 @@
+{
+  "description": "Honcho is a memory and reasoning system for stateful AI agents, with managed APIs and tools for storing conversations, querying representations, and adding persistent memory to agent workflows.",
+  "discoveredAt": "2026-07-03T23:27:42.534Z",
+  "domain": "honcho.dev",
+  "summary": "honcho.dev exposes a bearer-authenticated REST API at `https://api.honcho.dev`, a hosted MCP server at `https://mcp.honcho.dev`, and a `honcho` CLI installed from PyPI; all use a Honcho API key.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Honcho API",
+      "slug": "honcho-api",
+      "type": "http",
+      "url": "https://api.honcho.dev"
+    },
+    {
+      "authStatus": "required",
+      "name": "Honcho MCP server",
+      "slug": "honcho-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.honcho.dev"
+    },
+    {
+      "authStatus": "required",
+      "command": "honcho",
+      "name": "Honcho CLI",
+      "packages": [
+        {
+          "identifier": "honcho-cli",
+          "registryType": "pypi",
+          "runtimeHint": "uv tool install honcho-cli"
+        }
+      ],
+      "slug": "honcho-cli",
+      "type": "cli"
+    }
+  ]
+}

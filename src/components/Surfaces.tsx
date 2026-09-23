@@ -122,15 +122,18 @@ function EntryRow({ e }: { e: SurfaceEntry }) {
 function DiscoveryMeta({ discoveredAt, hasSurfaces, onRegenerate }: { discoveredAt?: string; hasSurfaces: boolean; onRegenerate: () => void }) {
   const freshness = discoveryFreshness(discoveredAt, hasSurfaces);
   // Unknown-age data (timestampless baselines) shows no age claim at all —
-  // just the regenerate affordance.
+  // just the refresh affordance. Refresh is always available: even a fresh or
+  // zero-surface result may need remapping after the provider changes its APIs.
   return (
     <div className="disc-freshness" title={freshness.title}>
       {freshness.known && <span>discovered {freshness.label}</span>}
-      {freshness.shouldRegenerate && (
-        <button className="conv-action disc-regenerate" onClick={onRegenerate}>
-          regenerate
-        </button>
-      )}
+      <button
+        className="conv-action disc-regenerate"
+        onClick={onRegenerate}
+        aria-label={freshness.shouldRegenerate ? "Refresh stale integration surfaces" : "Refresh integration surfaces"}
+      >
+        refresh surfaces
+      </button>
     </div>
   );
 }
@@ -155,6 +158,12 @@ export default function Surfaces({
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">(initialData ? "done" : "idle");
   const [data, setData] = useState<DiscoverData | null>(initialData);
   const [progress, setProgress] = useState("");
+  // Why the run failed, when the worker told us. A refused host (a platform
+  // deployment, a denylisted domain) has to explain itself instead of reading
+  // as an outage.
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  // A refusal is a verdict, not a transient failure: retrying it cannot help.
+  const [refused, setRefused] = useState(false);
   const [liveCreds, setLiveCreds] = useState<Record<string, Credential>>({});
   const [liveSurfaces, setLiveSurfaces] = useState<Surface[]>([]);
 
@@ -180,21 +189,38 @@ export default function Surfaces({
   }, [domain, initialData]);
 
   async function run(opts?: { regenerate?: boolean }) {
-    const posthog = (window as { posthog?: { capture: (e: string, p?: Record<string, unknown>) => void } }).posthog;
+    const posthog = (window as { posthog?: { capture?: (e: string, p?: Record<string, unknown>) => void } }).posthog;
     if (opts?.regenerate) {
-      posthog?.capture("regenerate_clicked", { domain });
+      posthog?.capture?.("regenerate_clicked", { domain });
     } else {
-      posthog?.capture("map_surface_clicked", { domain });
+      posthog?.capture?.("map_surface_clicked", { domain });
     }
     setState("loading");
     setProgress("Starting…");
+    setErrorMessage(null);
+    setRefused(false);
     setLiveCreds({});
     setLiveSurfaces([]);
     const surfaceKeys = new Set<string>();
     const started = Date.now();
     try {
-      const res = await fetch(`/api/${encodeURIComponent(domain)}/discover/stream`);
-      if (!res.ok || !res.body) throw new Error();
+      // Regenerate must actually re-run: `force=1` makes the worker skip its
+      // edge-cached result (still rate-limited per IP like any uncached run).
+      const res = await fetch(`/api/${encodeURIComponent(domain)}/discover/stream${opts?.regenerate ? "?force=1" : ""}`);
+      if (!res.ok) {
+        // The worker refuses some hosts outright with a JSON reason; show it
+        // rather than the generic "couldn't reach the detector".
+        const reason = await res
+          .json()
+          .then((body) => (body as { error?: string }).error)
+          .catch(() => undefined);
+        setErrorMessage(reason ?? null);
+        setRefused(res.status >= 400 && res.status < 500 && res.status !== 429);
+        setState("error");
+        posthog?.capture?.("discovery_stream_error", { domain, status: res.status });
+        return;
+      }
+      if (!res.body) throw new Error();
       const reader = res.body.getReader();
       const dec = new TextDecoder();
       let buf = "";
@@ -243,22 +269,23 @@ export default function Surfaces({
             setData(parsed as unknown as DiscoverData);
             setState("done");
             finished = true;
-            posthog?.capture("discovery_stream_done", { domain, surfaces: surfaceCount, duration_ms: Date.now() - started });
+            posthog?.capture?.("discovery_stream_done", { domain, surfaces: surfaceCount, duration_ms: Date.now() - started });
           } else if (ev === "error") {
+            setErrorMessage(typeof parsed.message === "string" ? parsed.message : null);
             setState("error");
             finished = true;
-            posthog?.capture("discovery_stream_error", { domain });
+            posthog?.capture?.("discovery_stream_error", { domain });
           }
         }
       }
       reader.cancel().catch(() => {});
       if (!finished) {
         setState("error");
-        posthog?.capture("discovery_stream_error", { domain });
+        posthog?.capture?.("discovery_stream_error", { domain });
       }
     } catch {
       setState("error");
-      posthog?.capture("discovery_stream_error", { domain });
+      posthog?.capture?.("discovery_stream_error", { domain });
     }
   }
 
@@ -301,14 +328,16 @@ export default function Surfaces({
       )}
       {state === "error" && (
         <div className="auth-loading">
-          <span className="auth-loading-text">Couldn't reach the detector.</span>
-          <button className="auth-btn" onClick={() => void run()}>
-            Retry
-          </button>
+          <span className="auth-loading-text">{errorMessage ?? "Couldn't reach the detector."}</span>
+          {!refused && (
+            <button className="auth-btn" onClick={() => void run()}>
+              Retry
+            </button>
+          )}
         </div>
       )}
       {state === "done" && data?.summary && <p className="disc-summary">{data.summary}</p>}
-      {state === "done" && hasSurfaceData && <DiscoveryMeta discoveredAt={data?.discoveredAt} hasSurfaces={hasSurfaceData} onRegenerate={regenerate} />}
+      {state === "done" && <DiscoveryMeta discoveredAt={data?.discoveredAt} hasSurfaces={hasSurfaceData} onRegenerate={regenerate} />}
 
       {built.map((sec) => (
         <section className="disc-sec" id={sec.kind} key={sec.kind}>

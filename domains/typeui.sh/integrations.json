@@ -1,0 +1,29 @@
+{
+  "description": "TypeUI provides design systems, UI prompts, and layout guidance for AI coding tools so they can generate more consistent user interfaces. It also offers a public catalog of design skills and prompts, with hosted workspace features for publishing and serving them to MCP-compatible tools.",
+  "discoveredAt": "2026-07-04T10:19:46.699Z",
+  "domain": "typeui.sh",
+  "summary": "TypeUI exposes a hosted MCP server at `https://mcp.typeui.sh` authenticated with a TypeUI account, plus an open-source `typeui.sh` npm CLI with no authentication.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "TypeUI MCP Server",
+      "slug": "typeui-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.typeui.sh"
+    },
+    {
+      "authStatus": "none",
+      "command": "typeui.sh",
+      "name": "TypeUI CLI",
+      "packages": [
+        {
+          "identifier": "typeui.sh",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "typeui-cli",
+      "type": "cli"
+    }
+  ]
+}

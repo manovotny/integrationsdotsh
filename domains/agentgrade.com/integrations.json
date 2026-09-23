@@ -1,0 +1,23 @@
+{
+  "description": "AgentGrade scans websites for AI-agent readiness, checking discovery files, payment protocols, MCP/OpenAPI support, identity signals, and related infrastructure. It returns scored reports, badges, history, and remediation guidance for improving a site's agent accessibility.",
+  "discoveredAt": "2026-07-05T23:55:13.262Z",
+  "domain": "agentgrade.com",
+  "summary": "AgentGrade exposes a public HTTP API documented by an OpenAPI spec at `https://agentgrade.com/openapi.json` and a public MCP server at `https://agentgrade.com/mcp`; no CLI or GraphQL surface was found, and current docs state the published endpoints are free with no authentication.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "AgentGrade MCP server",
+      "slug": "agentgrade-mcp-server",
+      "type": "mcp",
+      "url": "https://agentgrade.com/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "AgentGrade HTTP API",
+      "slug": "agentgrade-http-api",
+      "spec": "https://agentgrade.com/openapi.json",
+      "type": "http",
+      "url": "https://agentgrade.com"
+    }
+  ]
+}

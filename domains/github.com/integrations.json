@@ -1,14 +1,21 @@
 {
-  "description": "GitHub is a source code hosting and collaboration platform for Git repositories, issues, pull requests, automation, and related developer workflows. It also provides APIs and tooling for integrating repository, organization, and application operations.",
-  "discoveredAt": "2026-07-03T13:57:01.842Z",
+  "description": "GitHub is a software development platform for hosting repositories, collaboration workflows, automation, and related developer services. It provides source control, issues, pull requests, CI/CD, package and security features, and AI-assisted tooling through GitHub Copilot.",
+  "discoveredAt": "2026-09-09T05:24:08.272Z",
   "domain": "github.com",
-  "summary": "GitHub exposes a versioned REST API at api.github.com, a GraphQL API at api.github.com/graphql, and the `gh` CLI; authentication is primarily via personal access tokens, GitHub App tokens/JWTs, OAuth app tokens, or `gh auth login`.",
+  "summary": "GitHub exposes public docs-content HTTP APIs on `docs.github.com/api`, a REST API and GraphQL API on `api.github.com`, a CLI (`gh`), and a hosted MCP endpoint at `api.githubcopilot.com/mcp/`.",
   "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "GitHub REST API",
+      "slug": "github-rest-api",
+      "type": "http",
+      "url": "https://api.github.com"
+    },
     {
       "authStatus": "required",
       "name": "GitHub GraphQL API",
       "slug": "github-graphql-api",
-      "spec": "https://docs.github.com/public/fpt/schema.docs.graphql",
+      "spec": "introspection",
       "type": "graphql",
       "url": "https://api.github.com/graphql"
     },
@@ -20,14 +27,6 @@
         {
           "identifier": "gh",
           "registryType": "homebrew"
-        },
-        {
-          "identifier": "gh",
-          "registryType": "apt"
-        },
-        {
-          "identifier": "gh",
-          "registryType": "yum"
         }
       ],
       "slug": "github-cli",
@@ -35,10 +34,17 @@
     },
     {
       "authStatus": "required",
-      "name": "GitHub REST API",
-      "slug": "github-rest-api",
+      "name": "GitHub MCP server",
+      "slug": "github-mcp-server",
+      "type": "mcp",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    {
+      "authStatus": "none",
+      "name": "GitHub Docs content APIs",
+      "slug": "github-docs-content-apis",
       "type": "http",
-      "url": "https://api.github.com"
+      "url": "https://docs.github.com/api"
     }
   ]
 }

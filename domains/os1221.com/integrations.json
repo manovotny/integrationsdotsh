@@ -1,0 +1,23 @@
+{
+  "description": "os1221.com hosts FATE, a live 2026 FIFA World Cup probability and fantasy draft board that combines match results with simulation and rating data. It publishes read-only data endpoints for standings, market checks, ratings, and related share artifacts.",
+  "discoveredAt": "2026-07-04T16:06:01.925Z",
+  "domain": "os1221.com",
+  "summary": "os1221.com exposes a public HTTP API for FATE World Cup 2026 data and an MCP-discoverable/WebMCP read-only agent surface; no GraphQL API or CLI was found.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "FATE World Cup 2026 HTTP API",
+      "slug": "fate-world-cup-2026-http-api",
+      "spec": "https://os1221.com/openapi.json",
+      "type": "http",
+      "url": "https://os1221.com"
+    },
+    {
+      "authStatus": "none",
+      "name": "FATE MCP server",
+      "slug": "fate-mcp-server",
+      "type": "mcp",
+      "url": "https://os1221.com"
+    }
+  ]
+}

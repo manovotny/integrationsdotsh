@@ -1,0 +1,22 @@
+{
+  "description": "Jotty is a self-hosted, file-based notes and checklist application. It stores data in local files and supports local accounts as well as optional OIDC single sign-on.",
+  "discoveredAt": "2026-07-04T05:54:13.025Z",
+  "domain": "jotty.page",
+  "summary": "jotty.page documents a self-hosted REST API under each Jotty instance’s `/api`, authenticated by a per-user `x-api-key`, plus a public `/api/health` endpoint.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Jotty REST API",
+      "slug": "jotty-rest-api",
+      "type": "http",
+      "url": "https://<your-jotty-domain>/api"
+    },
+    {
+      "authStatus": "none",
+      "name": "Jotty health endpoint",
+      "slug": "jotty-health-endpoint",
+      "type": "http",
+      "url": "https://<your-jotty-domain>/api/health"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "description": "Re:port Flow is a cloud service for creating document templates and generating PDFs such as invoices, reports, and application forms. It provides a visual template editor, API-based PDF generation, and AI-client integration via MCP.",
+  "discoveredAt": "2026-07-06T16:38:33.968Z",
+  "domain": "lp.re-port-flow.com",
+  "summary": "Re:port Flow exposes a REST API at `api.re-port-flow.com/v1` for PDF/document generation plus an MCP server at `mcp.re-port-flow.com/mcp`; the API supports `appkey` header auth or OAuth 2.0 Bearer tokens, and the MCP server uses OAuth 2.0 with dynamic client registration. It also ships an npm-distributed local MCP executable (`reportflow-mcp`) run via `npx`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Report Flow REST API",
+      "slug": "report-flow-rest-api",
+      "type": "http",
+      "url": "https://api.re-port-flow.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Report Flow MCP",
+      "slug": "report-flow-mcp",
+      "type": "mcp",
+      "url": "https://mcp.re-port-flow.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "npx",
+      "name": "reportflow-mcp",
+      "packages": [
+        {
+          "identifier": "reportflow-mcp",
+          "registryType": "npm",
+          "runtimeHint": "Node.js 18+"
+        }
+      ],
+      "slug": "reportflow-mcp",
+      "type": "cli"
+    }
+  ]
+}

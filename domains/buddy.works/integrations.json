@@ -1,0 +1,44 @@
+{
+  "description": "Buddy provides infrastructure for software development workflows, including sandboxes, hosting, repositories, domains, package artifacts, and CI/CD-style automation. It offers these capabilities through a web platform plus programmatic interfaces for developers and AI agents.",
+  "discoveredAt": "2026-07-23T08:36:06.074Z",
+  "domain": "buddy.works",
+  "summary": "Buddy exposes three developer integration surfaces on buddy.works subdomains: a REST API at api.buddy.works, an OAuth-protected remote MCP server at mcp.buddy.works/mcp, and the bdy CLI; the API and MCP accept Buddy bearer tokens, and MCP also supports self-onboarding OAuth discovery/DCR.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Buddy MCP server",
+      "slug": "buddy-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.buddy.works/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "bdy",
+      "name": "bdy CLI",
+      "packages": [
+        {
+          "identifier": "bdy",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "bdy-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Buddy REST API",
+      "slug": "buddy-rest-api-2",
+      "type": "http",
+      "url": "https://api.buddy.works"
+    },
+    {
+      "authStatus": "required",
+      "name": "Buddy REST API",
+      "slug": "buddy-rest-api-2-2",
+      "spec": "https://buddy.works/openapi.json",
+      "type": "http",
+      "url": "https://api.buddy.works"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "description": "Guru is a knowledge management platform for organizing company knowledge, searching across connected sources, and powering AI-assisted answers and workflows. It lets teams manage cards, folders, profiles, tags, analytics, and related knowledge operations.",
-  "discoveredAt": "2026-07-02T21:42:56.345Z",
+  "description": "Guru is a knowledge management platform for teams to organize, search, and govern internal knowledge, cards, pages, collections, and connected sources. It also offers AI-oriented access to that knowledge through APIs and an MCP server.",
+  "discoveredAt": "2026-07-22T01:39:38.671Z",
   "domain": "getguru.com",
-  "summary": "Guru exposes a REST API at https://api.getguru.com/api/v1/, an MCP server at https://mcp.api.getguru.com/mcp, and an official npm CLI package (@getguru/cli).",
+  "summary": "Guru exposes a documented REST API at `https://api.getguru.com/api/v1/` and a streamable-HTTP MCP server at `https://mcp.api.getguru.com/mcp`; both require authentication, primarily via Guru-issued API credentials, with the MCP server also documented as supporting OAuth 2.0.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -17,19 +17,6 @@
       "slug": "guru-mcp-server",
       "type": "mcp",
       "url": "https://mcp.api.getguru.com/mcp"
-    },
-    {
-      "authStatus": "required",
-      "name": "Guru CLI",
-      "packages": [
-        {
-          "identifier": "@getguru/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
-        }
-      ],
-      "slug": "guru-cli",
-      "type": "cli"
     }
   ]
 }

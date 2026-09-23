@@ -1,0 +1,22 @@
+{
+  "description": "HTML/CSS to Image is a service that converts HTML, CSS, templates, and public URLs into rendered images and PDFs. It is used for generated social cards, screenshots, certificates, reports, and similar visual assets.",
+  "discoveredAt": "2026-08-31T11:35:24.047Z",
+  "domain": "htmlcsstoimage.com",
+  "summary": "htmlcsstoimage.com exposes two developer integration surfaces: an authenticated REST API at `https://hcti.io` using Basic auth with API ID/API Key, and an OAuth-protected MCP server at `https://mcp.hcti.io` with Dynamic Client Registration for self-onboarding clients.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "HTML/CSS to Image MCP server",
+      "slug": "html-css-to-image-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.hcti.io"
+    },
+    {
+      "authStatus": "required",
+      "name": "HCTI REST API",
+      "slug": "hcti-rest-api",
+      "type": "http",
+      "url": "https://hcti.io"
+    }
+  ]
+}

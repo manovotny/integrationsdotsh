@@ -1,36 +1,42 @@
 {
-  "description": "Polar is a merchant-of-record and billing platform for selling software, subscriptions, and digital products. It handles checkout, subscriptions, tax compliance, customer portal functions, and automated benefit delivery such as license keys and downloads.",
-  "discoveredAt": "2026-07-02T20:45:42.144Z",
+  "description": "Polar is a payments, billing, and merchant-of-record platform for selling software, subscriptions, and digital products. It provides hosted billing primitives, customer management, checkout flows, and related commerce infrastructure.",
+  "discoveredAt": "2026-07-05T00:30:06.690Z",
   "domain": "polar.sh",
-  "summary": "Polar exposes a REST HTTP API with core and customer-portal surfaces plus remote MCP servers for production and sandbox; authentication is via organization bearer tokens, customer session bearer tokens, or OAuth 2.0/OpenID Connect access tokens depending on surface.",
+  "summary": "Polar exposes a REST HTTP API at api.polar.sh/v1 (covering both core and customer-portal operations), two remote MCP endpoints at mcp.polar.sh for production and sandbox, and a Polar CLI for webhook-local-development workflows.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Polar API",
+      "name": "Polar HTTP API",
       "slug": "polar-api",
       "type": "http",
       "url": "https://api.polar.sh/v1"
     },
     {
       "authStatus": "required",
-      "name": "Polar Customer Portal API",
-      "slug": "polar-customer-portal-api",
-      "type": "http",
-      "url": "https://api.polar.sh/v1/customer-portal"
-    },
-    {
-      "authStatus": "required",
-      "name": "Polar MCP Server (production)",
+      "name": "Polar MCP server (production)",
       "slug": "polar-mcp-server-production",
       "type": "mcp",
       "url": "https://mcp.polar.sh/mcp/polar-mcp"
     },
     {
       "authStatus": "required",
-      "name": "Polar MCP Server (sandbox)",
+      "name": "Polar MCP server (sandbox)",
       "slug": "polar-mcp-server-sandbox",
       "type": "mcp",
       "url": "https://mcp.polar.sh/mcp/polar-sandbox"
+    },
+    {
+      "authStatus": "unknown",
+      "command": "polar",
+      "name": "Polar CLI",
+      "packages": [
+        {
+          "identifier": "https://polar.sh/install.sh",
+          "registryType": "other"
+        }
+      ],
+      "slug": "polar-cli",
+      "type": "cli"
     }
   ]
 }

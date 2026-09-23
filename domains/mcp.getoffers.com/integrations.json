@@ -1,0 +1,7 @@
+{
+  "description": "GetOffers is a B2B corporate travel and booking platform for flights, hotels, transfers, car rentals, yachts, and events, with an AI assistant for search and booking. Its public website also mentions internal supplier integrations and a future API offering.",
+  "discoveredAt": "2026-07-07T10:29:51.198Z",
+  "domain": "mcp.getoffers.com",
+  "summary": "No documented public integration surface was found for mcp.getoffers.com; the only related material on getoffers.com is a forthcoming API landing page without an endpoint, spec, auth details, or a working MCP server URL.",
+  "surfaces": []
+}

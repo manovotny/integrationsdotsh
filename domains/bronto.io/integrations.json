@@ -1,0 +1,22 @@
+{
+  "description": "Bronto is an observability platform for logs, traces, and metrics with long-retention search and AI-assisted investigation features. It stores telemetry data, supports ingestion from common collectors and cloud sources, and offers MCP access so AI agents can query that telemetry directly.",
+  "discoveredAt": "2026-07-06T10:28:31.976Z",
+  "domain": "bronto.io",
+  "summary": "Bronto exposes a regional HTTP API authenticated with Bronto API keys, plus a hosted MCP server on regional `mcp.*.bronto.io` endpoints that supports browser-based Bronto OAuth and documented API-key access.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Bronto API",
+      "slug": "bronto-api",
+      "type": "http",
+      "url": "https://api.{region}.bronto.io"
+    },
+    {
+      "authStatus": "required",
+      "name": "Bronto Hosted MCP Server",
+      "slug": "bronto-hosted-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.{region}.bronto.io/mcp"
+    }
+  ]
+}

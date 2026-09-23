@@ -1,0 +1,15 @@
+{
+  "description": "LingQ is a language-learning platform for reading, listening, and studying lessons in multiple languages. It lets users import or access content and track vocabulary and lesson progress.",
+  "discoveredAt": "2026-07-19T03:29:57.798Z",
+  "domain": "lingq.com",
+  "summary": "LingQ exposes a documented legacy/REST HTTP API under `https://www.lingq.com/api/`, authenticated with a LingQ-issued API token sent in the `Authorization` header; public docs exist for legacy/v2, while forum posts indicate newer v3 endpoints are undocumented.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "LingQ HTTP API",
+      "slug": "lingq-http-api",
+      "type": "http",
+      "url": "https://www.lingq.com/api/"
+    }
+  ]
+}

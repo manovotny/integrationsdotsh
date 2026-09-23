@@ -1,0 +1,36 @@
+{
+  "description": "Sprites provides persistent Linux environments (“Sprites”) that can be created, managed, and used to run commands, services, filesystems, checkpoints, and network policies. It is operated by Fly.io and supports both direct API access and remote MCP-based agent control.",
+  "discoveredAt": "2026-08-30T20:21:01.387Z",
+  "domain": "sprites.dev",
+  "summary": "Sprites exposes a bearer-token REST API at `api.sprites.dev`, an OAuth-protected hosted MCP server at `https://sprites.dev/mcp`, and a `sprite` CLI authenticated via browser login or token/env.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Sprites REST API",
+      "slug": "sprites-rest-api",
+      "type": "http",
+      "url": "https://api.sprites.dev/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Sprites MCP server",
+      "slug": "sprites-mcp-server",
+      "type": "mcp",
+      "url": "https://sprites.dev/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "sprite",
+      "name": "Sprites CLI",
+      "packages": [
+        {
+          "identifier": "https://sprites.dev/install.sh",
+          "registryType": "generic",
+          "runtimeHint": "shell install script"
+        }
+      ],
+      "slug": "sprites-cli",
+      "type": "cli"
+    }
+  ]
+}

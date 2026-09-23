@@ -1,0 +1,37 @@
+{
+  "description": "Schedulin is a social media scheduling platform for creating, scheduling, publishing, and analyzing posts across multiple social networks. It provides tools for managing posts, media, tags, and connected social accounts.",
+  "discoveredAt": "2026-07-05T20:07:18.625Z",
+  "domain": "developers.schedulin.app",
+  "summary": "Schedulin exposes a REST API at `api.schedulin.app`, an OAuth-protected MCP server at `mcp.schedulin.app/mcp`, and an npm-distributed `schedulin` CLI; the REST API accepts either workspace API keys or OAuth bearer tokens, the MCP server supports self-onboarding OAuth and is also owner-declared to accept API keys, and the CLI uses a workspace API key.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Schedulin MCP server",
+      "slug": "schedulin-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.schedulin.app/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "schedulin",
+      "name": "Schedulin CLI",
+      "packages": [
+        {
+          "identifier": "@schedulin/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "schedulin-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Schedulin REST API",
+      "slug": "schedulin-rest-api",
+      "spec": "https://developers.schedulin.app/openapi.json",
+      "type": "http",
+      "url": "https://api.schedulin.app"
+    }
+  ]
+}

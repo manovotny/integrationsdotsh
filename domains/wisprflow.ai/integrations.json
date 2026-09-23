@@ -1,0 +1,14 @@
+{
+  "description": "Wispr Flow is a voice-to-text dictation and meeting-notes product with native apps for macOS, Windows, iOS, and Android. It lets users dictate into any app and, for Notetaker users, search meeting notes and related data from AI tools.",
+  "discoveredAt": "2026-08-27T20:31:56.104Z",
+  "domain": "wisprflow.ai",
+  "summary": "wisprflow.ai exposes a remote MCP server for Wispr Flow Notetaker data, authorized by signing in with a Wispr Flow account; no public HTTP/GraphQL API or standalone CLI is currently documented, and Wispr’s older API is described as sunsetted.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Wispr Flow MCP server",
+      "slug": "wispr-flow-mcp-server",
+      "type": "mcp"
+    }
+  ]
+}

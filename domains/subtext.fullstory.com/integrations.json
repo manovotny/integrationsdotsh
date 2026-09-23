@@ -1,0 +1,29 @@
+{
+  "description": "Subtext is Fullstory’s standalone product for capturing production web sessions and making them available to AI coding agents for session review and debugging. It records user sessions in a web app and lets agents inspect those sessions, plus related privacy and verification workflows, through hosted tooling.",
+  "discoveredAt": "2026-08-11T13:21:27.676Z",
+  "domain": "subtext.fullstory.com",
+  "summary": "Subtext exposes two developer integration surfaces for this domain’s product: a hosted OAuth-protected MCP server at `https://api.fullstory.com/mcp/subtext` (also accepting API-key bearer auth) and an npm-distributed setup wizard CLI `npx @subtextdev/subtext-wizard` that can authenticate interactively via OAuth or with `SUBTEXT_API_KEY`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Subtext MCP server",
+      "slug": "subtext-mcp-server",
+      "type": "mcp",
+      "url": "https://api.fullstory.com/mcp/subtext"
+    },
+    {
+      "authStatus": "required",
+      "command": "npx @subtextdev/subtext-wizard",
+      "name": "Subtext setup wizard",
+      "packages": [
+        {
+          "identifier": "@subtextdev/subtext-wizard",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "subtext-setup-wizard",
+      "type": "cli"
+    }
+  ]
+}

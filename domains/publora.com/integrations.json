@@ -1,0 +1,22 @@
+{
+  "description": "Publora is a social media management platform for scheduling and managing posts across multiple social networks. It also offers an MCP server so AI assistants can operate Publora tools in natural language.",
+  "discoveredAt": "2026-07-08T08:02:15.387Z",
+  "domain": "publora.com",
+  "summary": "Publora exposes a server-to-server REST API at `api.publora.com/api/v1` and a remote MCP server at `mcp.publora.com`; both use the same user-generated Publora API key, with optional managed-user scoping on workspace REST calls.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Publora REST API",
+      "slug": "publora-rest-api",
+      "type": "http",
+      "url": "https://api.publora.com/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Publora MCP server",
+      "slug": "publora-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.publora.com"
+    }
+  ]
+}

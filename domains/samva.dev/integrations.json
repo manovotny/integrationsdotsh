@@ -1,0 +1,51 @@
+{
+  "description": "Samva is an email platform for developers and product teams, covering transactional email sending, templates, scheduling, campaigns, inbound receiving, and signed webhooks. It also provides hosted MCP access so AI agents can query public documentation and, with credentials, use organization-scoped email tools.",
+  "discoveredAt": "2026-09-16T13:19:03.755Z",
+  "domain": "samva.dev",
+  "summary": "Samva exposes a versioned HTTP email API at `https://api.samva.dev/v1`, a hosted MCP server at `https://mcp.samva.dev` plus a public unauthenticated MCP path at `https://samva.dev/mcp`, and a `samva` CLI; auth is via Samva API keys, MCP OAuth discovery, or CLI device-login OAuth depending on surface.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Samva MCP",
+      "slug": "mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.samva.dev"
+    },
+    {
+      "authStatus": "none",
+      "name": "Samva MCP (public path)",
+      "slug": "samva-mcp-public",
+      "type": "mcp",
+      "url": "https://samva.dev/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "samva",
+      "name": "Samva CLI",
+      "packages": [
+        {
+          "identifier": "@samva/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "samva-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Samva API",
+      "slug": "samva-rest-api-2-2-2-2-2",
+      "type": "http",
+      "url": "https://api.samva.dev/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Samva API",
+      "slug": "samva-rest-api-2-2-2-2-2-2",
+      "spec": "https://api.samva.dev/v1/openapi.json",
+      "type": "http",
+      "url": "https://api.samva.dev/v1"
+    }
+  ]
+}

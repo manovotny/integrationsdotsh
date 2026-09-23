@@ -1,0 +1,15 @@
+{
+  "description": "Kleros Skills hosts Markdown knowledge packs for AI agents about using the Kleros decentralized justice ecosystem. The site publishes skill documents such as the top-level `SKILL.md` and per-skill files under paths like `/kleros-ipfs-upload/SKILL.md`.",
+  "discoveredAt": "2026-07-04T01:53:19.824Z",
+  "domain": "skills.kleros.io",
+  "summary": "Publicly accessible skill-document endpoints at `https://skills.kleros.io/<skill>/SKILL.md`; no same-domain REST/GraphQL/MCP/CLI integration surface beyond these static skill files was documented.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Kleros Skills skill documents",
+      "slug": "kleros-skills-skill-documents",
+      "type": "http",
+      "url": "https://skills.kleros.io/<skill>/SKILL.md"
+    }
+  ]
+}

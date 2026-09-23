@@ -1,6 +1,13 @@
 import { parse } from "tldts";
 
 const JUNK_TLDS = new Set(["local", "test", "internal", "example"]);
+/**
+ * Application-hosting platforms. A host under one of these is someone's
+ * deployment, not a service's own domain, so it must never become a catalog
+ * DOMAIN key. `isJunkDomain` is only applied to domain keys — never to a
+ * surface URL — so a vendor record for `netlify.com` keeps its endpoint on
+ * `netlify.app`.
+ */
 const JUNK_HOSTING_SUFFIXES = [
   "workers.dev",
   "awsapprunner.com",
@@ -8,6 +15,17 @@ const JUNK_HOSTING_SUFFIXES = [
   "cloudfront.net",
   "onrender.com",
   "appspot.com",
+  "vercel.app",
+  "run.app",
+  "herokuapp.com",
+  "replit.app",
+  "railway.app",
+  "now.sh",
+  "fly.dev",
+  "netlify.app",
+  "pages.dev",
+  "azurecontainerapps.io",
+  "github.io",
 ];
 
 /**
@@ -39,6 +57,26 @@ export function faviconUrl(domain: string | null | undefined): string | null {
 
 /** The registrable domain behind `faviconUrl`'s validation, for callers that
  * need the domain itself (the /logo proxy route) rather than a favicon URL. */
+/** The host to look a logo up by.
+ *
+ *  `registrableDomain` answers "what domain was registered", which is not the
+ *  same question. `googleapis.com` is a public suffix in the PSL's private
+ *  section, so it HAS no registrable domain and was rejected outright — every
+ *  Google API service therefore resolved to no logo at all. A logo lookup only
+ *  needs a plausible public hostname, so fall back to the host itself.
+ *
+ *  Still refuses what could never carry a logo: IP addresses, single-label
+ *  hosts, and anything that is not a hostname. */
+export function logoHost(input: string | null | undefined): string | null {
+  const registrable = registrableDomain(input);
+  if (registrable) return registrable;
+  const host = normalizeHost(input);
+  if (!host || !host.includes(".")) return null;
+  const info = parse(host, { allowPrivateDomains: true });
+  if (info.isIp || !(info.isIcann || info.isPrivate)) return null;
+  return host;
+}
+
 export function registrableDomain(domain: string | null | undefined): string | null {
   if (!domain) return null;
   const info = parse(domain, { allowPrivateDomains: true });
@@ -74,6 +112,21 @@ function looksGeneratedLabel(label: string): boolean {
 
 /** Domains that are implementation hosts, fixtures, or generated deployment
  * names rather than durable public service domains. */
+/** A host on an application-hosting platform or a reserved test TLD, by suffix
+ *  alone — no guessing from label shape. This is the ingestion-time rule: it
+ *  refuses discovery and sync for `*.vercel.app`-style hosts without ever
+ *  rejecting a real vendor whose name merely looks generated
+ *  (`searchads360.googleapis.com`). `isJunkDomain` adds the label heuristic
+ *  and stays the render-time filter it always was. */
+export function isPlatformHost(domain: string | null | undefined): boolean {
+  const host = normalizeHost(domain);
+  if (!host) return false;
+  const labels = host.split(".").filter(Boolean);
+  const tld = labels[labels.length - 1];
+  if (tld && JUNK_TLDS.has(tld)) return true;
+  return JUNK_HOSTING_SUFFIXES.some((suffix) => host === suffix || host.endsWith(`.${suffix}`));
+}
+
 export function isJunkDomain(domain: string | null | undefined): boolean {
   const host = normalizeHost(domain);
   if (!host) return false;

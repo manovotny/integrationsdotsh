@@ -1,0 +1,16 @@
+{
+  "description": "justhtml.sh is an HTML document hosting service that lets users and agents publish, share, edit, and discuss HTML documents at stable URLs. Documents can be private, shared via grants or view tokens, or made public.",
+  "discoveredAt": "2026-07-11T17:46:20.134Z",
+  "domain": "justhtml.sh",
+  "summary": "justhtml.sh exposes one authenticated HTTP API at `https://justhtml.sh/api/v1`, documented by OpenAPI (`https://justhtml.sh/openapi.json` and YAML alternate) and secured with a long-lived Bearer API key obtained through its email code agent-auth flow.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "justhtml.sh HTTP API",
+      "slug": "justhtml-sh-http-api",
+      "spec": "https://justhtml.sh/openapi.json",
+      "type": "http",
+      "url": "https://justhtml.sh/api/v1"
+    }
+  ]
+}

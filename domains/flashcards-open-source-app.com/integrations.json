@@ -1,0 +1,22 @@
+{
+  "description": "Flashcards is an open-source spaced-repetition flashcards app with web, iOS, and Android clients plus a self-hosted deployment path. It stores study data in workspaces and supports AI-agent access for reading and modifying cards, decks, media, and package data.",
+  "discoveredAt": "2026-07-06T15:47:47.312Z",
+  "domain": "flashcards-open-source-app.com",
+  "summary": "flashcards-open-source-app.com exposes two developer surfaces on its subdomains: a REST external AI-agent API on `api.flashcards-open-source-app.com` and a remote MCP server on `mcp.flashcards-open-source-app.com`; the REST API uses a long-lived agent API key from email OTP bootstrap, while the MCP server supports either OAuth 2.1 with DCR/PKCE or the same key as a Bearer token. It also publishes unauthenticated public snapshot/catalog read endpoints under the same API host.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Flashcards External AI-Agent API",
+      "slug": "flashcards-external-ai-agent-api",
+      "type": "http",
+      "url": "https://api.flashcards-open-source-app.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Flashcards MCP Server",
+      "slug": "flashcards-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.flashcards-open-source-app.com/mcp"
+    }
+  ]
+}

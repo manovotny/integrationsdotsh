@@ -1,0 +1,29 @@
+{
+  "description": "Trustpilot is an online review platform for businesses and consumers. Its products include business review-management APIs and a Data Solutions product for accessing business profiles and review data.",
+  "discoveredAt": "2026-07-10T16:16:13.399Z",
+  "domain": "trustpilot.com",
+  "summary": "Trustpilot exposes three documented REST API surfaces on trustpilot.com-owned hosts: the core `api.trustpilot.com/v1` APIs, a separate invitations API on `invitations-api.trustpilot.com/v1`, and the Data Solutions API on `datasolutions.trustpilot.com/v1`; authentication is via `apikey` headers for public/data products and OAuth bearer tokens for private business APIs, sometimes plus `x-business-user-id`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Trustpilot Core REST APIs",
+      "slug": "trustpilot-core-rest-apis",
+      "type": "http",
+      "url": "https://api.trustpilot.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Trustpilot Invitations REST API",
+      "slug": "trustpilot-invitations-rest-api",
+      "type": "http",
+      "url": "https://invitations-api.trustpilot.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Trustpilot Data Solutions REST API",
+      "slug": "trustpilot-data-solutions-rest-api",
+      "type": "http",
+      "url": "https://datasolutions.trustpilot.com/v1"
+    }
+  ]
+}

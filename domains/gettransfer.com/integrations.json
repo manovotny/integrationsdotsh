@@ -1,0 +1,7 @@
+{
+  "description": "GetTransfer.com is an online marketplace for booking transfers, rides, and chauffeured transportation. It connects travelers and business customers with transportation providers across many countries.",
+  "discoveredAt": "2026-07-07T10:28:55.219Z",
+  "domain": "gettransfer.com",
+  "summary": "No public developer integration surface found for gettransfer.com after checking the site and search results; the domain appears to offer consumer and partner booking flows via its web app, but no documented API, GraphQL endpoint, MCP server, or CLI for external developers.",
+  "surfaces": []
+}

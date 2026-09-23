@@ -1,0 +1,23 @@
+{
+  "description": "BeachFinder is a beach, lake, and swimming-spot discovery service that helps people compare places using mapped spot data, current planning conditions, guides, and community context. It also surfaces related activity providers and beach-planning tools through its website and app.",
+  "discoveredAt": "2026-07-17T22:18:50.606Z",
+  "domain": "getbeachfinder.com",
+  "summary": "BeachFinder publishes two public developer surfaces on getbeachfinder.com: a read-only HTTP agent API at `https://getbeachfinder.com/api/v1/agent` with OpenAPI at `https://getbeachfinder.com/openapi.json`, and a read-only remote MCP server at `https://getbeachfinder.com/mcp`; both are documented as requiring no authentication.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "BeachFinder remote MCP server",
+      "slug": "beachfinder-remote-mcp-server",
+      "type": "mcp",
+      "url": "https://getbeachfinder.com/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "BeachFinder public agent API",
+      "slug": "beachfinder-public-agent-api",
+      "spec": "https://getbeachfinder.com/openapi.json",
+      "type": "http",
+      "url": "https://getbeachfinder.com/api/v1/agent"
+    }
+  ]
+}

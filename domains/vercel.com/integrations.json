@@ -1,15 +1,15 @@
 {
-  "description": "Vercel is a cloud platform for building, deploying, and operating web applications and AI-powered workloads. It provides hosting, deployment, project management, and related developer tooling for teams and individual developers.",
-  "discoveredAt": "2026-07-03T01:31:51.826Z",
+  "description": "Vercel is a cloud platform for building, deploying, and scaling web applications and AI workloads. It provides hosted infrastructure and tooling for projects, deployments, domains, analytics, and related account resources.",
+  "discoveredAt": "2026-08-31T08:22:09.402Z",
   "domain": "vercel.com",
-  "summary": "Vercel exposes a bearer-token authenticated REST API at `https://api.vercel.com`, an OAuth-protected remote MCP server at `https://mcp.vercel.com/`, and the `vercel` CLI with interactive login and token-based non-interactive auth.",
+  "summary": "Vercel exposes a public REST API on api.vercel.com, an OAuth-protected remote MCP server at mcp.vercel.com, and the `vercel` CLI; the REST API and CLI use Vercel access tokens, while MCP uses OAuth with dynamic client registration.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Vercel MCP server",
-      "slug": "vercel-mcp-server",
+      "name": "Vercel MCP",
+      "slug": "vercel-mcp",
       "type": "mcp",
-      "url": "https://mcp.vercel.com/"
+      "url": "https://mcp.vercel.com"
     },
     {
       "authStatus": "required",
@@ -18,8 +18,7 @@
       "packages": [
         {
           "identifier": "vercel",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         }
       ],
       "slug": "vercel-cli",

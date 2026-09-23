@@ -1,8 +1,8 @@
 {
-  "description": "HighLevel is a CRM and marketing automation platform with features for contacts, conversations, calendars, payments, workflows, and marketplace apps. Its developer platform lets agencies and sub-accounts build custom integrations and AI-connected workflows against HighLevel data.",
-  "discoveredAt": "2026-07-02T23:24:55.746Z",
+  "description": "HighLevel is a CRM and sales/marketing automation platform for agencies and businesses. It combines contacts, messaging, calendars, payments, workflows, and related business operations in one system.",
+  "discoveredAt": "2026-09-05T00:34:43.247Z",
   "domain": "gohighlevel.com",
-  "summary": "HighLevel exposes a REST API at services.leadconnectorhq.com, an HTTP MCP server at services.leadconnectorhq.com/mcp/, and official Node/Python/PHP SDK packages; auth is via Private Integration Tokens or OAuth 2.0 app-based access tokens, with MCP documented for PIT auth.",
+  "summary": "GoHighLevel exposes a versioned REST API at `services.leadconnectorhq.com` plus an MCP server at `services.leadconnectorhq.com/mcp/`; both use either OAuth 2.0 bearer tokens or Private Integration Tokens.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -13,52 +13,10 @@
     },
     {
       "authStatus": "required",
-      "name": "HighLevel MCP Server",
+      "name": "LeadConnector MCP Server",
       "slug": "highlevel-mcp-server",
       "type": "mcp",
       "url": "https://services.leadconnectorhq.com/mcp/"
-    },
-    {
-      "authStatus": "required",
-      "command": "node",
-      "name": "HighLevel Node.js SDK CLI surface",
-      "packages": [
-        {
-          "identifier": "@gohighlevel/api-client",
-          "registryType": "npm",
-          "runtimeHint": "Node.js 18+"
-        }
-      ],
-      "slug": "highlevel-node-js-sdk-cli-surface",
-      "type": "cli"
-    },
-    {
-      "authStatus": "required",
-      "command": "python",
-      "name": "HighLevel Python SDK CLI surface",
-      "packages": [
-        {
-          "identifier": "gohighlevel-api-client",
-          "registryType": "pypi",
-          "runtimeHint": "Python 3.8+"
-        }
-      ],
-      "slug": "highlevel-python-sdk-cli-surface",
-      "type": "cli"
-    },
-    {
-      "authStatus": "required",
-      "command": "php",
-      "name": "HighLevel PHP SDK CLI surface",
-      "packages": [
-        {
-          "identifier": "gohighlevel/api-client",
-          "registryType": "packagist",
-          "runtimeHint": "PHP 7.4+"
-        }
-      ],
-      "slug": "highlevel-php-sdk-cli-surface",
-      "type": "cli"
     }
   ]
 }

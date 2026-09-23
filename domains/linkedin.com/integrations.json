@@ -1,14 +1,15 @@
 {
-  "description": "LinkedIn is a professional networking platform that also offers business products for marketing, learning, sales, talent, compliance, and consumer identity integrations. Its developer platform lets approved apps integrate with LinkedIn data and workflows through product-specific APIs.",
-  "discoveredAt": "2026-07-02T20:32:50.838Z",
+  "description": "LinkedIn is a professional networking platform that also offers APIs for approved partner, marketing, recruiting, learning, compliance, and consumer integrations. Its developer portal lets organizations create apps and request access to LinkedIn products and permissions.",
+  "discoveredAt": "2026-08-27T15:06:05.498Z",
   "domain": "linkedin.com",
-  "summary": "LinkedIn exposes a public HTTP API platform documented on Microsoft Learn across Consumer, Compliance, Learning, Marketing, Sales, and Talent solutions; authentication is via LinkedIn-issued OAuth 2.0 app credentials and bearer access tokens.",
+  "summary": "LinkedIn exposes a documented REST API at `https://api.linkedin.com` for consumer, marketing, sales, talent, learning, compliance, and regulatory integrations, authenticated with OAuth 2.0 via a LinkedIn developer app; no public OpenAPI/GraphQL/MCP endpoint or first-party CLI was confirmed on linkedin.com.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "LinkedIn APIs",
-      "slug": "linkedin-apis",
-      "type": "http"
+      "name": "LinkedIn REST API",
+      "slug": "linkedin-rest-api",
+      "type": "http",
+      "url": "https://api.linkedin.com"
     }
   ]
 }

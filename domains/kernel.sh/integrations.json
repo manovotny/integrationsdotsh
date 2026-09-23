@@ -1,20 +1,19 @@
 {
-  "description": "Kernel provides cloud-based browsers and related infrastructure for AI agents, including browser automation, code execution for agent apps, and tooling for observing and managing those sessions. It also offers a hosted MCP server and CLI for interacting with those capabilities.",
-  "discoveredAt": "2026-07-03T01:04:18.335Z",
+  "description": "Kernel provides cloud browser infrastructure for AI agents and automations, including isolated Chromium sessions, browser control, profiles, proxies, managed authentication, telemetry, and replays. It is designed for agent workflows that need to interact with websites rather than purpose-built APIs.",
+  "discoveredAt": "2026-09-12T17:04:11.592Z",
   "domain": "kernel.sh",
-  "summary": "Kernel exposes a bearer-authenticated HTTP API at `api.onkernel.com`, an OAuth/API-key authenticated remote MCP server at `mcp.onkernel.com/mcp`, and the `kernel` CLI installable via Homebrew or npm.",
+  "summary": "Kernel exposes a REST HTTP API at `https://api.onkernel.com`, a hosted MCP server at `https://mcp.onkernel.com/mcp`, and an official `kernel` CLI; authentication is via Kernel API keys, with OAuth also supported for the MCP server and CLI login.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Kernel API",
+      "name": "Kernel HTTP API",
       "slug": "kernel-api",
-      "spec": "https://app.stainless.com/api/spec/documented/kernel/openapi.documented.yml",
       "type": "http",
       "url": "https://api.onkernel.com"
     },
     {
       "authStatus": "required",
-      "name": "Kernel MCP Server",
+      "name": "Kernel MCP server",
       "slug": "kernel-mcp-server",
       "type": "mcp",
       "url": "https://mcp.onkernel.com/mcp"
@@ -30,8 +29,7 @@
         },
         {
           "identifier": "@onkernel/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         }
       ],
       "slug": "kernel-cli",

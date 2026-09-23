@@ -28,7 +28,38 @@ export const DOMAIN_ALIASES: Record<string, string> = {
   "fellow.app": "fellow.ai",
   "frontapp.com": "front.com",
   "getpinwheel.com": "pinwheelapi.com",
+  // GitHub's asset hosts. They serve avatars and attachments, not APIs — the
+  // crawler discovered them as domains and attributed GitHub's own surfaces to
+  // them, which is worse than useless in a picker.
+  "avatars1.githubusercontent.com": "github.com",
+  "avatars2.githubusercontent.com": "github.com",
+  "avatars3.githubusercontent.com": "github.com",
+  "avatars.githubusercontent.com": "github.com",
   "gist.githubusercontent.com": "github.com",
+  // Gmail's API host is Gmail. Left unaliased it became a second Gmail in the
+  // catalog, carrying a duplicate API surface and a fabricated MCP endpoint
+  // (https://gmail.googleapis.com/mcp/ 404s).
+  "gmail.googleapis.com": "gmail.com",
+  // Google product API hosts → the product domains the catalog files them
+  // under, so crawled rows collapse onto (and are suppressed by) the curated
+  // per-product records.
+  "calendar-json.googleapis.com": "calendar.google.com",
+  "docs.googleapis.com": "docs.google.com",
+  "sheets.googleapis.com": "sheets.google.com",
+  "slides.googleapis.com": "slides.google.com",
+  "forms.googleapis.com": "forms.google.com",
+  "tasks.googleapis.com": "tasks.google.com",
+  "chat.googleapis.com": "chat.google.com",
+  "people.googleapis.com": "contacts.google.com",
+  "youtube.googleapis.com": "youtube.com",
+  "www.youtube.com": "youtube.com",
+  "searchconsole.googleapis.com": "search.google.com",
+  "classroom.googleapis.com": "classroom.google.com",
+  "admin.googleapis.com": "admin.google.com",
+  "script.googleapis.com": "script.google.com",
+  "bigquery.googleapis.com": "cloud.google.com",
+  "cloudresourcemanager.googleapis.com": "cloud.google.com",
+  "user-images.githubusercontent.com": "github.com",
   "graphite.dev": "graphite.com",
   "heapanalytics.com": "heap.io",
   "helpscout.net": "helpscout.com",
@@ -37,6 +68,12 @@ export const DOMAIN_ALIASES: Record<string, string> = {
   "intercom.io": "intercom.com",
   "letsdeel.com": "deel.com",
   "logtail.com": "betterstack.com",
+  "notion.notion.site": "notion.com",
+  "notion.so": "notion.com",
+  // Vendor docs/dev domains that the crawler discovered as separate services.
+  "shopify.dev": "shopify.com",
+  "slack.dev": "slack.com",
+  "spotify.net": "spotify.com",
   "meetcampfire.com": "campfire.ai",
   "mermaidchart.com": "mermaid.ai",
   "neon.tech": "neon.com",

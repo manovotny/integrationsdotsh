@@ -1,0 +1,37 @@
+{
+  "description": "FlightQueue provides airport intelligence data such as security wait times, FAA delays, predictions, and historical airport patterns. Its product covers thousands of airports worldwide and includes free and paid access tiers.",
+  "discoveredAt": "2026-07-04T01:14:21.297Z",
+  "domain": "flightqueue.com",
+  "summary": "FlightQueue exposes a REST API with published OpenAPI, an OAuth-protected MCP server, and an npm-distributed CLI that wraps the same FlightQueue API.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "FlightQueue MCP Server",
+      "slug": "flightqueue-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.flightqueue.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "flightqueue",
+      "name": "FlightQueue CLI",
+      "packages": [
+        {
+          "identifier": "@flightqueue/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "flightqueue-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "FlightQueue REST API",
+      "slug": "flightqueue-rest-api",
+      "spec": "https://flightqueue.com/openapi.json",
+      "type": "http",
+      "url": "https://flightqueue.com/api/v1"
+    }
+  ]
+}

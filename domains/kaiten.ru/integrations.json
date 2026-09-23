@@ -1,0 +1,37 @@
+{
+  "description": "Kaiten is a work management and collaboration platform with boards, cards, users, comments, files, and webhooks. Its public developer site documents a REST API for integrating with Kaiten data and automation.",
+  "discoveredAt": "2026-09-05T08:58:04.962Z",
+  "domain": "kaiten.ru",
+  "summary": "kaiten.ru exposes a bearer-authenticated REST API at `https://kaiten.ru/api/latest`; Kaiten’s broader platform docs also describe authenticated GraphQL, OFREP, and MCP interfaces on the separate `kaiten.sh` platform domain.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Kaiten REST API",
+      "slug": "kaiten-rest-api",
+      "type": "http",
+      "url": "https://kaiten.ru/api/latest"
+    },
+    {
+      "authStatus": "required",
+      "name": "Kaiten GraphQL API",
+      "slug": "kaiten-graphql-api",
+      "spec": "introspection",
+      "type": "graphql",
+      "url": "https://api.kaiten.sh/api/graphql"
+    },
+    {
+      "authStatus": "required",
+      "name": "Kaiten OpenFeature OFREP API",
+      "slug": "kaiten-openfeature-ofrep-api",
+      "type": "http",
+      "url": "https://api.kaiten.sh/api/ofrep/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Kaiten MCP server",
+      "slug": "kaiten-mcp-server",
+      "type": "mcp",
+      "url": "http://localhost:6000/mcp"
+    }
+  ]
+}

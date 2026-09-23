@@ -1,16 +1,9 @@
 {
-  "description": "Box is a cloud content management and collaboration platform for storing, sharing, and automating work around files and folders. It also provides enterprise APIs and AI features for working with Box content.",
-  "discoveredAt": "2026-07-03T01:39:47.840Z",
+  "description": "Box is a cloud content management and collaboration platform for storing, sharing, and governing files and enterprise content. It also provides AI and workflow features that operate on content stored in Box.",
+  "discoveredAt": "2026-07-05T18:47:07.761Z",
   "domain": "box.com",
-  "summary": "Box exposes a REST Platform API at `https://api.box.com/2.0`, a hosted MCP server at `https://mcp.box.com` (streamable HTTP), and the Box CLI (`box`).",
+  "summary": "Box exposes a REST Platform API at `https://api.box.com/2.0`, a hosted MCP server at `https://mcp.box.com`, and the `box` CLI; all require Box-issued OAuth-based credentials or access tokens.",
   "surfaces": [
-    {
-      "authStatus": "required",
-      "name": "Box Platform API",
-      "slug": "box-platform-api",
-      "type": "http",
-      "url": "https://api.box.com/2.0"
-    },
     {
       "authStatus": "required",
       "name": "Box MCP server",
@@ -25,17 +18,23 @@
       "packages": [
         {
           "identifier": "@box/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         },
         {
           "identifier": "box",
           "registryType": "npm",
-          "runtimeHint": "node"
+          "runtimeHint": "npx box"
         }
       ],
       "slug": "box-cli",
       "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Box Platform API",
+      "slug": "box-platform-api",
+      "type": "http",
+      "url": "https://api.box.com/2.0"
     }
   ]
 }

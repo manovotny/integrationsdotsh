@@ -1,0 +1,40 @@
+{
+  "description": "Teamtailor is a recruiting and applicant tracking platform used by companies to manage jobs, candidates, and hiring workflows. Its public documentation covers account APIs plus partner and job-board integration flows for connecting external recruiting systems.",
+  "discoveredAt": "2026-07-17T09:51:21.122Z",
+  "domain": "teamtailor.com",
+  "summary": "Teamtailor exposes a region-specific REST API for company data, partner/job-board integration APIs and webhook systems; no public GraphQL, MCP, or CLI surface was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Teamtailor Public API",
+      "slug": "teamtailor-public-api",
+      "type": "http",
+      "url": "https://api.teamtailor.com/v1"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "Teamtailor Partner API",
+      "slug": "teamtailor-partner-api",
+      "type": "http",
+      "url": "https://api.teamtailor.com/partner/v1"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "Teamtailor Job Board API",
+      "slug": "teamtailor-job-board-api",
+      "type": "http"
+    },
+    {
+      "authStatus": "required",
+      "name": "Teamtailor Partner webhook/config callbacks",
+      "slug": "teamtailor-partner-webhook-config-callbacks",
+      "type": "http"
+    },
+    {
+      "authStatus": "none",
+      "name": "Teamtailor Company Webhooks",
+      "slug": "teamtailor-company-webhooks",
+      "type": "http"
+    }
+  ]
+}

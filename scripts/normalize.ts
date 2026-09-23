@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { getDomain as tldGetDomain } from "tldts";
-import { aliasesOf, canonicalDomain } from "../src/lib/domain-aliases.ts";
+import { DOMAIN_ALIASES, canonicalDomain } from "../src/lib/domain-aliases.ts";
 
 // Registrable domain per the Public Suffix List, with the PSL's private section
 // enabled so platform-hosted services resolve to their own host
@@ -10,6 +10,8 @@ import { aliasesOf, canonicalDomain } from "../src/lib/domain-aliases.ts";
 const getDomain = (url: string) => tldGetDomain(url, { allowPrivateDomains: true });
 import type { Integration, Feed, Kind, ExtractedTool } from "../src/lib/types.ts";
 import { faviconUrl, isJunkDomain } from "../src/lib/favicon.ts";
+import { isDenylisted } from "../src/lib/catalog-denylist.ts";
+import { isPublishableMcpUrl, verifiedMcpAuth } from "../src/lib/endpoint-verdicts.ts";
 import { isSdkNotCli } from "../src/lib/surface-classify.ts";
 import { readDomainCatalogTree, type Catalog } from "./batch/discovered-catalog.ts";
 
@@ -17,6 +19,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCES = join(ROOT, "sources");
 const DOMAINS = join(ROOT, "domains");
 const OVERRIDES = join(ROOT, "overrides");
+const CURATED = join(ROOT, "curated");
 const OUTPUT = join(ROOT, "output");
 
 mkdirSync(OUTPUT, { recursive: true });
@@ -249,6 +252,47 @@ function buildOpenapi(): Integration[] {
   }
   for (const s of manual) byKey.set(keyOf(s), s);
 
+  // Second pass: one record per (domain, title).
+  //
+  // apis.guru catalogues every deployment target and dated release of the same
+  // API as its own spec. GitHub ships 20 copies of "GitHub v3 REST API"
+  // (GHES 2.18 through 3.8, GHEC, github.ae, dated `api.github.com` variants)
+  // and Azure 510 of "NetworkManagementClient". The provider+service pass above
+  // cannot see it, because each of those IS a distinct service string — but to
+  // anyone choosing something to connect they are one integration, and left
+  // alone they make a domain's API count meaningless (github.com read as 21).
+  //
+  // Pick order: a hand-curated override wins; then the base provider (no
+  // `:service` suffix), which is the vendor's own current deployment; then the
+  // most recently updated.
+  const providerDomain = (s: ApiGuruSpec) => (s.provider ?? "").split(":")[0].toLowerCase();
+  const titleKey = (s: ApiGuruSpec) => {
+    const title = (s.title ?? "").trim().toLowerCase();
+    // No title is no evidence of sameness — keep those records distinct.
+    return title.length === 0 ? null : `${providerDomain(s)}::${title}`;
+  };
+  const rank = (s: ApiGuruSpec): number =>
+    (manualKeys.has(keyOf(s)) ? 2 : 0) + (s.provider.includes(":") ? 0 : 1);
+  const byTitle = new Map<string, ApiGuruSpec>();
+  for (const [key, s] of byKey) {
+    const group = titleKey(s);
+    if (group === null) continue;
+    const prev = byTitle.get(group);
+    if (!prev) {
+      byTitle.set(group, s);
+      continue;
+    }
+    const better =
+      rank(s) > rank(prev) ||
+      (rank(s) === rank(prev) && (s.updated ?? "") > (prev.updated ?? ""));
+    if (better) {
+      byKey.delete(keyOf(prev));
+      byTitle.set(group, s);
+    } else {
+      byKey.delete(key);
+    }
+  }
+
   const recs: Integration[] = [];
   for (const [key, s] of byKey) {
     const slug = slugify(key);
@@ -385,9 +429,13 @@ interface DiscoveredDomain {
 }
 
 const DISCOVERED_KIND_PRIORITY: Kind[] = ["mcp", "openapi", "graphql", "cli"];
-// Railway's hand-maintained CLI source moved to railway.com. Keep the old
-// crawler row deduped against that source so normalization does not add records.
-const DISCOVERED_ALIAS_DEDUPE = new Set(aliasesOf("railway.com"));
+// An alias means "same vendor", so a crawled record for the alias must not open
+// a second bucket beside the canonical domain's. This was hardcoded to
+// railway.com's one migration; every alias has the same problem, and the ones
+// that went unhandled are how a static-asset host like
+// avatars1.githubusercontent.com ended up in the catalog claiming GitHub's REST,
+// GraphQL and CLI surfaces as its own.
+const DISCOVERED_ALIAS_DEDUPE = new Set(Object.keys(DOMAIN_ALIASES));
 
 const discoveredKind = (type: DiscoveredSurfaceType): Kind => (type === "http" ? "openapi" : type);
 const domainKindKey = (domain: string, kind: Kind) => `${canonicalDomain(domain)}:${kind}`;
@@ -480,6 +528,144 @@ export function buildDiscoveredEntries(
   return { records: dedupeSlugs(recs), zeroSurfaceDomains: [...zeroSurfaceDomains.values()] };
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Curated: curated/*.json
+//
+// Hand-verified records, and the only place in this repo where a human has
+// actually checked what a vendor exposes. They were previously read by nothing
+// — the files existed and fed free text into the discovery prompt, while the
+// index was built entirely from crawled and third-party feeds. That is how
+// github.com came to list 21 API rows and no MCP server at all, while
+// curated/github.json had the correct four surfaces sitting on disk the whole
+// time.
+//
+// Curated records are built FIRST, so every later source dedupes against them.
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface CuratedInterface {
+  format?: string;
+  name?: string;
+  endpoint?: string;
+  spec?: string;
+  docs?: string;
+  install?: string;
+  /** Present when the interface is a product of its own — one vendor domain
+   *  exposing many separately-addable APIs, like Microsoft Graph's workloads.
+   *  A slugged interface becomes its own record (and its own search row)
+   *  instead of merging into the domain's one-surface-per-kind set. */
+  slug?: string;
+  description?: string;
+  icon?: string;
+  /** The product's own domain, when it differs from the file-level one:
+   *  Gmail's record belongs on gmail.com even though the provider file is
+   *  Google's. Also what suppresses same-domain rows from crawled feeds. */
+  domain?: string;
+  /** Delegated OAuth scopes the surface needs. */
+  scopes?: string[];
+  /** Credential kind: "api_key", "oauth", … */
+  auth?: string;
+  /** Header pattern, e.g. "Authorization: {api_key}". */
+  authHeader?: string;
+  note?: string;
+  /** RFC 6902 JSON Patch to apply to the spec before use. */
+  specOverrides?: unknown[];
+}
+
+interface CuratedRecord {
+  slug?: string;
+  name?: string;
+  description?: string;
+  tagline?: string;
+  domain?: string;
+  icon?: string;
+  categories?: string[];
+  interfaces?: CuratedInterface[];
+}
+
+const CURATED_KIND: Record<string, Kind> = {
+  mcp: "mcp",
+  openapi: "openapi",
+  rest: "openapi",
+  http: "openapi",
+  graphql: "graphql",
+  cli: "cli",
+};
+
+export function buildCurated(): Integration[] {
+  if (!existsSync(CURATED)) return [];
+  const recs: Integration[] = [];
+  for (const file of readdirSync(CURATED)) {
+    if (!file.endsWith(".json")) continue;
+    const entry = readJson<CuratedRecord>(join(CURATED, file));
+    const domain = (entry.domain ?? "").trim().toLowerCase();
+    if (!domain) continue;
+    const description = (entry.description ?? entry.tagline ?? "").replace(/\s+/g, " ").trim();
+    const domainSlug = slugify(domain);
+    const seen = new Set<Kind>();
+    for (const iface of entry.interfaces ?? []) {
+      const kind = CURATED_KIND[(iface.format ?? "").toLowerCase()];
+      if (!kind) continue;
+      const productSlug = iface.slug?.trim().toLowerCase();
+      // One record per kind: the picker offers a surface, not every endpoint.
+      // Slugged interfaces are exempt — each is a product in its own right.
+      if (!productSlug) {
+        if (seen.has(kind)) continue;
+        seen.add(kind);
+      }
+      const productDescription = (iface.description ?? "").replace(/\s+/g, " ").trim();
+      const productDomain = iface.domain?.trim().toLowerCase() || domain;
+      const rec: Integration = {
+        id: productSlug ? `curated/${productSlug}` : `curated/${domainSlug}-${kind}`,
+        slug: productSlug ?? (seen.size === 1 ? domainSlug : `${domainSlug}-${kind}`),
+        kind,
+        name: (productSlug ? iface.name : undefined) ?? entry.name ?? domain,
+        ...(productSlug ? { standalone: true } : {}),
+        description: productDescription || description,
+        url: undefined,
+        icon: iface.icon ?? entry.icon ?? faviconUrl(productDomain) ?? undefined,
+        categories: entry.categories ?? [],
+        feeds: ["curated"],
+        raw: { curated: { domain: productDomain, interface: iface } },
+      };
+      if (kind === "mcp") {
+        rec.mcp = {
+          remoteUrl: iface.endpoint,
+          ...(iface.auth ? { authTypes: [iface.auth] } : {}),
+          ...(iface.authHeader ? { authHeader: iface.authHeader } : {}),
+          ...(iface.note ? { authNote: iface.note } : {}),
+        };
+      } else if (kind === "openapi") {
+        rec.openapi = {
+          provider: productDomain,
+          version: "curated",
+          specUrl: iface.spec,
+          docsUrl: iface.docs,
+          openapiVer: "",
+          ...(iface.auth ? { auth: iface.auth } : {}),
+          ...(iface.scopes && iface.scopes.length > 0 ? { scopes: iface.scopes } : {}),
+          ...(iface.authHeader ? { authHeader: iface.authHeader } : {}),
+          ...(iface.specOverrides && iface.specOverrides.length > 0
+            ? { specOverrides: iface.specOverrides }
+            : {}),
+        };
+      } else if (kind === "graphql") {
+        rec.graphql = {
+          endpoint: iface.endpoint ?? "",
+          hasSecurity: true,
+          docs: [],
+          ...(iface.auth ? { auth: iface.auth } : {}),
+          ...(iface.authHeader ? { authHeader: iface.authHeader } : {}),
+          ...(iface.note ? { authNote: iface.note } : {}),
+        };
+      } else {
+        rec.cli = { install: iface.install ?? iface.name ?? "", domain: productDomain };
+      }
+      recs.push(rec);
+    }
+  }
+  return dedupeSlugs(recs);
+}
+
 function buildDiscovered(
   knownRawDomains: Set<string>,
   knownDomainKinds: Set<string>,
@@ -569,6 +755,26 @@ interface ToolsCache {
   status: "ok" | "error" | "skipped";
   reason?: string;
   tools: ExtractedTool[];
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MCP endpoint verdicts: output/mcp-endpoints.json from verify-mcp-endpoints.ts
+//
+// The rules themselves live in src/lib/endpoint-verdicts.ts — the same module
+// the site's render paths use — so the build and the pages cannot disagree
+// about which endpoints are publishable or which `none` auth claims survive.
+// ─────────────────────────────────────────────────────────────────────────────
+
+function applyEndpointVerdicts(recs: Integration[]): Integration[] {
+  return recs.filter((r) => isPublishableMcpUrl(r.mcp?.remoteUrl));
+}
+
+/** Whether an MCP record may still publish an "auth: none" claim. The docs
+ *  saying a server is public is not evidence; a probe that got 401/403 is
+ *  evidence against it. Same rule as `verifiedMcpAuth`, expressed over the
+ *  feed-shaped record instead of a Surface. */
+function keepsNoneAuth(remoteUrl: string | undefined): boolean {
+  return verifiedMcpAuth(remoteUrl, { status: "none", basis: { via: "discovered", evidence: [] } }).status === "none";
 }
 
 function applyToolsCache(kind: Kind, recs: Integration[]): Integration[] {
@@ -689,8 +895,14 @@ function rawRecordDomain(r: Integration): string {
   } else {
     url = r.graphql?.endpoint ?? r.url;
   }
-  const discoveredDomain = (r.raw.discovered as { domain?: string } | undefined)?.domain;
-  if (discoveredDomain) return discoveredDomain;
+  // A record that names its own domain is believed over one inferred from a
+  // URL. GitHub's MCP server lives on api.githubcopilot.com and Slack's on
+  // slack.dev — deriving the vendor from the endpoint host files those under
+  // the wrong product entirely.
+  const declaredDomain =
+    (r.raw.curated as { domain?: string } | undefined)?.domain ??
+    (r.raw.discovered as { domain?: string } | undefined)?.domain;
+  if (declaredDomain) return declaredDomain;
   return (url ? getDomain(url) : null) ?? (r.url ? getDomain(r.url) ?? "" : "");
 }
 
@@ -767,26 +979,102 @@ function buildIndex(all: Integration[]) {
       id: r.id,
       kind: r.kind,
       slug: r.slug,
+      standalone: r.standalone,
       // Strip the platform prefix from remapped names: "googleapis.com – gmail" → "gmail".
       name: remapped ? r.name.replace(/^.*?[–-]\s*/, "") : r.name,
       description: r.description.slice(0, 240),
       url: r.url,
-      // Icon is the provider's own apex-domain favicon — never a third-party host,
-      // and never a LAN address (.local/private hosts return null).
-      icon: faviconUrl(domain) ?? undefined,
+      // Icon is the provider's own apex-domain favicon — never a third-party
+      // host, and never a LAN address (.local/private hosts return null) —
+      // EXCEPT curated records, whose icons a human picked deliberately
+      // (product marks: Google Calendar's own logo, Outlook's, not the
+      // vendor's generic favicon).
+      icon: (r.feeds.includes("curated") ? r.icon : undefined) ?? faviconUrl(domain) ?? undefined,
       domain,
       categories: r.categories,
       feeds: r.feeds,
       popularity: r.popularity,
       devtool: undefined,
+      // What a client must actually point at to connect this surface. Callers
+      // otherwise have to fetch the per-domain surface document just to learn
+      // it, and had no stable way to tell whether a surface was already
+      // connected — the domain is not that identifier (GitHub's MCP server
+      // lives on api.githubcopilot.com).
+      connectUrl:
+        r.kind === "mcp"
+          ? r.mcp?.remoteUrl
+          : r.kind === "openapi"
+            ? r.openapi?.specUrl
+            : r.kind === "graphql"
+              ? r.graphql?.endpoint
+              : undefined,
+      scopes: r.kind === "openapi" ? r.openapi?.scopes : undefined,
+      specOverrides: r.kind === "openapi" ? r.openapi?.specOverrides : undefined,
+      // How to authenticate, for surfaces whose connect target cannot carry it
+      // itself (a GraphQL endpoint has no spec document; some curated specs
+      // lack securitySchemes). The header pattern is the load-bearing part:
+      // Linear's personal keys take no Bearer prefix, and only this says so.
+      auth:
+        r.kind === "graphql" && r.graphql && (r.graphql.auth ?? r.graphql.authHeader)
+          ? {
+              ...(r.graphql.auth ? { kind: r.graphql.auth } : {}),
+              ...(r.graphql.authHeader ? { header: r.graphql.authHeader } : {}),
+              ...(r.graphql.authNote ? { note: r.graphql.authNote } : {}),
+            }
+          : r.kind === "openapi" && r.openapi?.authHeader
+            ? { kind: r.openapi.auth ?? "api_key", header: r.openapi.authHeader }
+            : r.kind === "mcp" && r.mcp
+              ? mcpSurfaceAuth(r.mcp)
+              : undefined,
     };
   });
 }
 
 type IndexEntry = ReturnType<typeof buildIndex>[number];
 
+/** MCP auth facts come from three signals of falling confidence: a curated
+ *  header pattern (a human verified it), Claude's explicit `is_authless`
+ *  flag, and the OpenAI feed's supported auth types (NONE/OAUTH/API_KEY). */
+function mcpSurfaceAuth(
+  mcp: NonNullable<Integration["mcp"]>,
+): { kind?: string; header?: string; note?: string } | undefined {
+  if (mcp.authHeader) {
+    return {
+      ...(mcp.authTypes?.[0] ? { kind: mcp.authTypes[0] } : {}),
+      header: mcp.authHeader,
+      ...(mcp.authNote ? { note: mcp.authNote } : {}),
+    };
+  }
+  if (mcp.isAuthless === true) return keepsNoneAuth(mcp.remoteUrl) ? { kind: "none" } : undefined;
+  const kinds = (mcp.authTypes ?? []).map((type) => type.toLowerCase());
+  for (const kind of ["oauth", "api_key", "none"]) {
+    if (!kinds.includes(kind)) continue;
+    // A feed's "NONE" is a claim like any other: drop it to unknown (no auth
+    // hint at all) when the probe contradicts it.
+    if (kind === "none" && !keepsNoneAuth(mcp.remoteUrl)) return undefined;
+    return { kind };
+  }
+  return undefined;
+}
+
+interface SearchIndexSurface {
+  kind: Kind;
+  slug: string;
+  url?: string;
+  /** A hand-picked product mark from the curated record, when it beats the
+   *  domain favicon (Google Calendar's own logo, not the generic G). */
+  icon?: string;
+  auth?: { kind?: string; header?: string; note?: string };
+  /** RFC 6902 JSON Patch a client should apply to the spec before use. */
+  specOverrides?: unknown[];
+}
+
 interface SearchIndexEntry {
   domain: string;
+  /** Set on standalone product rows (many products on one vendor domain);
+   *  domain-level rows are named by their domain and omit this. */
+  name?: string;
+  surfaces: SearchIndexSurface[];
   description: string;
   kinds: Kind[];
   devtool: boolean;
@@ -795,18 +1083,37 @@ interface SearchIndexEntry {
 }
 
 export function buildSearchIndex(index: IndexEntry[], zeroSurfaceDomains: readonly ZeroSurfaceDomain[] = []): SearchIndexEntry[] {
-  const map = new Map<string, { domain: string; description: string; kinds: Set<Kind>; devtool: boolean; popularity: number; total: number }>();
+  const map = new Map<string, { domain: string; name?: string; description: string; kinds: Set<Kind>; devtool: boolean; popularity: number; total: number; surfaces: Map<Kind, SearchIndexSurface> }>();
+  const seenDomains = new Set<string>();
   for (const r of index) {
     const domain = r.domain || r.slug;
     if (!domain) continue;
-    if (isJunkDomain(domain)) continue;
-    let group = map.get(domain);
+    if (isJunkDomain(domain) || isDenylisted(domain)) continue;
+    seenDomains.add(domain);
+    // A standalone product is its own search row: 25 Microsoft Graph workloads
+    // on graph.microsoft.com must not collapse into one openapi surface.
+    const key = r.standalone ? `${domain} ${r.slug}` : domain;
+    let group = map.get(key);
     if (!group) {
-      group = { domain, description: "", kinds: new Set(), devtool: false, popularity: 0, total: 0 };
-      map.set(domain, group);
+      group = { domain, ...(r.standalone ? { name: r.name } : {}), description: "", kinds: new Set(), devtool: false, popularity: 0, total: 0, surfaces: new Map() };
+      map.set(key, group);
     }
     group.total++;
     group.kinds.add(r.kind);
+    // First record per kind wins: index order already puts curated and
+    // higher-confidence rows first.
+    if (!group.surfaces.has(r.kind)) {
+      group.surfaces.set(r.kind, {
+        kind: r.kind,
+        slug: r.slug,
+        ...(r.connectUrl ? { url: r.connectUrl } : {}),
+        ...(r.feeds.includes("curated") && r.icon && !r.icon.startsWith("https://integrations.sh/logo/")
+          ? { icon: r.icon }
+          : {}),
+        ...(r.auth ? { auth: r.auth } : {}),
+        ...(r.specOverrides && r.specOverrides.length > 0 ? { specOverrides: r.specOverrides } : {}),
+      });
+    }
     group.popularity = Math.max(group.popularity, r.popularity ?? 0);
     group.devtool ||= r.devtool === true;
     if (!group.description && r.description) group.description = r.description.replace(/\s+/g, " ").slice(0, 110);
@@ -815,8 +1122,8 @@ export function buildSearchIndex(index: IndexEntry[], zeroSurfaceDomains: readon
   for (const zero of zeroSurfaceDomains) {
     const domain = zero.domain.trim().toLowerCase();
     if (!domain) continue;
-    if (isJunkDomain(domain)) continue;
-    if (map.has(domain) || map.has(canonicalDomain(domain))) continue;
+    if (isJunkDomain(domain) || isDenylisted(domain)) continue;
+    if (seenDomains.has(domain) || seenDomains.has(canonicalDomain(domain)) || map.has(domain)) continue;
     map.set(domain, {
       domain,
       description: zero.description.replace(/\s+/g, " ").trim().slice(0, 110),
@@ -824,14 +1131,25 @@ export function buildSearchIndex(index: IndexEntry[], zeroSurfaceDomains: readon
       devtool: false,
       popularity: 0,
       total: 0,
+      surfaces: new Map(),
     });
   }
 
   return [...map.values()]
     .map((group) => ({
       domain: group.domain,
+      ...(group.name ? { name: group.name } : {}),
       description: group.description,
       kinds: KIND_ORDER.filter((kind) => group.kinds.has(kind)),
+      // Omitted rather than empty: a domain with no connectable surface should
+      // not carry an empty array on every row of a multi-thousand-entry index.
+      ...(group.surfaces.size > 0
+        ? {
+            surfaces: KIND_ORDER.filter((kind) => group.surfaces.has(kind)).map(
+              (kind) => group.surfaces.get(kind)!,
+            ),
+          }
+        : {}),
       devtool: group.devtool,
       popularity: group.popularity,
       total: group.total,
@@ -866,7 +1184,15 @@ function catalogSeedEntry(r: Integration): { domain: string; entry: CatalogSeedE
   const base = { kind: r.kind, name: r.name, feeds: r.feeds };
   if (r.kind === "mcp") {
     if (!r.mcp?.remoteUrl) return null;
-    return { domain, entry: { ...base, remoteUrl: r.mcp.remoteUrl, transport: r.mcp.transport, authTypes: r.mcp.authTypes } };
+    // The seed text is read back by the discovery prompt, so an unverified
+    // "NONE" would re-enter the catalog as fact. Same rule as verifiedMcpAuth.
+    const authTypes = keepsNoneAuth(r.mcp.remoteUrl)
+      ? r.mcp.authTypes
+      : r.mcp.authTypes?.filter((type) => type.toLowerCase() !== "none");
+    return {
+      domain,
+      entry: { ...base, remoteUrl: r.mcp.remoteUrl, transport: r.mcp.transport, authTypes: authTypes?.length ? authTypes : undefined },
+    };
   }
   if (r.kind === "openapi") {
     if (!r.openapi?.specUrl) return null;
@@ -931,10 +1257,36 @@ function main() {
   // Order: build feed records → apply overrides (may add new records) → fill
   // tools from cache → swap broken icons for domain-based fallbacks → keep only
   // publicly-accessible records.
-  const baseMcp = applyFavicons(applyToolsCache("mcp", applyOverrides("mcp", buildMcp()))).filter(isPublic);
-  const baseOpenapi = applyFavicons(applyToolsCache("openapi", applyOverrides("openapi", buildOpenapi()))).filter(isPublic);
-  const baseGraphql = applyFavicons(applyToolsCache("graphql", applyOverrides("graphql", buildGraphql()))).filter(isPublic);
-  const baseCli = buildCli().filter(isPublic);
+  // Curated records come first so every other source dedupes against them.
+  const curated = buildCurated();
+  const curatedKinds = new Set(curated.map((r) => domainKindKey(recordDomain(r), r.kind)));
+  // A crawled or third-party row for a (domain, kind) a human has already
+  // verified is noise beside it, not extra coverage.
+  const notCurated = (r: Integration) =>
+    !curatedKinds.has(domainKindKey(recordDomain(r), r.kind));
+
+  const baseMcp = [
+    ...curated.filter((r) => r.kind === "mcp"),
+    ...applyEndpointVerdicts(applyFavicons(applyToolsCache("mcp", applyOverrides("mcp", buildMcp()))))
+      .filter(isPublic)
+      .filter(notCurated),
+  ];
+  const baseOpenapi = [
+    ...curated.filter((r) => r.kind === "openapi"),
+    ...applyFavicons(applyToolsCache("openapi", applyOverrides("openapi", buildOpenapi())))
+      .filter(isPublic)
+      .filter(notCurated),
+  ];
+  const baseGraphql = [
+    ...curated.filter((r) => r.kind === "graphql"),
+    ...applyFavicons(applyToolsCache("graphql", applyOverrides("graphql", buildGraphql())))
+      .filter(isPublic)
+      .filter(notCurated),
+  ];
+  const baseCli = [
+    ...curated.filter((r) => r.kind === "cli"),
+    ...buildCli().filter(isPublic).filter(notCurated),
+  ];
 
   const knownRawDomains = new Set(
     [...baseMcp, ...baseOpenapi, ...baseGraphql, ...baseCli]
@@ -954,7 +1306,7 @@ function main() {
       }),
   );
   const discoveredBuild = buildDiscovered(knownRawDomains, knownDomainKinds, knownDomains);
-  const discovered = discoveredBuild.records.filter(isPublic);
+  const discovered = applyEndpointVerdicts(discoveredBuild.records.filter(isPublic));
   const mcp = [...baseMcp, ...discovered.filter((r) => r.kind === "mcp")];
   const openapi = [...baseOpenapi, ...discovered.filter((r) => r.kind === "openapi")];
   const graphql = [...baseGraphql, ...discovered.filter((r) => r.kind === "graphql")];

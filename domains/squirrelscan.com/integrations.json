@@ -1,0 +1,37 @@
+{
+  "description": "squirrelscan is a website auditing service focused on SEO, performance, security, and AI-agent readiness checks. It can run audits locally via CLI and adds cloud features such as hosted crawling, reports, credits, and MCP access.",
+  "discoveredAt": "2026-07-04T03:40:08.213Z",
+  "domain": "squirrelscan.com",
+  "summary": "squirrelscan exposes three developer integration surfaces on its own domain: a REST API at `https://api.squirrelscan.com` with OpenAPI, a hosted streamable-HTTP MCP server at `https://mcp.squirrelscan.com/mcp`, and the `squirrel` CLI; authentication uses org API keys, CLI login tokens, and MCP OAuth sign-in depending on surface.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "squirrelscan MCP",
+      "slug": "squirrelscan-mcp",
+      "type": "mcp",
+      "url": "https://mcp.squirrelscan.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "squirrel",
+      "name": "squirrel CLI",
+      "packages": [
+        {
+          "identifier": "squirrelscan",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "squirrel-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "squirrelscan API",
+      "slug": "squirrelscan-api",
+      "spec": "https://squirrelscan.com/openapi.json",
+      "type": "http",
+      "url": "https://api.squirrelscan.com"
+    }
+  ]
+}

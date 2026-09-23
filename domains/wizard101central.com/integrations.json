@@ -1,0 +1,15 @@
+{
+  "description": "Wizard101 Central is a community site and wiki focused on the Wizard101 game. Its public-facing programmatic surface appears to be the site's MediaWiki API for querying wiki content and related wiki actions.",
+  "discoveredAt": "2026-07-19T03:27:02.932Z",
+  "domain": "wizard101central.com",
+  "summary": "wizard101central.com exposes a public MediaWiki HTTP API at `https://wiki.wizard101central.com/wiki/api.php`; no GraphQL, MCP server, or CLI surfaces were found.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "Wizard101 Central MediaWiki API",
+      "slug": "wizard101-central-mediawiki-api",
+      "type": "http",
+      "url": "https://wiki.wizard101central.com/wiki/api.php"
+    }
+  ]
+}

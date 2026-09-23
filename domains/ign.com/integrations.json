@@ -1,0 +1,7 @@
+{
+  "description": "IGN is a media and entertainment site focused on video game, movie, TV, and tech news, reviews, guides, and videos. Its public-facing sites appear to be content and account properties rather than current developer platforms.",
+  "discoveredAt": "2026-07-19T03:16:54.758Z",
+  "domain": "ign.com",
+  "summary": "No current public developer integration surface was found for ign.com: no documented public HTTP/REST API, GraphQL API, MCP server, or CLI on ign.com/subdomains.",
+  "surfaces": []
+}

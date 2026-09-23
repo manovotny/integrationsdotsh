@@ -1,0 +1,16 @@
+{
+  "description": "PostGrid provides APIs and tools for print-and-mail automation and address verification. Its products let businesses verify, standardize, and autocomplete addresses and programmatically send physical mail such as letters, postcards, and cheques.",
+  "discoveredAt": "2026-08-31T04:35:49.609Z",
+  "domain": "guides.postgrid.com",
+  "summary": "PostGrid exposes one documented REST API at `https://api.postgrid.com`, described by an OpenAPI document on `guides.postgrid.com`, and authenticated with an `x-api-key` header; no GraphQL, MCP server, or standalone CLI was documented on this domain.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "PostGrid API",
+      "slug": "postgrid-api",
+      "spec": "https://guides.postgrid.com/api/openapi.yaml",
+      "type": "http",
+      "url": "https://api.postgrid.com"
+    }
+  ]
+}

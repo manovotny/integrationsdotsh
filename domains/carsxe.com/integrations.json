@@ -1,0 +1,45 @@
+{
+  "description": "CarsXE is a B2B vehicle data platform from PiWaves, LLC that provides VIN decoding, vehicle specifications, recalls, market values, history, plate decoding, OCR, OBD decoding, and related automotive data. It is used by dealerships, insurers, lenders, fleets, and other auto-tech businesses.",
+  "discoveredAt": "2026-08-26T18:36:23.640Z",
+  "domain": "carsxe.com",
+  "summary": "CarsXE exposes a REST API at `https://api.carsxe.com`, a hosted MCP server at `https://mcp.carsxe.com/mcp`, and a `carsxe` CLI (`@carsxe/cli`); all require a CarsXE API key, with the MCP endpoint additionally accepting the same key as Bearer auth or query param per the live endpoint response.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "CarsXE MCP server",
+      "slug": "carsxe-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.carsxe.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "carsxe",
+      "name": "CarsXE CLI",
+      "packages": [
+        {
+          "identifier": "@carsxe/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        }
+      ],
+      "slug": "carsxe-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "CarsXE REST API",
+      "slug": "carsxe-api",
+      "spec": "https://carsxe.com/openapi.yaml",
+      "type": "http",
+      "url": "https://api.carsxe.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "CarsXE REST API",
+      "slug": "carsxe-api-2",
+      "spec": "https://api.carsxe.com/openapi.json",
+      "type": "http",
+      "url": "https://api.carsxe.com"
+    }
+  ]
+}

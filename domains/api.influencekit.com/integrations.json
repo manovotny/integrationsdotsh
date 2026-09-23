@@ -1,0 +1,30 @@
+{
+  "description": "InfluenceKit is an influencer marketing platform for brands, agencies, and creators. It supports campaign management, creator discovery, cross-platform content statistics, and shareable reporting.",
+  "discoveredAt": "2026-07-03T23:01:34.730Z",
+  "domain": "api.influencekit.com",
+  "summary": "InfluenceKit exposes a REST API at `https://api.influencekit.com/v1` with an OpenAPI spec, plus an OAuth-protected MCP server at `https://api.influencekit.com/mcp` and a public signup MCP endpoint at `https://api.influencekit.com/mcp/public`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "InfluenceKit REST API",
+      "slug": "influencekit-rest-api",
+      "spec": "https://api.influencekit.com/openapi.json",
+      "type": "http",
+      "url": "https://api.influencekit.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "InfluenceKit MCP server",
+      "slug": "influencekit-mcp-server",
+      "type": "mcp",
+      "url": "https://api.influencekit.com/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "InfluenceKit public MCP server (signup)",
+      "slug": "influencekit-public-mcp-server-signup",
+      "type": "mcp",
+      "url": "https://api.influencekit.com/mcp/public"
+    }
+  ]
+}

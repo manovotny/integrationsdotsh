@@ -1,0 +1,37 @@
+{
+  "description": "Award Travel Finder is a travel search service focused on finding award-flight availability and related loyalty-program data using points and miles. It offers tools for AI agents and developers to search award seats, compare redemptions, and work with airline and hotel program information.",
+  "discoveredAt": "2026-09-02T21:32:15.903Z",
+  "domain": "awardtravelfinder.com",
+  "summary": "awardtravelfinder.com exposes a REST API at `https://awardtravelfinder.com/api/v1` authenticated by `X-API-Key`, plus MCP endpoints at `https://mcp.awardtravelfinder.com/mcp` and a root-host variant `https://awardtravelfinder.com/mcp`; docs and metadata describe OAuth 2.1 for the subdomain MCP endpoint, while a seed probe reported both MCP endpoints as public/no-auth.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Award Travel Finder REST API",
+      "slug": "award-travel-finder-rest-api",
+      "type": "http",
+      "url": "https://awardtravelfinder.com/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Award Travel Finder MCP Server",
+      "slug": "award-travel-finder-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.awardtravelfinder.com/mcp"
+    },
+    {
+      "authStatus": "none",
+      "name": "Award Travel Finder MCP Server (root endpoint)",
+      "slug": "award-travel-finder-mcp-server-root-endpoint",
+      "type": "mcp",
+      "url": "https://awardtravelfinder.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Award Travel Finder REST API",
+      "slug": "rest-api",
+      "spec": "https://awardtravelfinder.com/openapi.json",
+      "type": "http",
+      "url": "https://awardtravelfinder.com/api/v1"
+    }
+  ]
+}

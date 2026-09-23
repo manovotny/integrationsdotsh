@@ -1,30 +1,29 @@
 {
-  "description": "ActiveCampaign is a customer experience automation platform for email marketing, CRM, automations, and ecommerce-related customer data. Businesses use it to manage contacts, campaigns, deals, automations, and connected app workflows.",
-  "discoveredAt": "2026-07-02T20:00:53.230Z",
+  "description": "ActiveCampaign is a customer experience automation platform for email marketing, CRM, campaigns, contacts, and automations. Businesses use it to manage contacts, marketing workflows, campaigns, and sales pipelines.",
+  "discoveredAt": "2026-07-07T20:05:14.877Z",
   "domain": "activecampaign.com",
-  "summary": "ActiveCampaign exposes a tenant-specific REST API v3, an Ecommerce GraphQL API, and a remote MCP server; public docs show API-key auth for REST/GraphQL and an account-specific private MCP endpoint authenticated via ActiveCampaign OAuth/login flow.",
+  "summary": "ActiveCampaign exposes an account-specific REST API, an account-specific GraphQL API, and a remote MCP server; the REST and GraphQL APIs use an `Api-Token` header, while the MCP server uses OAuth initiated from a private per-account MCP URL.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "ActiveCampaign REST API v3",
+      "name": "ActiveCampaign REST API",
       "slug": "activecampaign-rest-api-v3",
       "type": "http",
       "url": "https://<your-account>.api-us1.com/api/3"
     },
     {
       "authStatus": "required",
-      "name": "ActiveCampaign Ecommerce GraphQL API",
-      "slug": "activecampaign-ecommerce-graphql-api",
+      "name": "ActiveCampaign GraphQL API",
+      "slug": "activecampaign-graphql-api",
       "spec": "introspection",
       "type": "graphql",
-      "url": "https://<your-account>.api-us1.com/api/3/ecom/graphql"
+      "url": "https://<your-account>.api-us1.com/api/3/graphql"
     },
     {
-      "authStatus": "required",
+      "authStatus": "unknown",
       "name": "ActiveCampaign Remote MCP Server",
       "slug": "activecampaign-remote-mcp-server",
-      "type": "mcp",
-      "url": "private MCP endpoint copied from ActiveCampaign Settings → Developer"
+      "type": "mcp"
     }
   ]
 }

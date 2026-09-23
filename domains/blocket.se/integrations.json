@@ -1,0 +1,15 @@
+{
+  "description": "Blocket is a Swedish online classifieds marketplace. Its Pro Import API is aimed at business customers who need to create, update, renew, and delete Blocket ads programmatically.",
+  "discoveredAt": "2026-07-09T06:42:30.217Z",
+  "domain": "blocket.se",
+  "summary": "Blocket exposes one documented developer integration surface on its own domain: the Pro Import HTTP API at api.blocket.se for programmatic ad management, authenticated with a support-issued JWT in the `X-Auth-Token` header.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Blocket Pro Import API",
+      "slug": "blocket-pro-import-api",
+      "type": "http",
+      "url": "https://api.blocket.se/pro-import-api"
+    }
+  ]
+}

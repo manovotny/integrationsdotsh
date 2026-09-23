@@ -1,22 +1,30 @@
 {
-  "description": "PrintHive is a cloud platform for managing Bambu Lab 3D printer fleets, print jobs, materials, and operator workflows. It also provides AI-assisted print farm access through an MCP server connected to live farm data and control actions.",
-  "discoveredAt": "2026-07-03T19:10:58.584Z",
+  "description": "Print Hive is software for operating Bambu Lab 3D print farms, including fleet monitoring, job queueing, material workflows, and AI-assisted control. Its product connects printers and operators through a centralized management platform.",
+  "discoveredAt": "2026-07-05T14:48:00.385Z",
   "domain": "www.printhiv3d.com",
-  "summary": "PrintHive exposes a documented REST API and a Streamable HTTP MCP server; both require authentication and support either an organization API key or a user Bearer token.",
+  "summary": "Print Hive exposes two developer surfaces on api.printhiv3d.com: a REST API at `/v1` and a streamable HTTP MCP server at `/v1/mcp`; both are authenticated, with REST accepting API key or bearer token and MCP accepting OAuth, API key, or bearer token.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "PrintHive REST API",
-      "slug": "printhive-rest-api",
-      "type": "http",
-      "url": "https://api.hiv3d.com/v1"
-    },
-    {
-      "authStatus": "required",
-      "name": "PrintHive MCP server",
+      "name": "Print Hive MCP",
       "slug": "printhive-mcp-server",
       "type": "mcp",
       "url": "https://api.printhiv3d.com/v1/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Print Hive REST API",
+      "slug": "print-hive-rest-api",
+      "type": "http",
+      "url": "https://api.printhiv3d.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Print Hive REST API",
+      "slug": "print-hive-api",
+      "spec": "https://api.printhiv3d.com/openapi.json",
+      "type": "http",
+      "url": "https://api.printhiv3d.com/v1"
     }
   ]
 }

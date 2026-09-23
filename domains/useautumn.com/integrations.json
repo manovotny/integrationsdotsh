@@ -1,0 +1,46 @@
+{
+  "description": "Autumn is billing infrastructure for AI and SaaS products that sits on top of Stripe. It manages subscription state, usage metering, credits, entitlements, and related billing logic for customer applications.",
+  "discoveredAt": "2026-07-06T12:49:27.913Z",
+  "domain": "useautumn.com",
+  "summary": "Autumn exposes one authenticated REST API at `https://api.useautumn.com/v1`, an authenticated MCP server at `https://mcp.useautumn.com/mcp`, and an authenticated `atmn` CLI; no GraphQL surface was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Autumn REST API",
+      "slug": "autumn-rest-api",
+      "type": "http",
+      "url": "https://api.useautumn.com/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Autumn MCP Server",
+      "slug": "autumn-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.useautumn.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "atmn",
+      "name": "Autumn CLI",
+      "packages": [
+        {
+          "identifier": "atmn",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        },
+        {
+          "identifier": "atmn",
+          "registryType": "npm",
+          "runtimeHint": "pnpm dlx"
+        },
+        {
+          "identifier": "atmn",
+          "registryType": "npm",
+          "runtimeHint": "bunx"
+        }
+      ],
+      "slug": "autumn-cli",
+      "type": "cli"
+    }
+  ]
+}

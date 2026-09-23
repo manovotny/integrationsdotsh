@@ -1,9 +1,17 @@
 {
-  "description": "Linear is a product development and issue-tracking platform for planning roadmaps, managing projects, and tracking software work. It provides workspace data and actions around issues, projects, comments, agents, and related workflow objects.",
-  "discoveredAt": "2026-07-02T23:37:53.614Z",
+  "description": "Linear is a product development and issue tracking platform for planning roadmaps, managing projects, and coordinating software work. It provides workspaces where teams track issues, projects, documents, cycles, customers, and related development activity.",
+  "discoveredAt": "2026-08-08T11:34:39.197Z",
   "domain": "linear.app",
-  "summary": "Linear exposes a GraphQL API at `api.linear.app`, a hosted MCP server at `mcp.linear.app/mcp`, and a `linear` CLI; developer auth is via Linear-issued personal API keys and OAuth applications/tokens.",
+  "summary": "Linear exposes a GraphQL API at `api.linear.app`, a remote MCP server at `mcp.linear.app/mcp`, and a `linear` CLI; authentication is via personal API keys, OAuth 2.0 apps, or MCP OAuth depending on surface.",
   "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Linear GraphQL API",
+      "slug": "linear-graphql-api",
+      "spec": "https://raw.githubusercontent.com/linear/linear/master/packages/sdk/src/schema.graphql",
+      "type": "graphql",
+      "url": "https://api.linear.app/graphql"
+    },
     {
       "authStatus": "required",
       "name": "Linear MCP server",
@@ -18,20 +26,11 @@
       "packages": [
         {
           "identifier": "@linear/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
+          "registryType": "npm"
         }
       ],
       "slug": "linear-2",
       "type": "cli"
-    },
-    {
-      "authStatus": "required",
-      "name": "Linear GraphQL API",
-      "slug": "linear-graphql-api",
-      "spec": "https://raw.githubusercontent.com/linear/linear/master/packages/sdk/src/schema.graphql",
-      "type": "graphql",
-      "url": "https://api.linear.app/graphql"
     }
   ]
 }

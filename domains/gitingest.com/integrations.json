@@ -1,0 +1,16 @@
+{
+  "description": "GitIngest turns Git repositories into structured plain-text digests that summarize repository structure and file contents for use with large language models. Its website also offers a web interface for ingesting public or private GitHub repositories.",
+  "discoveredAt": "2026-07-04T19:10:32.193Z",
+  "domain": "gitingest.com",
+  "summary": "gitingest.com exposes one public HTTP API documented by an OpenAPI schema at `https://gitingest.com/openapi.json`; no GraphQL API, MCP server, or gitingest.com-hosted CLI surface was found.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "name": "GitIngest HTTP API",
+      "slug": "gitingest-http-api",
+      "spec": "https://gitingest.com/openapi.json",
+      "type": "http",
+      "url": "https://gitingest.com"
+    }
+  ]
+}

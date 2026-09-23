@@ -1,12 +1,12 @@
 {
-  "description": "idoctor.md appears to operate a service that includes the Kokiko MCP endpoint. No broader public product or developer documentation for the domain was discoverable from the web pages and searches checked.",
-  "discoveredAt": "2026-07-02T21:50:21.621Z",
+  "description": "idoctor.md appears to host Kokiko, an MCP server endpoint on a subdomain. No broader product or developer documentation for additional programmatic surfaces could be verified from the domain.",
+  "discoveredAt": "2026-07-09T23:35:27.007Z",
   "domain": "idoctor.md",
-  "summary": "idoctor.md exposes a public MCP server at https://kokiko.idoctor.md/mcp; no other public developer integration surfaces were found.",
+  "summary": "idoctor.md exposes one known public MCP surface: Kokiko at `https://kokiko.idoctor.md/mcp`. No public HTTP APIs, GraphQL endpoints, or CLIs could be verified from the domain.",
   "surfaces": [
     {
       "authStatus": "none",
-      "name": "Kokiko MCP Server",
+      "name": "Kokiko MCP",
       "slug": "kokiko-mcp-server",
       "type": "mcp",
       "url": "https://kokiko.idoctor.md/mcp"

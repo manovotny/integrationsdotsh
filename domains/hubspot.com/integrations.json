@@ -1,0 +1,46 @@
+{
+  "description": "HubSpot is a customer platform and CRM for marketing, sales, service, content, commerce, and operations teams. It lets businesses manage customer data, automate workflows, and build integrations and custom extensions on top of its platform.",
+  "discoveredAt": "2026-08-31T15:27:45.824Z",
+  "domain": "hubspot.com",
+  "summary": "HubSpot exposes a REST API at api.hubapi.com, a remote OAuth-protected MCP server at mcp.hubspot.com/anthropic, a local HubSpot CLI (`hs`), and a locally installed Developer MCP server configured through the CLI.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "HubSpot REST APIs",
+      "slug": "hubspot-rest-api",
+      "type": "http",
+      "url": "https://api.hubapi.com/"
+    },
+    {
+      "authStatus": "required",
+      "name": "HubSpot MCP server",
+      "slug": "hubspot",
+      "type": "mcp",
+      "url": "https://mcp.hubspot.com/anthropic"
+    },
+    {
+      "authStatus": "required",
+      "command": "hs",
+      "name": "HubSpot CLI",
+      "packages": [
+        {
+          "identifier": "@hubspot/cli",
+          "registryType": "npm",
+          "runtimeHint": "node"
+        },
+        {
+          "identifier": "hubspot-cli",
+          "registryType": "rubygems"
+        }
+      ],
+      "slug": "hubspot-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "HubSpot Developer MCP server",
+      "slug": "hubspot-developer-mcp-server",
+      "type": "mcp"
+    }
+  ]
+}

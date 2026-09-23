@@ -1,13 +1,13 @@
 {
-  "description": "Resend provides an email platform for developers to send, receive, and manage email, contacts, domains, broadcasts, templates, and related workflows. It also offers AI-oriented tooling such as a hosted MCP server and CLI for agent and automation use.",
-  "discoveredAt": "2026-07-03T01:31:56.731Z",
+  "description": "Resend is an email delivery service for developers focused on transactional and marketing email sending, inbound email handling, and related audience, template, webhook, and automation features. It also provides tooling for terminal and AI-agent workflows.",
+  "discoveredAt": "2026-08-14T10:33:50.506Z",
   "domain": "resend.com",
-  "summary": "Resend exposes a bearer-authenticated REST API at api.resend.com with published OpenAPI specs, an OAuth-protected hosted MCP server at mcp.resend.com, and a Resend CLI authenticated with an API key.",
+  "summary": "Resend exposes a REST API at api.resend.com, a hosted OAuth-protected MCP server at mcp.resend.com with API-key fallback, and a `resend` CLI; docs also describe SMTP sending via smtp.resend.com using an API key.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "Resend REST API",
-      "slug": "resend-rest-api",
+      "slug": "resend-rest-api-2",
       "spec": "https://resend.com/openapi.yaml",
       "type": "http",
       "url": "https://api.resend.com"
@@ -17,7 +17,7 @@
       "name": "Resend MCP",
       "slug": "resend-mcp",
       "type": "mcp",
-      "url": "https://mcp.resend.com"
+      "url": "https://mcp.resend.com/mcp"
     },
     {
       "authStatus": "required",
@@ -36,6 +36,13 @@
       ],
       "slug": "resend-cli",
       "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Resend SMTP",
+      "slug": "resend-smtp",
+      "type": "http",
+      "url": "smtp.resend.com"
     }
   ]
 }

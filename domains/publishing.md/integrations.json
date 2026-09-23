@@ -1,0 +1,7 @@
+{
+  "description": "The domain publishing.md does not appear to expose publicly documented developer APIs, GraphQL endpoints, MCP servers, or CLI tools. Searches for developer resources and direct fetches of the site did not yield accessible documentation or integration endpoints.",
+  "discoveredAt": "2026-07-04T14:26:22.268Z",
+  "domain": "publishing.md",
+  "summary": "No public developer integration surfaces were found for publishing.md.",
+  "surfaces": []
+}

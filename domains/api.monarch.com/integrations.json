@@ -1,0 +1,15 @@
+{
+  "description": "Monarch Money is a personal finance service for tracking accounts, transactions, budgets, and cash flow. Its `api.monarch.com` host currently exposes a Model Context Protocol server for AI clients, though Monarch's help center says the MCP connector is temporarily paused.",
+  "discoveredAt": "2026-07-19T03:13:09.795Z",
+  "domain": "api.monarch.com",
+  "summary": "api.monarch.com exposes an OAuth-protected MCP server at `https://api.monarch.com/mcp`, using self-onboarding OAuth 2.0 with Dynamic Client Registration and scopes `mcp:read`/`mcp:write`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Monarch MCP Server",
+      "slug": "monarch-mcp-server",
+      "type": "mcp",
+      "url": "https://api.monarch.com/mcp"
+    }
+  ]
+}

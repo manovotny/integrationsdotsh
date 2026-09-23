@@ -1,0 +1,15 @@
+{
+  "description": "Salvy is a Brazilian MVNO focused on corporate mobile lines, eSIMs, and virtual mobile numbers for business use. Its platform includes APIs and webhooks for managing virtual numbers, employees, equipment, and receiving SMS events.",
+  "discoveredAt": "2026-07-10T14:16:15.765Z",
+  "domain": "salvy.com.br",
+  "summary": "Salvy exposes one authenticated REST API at `https://api.salvy.com.br` for virtual phone numbers, employees, assets, and webhook-backed SMS workflows; no GraphQL API, MCP server, or CLI was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Salvy API",
+      "slug": "salvy-api",
+      "type": "http",
+      "url": "https://api.salvy.com.br"
+    }
+  ]
+}

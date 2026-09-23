@@ -1,0 +1,25 @@
+{
+  "description": "Pyrite Cloud is a serverless application deployment platform for building, deploying, and scaling apps without managing infrastructure. Its public site and docs describe platform features and a command-line workflow for managing projects, services, and deployments.",
+  "discoveredAt": "2026-07-26T10:28:04.090Z",
+  "domain": "pyrite.cloud",
+  "summary": "pyrite.cloud exposes a documented Pyrite CLI (`pyrite`) for deployment and environment management, authenticated via interactive GitHub OAuth login; no public HTTP/GraphQL/MCP developer API surface or machine-readable spec was found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "command": "pyrite",
+      "name": "Pyrite CLI",
+      "packages": [
+        {
+          "identifier": "pyritecloud/tap/pyrite",
+          "registryType": "homebrew"
+        },
+        {
+          "identifier": "ghcr.io/pyritecloud/pyrite:latest",
+          "registryType": "docker"
+        }
+      ],
+      "slug": "pyrite-cli",
+      "type": "cli"
+    }
+  ]
+}

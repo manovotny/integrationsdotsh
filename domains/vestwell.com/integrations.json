@@ -1,0 +1,15 @@
+{
+  "description": "Vestwell is a retirement and workplace savings platform for employers, advisors, savers, and financial institutions. It supports products such as 401(k), 403(b), IRA, PEP, and other savings programs with administration, compliance, and payroll connectivity.",
+  "discoveredAt": "2026-08-07T05:33:24.670Z",
+  "domain": "vestwell.com",
+  "summary": "Vestwell publicly documents a payroll-integration HTTP surface at `https://programpay.vestwell.com`, but I could not find public developer API specs, GraphQL, MCP, or CLI surfaces on `vestwell.com` or its subdomains.",
+  "surfaces": [
+    {
+      "authStatus": "unknown",
+      "name": "Vestwell payroll integration platform",
+      "slug": "vestwell-payroll-integration-platform",
+      "type": "http",
+      "url": "https://programpay.vestwell.com"
+    }
+  ]
+}

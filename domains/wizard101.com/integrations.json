@@ -1,0 +1,7 @@
+{
+  "description": "Wizard101 is an online fantasy MMORPG published by KingsIsle. The wizard101.com domain primarily serves game, account, news, and marketing pages for players.",
+  "discoveredAt": "2026-07-19T03:27:59.829Z",
+  "domain": "wizard101.com",
+  "summary": "No public developer integration surface found for wizard101.com; the site appears to be a consumer game website, and the only surfaced API references point to other domains (for example `strapi.kingsisle.com`), which are out of scope for wizard101.com.",
+  "surfaces": []
+}

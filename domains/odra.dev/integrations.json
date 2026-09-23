@@ -1,0 +1,21 @@
+{
+  "description": "Odra is a Rust-based smart contract framework for building contracts for the Casper Network. Its documentation covers project scaffolding, testing, deployment workflows, and generated client libraries for interacting with Casper-based contracts.",
+  "discoveredAt": "2026-07-30T09:31:25.186Z",
+  "domain": "odra.dev",
+  "summary": "odra.dev publishes documentation for the Odra smart-contract framework and one public developer CLI surface: the `cargo-odra` Cargo subcommand; no Odra-hosted HTTP, GraphQL, or MCP integration endpoints are documented.",
+  "surfaces": [
+    {
+      "authStatus": "none",
+      "command": "cargo",
+      "name": "cargo-odra",
+      "packages": [
+        {
+          "identifier": "cargo-odra",
+          "registryType": "cargo"
+        }
+      ],
+      "slug": "cargo-odra",
+      "type": "cli"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "description": "usesocial.dev offers a command-line tool that lets a user operate LinkedIn and X accounts from the shell for posting, messaging, outreach, and local mirrored-data querying. The product focuses on agent-friendly social-media workflows with JSON output and account-linked usage billing.",
+  "discoveredAt": "2026-07-04T09:45:00.042Z",
+  "domain": "usesocial.dev",
+  "summary": "usesocial.dev exposes one documented developer integration surface: the `social` CLI for LinkedIn and X account operations, authenticated via `social account login` and per-network account connection commands.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "command": "social",
+      "name": "social CLI",
+      "packages": [
+        {
+          "identifier": "@usesocial/cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "social-cli",
+      "type": "cli"
+    }
+  ]
+}

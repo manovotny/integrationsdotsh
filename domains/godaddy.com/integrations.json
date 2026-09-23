@@ -1,22 +1,52 @@
 {
-  "description": "GoDaddy provides domain registration, DNS, certificates, auctions, reseller, and related internet infrastructure services. It also offers an Agent Name Service (ANS) registry for verified AI agents.",
-  "discoveredAt": "2026-07-02T21:44:14.381Z",
+  "description": "GoDaddy provides domain registration and lifecycle services, including domain search, availability checks, DNS management, transfers, renewals, and related account-scoped domain operations. Its developer platform centers on APIs and tools for automating those domain workflows.",
+  "discoveredAt": "2026-07-21T14:16:41.881Z",
   "domain": "godaddy.com",
-  "summary": "GoDaddy exposes authenticated HTTP developer APIs at https://api.godaddy.com plus a public MCP server at https://api.godaddy.com/v1/domains/mcp; no GraphQL or CLI surface was found.",
+  "summary": "GoDaddy exposes three documented Domains HTTP APIs on api.godaddy.com (v3 recommended, plus legacy v1 and v2), a public streamable-HTTP MCP server at /v1/domains/mcp, and the `gddy` CLI.",
   "surfaces": [
     {
+      "authStatus": "none",
+      "name": "GoDaddy MCP server",
+      "slug": "godaddy-mcp-server",
+      "type": "mcp",
+      "url": "https://api.godaddy.com/v1/domains/mcp"
+    },
+    {
       "authStatus": "required",
-      "name": "GoDaddy Developer APIs",
+      "command": "gddy",
+      "name": "GoDaddy CLI",
+      "packages": [
+        {
+          "identifier": "godaddy/cli",
+          "registryType": "github"
+        }
+      ],
+      "slug": "godaddy-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "GoDaddy Domains API v2",
       "slug": "godaddy-developer-apis",
+      "spec": "https://developer.godaddy.com/openapi/domains-v2.json",
       "type": "http",
       "url": "https://api.godaddy.com"
     },
     {
-      "authStatus": "none",
-      "name": "GoDaddy MCP Server",
-      "slug": "godaddy-mcp-server",
-      "type": "mcp",
-      "url": "https://api.godaddy.com/v1/domains/mcp"
+      "authStatus": "required",
+      "name": "GoDaddy Domains API v1",
+      "slug": "godaddy-developer-apis-2",
+      "spec": "https://developer.godaddy.com/openapi/domains-v1.json",
+      "type": "http",
+      "url": "https://api.godaddy.com"
+    },
+    {
+      "authStatus": "required",
+      "name": "GoDaddy Domains API v3",
+      "slug": "godaddy-domains-api-v3",
+      "spec": "https://developer.godaddy.com/openapi/domains-v3.json",
+      "type": "http",
+      "url": "https://api.godaddy.com/v3/domains"
     }
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "description": "PSNProfiles is a community website for tracking PlayStation trophies, player profiles, leaderboards, guides, and gaming sessions. Its forum discussions indicate it relies on Sony data sources and that neither Sony nor PSNProfiles exposes a public developer API for this use case.",
+  "discoveredAt": "2026-08-07T05:46:24.014Z",
+  "domain": "psnprofiles.com",
+  "summary": "No documented developer integration surface found for psnprofiles.com: no public HTTP/REST API, GraphQL API, MCP server, or CLI could be verified on the domain.",
+  "surfaces": []
+}

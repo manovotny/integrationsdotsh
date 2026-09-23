@@ -1,22 +1,47 @@
 {
-  "discoveredAt": "2026-07-02T20:51:16.307Z",
+  "description": "Shopify is a commerce platform for creating and operating online stores, checkout, payments, and retail sales. It also provides developer tooling for apps, custom storefronts, and AI-powered shopping and store-management experiences.",
+  "discoveredAt": "2026-08-31T12:22:11.844Z",
   "domain": "shopify.com",
-  "summary": "Shopify exposes Admin REST and GraphQL APIs, Storefront, Partner, Customer Account, and Payments GraphQL APIs, plus an MCP endpoint and the `shopify` CLI; auth is mainly via `X-Shopify-Access-Token` app/store or partner tokens, Storefront public/private tokens, Customer Account OAuth, CLI login, while the recorded MCP supports none or OAuth.",
+  "summary": "Shopify exposes GraphQL APIs for Admin, Storefront, and Partner access, MCP servers for storefront and setup flows, and the `shopify` CLI; auth varies by surface, including Admin/Partner tokens, Storefront tokens or tokenless access, OAuth for customer-account/setup flows, and CLI browser login.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Shopify Admin REST API",
-      "slug": "shopify-admin-rest-api",
-      "type": "http",
-      "url": "https://{shop}.myshopify.com/admin/api/{api_version}"
+      "name": "Shopify GraphQL Admin API",
+      "slug": "shopify-graphql-admin-api",
+      "spec": "introspection",
+      "type": "graphql",
+      "url": "https://{store}.myshopify.com/admin/api/2025-04/graphql.json"
+    },
+    {
+      "authStatus": "none",
+      "name": "Shopify Storefront MCP server",
+      "slug": "shopify-storefront-mcp-server",
+      "type": "mcp",
+      "url": "https://{shop}.myshopify.com/api/mcp"
     },
     {
       "authStatus": "required",
-      "name": "Shopify Admin GraphQL API",
-      "slug": "shopify-admin-graphql-api",
-      "spec": "introspection",
-      "type": "graphql",
-      "url": "https://{shop}.myshopify.com/admin/api/{api_version}/graphql.json"
+      "name": "Shopify Setup MCP server",
+      "slug": "shopify",
+      "type": "mcp",
+      "url": "https://setup.shopify.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "shopify",
+      "name": "Shopify CLI",
+      "packages": [
+        {
+          "identifier": "@shopify/cli",
+          "registryType": "npm"
+        },
+        {
+          "identifier": "shopify-cli",
+          "registryType": "homebrew"
+        }
+      ],
+      "slug": "shopify-cli",
+      "type": "cli"
     }
   ]
 }

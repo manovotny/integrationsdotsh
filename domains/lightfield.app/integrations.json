@@ -1,0 +1,40 @@
+{
+  "description": "Lightfield is an AI-native CRM that automatically captures emails, meetings, and other customer interactions to build and update relationship records. It provides a shared customer-memory model and agent layer for sales workflows, reporting, and automations.",
+  "discoveredAt": "2026-09-21T21:38:24.741Z",
+  "domain": "lightfield.app",
+  "summary": "Lightfield exposes a beta REST API at `api.lightfield.app/v1`, a `lightfield` CLI, and a Streamable HTTP MCP server at `mcp.lightfield.app/mcp`; the REST API and CLI use admin-created API keys, while the MCP server uses OAuth 2.1 via the MCP client flow.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Lightfield REST API",
+      "slug": "lightfield-rest-api",
+      "type": "http",
+      "url": "https://api.lightfield.app/v1"
+    },
+    {
+      "authStatus": "required",
+      "command": "lightfield",
+      "name": "Lightfield CLI",
+      "packages": [
+        {
+          "identifier": "Lightfld/lightfield/lightfield",
+          "registryType": "homebrew"
+        },
+        {
+          "identifier": "github.com/Lightfld/lightfield-cli/cmd/lightfield",
+          "registryType": "go",
+          "runtimeHint": "Go 1.22+"
+        }
+      ],
+      "slug": "lightfield-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Lightfield MCP server",
+      "slug": "lightfield-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.lightfield.app/mcp"
+    }
+  ]
+}

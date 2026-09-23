@@ -1,20 +1,29 @@
 {
-  "description": "beehiiv is a newsletter publishing platform for creators, publishers, and brands. It provides tools to create, distribute, grow, and monetize newsletters, along with audience, automation, and analytics features.",
-  "discoveredAt": "2026-07-02T20:09:14.174Z",
+  "description": "beehiiv is a newsletter publishing platform for creators, publishers, and brands. It provides tools to create, distribute, grow, and monetize newsletters, along with websites, automations, podcasts, analytics, and related audience features.",
+  "discoveredAt": "2026-09-02T21:34:09.291Z",
   "domain": "beehiiv.com",
-  "summary": "beehiiv exposes a documented REST API authenticated by either API keys or OAuth 2.0 bearer tokens, plus a hosted MCP server for AI clients; no public GraphQL API or CLI was found.",
+  "summary": "beehiiv exposes a REST API at `https://api.beehiiv.com/v2` authenticated by API keys or OAuth2 bearer tokens, plus two MCP endpoints: an authenticated developer MCP server at `https://developers.beehiiv.com/_mcp/server` and a public pricing MCP endpoint at `https://www.beehiiv.com/api/mcp`.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "beehiiv REST API",
       "slug": "beehiiv-rest-api",
-      "type": "http"
+      "type": "http",
+      "url": "https://api.beehiiv.com/v2"
     },
     {
-      "authStatus": "required",
+      "authStatus": "unknown",
       "name": "beehiiv MCP server",
       "slug": "beehiiv-mcp-server",
-      "type": "mcp"
+      "type": "mcp",
+      "url": "https://developers.beehiiv.com/_mcp/server"
+    },
+    {
+      "authStatus": "none",
+      "name": "beehiiv public pricing MCP endpoint",
+      "slug": "beehiiv-public-pricing-mcp-endpoint",
+      "type": "mcp",
+      "url": "https://www.beehiiv.com/api/mcp"
     }
   ]
 }

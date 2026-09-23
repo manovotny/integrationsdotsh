@@ -1,0 +1,22 @@
+{
+  "description": "TranscriptAPI provides programmatic access to YouTube transcripts, video metadata, search, channel browsing, and playlist listing. It offers these capabilities through a REST API and a Model Context Protocol server for AI assistants.",
+  "discoveredAt": "2026-08-27T05:58:10.611Z",
+  "domain": "transcriptapi.com",
+  "summary": "TranscriptAPI exposes two developer integration surfaces on transcriptapi.com: a REST API at `https://transcriptapi.com/api/v2` authenticated with a bearer API key, and an OAuth-protected MCP server at `https://transcriptapi.com/mcp` that supports self-onboarding via Dynamic Client Registration plus a documented API-key fallback.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "TranscriptAPI MCP server",
+      "slug": "transcriptapi-mcp-server",
+      "type": "mcp",
+      "url": "https://transcriptapi.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "TranscriptAPI REST API",
+      "slug": "transcriptapi-rest-api",
+      "type": "http",
+      "url": "https://transcriptapi.com/api/v2"
+    }
+  ]
+}

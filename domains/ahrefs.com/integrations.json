@@ -1,0 +1,22 @@
+{
+  "description": "Ahrefs is an SEO and marketing intelligence platform that provides search, backlink, rank-tracking, site audit, and related analytics data. It also offers an MCP server so AI assistants can access Ahrefs data through supported MCP clients.",
+  "discoveredAt": "2026-07-03T22:27:24.295Z",
+  "domain": "ahrefs.com",
+  "summary": "Ahrefs exposes a REST API at `https://api.ahrefs.com/v3` authenticated either by workspace API keys or by Ahrefs Connect OAuth access tokens, plus a hosted MCP server at `https://api.ahrefs.com/mcp/mcp` using OAuth and optionally manual MCP keys.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Ahrefs API v3",
+      "slug": "ahrefs-api-v3",
+      "type": "http",
+      "url": "https://api.ahrefs.com/v3"
+    },
+    {
+      "authStatus": "required",
+      "name": "Ahrefs MCP",
+      "slug": "ahrefs",
+      "type": "mcp",
+      "url": "https://api.ahrefs.com/mcp/mcp"
+    }
+  ]
+}

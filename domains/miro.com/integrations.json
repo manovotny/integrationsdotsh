@@ -1,0 +1,22 @@
+{
+  "description": "Miro is an online collaborative whiteboard and visual workspace platform for creating boards, diagrams, and team planning artifacts. It provides APIs and AI-agent connectivity for working with Miro boards and related content.",
+  "discoveredAt": "2026-07-09T14:36:42.856Z",
+  "domain": "miro.com",
+  "summary": "Miro exposes a REST API at `https://api.miro.com/v2` authenticated with OAuth 2.0 app credentials and a public streamable-HTTP MCP server at `https://mcp.miro.com/`.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Miro REST API",
+      "slug": "miro-rest-api",
+      "type": "http",
+      "url": "https://api.miro.com/v2"
+    },
+    {
+      "authStatus": "required",
+      "name": "Miro MCP Server",
+      "slug": "miro",
+      "type": "mcp",
+      "url": "https://mcp.miro.com/"
+    }
+  ]
+}

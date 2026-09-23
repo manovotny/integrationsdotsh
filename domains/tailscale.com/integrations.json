@@ -1,29 +1,16 @@
 {
-  "description": "Tailscale provides a mesh VPN and zero-trust network access platform for connecting devices, users, and services. It lets organizations manage private connectivity, access control, and related network operations across their tailnet.",
-  "discoveredAt": "2026-07-02T21:01:21.509Z",
+  "description": "Tailscale is a networking platform that creates private mesh networks for devices, users, and services. It provides tooling for managing tailnets, devices, policies, DNS, users, and related network administration.",
+  "discoveredAt": "2026-07-13T01:16:52.530Z",
   "domain": "tailscale.com",
-  "summary": "Tailscale exposes an authenticated HTTP API at `https://api.tailscale.com` and a `tailscale` CLI; docs also describe OAuth clients for API access.",
+  "summary": "Tailscale exposes one documented developer integration surface on tailscale.com: a REST HTTP API at `https://api.tailscale.com/api/v2/`, authenticated with Tailscale-issued API access tokens or OAuth client credentials that mint short-lived access tokens.",
   "surfaces": [
     {
       "authStatus": "required",
       "name": "Tailscale API",
       "slug": "tailscale-api",
+      "spec": "https://api.tailscale.com/api/v2?outputOpenapiSchema=true",
       "type": "http",
-      "url": "https://api.tailscale.com"
-    },
-    {
-      "authStatus": "required",
-      "command": "tailscale",
-      "name": "tailscale CLI",
-      "packages": [
-        {
-          "identifier": "https://tailscale.com/download",
-          "registryType": "other",
-          "runtimeHint": "native binaries and OS packages"
-        }
-      ],
-      "slug": "tailscale-cli",
-      "type": "cli"
+      "url": "https://api.tailscale.com/api/v2/"
     }
   ]
 }

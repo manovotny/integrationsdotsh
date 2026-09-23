@@ -1,0 +1,15 @@
+{
+  "description": "Public is an investing and brokerage platform for trading stocks, ETFs, options, crypto, bonds, and treasuries. Its hosted MCP offering connects AI assistants to a user’s Public brokerage account for portfolio access and trade actions.",
+  "discoveredAt": "2026-08-05T00:59:28.927Z",
+  "domain": "mcp.public.com",
+  "summary": "mcp.public.com exposes one OAuth-protected hosted MCP server at `https://mcp.public.com/mcp`; Public’s docs also mention an API-key-based connector flow for some MCP clients.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Public Hosted MCP Server",
+      "slug": "public-hosted-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.public.com/mcp"
+    }
+  ]
+}

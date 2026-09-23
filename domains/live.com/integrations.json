@@ -1,7 +1,7 @@
 {
-  "description": "live.com is a Microsoft-owned consumer account/domain family associated with Microsoft accounts and services such as Outlook.com and OneDrive. The developer materials surfaced for live.com route to Microsoft Learn and Microsoft Graph documentation rather than exposing programmatic interfaces hosted on live.com itself.",
-  "discoveredAt": "2026-07-02T23:37:17.309Z",
+  "description": "live.com is a Microsoft consumer account and webmail domain used for Outlook.com and related Microsoft account services. Current developer integrations for those services are documented under other Microsoft domains and target other API hosts rather than live.com itself.",
+  "discoveredAt": "2026-08-29T07:15:23.121Z",
   "domain": "live.com",
-  "summary": "No public developer integration surfaces were found on live.com itself. The domain mainly fronts Microsoft Learn and consumer Microsoft account/OneDrive properties, while the documented APIs for live.com users belong to other domains such as graph.microsoft.com, not live.com.",
+  "summary": "No developer integration surfaces were confirmed on live.com itself; searches mainly resolve to Microsoft developer documentation for other domains (for example Microsoft Graph and OneDrive) or deprecated Windows Live materials.",
   "surfaces": []
 }

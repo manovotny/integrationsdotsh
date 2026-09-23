@@ -1,0 +1,15 @@
+{
+  "description": "Hevy is a workout tracking and fitness logging service. Its public API lets users access and manage workout, routine, exercise template, routine folder, exercise history, and body measurement data.",
+  "discoveredAt": "2026-07-04T16:47:18.428Z",
+  "domain": "hevy.com",
+  "summary": "hevy.com exposes one documented HTTP API at https://api.hevyapp.com, authenticated with a user-generated Hevy API key sent in the `api-key` header; no first-party GraphQL, MCP server, or CLI were found.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Hevy Public API",
+      "slug": "hevy-public-api",
+      "type": "http",
+      "url": "https://api.hevyapp.com"
+    }
+  ]
+}

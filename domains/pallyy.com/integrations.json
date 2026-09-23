@@ -1,0 +1,22 @@
+{
+  "description": "Pallyy is a social media management platform for scheduling, approving, publishing, and reporting on posts across multiple social networks. It also includes shared inbox, media library, analytics, and link-in-bio features for agencies, brands, and creators.",
+  "discoveredAt": "2026-08-27T06:05:54.591Z",
+  "domain": "pallyy.com",
+  "summary": "Pallyy exposes a REST API at https://app.pallyy.com/api/v1 authenticated with Pallyy API keys, plus a detected MCP server endpoint on pallyy.com whose auth could not be confirmed from public docs.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Pallyy REST API",
+      "slug": "pallyy-rest-api",
+      "type": "http",
+      "url": "https://app.pallyy.com/api/v1"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "Pallyy MCP server",
+      "slug": "pallyy-mcp-server",
+      "type": "mcp",
+      "url": "https://pallyy.com/.well-known/mcp/server-card.json"
+    }
+  ]
+}

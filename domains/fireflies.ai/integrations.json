@@ -1,0 +1,30 @@
+{
+  "description": "Fireflies.ai is an AI meeting assistant that records, transcribes, summarizes, and analyzes meetings and calls. It helps teams turn conversations into searchable notes, insights, action items, and workflow automations.",
+  "discoveredAt": "2026-07-19T06:49:06.071Z",
+  "domain": "fireflies.ai",
+  "summary": "Fireflies.ai exposes a GraphQL API at `https://api.fireflies.ai/graphql`, a WebSocket-based Realtime API at `wss://api.fireflies.ai`, and an OAuth-protected MCP server at `https://api.fireflies.ai/mcp`; developer access is primarily via a Fireflies API key, with MCP also supporting Fireflies account OAuth.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Fireflies GraphQL API",
+      "slug": "fireflies-graphql-api",
+      "spec": "introspection",
+      "type": "graphql",
+      "url": "https://api.fireflies.ai/graphql"
+    },
+    {
+      "authStatus": "required",
+      "name": "Fireflies MCP Server",
+      "slug": "fireflies",
+      "type": "mcp",
+      "url": "https://api.fireflies.ai/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Fireflies Realtime API",
+      "slug": "fireflies-realtime-api",
+      "type": "http",
+      "url": "wss://api.fireflies.ai"
+    }
+  ]
+}

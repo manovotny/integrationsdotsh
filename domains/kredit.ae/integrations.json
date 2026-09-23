@@ -1,15 +1,29 @@
 {
-  "description": "Kredit is a UAE credit card comparison platform. It helps users find and compare credit cards from banks and brands in the United Arab Emirates.",
-  "discoveredAt": "2026-07-02T21:53:56.135Z",
+  "description": "Kredit is a UAE credit-card comparison platform that publishes card rankings, reward-rate datasets, and recommendation tooling. It helps users compare UAE credit cards and related financial products such as bank accounts.",
+  "discoveredAt": "2026-09-10T18:39:54.983Z",
   "domain": "kredit.ae",
-  "summary": "kredit.ae exposes a public MCP server at https://kredit.ae/api/mcp/sse; no public HTTP/GraphQL API or CLI documentation was found.",
+  "summary": "Kredit exposes two MCP endpoints on kredit.ae—an OAuth-discoverable streamable-HTTP MCP server at `/api/mcp/v2` and a catalog-listed SSE endpoint at `/api/mcp/sse`—plus several public JSON dataset endpoints under `/api/data` that the site explicitly says are public distributions rather than a supported developer API.",
   "surfaces": [
     {
-      "authStatus": "none",
+      "authStatus": "required",
       "name": "Kredit MCP Server",
       "slug": "kredit-mcp-server",
       "type": "mcp",
+      "url": "https://kredit.ae/api/mcp/v2"
+    },
+    {
+      "authStatus": "none",
+      "name": "Kredit MCP Server (SSE endpoint)",
+      "slug": "kredit-mcp-server-2",
+      "type": "mcp",
       "url": "https://kredit.ae/api/mcp/sse"
+    },
+    {
+      "authStatus": "none",
+      "name": "Kredit Public Datasets",
+      "slug": "kredit-public-datasets",
+      "type": "http",
+      "url": "https://kredit.ae/api/data"
     }
   ]
 }

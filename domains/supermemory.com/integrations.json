@@ -1,0 +1,22 @@
+{
+  "description": "Supermemory provides memory and context infrastructure for AI agents, including ingestion, search, user profiles, and connectors. It also offers an MCP-based memory layer so compatible AI clients can access shared spaces and saved context.",
+  "discoveredAt": "2026-08-27T21:31:16.953Z",
+  "domain": "supermemory.com",
+  "summary": "Supermemory exposes a bearer-authenticated HTTP API at `https://api.supermemory.ai` and an OAuth-protected remote MCP server at `https://mcp.supermemory.ai/mcp`; no GraphQL API or standalone CLI endpoint on `supermemory.com` was documented.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Supermemory HTTP API",
+      "slug": "supermemory-http-api",
+      "type": "http",
+      "url": "https://api.supermemory.ai"
+    },
+    {
+      "authStatus": "required",
+      "name": "Supermemory MCP",
+      "slug": "supermemory-mcp",
+      "type": "mcp",
+      "url": "https://mcp.supermemory.ai/mcp"
+    }
+  ]
+}

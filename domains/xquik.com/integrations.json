@@ -1,0 +1,44 @@
+{
+  "description": "Xquik is a hosted SaaS platform for searching public X data, exporting results, publishing from connected X accounts, and running monitoring and giveaway workflows. It also provides MCP access so AI agents can use Xquik’s X automation and data tools.",
+  "discoveredAt": "2026-07-14T08:39:15.218Z",
+  "domain": "xquik.com",
+  "summary": "Xquik exposes a REST API at `/api/v1`, a hosted streamable-HTTP MCP server at `/mcp`, and a Go-installed `x-twitter-scraper` CLI; auth is via Xquik API keys, with OAuth 2.1 also supported for MCP and documented in the REST OpenAPI schema.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Xquik MCP Server",
+      "slug": "xquik-mcp-server",
+      "type": "mcp",
+      "url": "https://xquik.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "x-twitter-scraper",
+      "name": "x-twitter-scraper CLI",
+      "packages": [
+        {
+          "identifier": "github.com/Xquik-dev/x-twitter-scraper-cli/cmd/x-twitter-scraper",
+          "registryType": "golang",
+          "runtimeHint": "go install"
+        }
+      ],
+      "slug": "x-twitter-scraper-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Xquik REST API",
+      "slug": "xquik-rest-api",
+      "type": "http",
+      "url": "https://xquik.com/api/v1"
+    },
+    {
+      "authStatus": "required",
+      "name": "Xquik REST API",
+      "slug": "xquik-rest-api-2",
+      "spec": "https://xquik.com/openapi.json",
+      "type": "http",
+      "url": "https://xquik.com/api/v1"
+    }
+  ]
+}

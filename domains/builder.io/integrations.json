@@ -1,50 +1,42 @@
 {
-  "description": "Builder.io is a visual headless CMS and development platform for creating, managing, and publishing digital content and frontend experiences. It provides tools for content delivery, programmatic content management, and code-generation workflows.",
-  "discoveredAt": "2026-07-02T20:10:30.234Z",
+  "description": "Builder.io is a visual development and content management platform for building and publishing digital experiences. It provides content delivery, content management, asset upload, and AI-assisted tooling for websites and applications.",
+  "discoveredAt": "2026-07-06T10:59:48.894Z",
   "domain": "builder.io",
-  "summary": "Builder.io exposes a publish MCP server plus developer APIs for content, GraphQL, admin/write operations, and an npm-distributed CLI; only the MCP server’s OAuth flow was clearly documented from the sources read.",
+  "summary": "Builder.io exposes a remote OAuth-protected MCP server, a REST Content API plus Write and Upload APIs on `cdn.builder.io`, and GraphQL content/admin APIs authenticated with Builder API keys.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Builder MCP Publish Server",
-      "slug": "builder-mcp-publish-server",
+      "name": "Builder MCP Server",
+      "slug": "builder-mcp-server",
       "type": "mcp",
-      "url": "https://mcp.builder.io/mcp/publish"
+      "url": "https://mcp.builder.io"
     },
     {
-      "authStatus": "unknown",
-      "name": "Builder Content GraphQL API",
+      "authStatus": "required",
+      "name": "Builder Content API",
+      "slug": "builder-content-api",
+      "type": "http",
+      "url": "https://cdn.builder.io/api/v3"
+    },
+    {
+      "authStatus": "required",
+      "name": "Builder GraphQL Content API",
       "slug": "builder-content-graphql-api",
       "spec": "introspection",
       "type": "graphql",
       "url": "https://cdn.builder.io/api/v3/graphql"
     },
     {
-      "authStatus": "unknown",
-      "name": "Builder Content API",
-      "slug": "builder-content-api",
-      "type": "http",
-      "url": "https://cdn.builder.io/api/v3/content"
-    },
-    {
-      "authStatus": "unknown",
+      "authStatus": "required",
       "name": "Builder Write API",
       "slug": "builder-write-api",
       "type": "http"
     },
     {
-      "authStatus": "unknown",
-      "command": "builder",
-      "name": "Builder CLI",
-      "packages": [
-        {
-          "identifier": "@builder.io/cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
-        }
-      ],
-      "slug": "builder-cli",
-      "type": "cli"
+      "authStatus": "required",
+      "name": "Builder Upload API",
+      "slug": "builder-upload-api",
+      "type": "http"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "description": "Slack is a workplace messaging and collaboration platform for channels, direct messages, files, workflows, and enterprise administration. It also provides APIs and AI connectivity features so apps and agents can read and act on Slack data.",
-  "discoveredAt": "2026-07-02T20:51:14.449Z",
+  "description": "Slack is a workplace messaging and collaboration platform for channels, messaging, workflows, and app integrations. It also provides developer tooling for building Slack apps and AI agents that interact with Slack workspaces.",
+  "discoveredAt": "2026-08-12T16:30:02.631Z",
   "domain": "slack.com",
-  "summary": "Slack exposes HTTP APIs for the Web API, SCIM, Audit Logs, Legal Holds, an MCP server at `https://mcp.slack.com/mcp`, and the Slack CLI; developer access is authenticated with Slack app OAuth tokens or CLI login.",
+  "summary": "Slack exposes a documented HTTP Web API at https://slack.com/api, an OAuth-protected MCP server at https://mcp.slack.com/mcp, and the authenticated `slack` CLI.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -14,7 +14,7 @@
     {
       "authStatus": "required",
       "name": "Slack Web API",
-      "slug": "slack-web-api",
+      "slug": "slack-web-api-2-2",
       "type": "http",
       "url": "https://slack.com/api"
     },
@@ -31,33 +31,17 @@
       "name": "Slack CLI",
       "packages": [
         {
-          "identifier": "https://downloads.slack-edge.com/slack-cli/install.sh",
-          "registryType": "shell",
-          "runtimeHint": "curl | bash installer"
+          "identifier": "@slack/cli",
+          "registryType": "npm",
+          "runtimeHint": "npx"
+        },
+        {
+          "identifier": "slackapi/slack-cli",
+          "registryType": "github"
         }
       ],
       "slug": "slack-cli",
       "type": "cli"
-    },
-    {
-      "authStatus": "required",
-      "name": "Slack SCIM API",
-      "slug": "slack-scim-api",
-      "type": "http",
-      "url": "https://api.slack.com/scim/VERSION/"
-    },
-    {
-      "authStatus": "required",
-      "name": "Slack Audit Logs API",
-      "slug": "slack-audit-logs-api",
-      "type": "http",
-      "url": "https://api.slack.com/audit/v1/"
-    },
-    {
-      "authStatus": "required",
-      "name": "Slack Legal Holds API",
-      "slug": "slack-legal-holds-api",
-      "type": "http"
     }
   ]
 }

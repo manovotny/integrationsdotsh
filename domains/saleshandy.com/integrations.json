@@ -1,0 +1,36 @@
+{
+  "description": "Saleshandy is a multichannel outbound sales platform for managing prospecting, email sequences, email accounts, analytics, inbox workflows, and related sales operations. It also provides lead data and enrichment features for sales teams, agencies, and recruiters.",
+  "discoveredAt": "2026-07-07T19:27:21.037Z",
+  "domain": "saleshandy.com",
+  "summary": "Saleshandy exposes a REST API at `open-api.saleshandy.com/v1`, a remote MCP server at `mcp.saleshandy.com/mcp`, and an official `saleshandy` CLI; all use Saleshandy-issued auth, with API keys across REST/CLI and either OAuth or API key for MCP.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Saleshandy MCP server",
+      "slug": "saleshandy-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.saleshandy.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "saleshandy",
+      "name": "Saleshandy CLI",
+      "packages": [
+        {
+          "identifier": "@saleshandy/saleshandy-cli",
+          "registryType": "npm",
+          "runtimeHint": "Node.js 18+"
+        }
+      ],
+      "slug": "saleshandy-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Saleshandy REST API",
+      "slug": "saleshandy-rest-api",
+      "type": "http",
+      "url": "https://open-api.saleshandy.com/v1"
+    }
+  ]
+}

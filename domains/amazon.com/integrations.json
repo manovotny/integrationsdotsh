@@ -1,33 +1,29 @@
 {
-  "discoveredAt": "2026-07-02T22:52:52.809Z",
+  "description": "Amazon.com operates consumer and business platforms including retail, seller, and developer services. Its developer-facing amazon.com properties document APIs for sellers, customer-authorized data portability, and gift card incentives.",
+  "discoveredAt": "2026-08-27T15:04:09.137Z",
   "domain": "amazon.com",
-  "summary": "Amazon exposes multiple HTTP developer APIs—App Submission, Appstore Reporting, Vitals, Data Portability, plus Amazon Pay and Incentives surfaces—with auth via Login with Amazon security-profile tokens (Bearer), Data Portability LWA OAuth tokens, Amazon Pay signed requests using a publicKeyId/private key pair (optionally plus delegated auth token), or Incentives Partner ID + access/secret keys.",
+  "summary": "amazon.com exposes documented HTTP APIs for Selling Partner, Data Portability, and Gift Card Incentives; no Amazon-owned GraphQL, MCP, or CLI surfaces were found on this domain.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Amazon App Submission API",
-      "slug": "amazon-app-submission-api",
+      "name": "Amazon Selling Partner API",
+      "slug": "amazon-selling-partner-api",
       "type": "http",
-      "url": "https://developer.amazon.com"
-    },
-    {
-      "authStatus": "required",
-      "name": "Amazon Appstore Reporting API",
-      "slug": "amazon-appstore-reporting-api",
-      "type": "http"
-    },
-    {
-      "authStatus": "required",
-      "name": "Amazon Appstore Vitals API",
-      "slug": "amazon-appstore-vitals-api",
-      "type": "http"
+      "url": "https://sellingpartnerapi-na.amazon.com"
     },
     {
       "authStatus": "required",
       "name": "Amazon Data Portability API",
       "slug": "amazon-data-portability-api",
       "type": "http",
-      "url": "https://intake.{region}.portability.data.amazon"
+      "url": "https://intake.us-east-1.portability.data.amazon"
+    },
+    {
+      "authStatus": "required",
+      "name": "Amazon Gift Card Incentives API",
+      "slug": "amazon-gift-card-incentives-api",
+      "type": "http",
+      "url": "https://agcod-v2-gamma.amazon.com"
     }
   ]
 }

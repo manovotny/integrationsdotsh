@@ -1,12 +1,12 @@
 {
-  "description": "Fly.io is a cloud platform for running applications and virtual-machine workloads globally. It provides app deployment, machine management, networking, storage, and related operational tooling.",
-  "discoveredAt": "2026-07-02T20:23:09.554Z",
+  "description": "Fly.io is a cloud platform for running applications on Firecracker-based virtual machines across global regions. It also offers Sprites, persistent Linux sandbox environments for AI agents and exploratory code execution.",
+  "discoveredAt": "2026-08-30T20:47:17.389Z",
   "domain": "fly.io",
-  "summary": "Fly.io exposes a REST Machines API, a GraphQL API, the flyctl CLI, and a flyctl-provided MCP server; all documented developer surfaces require a Fly.io access token.",
+  "summary": "fly.io exposes the Fly Machines REST API at `api.machines.dev`, the `flyctl` CLI, plus Sprites surfaces under the Fly ecosystem: a Sprites REST API at `api.sprites.dev/v1` and a hosted MCP server at `https://sprites.dev/mcp` authenticated via OAuth.",
   "surfaces": [
     {
       "authStatus": "required",
-      "command": "fly",
+      "command": "flyctl",
       "name": "flyctl",
       "packages": [
         {
@@ -19,17 +19,24 @@
     },
     {
       "authStatus": "required",
-      "name": "Fly.io GraphQL API",
-      "slug": "fly-io-graphql-api",
-      "spec": "introspection",
-      "type": "graphql",
-      "url": "https://api.fly.io/graphql"
+      "name": "Sprites REST API",
+      "slug": "sprites-rest-api",
+      "type": "http",
+      "url": "https://api.sprites.dev/v1"
     },
     {
       "authStatus": "required",
-      "name": "flyctl MCP server",
-      "slug": "flyctl-mcp-server",
-      "type": "mcp"
+      "name": "Sprites MCP server",
+      "slug": "sprites-mcp-server",
+      "type": "mcp",
+      "url": "https://sprites.dev/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Fly Machines API",
+      "slug": "fly-machines-api",
+      "type": "http",
+      "url": "https://api.machines.dev"
     }
   ]
 }

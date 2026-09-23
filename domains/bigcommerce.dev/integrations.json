@@ -1,0 +1,42 @@
+{
+  "description": "BigCommerce is an ecommerce platform for building and operating online stores. It provides APIs and agent tooling for managing store data, powering storefront experiences, and enabling AI-assisted shopping flows.",
+  "discoveredAt": "2026-07-10T16:18:56.902Z",
+  "domain": "bigcommerce.dev",
+  "summary": "BigCommerce exposes an Admin REST API, a public same-origin Storefront REST API, a Storefront GraphQL API, and MCP servers for documentation and storefront access.",
+  "surfaces": [
+    {
+      "authStatus": "unknown",
+      "name": "BigCommerce documentation MCP server",
+      "slug": "bigcommerce-documentation-mcp-server",
+      "type": "mcp",
+      "url": "https://docs.bigcommerce.com/_mcp/server"
+    },
+    {
+      "authStatus": "required",
+      "name": "BigCommerce Admin REST API",
+      "slug": "bigcommerce-admin-rest-api",
+      "type": "http",
+      "url": "https://api.bigcommerce.com/stores/{store_hash}/v3"
+    },
+    {
+      "authStatus": "none",
+      "name": "BigCommerce Storefront REST API",
+      "slug": "bigcommerce-storefront-rest-api",
+      "type": "http"
+    },
+    {
+      "authStatus": "required",
+      "name": "BigCommerce Storefront GraphQL API",
+      "slug": "bigcommerce-storefront-graphql-api",
+      "spec": "introspection",
+      "type": "graphql",
+      "url": "https://store-{store_hash}.mybigcommerce.com/graphql"
+    },
+    {
+      "authStatus": "none",
+      "name": "BigCommerce Storefront MCP server",
+      "slug": "bigcommerce-storefront-mcp-server",
+      "type": "mcp"
+    }
+  ]
+}

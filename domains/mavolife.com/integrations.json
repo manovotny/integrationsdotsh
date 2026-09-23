@@ -1,0 +1,23 @@
+{
+  "description": "Mavo Life is a shared family and household organizer for calendars, lists, meals, people, notifications, and related household workflows. It lets families keep one shared plan and offers assistant-driven and API-driven ways to read and update that household data.",
+  "discoveredAt": "2026-07-04T19:36:49.750Z",
+  "domain": "mavolife.com",
+  "summary": "Mavolife.com exposes two developer integration surfaces: a family-scoped REST API with OpenAPI and API-key auth, and a remote MCP server at `/mcp` using OAuth 2.0 with dynamic client registration/self-onboarding.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Mavo MCP connector",
+      "slug": "mavo-mcp-connector",
+      "type": "mcp",
+      "url": "https://mavolife.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "name": "Mavo REST API",
+      "slug": "mavo-rest-api",
+      "spec": "https://mavolife.com/openapi.json",
+      "type": "http",
+      "url": "https://mavolife.com/api/v1"
+    }
+  ]
+}

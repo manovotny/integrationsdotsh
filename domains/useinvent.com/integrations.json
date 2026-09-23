@@ -1,0 +1,22 @@
+{
+  "description": "Invent is an AI-native customer communication platform for running assistants, shared inboxes, contacts, broadcasts, knowledge, workflows, and channel integrations such as WhatsApp, Instagram, Messenger, Telegram, Slack, Gmail, SMS, and web chat. Businesses use it to manage customer conversations and automation across those channels.",
+  "discoveredAt": "2026-08-27T22:10:25.286Z",
+  "domain": "useinvent.com",
+  "summary": "useinvent.com exposes a documented REST API at api.useinvent.com authenticated with an Invent API key, plus a public website-widget embed script on www.useinvent.com; no GraphQL API, CLI, or MCP server is currently documented.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Invent REST API",
+      "slug": "invent-rest-api",
+      "type": "http",
+      "url": "https://api.useinvent.com"
+    },
+    {
+      "authStatus": "none",
+      "name": "Invent website widget embed",
+      "slug": "invent-website-widget-embed",
+      "type": "http",
+      "url": "https://www.useinvent.com/embed.js"
+    }
+  ]
+}

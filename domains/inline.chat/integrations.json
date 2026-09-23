@@ -1,16 +1,9 @@
 {
-  "description": "Inline is a work chat application for teams and agents. It provides messaging and conversation workflows, including bot automation and MCP-based access to approved workspace content.",
-  "discoveredAt": "2026-07-03T11:52:17.324Z",
+  "description": "Inline is a work chat product for teams. It provides messaging, bots, and assistant-oriented integrations around conversations, spaces, and direct messages.",
+  "discoveredAt": "2026-07-04T08:06:17.836Z",
   "domain": "inline.chat",
-  "summary": "inline.chat exposes a bot-oriented HTTP API on api.inline.chat, a hosted OAuth-protected MCP server at mcp.inline.chat/mcp, and an `inline` CLI.",
+  "summary": "inline.chat exposes a Bot HTTP API on api.inline.chat, a hosted OAuth-protected MCP server on mcp.inline.chat, a CLI, and owner-declared additional HTTP/Realtime surfaces; the Bot API and MCP are documented, while a second HTTP API is only owner-declared and not fully documented for developer auth.",
   "surfaces": [
-    {
-      "authStatus": "required",
-      "name": "Inline Bot HTTP API",
-      "slug": "inline-bot-http-api",
-      "type": "http",
-      "url": "https://api.inline.chat"
-    },
     {
       "authStatus": "required",
       "name": "Inline MCP server",
@@ -26,14 +19,25 @@
         {
           "identifier": "inline-chat/homebrew-inline/inline",
           "registryType": "homebrew"
-        },
-        {
-          "identifier": "https://inline.chat/cli/install.sh",
-          "registryType": "generic"
         }
       ],
       "slug": "inline-cli",
       "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Inline Bot HTTP API",
+      "slug": "inline-bot-http-api",
+      "type": "http",
+      "url": "https://api.inline.chat"
+    },
+    {
+      "authStatus": "required",
+      "name": "Inline Bot HTTP API",
+      "slug": "inline-bot-http-api-2",
+      "spec": "https://inline.chat/openapi.json",
+      "type": "http",
+      "url": "https://api.inline.chat"
     }
   ]
 }

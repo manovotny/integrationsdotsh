@@ -1,8 +1,8 @@
 {
-  "description": "Clay is a go-to-market workflow platform for researching companies and people, enriching records with many data providers, and automating sales and marketing workflows. It also lets teams connect their Clay workspace to AI tools like Claude, ChatGPT, and Codex through MCP.",
-  "discoveredAt": "2026-07-03T03:48:55.850Z",
+  "description": "Clay is a sales intelligence and enrichment platform built around tables, workflows, and integrations for finding, enriching, and activating company and person data. It also lets teams connect Clay workflows to AI tools through MCP.",
+  "discoveredAt": "2026-07-03T22:57:01.133Z",
   "domain": "clay.com",
-  "summary": "Clay exposes an OAuth-protected MCP server at `https://api.clay.com/v3/mcp`; no public developer-facing REST/GraphQL API or CLI on `clay.com` was confirmed from public docs, though Clay also issues per-user API keys for its own Clay-native integrations inside the product.",
+  "summary": "Clay exposes an OAuth-protected MCP server at `https://api.clay.com/v3/mcp` and documents a limited Enterprise People & Company HTTP API, but does not publish a traditional public API reference or machine-readable spec for that API.",
   "surfaces": [
     {
       "authStatus": "required",
@@ -10,6 +10,12 @@
       "slug": "clay",
       "type": "mcp",
       "url": "https://api.clay.com/v3/mcp"
+    },
+    {
+      "authStatus": "unknown",
+      "name": "Clay Enterprise People & Company API",
+      "slug": "clay-enterprise-people-company-api",
+      "type": "http"
     }
   ]
 }

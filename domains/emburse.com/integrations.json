@@ -1,0 +1,31 @@
+{
+  "description": "Emburse provides spend management, expense management, travel, cards, invoice, and AP automation products for businesses. Its platform includes separate product lines such as Emburse Cards, Emburse Spend, and Emburse Enterprise (Chrome River).",
+  "discoveredAt": "2026-07-06T21:34:08.483Z",
+  "domain": "emburse.com",
+  "summary": "Emburse exposes three documented REST API surfaces: Emburse Cards (`api.emburse.com`), Emburse Spend (`spend.emburse.com` with OpenAPI YAML), and Emburse Enterprise REST APIs (`service.chromeriver.com`) documented as multiple Swagger/OpenAPI documents; no public GraphQL, MCP, or CLI surfaces were found on emburse.com.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Emburse Cards API",
+      "slug": "emburse-cards-api",
+      "type": "http",
+      "url": "https://api.emburse.com/v1/"
+    },
+    {
+      "authStatus": "required",
+      "name": "Emburse Spend API",
+      "slug": "emburse-spend-api",
+      "spec": "https://spend.emburse.com/apidoc/spend-api-spec.yaml",
+      "type": "http",
+      "url": "https://spend.emburse.com/api"
+    },
+    {
+      "authStatus": "required",
+      "name": "Emburse Enterprise REST APIs",
+      "slug": "emburse-enterprise-rest-apis",
+      "spec": "https://service.chromeriver.com/personapi-docs",
+      "type": "http",
+      "url": "https://service.chromeriver.com/"
+    }
+  ]
+}

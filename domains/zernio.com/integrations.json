@@ -1,0 +1,36 @@
+{
+  "description": "Zernio is a social media scheduling, messaging, analytics, and ads platform that provides a unified API for managing posts and connected accounts across many social networks. It also offers AI-agent access through MCP and a command-line interface.",
+  "discoveredAt": "2026-07-04T04:43:27.909Z",
+  "domain": "zernio.com",
+  "summary": "Zernio exposes a REST API at `https://zernio.com/api/v1` with an OpenAPI spec, a hosted MCP server at `https://mcp.zernio.com/mcp`, and a `zernio` CLI; the REST API and CLI use Zernio API keys, and the MCP server supports either OAuth or API-key bearer auth.",
+  "surfaces": [
+    {
+      "authStatus": "required",
+      "name": "Zernio MCP server",
+      "slug": "zernio-mcp-server",
+      "type": "mcp",
+      "url": "https://mcp.zernio.com/mcp"
+    },
+    {
+      "authStatus": "required",
+      "command": "zernio",
+      "name": "Zernio CLI",
+      "packages": [
+        {
+          "identifier": "@zernio/cli",
+          "registryType": "npm"
+        }
+      ],
+      "slug": "zernio-cli",
+      "type": "cli"
+    },
+    {
+      "authStatus": "required",
+      "name": "Zernio REST API",
+      "slug": "zernio-rest-api",
+      "spec": "https://zernio.com/openapi.yaml",
+      "type": "http",
+      "url": "https://zernio.com/api/v1"
+    }
+  ]
+}

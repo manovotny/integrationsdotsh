@@ -1,43 +1,27 @@
 {
-  "description": "Zoho is a business software provider with products including CRM and an MCP service for connecting AI agents to Zoho and third-party applications. The developer materials found on zoho.com here centered on Zoho CRM programmatic access and Zoho's MCP platform.",
-  "discoveredAt": "2026-07-02T21:08:25.619Z",
+  "description": "Zoho provides a large suite of business software products, including CRM, collaboration, finance, and project management tools. The public developer pages found here center on Zoho CRM integrations and Zoho-wide OAuth 2.0 authentication.",
+  "discoveredAt": "2026-07-04T20:06:27.000Z",
   "domain": "zoho.com",
-  "summary": "Zoho.com exposes Zoho CRM developer surfaces including a REST API, a GraphQL API, an MCP offering for CRM, and the ZDK CLI; documented developer auth is Zoho OAuth 2.0 for the APIs, while MCP and CLI login mechanics were not clearly documented in the pages read.",
+  "summary": "zoho.com exposes a documented Zoho CRM REST API plus CRM GraphQL and MCP pages, but the available public pages did not reveal machine-readable spec URLs, GraphQL endpoint details, or MCP connect/auth details.",
   "surfaces": [
     {
       "authStatus": "required",
-      "name": "Zoho CRM REST API",
-      "slug": "zoho-crm-rest-api",
-      "type": "http",
-      "url": "https://{api_domain}/crm/v8"
+      "name": "Zoho CRM API v8",
+      "slug": "zoho-crm-api-v8",
+      "type": "http"
     },
     {
-      "authStatus": "required",
+      "authStatus": "unknown",
       "name": "Zoho CRM GraphQL API",
       "slug": "zoho-crm-graphql-api",
-      "spec": "introspection",
       "type": "graphql",
-      "url": "https://{api_domain}/crm/graphql"
+      "url": "https://www.zoho.com/crm/developer/graphql-apis.html"
     },
     {
       "authStatus": "unknown",
       "name": "Zoho CRM MCP",
       "slug": "zoho-crm-mcp",
       "type": "mcp"
-    },
-    {
-      "authStatus": "unknown",
-      "command": "zdk",
-      "name": "ZDK CLI",
-      "packages": [
-        {
-          "identifier": "@zohocrm/zdk-cli",
-          "registryType": "npm",
-          "runtimeHint": "node"
-        }
-      ],
-      "slug": "zdk-cli",
-      "type": "cli"
     }
   ]
 }

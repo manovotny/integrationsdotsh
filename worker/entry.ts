@@ -17,11 +17,13 @@ import yogaWasmModule from "satori/yoga.wasm?module";
 import { apiContext, apiHandler } from "./api.ts";
 import { canonicalRedirect } from "./canonical.ts";
 import { discoveryDoc, discoveryKvGet } from "./discovery-doc.ts";
-import { domainsJsonWithLiveIndex, upsertLiveIndex } from "./live-index.ts";
-import { setChat, setWebBackend, discoverWithProgress, preserveSlugs } from "./operations.ts";
+import { apiJsonWithLiveIndex, domainsJsonWithLiveIndex, upsertLiveIndex } from "./live-index.ts";
+import { setChat, setWebBackend, discoverWithProgress, discoveryRefusal, preserveSlugs } from "./operations.ts";
 import { contextWeb, naiveWeb } from "../src/lib/contextdev.ts";
+import { isDenylisted } from "../src/lib/catalog-denylist.ts";
 import { DOMAIN_ALIASES, canonicalDomain } from "../src/lib/domain-aliases.ts";
-import { isJunkDomain, registrableDomain } from "../src/lib/favicon.ts";
+import { applyEndpointVerdicts } from "../src/lib/endpoint-verdicts.ts";
+import { isJunkDomain, logoHost, registrableDomain } from "../src/lib/favicon.ts";
 import { isSdkNotCli } from "../src/lib/surface-classify.ts";
 import { renderOgPng, type OgFonts, type OgImageData } from "../src/lib/og.tsx";
 import type { Surface } from "../src/lib/surface-view.ts";
@@ -31,7 +33,8 @@ import { McpDurableObject } from "./mcp-do.ts";
 
 // Bump when detect/discover output shape or logic changes, so the edge Cache API
 // (which survives deploys) stops serving results produced by the old code.
-const CACHE_VERSION = "20"; // 20: llms.txt content seeds discovery
+const CACHE_VERSION = "21"; // 21: dynamic API responses carry CORS headers
+const API_JSON_CACHE_VERSION = "1";
 
 // The discovery-loop model. gpt-5.4 drives the agentic tool-calling loop
 // (search/sitemap/scrape/report). (Note: gpt-5.x rejects `reasoning_effort`
@@ -92,9 +95,15 @@ async function priorSurfaces(env: Env, origin: string, domain: string): Promise<
   return (await discoveryDoc(env, origin, domain))?.surfaces ?? [];
 }
 
-async function persistDiscovery(env: Env, result: { domain?: string; surfaces?: readonly unknown[]; summary?: unknown }, model: string): Promise<void> {
+async function persistDiscovery(env: Env, result: { domain?: string; surfaces?: readonly unknown[]; summary?: unknown; discoveredAt?: string }, model: string): Promise<void> {
   if (!result.domain) return;
-  const discoveredAt = new Date().toISOString();
+  // Defense in depth: the stream route already refuses these, but nothing that
+  // writes a durable record may take a host on trust.
+  if (discoveryRefusal(canonicalDomain(result.domain))) return;
+  // Keep the result's own generation timestamp: the cache-hit backfill also
+  // lands here, and stamping `now` would relabel a day-old cached result as
+  // fresh — hiding the regenerate affordance for another staleness window.
+  const discoveredAt = result.discoveredAt ?? new Date().toISOString();
   await Promise.all([
     env.DISCOVERY.put(canonicalDomain(result.domain), JSON.stringify({ result, discoveredAt, model })),
     upsertLiveIndex(env, result, discoveredAt),
@@ -276,11 +285,15 @@ function discoveryCounts(result: {
 /** Drop SDK-as-`cli` surfaces from a stored-discovery KV envelope's JSON string,
  * so the /api/{domain}/discovery endpoint matches the rendered pages. Serves the
  * value unchanged if it doesn't parse into the expected shape. */
-function stripSdkFromStored(raw: string): string {
+/** The stored-discovery JSON, corrected the way the pages correct it: client
+ *  SDKs mis-typed as `cli` dropped, and the MCP probe verdicts applied (dead
+ *  endpoints dropped, unverified `none` claims downgraded). Without this the
+ *  API and the rendered page disagree about the same record. */
+function correctStored(raw: string): string {
   try {
     const envelope = JSON.parse(raw) as { result?: { surfaces?: Surface[] } };
     if (envelope.result?.surfaces?.length) {
-      envelope.result.surfaces = envelope.result.surfaces.filter((s) => !isSdkNotCli(s));
+      envelope.result.surfaces = applyEndpointVerdicts(envelope.result.surfaces.filter((s) => !isSdkNotCli(s)));
       return JSON.stringify(envelope);
     }
   } catch {
@@ -303,7 +316,7 @@ async function healthz(env: Env): Promise<Response> {
 
 const TRAILING_SLASH_SKIP_PREFIXES = ["/api/", "/og/", "/_i/", "/logo/"];
 
-function trailingSlashRedirect(request: Request, url: URL): Response | null {
+async function trailingSlashRedirect(request: Request, url: URL, env: Env): Promise<Response | null> {
   if (request.method !== "GET" || url.pathname.endsWith("/")) return null;
   if (TRAILING_SLASH_SKIP_PREFIXES.some((prefix) => url.pathname.startsWith(prefix))) return null;
   const segments = url.pathname.split("/").filter(Boolean);
@@ -316,6 +329,13 @@ function trailingSlashRedirect(request: Request, url: URL): Response | null {
   const last = segments[segments.length - 1];
   if (!registrableDomain(first)) return null;
   if (last !== first && last.includes(".")) return null;
+  // A prerendered file can still look like a domain page — /skill.md parses
+  // as a registrable .md domain. If the exact path is a built asset, let the
+  // normal asset flow serve it instead of redirecting into a 404. redirect:
+  // "manual" so the binding's own trailing-slash redirect for directory-style
+  // pages (/gitlab.com → /gitlab.com/) isn't followed and counted as a hit.
+  const asset = await env.ASSETS.fetch(new Request(url.origin + url.pathname, { redirect: "manual" }));
+  if (asset.ok) return null;
   const target = new URL(url);
   target.pathname = `${url.pathname}/`;
   return Response.redirect(target.toString(), 301);
@@ -441,6 +461,29 @@ async function handleRequest(
       return healthz(env);
     }
 
+    // A neutral mark for a domain with no logo on file: its first letter on a
+    // tinted square, deterministic per domain so the same service always looks
+    // the same. Served with the same cache headers as a real logo.
+    const letterLogo = (domain: string, size: number): Response => {
+      const letter = (domain.replace(/^www\./, "")[0] ?? "?").toUpperCase();
+      // A stable hue per domain — recognisable at a glance, never garish.
+      let hash = 0;
+      for (const char of domain) hash = (hash * 31 + char.charCodeAt(0)) % 360;
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 64 64">` +
+        `<rect width="64" height="64" rx="12" fill="hsl(${hash} 12% 88%)"/>` +
+        `<text x="32" y="33" fill="hsl(${hash} 14% 34%)" font-family="ui-sans-serif,system-ui,sans-serif" ` +
+        `font-size="34" font-weight="600" text-anchor="middle" dominant-baseline="central">${letter}</text>` +
+        `</svg>`;
+      return new Response(svg, {
+        headers: {
+          "content-type": "image/svg+xml; charset=utf-8",
+          "access-control-allow-origin": "*",
+          "cache-control": "public, max-age=86400",
+        },
+      });
+    };
+
     // Logo proxy — the single logo source for executor clients (and anything
     // else): /logo/{domain}?theme=light|dark&sz=64. Proxies context.dev Logo
     // Link, falling back to Google's favicon service when the client id is
@@ -450,8 +493,11 @@ async function handleRequest(
     // upstream's own 24h Cache-Control — no KV/R2.
     const logoMatch = /^\/logo\/([^/]+)\/?$/.exec(url.pathname);
     if (logoMatch) {
-      const domain = registrableDomain(decodeURIComponent(logoMatch[1]).trim().toLowerCase());
-      if (!domain) return json({ error: "not a public registrable domain" }, 400);
+      const domain = logoHost(decodeURIComponent(logoMatch[1]).trim().toLowerCase());
+      // Only a host that could never carry a logo is refused. Everything else
+      // gets an image — see letterLogo below for why an error is the wrong
+      // answer here.
+      if (!domain) return json({ error: "not a usable logo host" }, 400);
       const theme = url.searchParams.get("theme");
       const size = Math.min(Math.max(Number(url.searchParams.get("sz")) || 64, 16), 256);
 
@@ -487,7 +533,16 @@ async function handleRequest(
           `https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`,
         ).catch(() => null);
       }
-      if (!upstream || !isImage(upstream)) return json({ error: "no logo found" }, 404);
+      // A LOGO ENDPOINT MUST RETURN A LOGO. Clients put this URL in an <img>;
+      // a JSON 404 renders as a broken image, and since the failure is silent
+      // to onError-less callers it reads as "the icon system is broken" rather
+      // than "this brand has no mark on file". A letter placeholder is a
+      // truthful answer to "show me something for this domain".
+      if (!upstream || !isImage(upstream)) {
+        const placeholder = letterLogo(domain, size);
+        ctx.waitUntil(cache.put(cacheKey, placeholder.clone()));
+        return placeholder;
+      }
 
       const res = new Response(upstream.body, {
         headers: {
@@ -548,10 +603,12 @@ async function handleRequest(
     const storedMatch = /^\/api\/([^/]+)\/discovery\/?$/.exec(url.pathname);
     if (storedMatch) {
       const domain = canonicalDomain(decodeURIComponent(storedMatch[1]));
+      // `discoveryKvGet` returns null for a denylisted domain, so a rejected
+      // record 404s here exactly as it does on the pages.
       const raw = await discoveryKvGet(env, domain);
-      // Strip client SDKs mis-typed as `cli` so this stored-discovery API agrees
-      // with what the pages render. Falls back to raw if the value doesn't parse.
-      const body = raw ? stripSdkFromStored(raw) : JSON.stringify({ stored: false });
+      // Correct the stored surfaces so this API agrees with what the pages
+      // render. Falls back to raw if the value doesn't parse.
+      const body = raw ? correctStored(raw) : JSON.stringify({ stored: false });
       return new Response(body, {
         status: raw ? 200 : 404,
         headers: { "content-type": "application/json; charset=utf-8", "access-control-allow-origin": "*", "cache-control": "public, max-age=60" },
@@ -565,6 +622,17 @@ async function handleRequest(
     const streamMatch = /^\/api\/([^/]+)\/discover\/stream\/?$/.exec(url.pathname);
     if (streamMatch) {
       const domain = canonicalDomain(decodeURIComponent(streamMatch[1]));
+      // Who may become a catalog record is decided BEFORE the rate limiter and
+      // before any LLM spend: the button is public, so the refusal has to be
+      // the cheapest path, and it has to explain itself to the island.
+      const refusal = discoveryRefusal(domain);
+      if (refusal) {
+        track(env, ctx, request, "discovery_refused", { domain, reason: refusal.reason });
+        return json({ error: refusal.message }, refusal.status);
+      }
+      // `force=1` (the regenerate button) skips the cached result and re-runs
+      // discovery; the fresh run then overwrites the cache entry below.
+      const force = url.searchParams.get("force") === "1";
       const cache = (caches as unknown as EdgeCaches).default;
       const keyUrl = new URL(url.origin + `/api/${encodeURIComponent(domain)}/discover`);
       keyUrl.searchParams.set("__cv", CACHE_VERSION);
@@ -577,7 +645,7 @@ async function handleRequest(
 
       // Cached results are free to serve; an uncached run costs an LLM loop —
       // cap those per client IP. 429 before the stream starts.
-      const cachedProbe = await cache.match(cacheKey);
+      const cachedProbe = force ? undefined : await cache.match(cacheKey);
       if (!cachedProbe && env.DISCOVER_LIMITER) {
         const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
         const { success } = await env.DISCOVER_LIMITER.limit({ key: ip });
@@ -589,9 +657,9 @@ async function handleRequest(
       const producer = (async () => {
         const started = Date.now();
         try {
-          const cached = await cache.match(cacheKey);
+          const cached = force ? undefined : await cache.match(cacheKey);
           if (cached) {
-            const result = (await cached.json()) as { domain?: string; surfaces?: unknown[]; credentials?: Record<string, unknown>; usedLlm?: boolean };
+            const result = (await cached.json()) as { domain?: string; surfaces?: unknown[]; credentials?: Record<string, unknown>; usedLlm?: boolean; discoveredAt?: string };
             await send("done", result);
             track(env, ctx, request, "discovery_run", {
               domain,
@@ -655,6 +723,31 @@ async function handleRequest(
       /^\/api\/[^/]+\/(?:detect|discover|surface)\/?$/.test(url.pathname)
     ) {
       const endpoint = apiEndpoint(url.pathname);
+      // Browser callers (e.g. the executor console's catalog search) hit these
+      // endpoints cross-origin; the static JSON routes are already CORS-open.
+      if (request.method === "OPTIONS") {
+        return new Response(null, {
+          status: 204,
+          headers: {
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "GET, HEAD, OPTIONS",
+            "access-control-allow-headers": "content-type",
+            "access-control-max-age": "86400",
+          },
+        });
+      }
+      // The JSON `/api/{domain}/discover` runs the same loop as the stream and
+      // writes the same KV row, so it refuses the same hosts, and before the
+      // cache so a warm rejected result cannot be served either.
+      const apiDiscoverMatch = /^\/api\/([^/]+)\/discover\/?$/.exec(url.pathname);
+      if (apiDiscoverMatch) {
+        const target = canonicalDomain(decodeURIComponent(apiDiscoverMatch[1]));
+        const refusal = discoveryRefusal(target);
+        if (refusal) {
+          track(env, ctx, request, "discovery_refused", { domain: target, reason: refusal.reason });
+          return json({ error: refusal.message }, refusal.status);
+        }
+      }
       const cache = (caches as unknown as EdgeCaches).default;
       // Version the cache key so a deploy that bumps CACHE_VERSION orphans stale
       // entries (the Cache API otherwise survives deploys).
@@ -676,7 +769,13 @@ async function handleRequest(
           return json({ error: "rate limited — try again in a minute" }, 429, { "retry-after": "60" });
         }
       }
-      const res = await apiHandler(request, apiContext(env, url.origin));
+      // The Host header, not url.origin: wrangler dev emulates the custom
+      // domain in request.url, so url.origin claims to be integrations.sh
+      // while the server actually answers on 127.0.0.1. Self-hosted asset
+      // URLs in API responses must point where the caller can reach.
+      const requestHost = request.headers.get("host");
+      const requestOrigin = requestHost ? `${url.protocol}//${requestHost}` : url.origin;
+      const res = await apiHandler(request, apiContext(env, requestOrigin));
       track(env, ctx, request, "api_request", { ...(endpoint && { endpoint }), cache_hit: false, status: res.status });
       const maxAge = url.pathname.includes("/discover") ? 86400 : url.pathname.includes("/surface") || url.pathname === "/api/search" ? 60 : 3600;
       if (request.method === "GET" && (res.status === 200 || (url.pathname.includes("/surface") && res.status === 404))) {
@@ -684,10 +783,13 @@ async function handleRequest(
         // discover runs the LLM agent — cache a day; live-indexed search and
         // surface reads stay fresh within a minute; the rest are cheap — an hour.
         out.headers.set("cache-control", `public, max-age=${maxAge}`);
+        out.headers.set("access-control-allow-origin", "*");
         if (res.status === 200) ctx.waitUntil(cache.put(cacheKey, out.clone()));
         return out;
       }
-      return res;
+      const passthrough = new Response(res.body, res);
+      passthrough.headers.set("access-control-allow-origin", "*");
+      return passthrough;
     }
 
     // Analytics on fallthrough: `hit` for executor agents, `data_fetch` for
@@ -709,6 +811,19 @@ async function handleRequest(
       return domainsJsonWithLiveIndex(env, url.origin);
     }
 
+    if ((request.method === "GET" || request.method === "HEAD") && url.pathname === "/api.json") {
+      const cache = (caches as unknown as EdgeCaches).default;
+      const keyUrl = new URL(`${url.origin}/api.json`);
+      keyUrl.searchParams.set("__cv", API_JSON_CACHE_VERSION);
+      const cacheKey = new Request(keyUrl.toString(), { method: "GET" });
+      const cached = await cache.match(cacheKey);
+      if (cached) return request.method === "HEAD" ? new Response(null, cached) : cached;
+
+      const response = await apiJsonWithLiveIndex(env, url.origin);
+      if (response.ok) ctx.waitUntil(cache.put(cacheKey, response.clone()));
+      return request.method === "HEAD" ? new Response(null, response) : response;
+    }
+
     // /ssr/{domain}/ is the INTERNAL render target below — never a public URL.
     // Direct hits redirect to the one canonical path.
     const ssrLeak = /^\/ssr\/([^/]+)\/?$/.exec(url.pathname);
@@ -716,7 +831,7 @@ async function handleRequest(
       return Response.redirect(new URL(`/${ssrLeak[1]}/`, url.origin).toString(), 301);
     }
 
-    const slashRedirect = trailingSlashRedirect(request, url);
+    const slashRedirect = await trailingSlashRedirect(request, url, env);
     if (slashRedirect) return slashRedirect;
 
     // Domain page with a STORED discovery → SSR it with the map baked in
@@ -726,7 +841,7 @@ async function handleRequest(
     const domainMatch = /^\/([^/]+)\/?$/.exec(url.pathname);
     if (request.method === "GET" && domainMatch && domainMatch[1].includes(".")) {
       const domain = canonicalDomain(decodeURIComponent(domainMatch[1]));
-      if (!isJunkDomain(domain) && await discoveryKvGet(env, domain)) {
+      if (!isJunkDomain(domain) && !isDenylisted(domain) && await discoveryKvGet(env, domain)) {
         const ssrUrl = new URL(`/ssr/${encodeURIComponent(domain)}/`, url.origin);
         return handle(manifest, app, new Request(ssrUrl, request) as never, env as never, ctx as never);
       }
